@@ -12,8 +12,7 @@ files = [
   'node_modules/sinon/lib/sinon/stub.js',
   'node_modules/sinon-chai/lib/sinon-chai.js',
   'node_modules/underscore/underscore.js',
-  'content/shared/public/js/lib/angular/angular.js',
-  'content/shared/public/angular-ui-bootstrap/ui-bootstrap-tpls-0.2.0.js',
+  'content/shared/public/angular/angular.js',
   //'content/shared/public/js/lib/angular/angular-*.js',
   'test/lib/angular/angular-mocks.js',
   //'content/shared/public/js/lib/*.js',
@@ -22,7 +21,7 @@ files = [
   'content/mobile/public/js/filters/*.js',
   'content/mobile/public/js/directives/*.js',
   'content/mobile/public/js/controllers/*.js',
-  'test/mocks/*.js',
+  'test/mocks/mockServices.js',
   'test/unit/client/**/*.js'
 ];
 
@@ -33,6 +32,6 @@ browsers = ['Chrome'];
 
 reporters=['junit'];
 junitReporter = {
-  outputFile: 'test_out/unit.xml',
+  outputFile: 'test/out/unit.xml',
   suite: 'unit'
 };

@@ -1,0 +1,23 @@
+
+[State]
+ConfigSetExtMode=2
+SrchSetFlags=0x041028ba
+SrchSetAgainFlags=0x041028ba,0
+SrchSetAgainFlags=0x06100003,1
+SrchSetAttrElements=
+SrchSetAgainAttrElements=
+FileSortMode=0x0
+MacroCurName=_API_Macro_int_handler,0
+MacroFlags=0x00000001
+StateWindowFrame=100,52,1412,867,0x43c817f8
+_StateView='C:\dev\.Command\src\pe-seed\test\unit\client\mainControllerSpec.js',0,0,1165,517,-1,-1,11,27,1,1,2,'',0x0000000c,0,10,0,0,'',0,1
+_StateView='C:\dev\.Command\src\pe-seed\test\e2e\web_hello.js',50,50,1165,517,-1,-1,12,5,4,1,1,'',0x0000001c,0,10,0,0,'',0,2
+_StateBuffer='C:\dev\.Command\src\pe-seed\test\unit\client\mainControllerSpec.js',0x0400048e,11,27,25,'5 9','c:\cwright\backup\%r%e',0x101,'',1,72,0,0,'',''
+_StateBuffer='C:\dev\.Command\src\pe-seed\test\e2e\web_hello.js',0x0400048e,12,5,25,'5 9','c:\cwright\backup\%r%e',0x101,'',1,72,1,0,'',''
+_StateHistory=FILELIST,'C:\dev\.Command\src\pe-seed\test\unit\client\mainControllerSpec.js','C:\dev\.Command\src\pe-seed\test\e2e\main_hello.js','C:\dev\.Command\src\pe-seed\test\e2e\web_hello.js'
+_StateHistory=SEARCH,'util'
+_StateHistory=DOCUMENTVISIT,'11          27          C:\dev\.Command\src\pe-seed\test\unit\client\mainControllerSpec.js','10          20          C:\dev\.Command\src\pe-seed\test\e2e\main_hello.js'
+_StateDocumentVisit=2
+_DialogSizeEnable=1
+ProjSetConfigFlags=0x0c110940
+

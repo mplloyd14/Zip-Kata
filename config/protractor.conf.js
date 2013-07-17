@@ -16,11 +16,10 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  // Options to be passed to Jasmine-node.
+  specs: ['test/e2e/web_hello.js'],
+
+    // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
-    // Spec folders are relative to the current working directly when
-    // protractor is called. This can be folders or files.
-    specFolders: ['test/e2e'],    
     isVerbose: false,
     showColors: true,
     includeStackTrace: false,
