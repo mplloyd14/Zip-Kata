@@ -30,7 +30,7 @@ config/production.js
 ############
 ## Misc
 ############
-#test/out/
+test/out/
 logs/*.log
-#*.pst
-#/test/selenium
+*.pst
+/test/selenium
