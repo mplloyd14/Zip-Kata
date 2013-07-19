@@ -22,14 +22,17 @@ module.exports = {
     routes: 'config/routes'
   },
   data: {
-	  providers: [          
-      ],
-	  socket: {
-	    server: {
-		    host: 'http://localhost',
-		    port: 3002,
-		    timeout: 10000
-	    }
+	providers: [          
+    ],
+	socket: {
+	  server: {
+	    host: 'http://localhost',
+		port: 3002,
+		timeout: 10000
 	  }
-  }
+	}
+  },
+  logging: {
+	level: 'info'
+  },  
 };

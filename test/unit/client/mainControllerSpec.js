@@ -6,8 +6,8 @@ describe('Main Controller', function() {
 	var expect = chai.expect,
 	    should = chai.should();
 
-    beforeEach(module('cai.services'));
-	beforeEach(module('peApp'));
+    //beforeEach(module('cai.services'));
+	//beforeEach(module('peApp'));
 	beforeEach(module('peControllers'));
 
     describe('display', function() {
@@ -18,9 +18,7 @@ describe('Main Controller', function() {
             scope = $rootScope.$new();
             inject(function($controller, apiProvider){
                 ctrl = $controller('MainController', {
-                    $scope: scope,
-                    contacts: env.contactSvc,
-                    notifications: env.notificationSvc
+                    $scope: scope
                 });
             });
 		}));
