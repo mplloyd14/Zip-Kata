@@ -23,7 +23,7 @@ module.exports = {
                 id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
                 url : "/ticket/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
-                filter : function (data) {},
+                filter : function (data) {return data},
                 exclusive : true  ///Todo: Add Exclusivity so that joining one room deletes client from others
             }
         },
