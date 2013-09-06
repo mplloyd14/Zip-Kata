@@ -2,6 +2,7 @@ var Q = require('q');
 var pec = require('projevo-core');
 var rest = pec.RestClient;
 
+//ToDo: I think a connect module type approach would be better.  include it in SocketServer (or RestServer?) and then all calls pass thru it before being passed to the handler....But, too much refactoring before the conference.
 module.exports = {
     type: "Socket",
     services: {
@@ -21,10 +22,53 @@ module.exports = {
             },
             room : {
                 id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
-                url : "/ticket/{num}",//Todo: align this with the URL declarations in Restify
+                url : "/timestwo/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
                 filter : function (data) {return data},
-                exclusive : true  ///Todo: Add Exclusivity so that joining one room deletes client from others
+                exclusivityGroup : 'rawhide'
+            }
+        },
+        timesThree: {
+            "handler": function (data) {
+                var deferred = Q.defer();
+                timethree(data.num);
+                function timethree(num) {
+                    setTimeout(function () {
+                        var sum = num * 3;
+                        deferred.resolve(sum);
+                    }, 300);
+
+                };
+
+                return deferred.promise;
+            },
+            room : {
+                id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
+                url : "/timethree/{num}",//Todo: align this with the URL declarations in Restify
+                announce : true,
+                filter : function (data) {return data},
+                exclusivityGroup : 'rawhide'
+            }
+        },
+        timesFour: {
+            "handler": function (data) {
+                var deferred = Q.defer();
+                timesfour(data.num);
+                function timesfour(num) {
+                    setTimeout(function () {
+                        var sum = num * 4;
+                        deferred.resolve(sum);
+                    }, 300);
+
+                };
+
+                return deferred.promise;
+            }, room : {
+                id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
+                url : "/timefour/{num}",//Todo: align this with the URL declarations in Restify
+                announce : true,
+                filter : function (data) {return data},
+                exclusivityGroup : 'chuckwagon'
             }
         },
         callReddit:
