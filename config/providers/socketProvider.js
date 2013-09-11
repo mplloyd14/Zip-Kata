@@ -4,6 +4,7 @@ var rest = pec.RestClient;
 var utils = pec.CoreUtilities;
 
 var oldHash;
+var evaluator = new utils.Evaluator();
 //ToDo: I think a connect module type approach would be better.  include it in SocketServer (or RestServer?) and then all calls pass thru it before being passed to the handler....But, too much refactoring before the conference.
 module.exports = {
     type: "Socket",
@@ -27,9 +28,8 @@ module.exports = {
                 url : "/timestwo/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
                 filter : function (data) {
-                    console.log(data);
                     var deferred = Q.defer();
-                    utils.EvaluateForDiff(data).then(function(result){
+                    evaluator.EvaluateForDiff(data).then(function(result){
                        deferred.resolve(result);
                     }).fail(function(error){
                        deferred.reject();
