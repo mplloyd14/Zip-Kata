@@ -10,10 +10,10 @@ module.exports = {
         }]
     },
     'requests' : [{ //these will call remote REST services when the requestEvent fires.  Data retrieve will be published on the publishEvent
-        'server' : 'http://localhost:8080',
+        'server' : 'http://localhost:8181',
         'method' : 'GET',//could also have options : {} or data : {}
-        'publishEvent' : 'ticketUpdate',
-        'requestEvent' : { 'event': 'roomCreated', regEx : '/ticket/num/\w*', 'reoccur' : {'interval' : '*/10 * * * * *', 'terminationEvent' : 'roomClosed' }}  //on room creation if id matches the regEX begin the polling
+        'publishEvent' : 'timesTwoRequest',
+        'requestEvent' : { 'event': 'roomCreated', regEx : '/timestwo/num/\w*', 'reoccur' : {'interval' : '*/15 * * * * *', 'terminationEvent' : 'roomClosed' }}  //on room creation if id matches the regEX begin the polling
 
     }]
  }

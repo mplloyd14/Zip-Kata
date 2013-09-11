@@ -1,7 +1,9 @@
 var Q = require('q');
 var pec = require('projevo-core');
 var rest = pec.RestClient;
+var utils = pec.CoreUtilities;
 
+var oldHash;
 //ToDo: I think a connect module type approach would be better.  include it in SocketServer (or RestServer?) and then all calls pass thru it before being passed to the handler....But, too much refactoring before the conference.
 module.exports = {
     type: "Socket",
@@ -24,8 +26,17 @@ module.exports = {
                 id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
                 url : "/timestwo/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
-                filter : function (data) {return data},
-                exclusivityGroup : 'rawhide'
+                filter : function (data) {
+                    console.log(data);
+                    var deferred = Q.defer();
+                    utils.EvaluateForDiff(data).then(function(result){
+                       deferred.resolve(result);
+                    }).fail(function(error){
+                       deferred.reject();
+                    });  //Todo:  Do not use the fail for no diff. This is just to get it done.
+                    return deferred.promise;
+                },
+                exclusivityGroup : 'chuckwagon'  //ToDo: shouldn't be kicked out of this group cause no other services implements it.BUGGY!!!!
             }
         },
         timesThree: {
@@ -46,8 +57,8 @@ module.exports = {
                 id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
                 url : "/timethree/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
-                filter : function (data) {return data},
-                exclusivityGroup : 'rawhide'
+               // filter : function (data) {return data},
+                exclusivityGroup : 'rawhide'  //when any other services implements this group, then client will be removed from all other rooms before being added to this one
             }
         },
         timesFour: {
@@ -67,8 +78,8 @@ module.exports = {
                 id : "|URL|",//Todo: could be |*|, |user|, or a function to return an id
                 url : "/timefour/{num}",//Todo: align this with the URL declarations in Restify
                 announce : true,
-                filter : function (data) {return data},
-                exclusivityGroup : 'chuckwagon'
+              //  filter : function (data) {return data},
+                exclusivityGroup : 'rawhide'
             }
         },
         callReddit:
@@ -76,12 +87,9 @@ module.exports = {
             "handler" : function(data) {
                 return rest.request('GET','http://www.reddit.com/.json')
             }
-        },
-        sayHello : {
-             'event' : 'helloReceived'
         }
     },
     emitters : {
-        events : [{'event' :  "clientReceived", 'room': '*'},{ event : 'ticketUpdate', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
+        events : [{'event' :  "clientReceived", 'room': '*'},{ event : 'timesTwoRequest', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
     }
 };

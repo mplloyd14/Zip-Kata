@@ -24,8 +24,8 @@ angular.module('peControllers', ['cai.services'])
 
 		$log.log('Loading web main controller');
 		$scope.message = 'Hello world';
-        $rootScope.$on("ticketUpdate",function(event,message){
-            $log.log("Event ticketUpdated fired with : " + message);
+        $rootScope.$on("timesTwoRequest",function(event,message){
+            $log.log("Event timesTwoRequest fired with : " + message);
         })
 
         $rootScope.$on("clientReceived",function(event,message){
