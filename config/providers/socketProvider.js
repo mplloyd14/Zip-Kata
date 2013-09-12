@@ -1,9 +1,14 @@
 var Q = require('q');
+var _ = require('underscore');
 var pec = require('projevo-core');
 var rest = pec.RestClient;
 var utils = pec.CoreUtilities;
 
-var oldHash;
+var newCollection = {};
+var oldCollection = {
+    init : false,
+    hashes : []
+}
 var evaluator = new utils.Evaluator();
 //ToDo: I think a connect module type approach would be better.  include it in SocketServer (or RestServer?) and then all calls pass thru it before being passed to the handler....But, too much refactoring before the conference.
 module.exports = {
@@ -29,8 +34,35 @@ module.exports = {
                 announce : true,
                 filter : function (data) {
                     var deferred = Q.defer();
-                    evaluator.EvaluateForDiff(data).then(function(result){
-                       deferred.resolve(result);
+                    evaluator.EvaluateForDiff(data.message).then(function(result){
+                       result = JSON.parse(result);
+                       var newOrders = [];
+                        if(oldCollection.init === false) {
+                            result.orders.forEach(function(order){
+                                var hash = utils.StringToHash(utils.ItemToString(order.id + order.date))
+                                oldCollection[hash] = order;
+                             });
+                            oldCollection.init = true;
+                        } else {
+                            result.orders.forEach(function(order){
+                                var hash = utils.StringToHash(utils.ItemToString(order.id + order.date))
+                                newCollection[hash] = order;
+                            });
+                        };
+
+                        for (var newHash in newCollection) {
+                            if(newCollection.hasOwnProperty(newHash)){
+                                if(oldCollection.hasOwnProperty(newHash)){
+                                    log.debug("Already contains order " + newCollection[newHash]);
+                                } else {
+                                    log.debug("New order found " + newCollection[newHash]);
+                                    oldCollection[newHash] = newCollection[newHash];
+                                    //send email on new order
+                                }
+                            }
+                        };
+                        deferred.resolve(data);
+
                     }).fail(function(error){
                        deferred.reject();
                     });  //Todo:  Do not use the fail for no diff. This is just to get it done.

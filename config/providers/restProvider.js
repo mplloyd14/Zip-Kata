@@ -13,7 +13,7 @@ module.exports = {
         'server' : 'http://localhost:8181',
         'method' : 'GET',//could also have options : {} or data : {}
         'publishEvent' : 'timesTwoRequest',
-        'requestEvent' : { 'event': 'roomCreated', regEx : '/timestwo/num/\w*', 'reoccur' : {'interval' : '*/15 * * * * *', 'terminationEvent' : 'roomClosed' }}  //on room creation if id matches the regEX begin the polling
+        'requestEvent' : { 'event': 'roomCreated', regEx : '/timestwo/num/\w*', 'reoccur' : {'interval' : '*/10 * * * * *', 'terminationEvent' : 'roomClosed' }}  //on room creation if id matches the regEX begin the polling
 
     }]
  }
