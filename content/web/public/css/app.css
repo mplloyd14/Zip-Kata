@@ -168,3 +168,23 @@ a {
 .modal-body {
   max-height: 450px;
 }
+#scroller1{
+    background-color: indianred;
+}
+#scroller2{
+    background-color: seagreen;
+}
+#scroller3{
+    background-color: steelblue;
+}
+#container{
+   width:90%;
+    height: 90%;
+}
+.scrollable {
+
+    width : 400px;
+    height : 400px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}

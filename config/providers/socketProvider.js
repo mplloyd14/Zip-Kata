@@ -3,6 +3,7 @@ var _ = require('underscore');
 var pec = require('projevo-core');
 var rest = pec.RestClient;
 var utils = pec.CoreUtilities;
+var eventBus = pec.EventBus;
 
 var newCollection = {};
 var oldCollection = {
@@ -119,9 +120,20 @@ module.exports = {
             "handler" : function(data) {
                 return rest.request('GET','http://www.reddit.com/.json')
             }
+        },
+        announceToAll:
+        {
+            "handler" : function(data) {
+                var deferred = Q.defer();
+                //setTimeout(function () {
+                    eventBus.publishEvent('ticketReceived',{ "source" : "Sockets","data" : data});
+                    deferred.resolve();
+               // }, 300);
+              return deferred.promise;
+            }
         }
     },
     emitters : {
-        events : [{'event' :  "clientReceived", 'room': '*'},{ event : 'timesTwoRequest', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
+        events : [{'event' :  "clientReceived", 'room': '*'},{'event' :  "ticketReceived", 'room': '*'},{ event : 'timesTwoRequest', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
     }
 };

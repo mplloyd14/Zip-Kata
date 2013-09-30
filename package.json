@@ -1,6 +1,6 @@
 {
   "name": "pe-seed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "start": "node content/app",
