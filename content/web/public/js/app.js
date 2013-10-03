@@ -1,11 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('peApp', ['cai.services', 'peControllers']).
+angular.module('peApp', ['cai.services', 'peControllers', 'ngCookies']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
-      when('/', {    
-		templateUrl: 'hello',
+      when('/', {
+    templateUrl: 'hello',
         controller: 'MainController'
       });
     $locationProvider.html5Mode(true);
