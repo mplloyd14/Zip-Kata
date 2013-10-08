@@ -10,7 +10,7 @@ module.exports = exports = function(i18n) {
         },
         protected: true,
         options: {
-            loginUrl: 'http://localhost:3000/login'
+            loginUrl: 'http://ec2-54-242-10-194.compute-1.amazonaws.com/login'
         }
     },
 	{

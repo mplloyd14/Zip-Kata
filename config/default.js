@@ -46,9 +46,11 @@ module.exports = {
         // session configuration - use shared mongodb session for all apps
         // pool config is not necessary here, because we are not using generic-pool
         session: {
-          host: 'localhost',
-          port: 27017,
+          host: 'paulo.mongohq.com',
+          port: 10003,
           name: 'session',
+          username: 'projevo',
+          password: 'd3m0pass',
           options: {
             server: {
               poolSize: 10,
