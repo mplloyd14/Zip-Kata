@@ -16,7 +16,7 @@
     "i18n": "=0.4.0",
     "generic-pool": "=2.0.3",
     "config": "=0.4.21",    
-    "socket.io": "~0.9.13",        
+    "socket.io": "~0.9.14",
     "request": "~2.21.0",
     "express-expose": "~0.3.3"
   },

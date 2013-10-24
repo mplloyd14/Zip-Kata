@@ -3,7 +3,7 @@
 /* Controllers */
 angular.module('peControllers', ['cai.services'])
 	.controller('MainController', function($rootScope,$scope, $log,$timeout, apiProvider,config) {
-        $rootScope.pushToLoggly = true;
+        $rootScope.pushToLoggly = false;
         apiProvider.callFunction('timesTwo',{num:2}).then(function(message){
             $log.info("Result of timesTwo is " + message.result);
         });

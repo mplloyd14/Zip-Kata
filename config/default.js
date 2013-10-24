@@ -42,34 +42,7 @@ module.exports = {
     },
     logging: {
         level: 'info'
-    },
-    log: {
-        client: {
-            levels: ['error', 'warn', 'info', 'debug'],
-            transports: [
-                {
-                    type: 'console',
-                    level: 'info',
-                    enabled: true,
-                    buffer: {
-                        interval: 2000,
-                        limit: 500
-                    }
-                },
-                {
-                    type: 'loggly',
-                    level: 'error',
-                    enabled: true,
-                    key: '1a21ae55-17e2-47d7-9000-3d7c4e317e20'
-                },
-                {
-                    type: 'loggly',
-                    level: 'debug',
-                    enabled: true,
-                    key: '1a21ae55-17e2-47d7-9000-3d7c4e317e20'
-                }
-            ]
-        }
     }
+
 };
 
