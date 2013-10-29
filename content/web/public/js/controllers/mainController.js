@@ -34,7 +34,9 @@ angular.module('peControllers', ['cai.services'])
             $log.log("Event clientReceived fired with info about  : " + message.body.client.name); //you can access ticket.body to get the POST body
         });
 
-        $scope.udata = user;
+        $scope.udata = user.data;
+
+        $scope.companyName = user.context.company;
     });
 
 
