@@ -29,19 +29,19 @@ module.exports = {
         ],
         socket: {
             server: {
-                host: 'http://localhost',
+                host: 'http://ec2-50-16-179-157.compute-1.amazonaws.com',
                 port: 3002,
                 timeout: 10000
             }
         },
         REST: {
             server: {
-                port: 3001
+		port : 3001
             }
         }
     },
     logging: {
-        level: 'info'
+        level: 'debug'
     }
 
 };

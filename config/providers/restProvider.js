@@ -2,10 +2,10 @@ var Q = require('q');
 module.exports = {
     'type' : 'REST',
     'services' : {//these will create REST listeners on the routes specified
-        "/clients/client/:num" : [{   //there should be a matching room id if the socket emitter is of type |URL|. if it is |*| then not needed.
+        "/pivotalTracker" : [{   //there should be a matching room id if the socket emitter is of type |URL|. if it is |*| then not needed.
             "method" : "post",
             "version" : "0.1.0",
-            "event": "clientReceived"
+            "event": "trackerEvent"
 
         }]
     },

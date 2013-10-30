@@ -134,6 +134,6 @@ module.exports = {
         }
     },
     emitters : {
-        events : [{'event' :  "clientReceived", 'room': '*'},{'event' :  "ticketReceived", 'room': '*'},{ event : 'timesTwoRequest', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
+        events : [{'event' :  "trackerEvent", 'room': '*'},{'event' :  "ticketReceived", 'room': '*'},{ event : 'timesTwoRequest', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
     }
 };
