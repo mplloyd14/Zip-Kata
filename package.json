@@ -7,7 +7,7 @@
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
-    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#conference_build",
+    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#pe-pivotal-core",
     "express": "3.1.0",
     "jade": "*",
     "mongodb": "=1.2.13",
