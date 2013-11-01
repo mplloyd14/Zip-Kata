@@ -5,7 +5,7 @@ module.exports = exports = function(i18n) {
     	method: 'get',
         route: '/',
         render: {
-        	title: 'Hello World',
+        	title: 'Pivotal Tracker',
             template: '/web/index'
         },
         protected: false

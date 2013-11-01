@@ -1,0 +1,5 @@
+script#pivotal(type='text/ng-template')
+    alert#update(ng-repeat='alert in alerts',type="alert.type",close="closeAlert($index)") {{alert.msg}}
+    accordion(close-others="oneAtATime")
+        accordion-group(ng-repeat='story in stories',heading="{{story.name}}")
+            {{story.description}}
