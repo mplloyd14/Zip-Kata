@@ -21,6 +21,6 @@ module.exports = {
     },
 
     emitters : {
-        events : [{'event' :  "trackerEvent", 'room': '*'},{ event : 'storiesRetrieved', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
+        events : [{'event' :  "trackerEvent", 'room': '|URL|'},{ event : 'storiesRetrieved', 'room' : '|URL|' }]//what REST event to listen for and what room to publish to.  could be *, |USER|, or |URL|
     }
 };
