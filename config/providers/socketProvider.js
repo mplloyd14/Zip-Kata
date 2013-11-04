@@ -119,6 +119,20 @@ module.exports = {
             "handler" : function(data) {
                 return rest.request('GET','http://www.reddit.com/.json')
             }
+        },
+        gimmeContextData:
+        {
+            "handler" : function(data, context) {
+                var deferred = Q.defer();
+                getContextData(context);
+                function getContextData(context) {
+                    setTimeout(function() {
+                        deferred.resolve(context);
+                    }, 300);
+                };
+
+                return deferred.promise;
+            }
         }
     },
     emitters : {

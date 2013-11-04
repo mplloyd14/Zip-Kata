@@ -39,6 +39,7 @@ eventBus.configure(eventProvider,{
 var socketServer = pec.SocketServer;
 var socketProvider = providers.Socket;
 socketServer.configure(socketProvider, {
+    socket_server: config.data.socket.server.host,
     socket_port: config.data.socket.server.port,
     log: log
 });
