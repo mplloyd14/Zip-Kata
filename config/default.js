@@ -4,7 +4,8 @@ module.exports = {
     client: {
         socket_server: 'data.socket.server.host',
         socket_port: 'data.socket.server.port',
-        socket_timeout: 'data.socket.server.timeout'
+        socket_timeout: 'data.socket.server.timeout',
+        log : 'test'
     },
     paths: {
         views: {
@@ -63,5 +64,6 @@ module.exports = {
           }
         }
     }
+
 };
 
