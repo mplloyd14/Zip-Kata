@@ -25,11 +25,12 @@ module.exports = {
     data: {
         providers: [
             'socketProvider',
-            'restProvider'
+            'restProvider',
+            'jobProvider'
         ],
         socket: {
             server: {
-                host: 'http://localhost',
+                host: 'http://argos.localhost',
                 port: 3102,
                 timeout: 10000
             }
