@@ -3,21 +3,21 @@ module.exports = exports = function(i18n) {
   return [
 	{
     	method: 'get',
-        route: '/',
+        route: '/peseed/simple',
         render: {
-        	title: 'Hello World',
-            template: '/web/index'
+        	title: 'Simple',
+            template: '/web/simpleView'
         },
-        protected: false
+        protected: true
     },
 	{
     	method: 'get',
-        route: '/mobile',
+        route: '/peseed/complex',
         render: {
-        	title: 'Hello World',
-            template: '/mobile/index'
+        	title: 'Complex',
+            template: '/web/complexView'
         },
-        protected: false
+        protected: true
     }	
   ];
 }

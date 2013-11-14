@@ -1,0 +1,9 @@
+[
+	{
+    	"code": "mcc",
+	    "description": "MOBILEcommerce",
+		"product": "mcc",
+	    "status": "active",
+	    "baseUrl": "http://localhost:4000"
+	}
+]

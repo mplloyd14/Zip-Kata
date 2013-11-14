@@ -1,0 +1,14 @@
+!!!
+html
+    head
+        include /core/shared/scripts
+    body(ng-app="complexViewApp")
+        div(ng-controller="complexViewController")
+            h1 Simple View
+            div.well
+                label This is for everyone
+                input(ng-model="input0")
+            ng-include(src="'canInput1_ViewOneTemplate'")
+            ng-include(src="'canInput1_ViewTwoTemplate'")
+
+        script(src='/web/js/complexView.js')

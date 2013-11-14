@@ -1,0 +1,15 @@
+!!!
+html
+    head
+        include /core/shared/scripts
+    body(ng-app="simpleViewApp")
+        div(ng-controller="simpleViewController")
+            h1 Simple View
+            div.well
+                label This is for everyone
+                input(ng-model="input0")
+            ng-include(src="'canInput1Template'")
+            ng-include(src="'canInput2Template'")
+            ng-include(src="'canInput3Template'")
+
+        script(src='/web/js/simpleView.js')

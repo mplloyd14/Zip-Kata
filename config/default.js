@@ -1,5 +1,5 @@
 module.exports = {
-  port: 3000,
+  port: 9000,
   locales: [],
   client: {
     socket_server: 'data.socket.server.host',
@@ -10,7 +10,12 @@ module.exports = {
     views: {
       web: 'content/web/views',
       mobile: 'content/mobile/views',
-      shared: 'content/shared/views'
+      shared: 'content/shared/views',
+      custom: {
+          web: 'content/web/views/custom',
+          mobile: 'content/mobile/views/custom',
+          shared: 'content/shared/views/custom'
+      }
     },
     static: {
       web: 'content/web/public',
@@ -27,12 +32,19 @@ module.exports = {
 	socket: {
 	  server: {
 	    host: 'http://localhost',
-		port: 3002,
+		port: 9002,
 		timeout: 10000
 	  }
 	}
   },
   logging: {
-	level: 'info'
-  },  
+	level: 'debug'
+  },
+    db: {
+        users: {
+            host: 'localhost',
+            port: 27017,
+            name: 'project-evolution'
+        }
+    }
 };

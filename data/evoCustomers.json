@@ -1,0 +1,16 @@
+[
+	{
+		"name": "COMP1",
+	    "status": "active",
+	    "instances": [
+	    	"mcc"
+	    ]
+	},
+	{
+		"name": "COMP2",
+	    "status": "active",
+	    "instances": [
+	    	"mcc"
+	    ]
+	}	
+]
