@@ -18,6 +18,16 @@ module.exports = exports = function(i18n) {
             template: '/web/complexView'
         },
         protected: true
-    }	
+    },
+    {
+        method: 'get',
+        route: '/peseed/table',
+        render: {
+            title: 'Table',
+            template: '/web/tableView'
+        },
+        protected: true
+    }
+
   ];
 }
