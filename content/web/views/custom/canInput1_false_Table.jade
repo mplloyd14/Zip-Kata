@@ -1,0 +1,10 @@
+script#canInput1_TableTemplate(type='text/ng-template')
+    table.table.table-striped
+        thead
+            tr
+                th Column Fixed
+                th Column B
+        tbody
+            tr(ng-repeat='item in items')
+                td {{item.all}}
+                td {{item.b}}

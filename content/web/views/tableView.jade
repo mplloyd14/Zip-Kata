@@ -6,19 +6,7 @@ html
         div(ng-controller="tableViewController")
             h1 Table View
             div.well
-                table.table.table-striped
-                    thead
-                        tr
-                            th Column Fixed
-                            ng-include(src="'canInput1_HeaderTemplate'")
-                            ng-include(src="'canInput2_HeaderTemplate'")
-                            ng-include(src="'canInput3_HeaderTemplate'")
-                    tbody
-                        tr(ng-repeat='item in items')
-                            td {{item.all}}
-                            ng-include(src="'canInput1_DataTemplate'")
-                            ng-include(src="'canInput2_DataTemplate'")
-                            ng-include(src="'canInput3_DataTemplate'")
+                ng-include(src="'canInput1_TableTemplate'")
 
         include /core/shared/scripts
         script(src='/web/js/tableView.js')
