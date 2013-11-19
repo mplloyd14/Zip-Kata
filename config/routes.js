@@ -8,10 +8,7 @@ module.exports = exports = function(i18n) {
         	title: 'Hello World',
             template: '/web/index'
         },
-        protected: true,
-        options: {
-            loginUrl: 'http://localhost:3000/login'
-        }
+        protected: true
     },
 	{
     	method: 'get',
@@ -20,7 +17,7 @@ module.exports = exports = function(i18n) {
         	title: 'Hello World',
             template: '/mobile/index'
         },
-        protected: false
+        protected: true
     }
   ];
 }

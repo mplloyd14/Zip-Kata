@@ -40,3 +40,6 @@ script#hello(type='text/ng-template')
     h2#userdata {{udata || 'User is undefined'}}
     h2#companydata {{companyName || 'Company is undefined'}}
     h2#productdata {{productName || 'Product is undefined'}}
+
+    form(action='{{logoutUrl}}', method='post')
+        input(type='submit',value='Log Out')

@@ -2,7 +2,7 @@
 
 /* Controllers */
 angular.module('peControllers', ['cai.services'])
-	.controller('MainController', function($rootScope,$scope, $log, $timeout, apiProvider, user, config) {
+	.controller('MainController', function($rootScope,$scope, $log, $timeout, apiProvider, user, core, config) {
         apiProvider.callFunction('timesTwo',{num:2}).then(function(message){
             $log.info("Result of timesTwo is " + message.result);
         });
@@ -57,6 +57,8 @@ angular.module('peControllers', ['cai.services'])
         $scope.companyName = user.context.company;
 
         $scope.productName = user.context.product;
+
+        $scope.logoutUrl = core.logoutUrl;
     });
 
 

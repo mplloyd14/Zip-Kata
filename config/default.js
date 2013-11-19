@@ -1,11 +1,13 @@
 module.exports = {
     port: 3100,
     locales: ['en'],
+    authenticationServer: 'localhost:3000',
     client: {
         socket_server: 'data.socket.server.host',
         socket_port: 'data.socket.server.port',
         socket_timeout: 'data.socket.server.timeout',
-        log : 'test'
+        log : 'test',
+        auth_server: 'authenticationServer'
     },
     paths: {
         views: {
