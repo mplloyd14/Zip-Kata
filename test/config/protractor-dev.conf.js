@@ -20,7 +20,7 @@ exports.config = {
     },
     allScriptsTimeout: 20000,
     specs: [
-		'../test/e2e/**/*.js'
+		'../e2e/**/*.js'
     ],
 
     // Options to be passed to Jasmine-node.

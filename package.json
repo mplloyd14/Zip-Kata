@@ -9,20 +9,21 @@
   "dependencies": {
     "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",
     "express": "3.1.0",
-    "jade": "*",
+    "jade": "=0.33.0",
     "mongodb": "=1.2.13",
     "q": "=0.9.2",
     "underscore": "=1.4.4",
     "i18n": "=0.4.0",
     "generic-pool": "=2.0.3",
-    "config": "=0.4.21",    
-    "socket.io": "~0.9.13",        
+    "config": "=0.4.21",
+    "socket.io": "~0.9.13",
     "request": "~2.21.0",
-    "express-expose": "~0.3.3"
+    "express-expose": "~0.3.3"   
   },
   "devDependencies": {
-    "protractor": "*",    
-	"karma": "*",
+    "protractor": "*",
+	"jasmine-reporters": "~0.2.1",
+    "karma": "*",
     "mocha": "=1.10.0",
     "chai": "=1.5.0",
     "sinon": "=1.6.0",
