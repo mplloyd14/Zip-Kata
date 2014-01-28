@@ -1,4 +1,3 @@
-(function() {
 'use strict';
 
 var caiServices;
@@ -9,23 +8,44 @@ catch(e) {
     caiServices = angular.module('cai.services', []);
 };
 caiServices
-    .factory('apiProvider', function() {
-    	var service = {
-			callFunction: function(name, params){
-		    	var data = null;
+    .factory('apiProvider', function($q,$rootScope) {
+        var scope = $rootScope.$new();
+        var deferred = $q.defer();
+        var promise = deferred.promise;
+        var stub = sinon.stub();
+        stub.returns(promise);
 
-				// it's an object that looks like a promise, right??
-				return {        
-			    	then: function(callback) {
-			        	callback({result: data});
-			            return this;
-			        }
-				};
-		    }
-		};
+        var service = {
+            reset: function() {
+                deferred = $q.defer();
+                promise = deferred.promise;
+                stub.reset();
+                stub.returns(promise);
+            },
+            resolvePromise : function (data){
+                scope.$apply(function(){
+                    deferred.resolve({ result: data });
+                });
+            },
+            rejectPromise : function (data){
+                scope.$apply(function(){deferred.reject({result: data});
+                });
+            },
+            callFunction: stub
+        };
         return service;
+    })
+    .factory('serverData', function() {
+        var serverData = {
+            config: {
+                'clientA': 'value_a',
+                'clientB': ['value_b0', 'value_b1'],
+                'clientC': {
+                    d: 'value_d'
+                }
+            }
+        };
+
+        return btoa(JSON.stringify(serverData));
     });
 
-
-
-})();

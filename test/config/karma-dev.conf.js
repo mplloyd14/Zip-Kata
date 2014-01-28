@@ -27,11 +27,11 @@ files = [
   'node_modules/projevo-core/content/shared/public/js/services/**/*.js',
   'node_modules/projevo-core/content/shared/public/js/controllers/*.js',
   'node_modules/projevo-core/content/shared/public/js/directives/*.js',
-    //tjb added for styling
   'content/shared/public/js/lib/ui-bootstrap/*.js',
   'content/shared/public/js/**/*.js',
   'content/mobile/public/js/**/*.js',
   'content/web/public/js/**/*.js',
+  'test/mocks/mockServices.js',
   'test/unit/client/**/*.js'
 ];
 

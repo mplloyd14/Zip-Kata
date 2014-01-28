@@ -6,8 +6,10 @@ describe('Main Controller', function() {
 	var expect = chai.expect,
 	    should = chai.should();
 
-    //beforeEach(module('cai.services'));
-	//beforeEach(module('peApp'));
+    beforeEach(module('ngCookies'));
+    beforeEach(module('ngRoute'));
+    beforeEach(module('cai.services'));
+	beforeEach(module('peApp'));
 	beforeEach(module('peControllers'));
 
     describe('display', function() {
