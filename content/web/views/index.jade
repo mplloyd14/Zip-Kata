@@ -1,10 +1,14 @@
 extends layout
-
 block body
     script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')	
+    script(src='/web/js/app.js')
+    cai-navigation-directive(class="cai-navigation-desktop", data-ng-model="username")
+    div.colorband
+    div.cai-pagebackground
+        div.cai-stripes
+        section
+            div(ng-view, id="pageContentWrapper")
 
-    h1 Web
-    div(ng-view)
-        
-    include partials/hello.jade
+            include partials/hello.jade
+            include partials/caiCommerceNavigation
+    footer.navbar.navbar-fixed-bottom
