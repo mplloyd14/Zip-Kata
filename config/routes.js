@@ -10,6 +10,15 @@ module.exports = exports = function(i18n) {
         },
         protected: false
     },
+    {
+          method: 'get',
+          route: '/product/shared',
+          render: {
+              title: 'Hello World',
+              template: '/web/index'
+          },
+          protected: false
+    },
 	{
     	method: 'get',
         route: '/mobile',
