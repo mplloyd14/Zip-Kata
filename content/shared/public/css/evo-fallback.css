@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(fonts/titilliumweb.woff) format('woff');
+}
+
+html,body{
+    font-family: 'Titillium Web';
+}
+a, a:hover {
+    text-decoration: none;
+    color:#72b842;
+}
+
+/* handles the background color band running the width of the pag */
+.colorband{
+    margin-top:50px;
+    width: 100%;
+    height:25px;
+    background:  #72b842;
+}
+
+.cai-pagebackground{
+    width:100%;
+    display: block;
+    height: 70%;
+    min-height: 400px; /* added remove if poss */
+    background-color: #494c57;
+    background-image: -moz-linear-gradient(top, #494c57, #f5f5f5);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#494c57, to(#f5f5f5)));
+    background-image: -webkit-linear-gradient(top, #494c57, #f5f5f5);
+    background-image: -o-linear-gradient(top, #494c57, #f5f5f5);
+    background-image: linear-gradient(to bottom, #494c57, #f5f5f5);
+    background-repeat: repeat;
+}
+
+/* layout - handles center main content area in application */
+.cai-pagebackground > section{
+    margin:0 auto;
+    border:0;
+    padding:10px 20px;
+    width: 980px;
+    height: 100%;
+    background: #ffffff;
+    position: relative;
+    top: -50px;
+    bottom: 0px;
+    box-shadow: 0px 2px 4px 4px #494c57;
+}
+
+.cai-stripes{
+    width: 100%;
+    height: inherit;
+    opacity:0.2;
+    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+    background-image: -webkit-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
+    -webkit-background-size: 10px 10px;
+    -moz-background-size: 10px 10px;
+    background-size: 10px 10px;
+}
+
+/* content area - handles head of a new section */
+.cai-header {
+    color: #393c45;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: solid 1px #72b842;
+}
+
+.cai-nav{
+    border-top: solid 5px #72b842;
+    background: #393c45;
+}
+.cai-nav .divider {
+    border-right: 1px solid #72b842;
+}
+.cai-nav .btn {
+    color: #393c45;
+    background: #72b842;
+}
+
+/* buttons - used in header footer nav  */
+.cai-nav .btn.disabled,
+.cai-nav .btn[disabled] {
+    background: #72b842;
+    color: #393c45;
+}
+.cai-nav .btn:hover,
+.cai-nav .btn:focus,
+.cai-nav .btn.active {
+    color: #393c45;
+}
+.cai-nav i[class^='icon-']{
+    color: #393c45;
+    font-size: 30px;
+}
+
+/* content area - handles button style */
+.cai-btn {
+    display: inline-block;
+    margin: 20px 0px 0px 20px;
+    padding: 20px 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    height: auto;
+    width: 120px;
+    text-align: center;
+    border-width: 4px;
+    border-style: solid;
+    /*border-color: lighten(#72b842, 20%);*/
+    border-radius: 0px;
+    box-shadow: 0;
+    text-shadow: 0 0 0 rgba(255,255,255,0.75);
+    background: -webkit-linear-gradient(top, #72b842 0%, #72b842 100%);
+    background: -moz-linear-gradient(top, #72b842 0%, #72b842 100%);
+    cursor: pointer;
+}
+.cai-btn:hover {
+    background: -webkit-linear-gradient(top, #71b741 0%, #66af3f 100%);
+    background: -moz-linear-gradient(top, #71b741 0%, #66af3f 100%);
+    /*border-color: lighten(#72b842, 10%);*/
+    box-shadow: 0;
+    text-shadow: 0 0 0 rgba(255,255,255,0.75);
+}
+
+/* content area - handles assigning primary and secndary color */
+.cai-color-primary{
+    color: #72b842;
+}
+.cai-color-secondary{
+    color: #393c45;
+}
+
+/* content area - handles navigation - pills */
+.cai-nav-pills>li{
+    list-style: none;
+}
+.cai-nav-pills>li>a{
+    color: #72b842;
+}
+.cai-nav-pills > .active > a, .cai-nav-pills > .active > a:hover, .cai-nav-pills> .active > a:focus {
+    color: white;
+    background-color: #72b842;
+}
+.cai-nav-pills>li>a:hover, .cai-nav-pills>li>a:focus {
+    /*background-color: lighten(#72b842, 40%);*/
+}
+
+/* labels - handles labels used in forms */
+.cai-label{
+    display: inline-block;
+    padding: 0 10px;
+    color: #72b842;
+    font-weight: bold;
+}
+

@@ -4,31 +4,30 @@ block body
 	script(src='/web/js/app.js')
 	#cai-commerce-nav
 		header
-			div.navbar.navbar-inverse
-				div.navbar-inner
-					h1
-						div.icon-arrow-left(align='left')
-						span  ACME CO
-					nav.pull-right.dropdown
-						ul
-							li(ng-show="!disabled")
-								button.btn(type="button", href="/projects", active-link="active", ng-disabled="disabled", ng-click="btnClick('/projects')")
-									i.icon-check
-									span &nbsp; Button One
-							li(ng-show="!disabled")
-								button.btn(type="button", href="/orders", active-link="active",  ng-disabled="disabled", ng-click="btnClick('/orders')")
-									i.icon-check
-									span &nbsp; Button Two
-							span.divider(ng-show="!disabled")
-							li.toggle
-								button.btn.dropdown-toggle(id="btnDropDown", type="button", active-link="active")
-									i.icon-reorder
+			div.navbar.navbar-inverse.cai-nav
+				h1
+					div.icon-arrow-left(align='left')
+					span  ACME CO
+				nav.pull-right.dropdown
+					ul
+						li(ng-show="!disabled")
+							button.btn(type="button", href="/projects", active-link="active", ng-disabled="disabled", ng-click="btnClick('/projects')")
+								i.icon-check
+								span &nbsp; Button One
+						li(ng-show="!disabled")
+							button.btn(type="button", href="/orders", active-link="active",  ng-disabled="disabled", ng-click="btnClick('/orders')")
+								i.icon-check
+								span &nbsp; Button Two
+						span.divider(ng-show="!disabled")
+						li.toggle
+							button.btn.dropdown-toggle(id="btnDropDown", type="button", active-link="active")
+								i.icon-reorder
 	div.colorband
 	div.cai-pagebackground
 		div.cai-stripes
 		section
 			div(ng-view)
 
-	footer.navbar.navbar-fixed-bottom
+	footer.navbar.navbar-fixed-bottom.cai-nav
 		p ACME CO &copy; 2000 - 2014 Command Alkon. All rights reserved.
 	include partials/hello.jade
