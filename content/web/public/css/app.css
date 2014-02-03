@@ -1,170 +1,95 @@
-/* app css stylesheet */
-
-.menu {
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
+/* branding overwrites bootstrap */
+.navbar-inverse .navbar-inner {
+    padding: 0;
+    border-radius: 0;
 }
 
-.menu:before {
-    content: "[";
+/* header title */
+.navbar-inverse .brand {
+    color: #999999;
 }
 
-.menu:after {
-    content: "]";
+/* header title :hover */
+.navbar-inverse .brand:hover {
+    color: #ffffff;
 }
-
-.menu > li {
+.navbar a,
+.navbar a:hover,
+.navbar a:visited {
+    color: #ffffff;
+}
+.navbar ul li i span {
+    font-family: "Titillium Web";
+}
+.navbar .btn {
+    margin: 2px 5px;
+    border: 0px;
+    border-radius: 5px;
+}
+.navbar ul li {
+    display: inline-block;
+}
+.navbar-fixed-bottom {
+    margin: 0;
+    z-index: 1;
+}
+.navbar-fixed-bottom p {
+    color: #e5e8f9;
+    text-align: center;
+    margin: 2px 0 2px 0;
+}
+.navbar-inner {
+    min-height: 50px;
+}
+.navbar-fixed-bottom ul {
+    margin: 0;
+}
+.navbar-fixed-bottom ul a > li {
+    padding: 0 10px;
+    display: inline-block;
+}
+.navbar .divider {
+    position: relative;
+    top: 3px;
+    right: -2px;
+    width: 1px;
+}
+.navbar h1 {
     display: inline;
+    padding: 0 0 0 10px;
+    color: #ffffff;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2em;
+    line-height: 2.5em;
+}
+.navbar-inverse .navbar-search .search-query {
+    color: #000000;
+}
+/* header footer buttons  */
+header > .navbar .btn {
+    padding: 5px 10px;
+    margin-bottom: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2em;
+    line-height: 1em;
+    text-align: center;
+}
+/* buttons - used in header footer nav  */
+header > .navbar .btn.disabled,
+header > .navbar .btn[disabled] {
+    text-shadow: none;
+}
+header > .navbar .btn:hover,
+header > .navbar .btn:focus,
+header > .navbar .btn.active {
+    background: #ffffff;
+    text-shadow: none;
+}
+header > .navbar .btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
 }
 
-.menu > li:before {
-    content: "|";
-    padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-    content: "";
-    padding: 0;
-}
-
-/* card styles */
-
-body {
-    margin: 60px 2em;
-    height: 100%;
-}
-
-/* fix problem with Angular UI bootstrap cursor on anchors */
-a {
-    cursor: pointer;
-}
-
-.card_holder {
-    overflow: auto;
-}
-.card {
-    background-color: white;
-    padding: 0;
-    margin: .25em;
-    min-width: 240px;
-
-    border-radius: 6px;
-    box-shadow: 3px 3px 3px #ddd;
-    border: solid 1px #ccc;
-
-    float: left;
-    height: 250px;
-    /*overflow: visible;*/
-}
-
-.card_header {
-    background-color: #eee;
-    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
-    border-bottom: solid 1px #ccc;
-    padding: .25em .25em 0 .25em;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-
-.card_body {
-    padding: .25em .5em .25em .5em;
-    margin: 0;
-}
-
-.card h3 {
-    padding: 0 .25em 0 0;
-    margin: 0 0 0 0;
-}
-
-.card ul.contact {
-    padding: 0 0 0 0;
-    margin: 0 0 .5em 0;
-
-    list-style: none;
-}
-
-.card h4 {
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-    font-style: italic;
-}
-
-.card ul.notifications {
-    padding-top: 0;
-    padding-left: 1.25em;
-    padding-bottom: 1em;
-    margin: 0 0 0 0;
-}
-
-.card ul.details{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.contList{
-    padding-top: 0;
-    padding-left: 1.25em;
-    padding-bottom: 1em;
-    margin: 0 0 0 0;
-}
-
-.desc{
-    padding: .25em;
-    margin: .25em;
-}
-
-.card .btn {
-    float: right;
-}
-
-.card.new {
-    color: #ccc;
-    font-style: italic;
-    cursor: hand;
-    cursor: pointer;
-}
-
-.card.new a {
-    color: #ccc;
-}
-
-.configNotificationsBtn {
-    float: right;
-}
-
-.navbar-inner.cai_header {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.red-message{
-    color: red;
-}
-
-.imagePad{
-    padding-left:.25em;
-}
-
-.collapsePanel{
-    z-index: 999;
-}
-
-/* definition selection */
-
-.scrollBox {
-    height: 110px;
-    overflow: auto;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    margin: 4px;
-    padding: 2px;
-}
-
-.modal-body {
-    max-height: 450px;
-}
