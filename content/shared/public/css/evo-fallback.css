@@ -33,6 +33,7 @@ a, a:hover {
     background-image: -o-linear-gradient(top, #494c57, #f5f5f5);
     background-image: linear-gradient(to bottom, #494c57, #f5f5f5);
     background-repeat: repeat;
+    border-top:solid 5px #ffffff;
 }
 
 /* layout - handles center main content area in application */
