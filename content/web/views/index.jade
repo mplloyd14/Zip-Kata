@@ -1,14 +1,32 @@
 extends layout
 block body
-    script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')
-    cai-navigation-directive(class="cai-navigation-desktop", data-ng-model="username")
-    div.colorband
-    div.cai-pagebackground
-        div.cai-stripes
-        section
-            div(ng-view, id="pageContentWrapper")
+	script(src='/web/js/controllers/mainController.js')
+	script(src='/web/js/app.js')
+	#cai-commerce-nav
+		header
+			div.navbar.navbar-inverse
+				div.navbar-inner
+					div.icon-app(align='left')
+					nav.pull-right.dropdown
+						ul
+							li(ng-show="!disabled")
+								button.btn(type="button", href="/projects", active-link="active", ng-disabled="disabled", ng-click="btnClick('/projects')")
+									i.icon-check
+									span &nbsp; Button One
+							li(ng-show="!disabled")
+								button.btn(type="button", href="/orders", active-link="active",  ng-disabled="disabled", ng-click="btnClick('/orders')")
+									i.icon-check
+									span &nbsp; Button Two
+							span.divider(ng-show="!disabled")
+							li.toggle
+								button.btn.dropdown-toggle(id="btnDropDown", type="button", active-link="active")
+									i.icon-reorder
 
-            include partials/hello.jade
-            include partials/caiCommerceNavigation
-    footer.navbar.navbar-fixed-bottom
+	div.colorband
+	div.cai-pagebackground
+		div.cai-stripes
+		section
+			div(ng-view)
+
+			include partials/hello.jade
+	footer.navbar.navbar-fixed-bottom

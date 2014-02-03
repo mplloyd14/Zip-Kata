@@ -7,13 +7,10 @@ html(ng-app="peApp")
     link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/web/css/app.css')
     link(rel='stylesheet', href='/shared/css/app.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
     include /core/shared/scripts
-    include /core/shared/scripts
-    script(src='#{config.appBase}/shared/js/controllers/navigationDirectiveController.js')
-    script(src='#{config.appBase}/shared/js/directives/caiNavigationDirective.js')
+    include /core/shared/branding
 
     block body
