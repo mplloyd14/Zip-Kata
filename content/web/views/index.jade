@@ -10,17 +10,17 @@ block body
 					span  ACME CO
 				nav.pull-right.dropdown
 					ul
-						li(ng-show="!disabled")
-							button.btn(type="button", href="/projects", active-link="active", ng-disabled="disabled", ng-click="btnClick('/projects')")
+						li
+							button.btn(type="button")
 								i.icon-check
 								span &nbsp; Button One
-						li(ng-show="!disabled")
-							button.btn(type="button", href="/orders", active-link="active",  ng-disabled="disabled", ng-click="btnClick('/orders')")
+						li
+							button.btn(type="button")
 								i.icon-check
 								span &nbsp; Button Two
-						span.divider(ng-show="!disabled")
+						span.divider
 						li.toggle
-							button.btn.dropdown-toggle(id="btnDropDown", type="button", active-link="active")
+							button.btn.dropdown-toggle(type="button")
 								i.icon-reorder
 	div.colorband
 	div.cai-pagebackground
