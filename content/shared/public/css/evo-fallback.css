@@ -6,6 +6,7 @@
 }
 
 html,body{
+    background: #f5f5f5;
     font-family: 'Titillium Web';
 }
 a, a:hover {
@@ -47,24 +48,29 @@ a, a:hover {
     position: relative;
     top: -50px;
     bottom: 0px;
-    box-shadow: 0px 2px 4px 4px #494c57;
+    box-shadow: 0px 6px 16px 2px #494c57;
 }
-
+/* layout - stripes overlay .cai-pagebackground */
 .cai-stripes{
+    float: left;
+    margin: 0px;
     width: 100%;
     height: inherit;
-    opacity:0.2;
-    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
-    background-image: -webkit-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
-    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 1) 75%, transparent 75%, transparent);
-    -webkit-background-size: 10px 10px;
-    -moz-background-size: 10px 10px;
-    background-size: 10px 10px;
+    opacity: 0.3;
+    position: absolute;
+    top: 150px;
+    bottom: 0px;
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-image: -webkit-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
+    background-size: 20px 20px;
 }
 
-/* content area - handles head of a new section */
+/* content area - handles the head, or title, of a new section */
 .cai-header {
     color: #393c45;
     font-weight: bold;
@@ -77,7 +83,12 @@ a, a:hover {
     border-top: solid 5px #72b842;
     background: #393c45;
 }
+.navbar-fixed-bottom.cai-nav{
+    position: fixed;
+    bottom: 0;
+}
 .cai-nav .divider {
+    top:5px;
     border-right: 1px solid #72b842;
 }
 .cai-nav .btn {
