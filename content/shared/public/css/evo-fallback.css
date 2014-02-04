@@ -174,3 +174,105 @@ a, a:hover {
     font-weight: bold;
 }
 
+
+
+
+
+/* everything below handles header elements like title and buttons */
+/* if these can not be shared between desktop and mobile then move these outta here */
+
+/* branding overwrites bootstrap */
+.navbar-inverse .navbar-inner {
+    padding: 0;
+    border-radius: 0;
+}
+
+/* header title */
+.navbar-inverse .brand {
+    color: #999999;
+}
+
+/* header title :hover */
+.navbar-inverse .brand:hover {
+    color: #ffffff;
+}
+.navbar a,
+.navbar a:hover,
+.navbar a:visited {
+    color: #ffffff;
+}
+.navbar ul li i span {
+    font-family: "Titillium Web";
+}
+.navbar .btn {
+    margin: 2px 5px;
+    border: 0px;
+    border-radius: 5px;
+}
+.navbar ul li {
+    display: inline-block;
+}
+.navbar-fixed-bottom {
+    margin: 0;
+    z-index: 1;
+}
+.navbar-fixed-bottom p {
+    color: #e5e8f9;
+    text-align: center;
+    margin: 2px 0 2px 0;
+}
+.navbar-inner {
+    min-height: 50px;
+}
+.navbar-fixed-bottom ul {
+    margin: 0;
+}
+.navbar-fixed-bottom ul a > li {
+    padding: 0 10px;
+    display: inline-block;
+}
+.navbar .divider {
+    position: relative;
+    top: 3px;
+    right: -2px;
+    width: 1px;
+}
+.navbar h1 {
+    display: inline;
+    padding: 0 0 0 10px;
+    color: #ffffff;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2em;
+    line-height: 2.5em;
+}
+.navbar-inverse .navbar-search .search-query {
+    color: #000000;
+}
+/* header footer buttons  */
+header > .navbar .btn {
+    padding: 5px 10px;
+    margin-bottom: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2em;
+    line-height: 1em;
+    text-align: center;
+}
+/* buttons - used in header footer nav  */
+header > .navbar .btn.disabled,
+header > .navbar .btn[disabled] {
+    text-shadow: none;
+}
+header > .navbar .btn:hover,
+header > .navbar .btn:focus,
+header > .navbar .btn.active {
+    background: #ffffff;
+    text-shadow: none;
+}
+header > .navbar .btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+}
+
