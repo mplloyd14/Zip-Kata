@@ -83,6 +83,12 @@ a, a:hover {
     border-top: solid 5px #72b842;
     background: #393c45;
 }
+.cai-nav .logo{
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    vertical-align: middle;
+}
 .navbar-fixed-bottom.cai-nav{
     position: fixed;
     bottom: 0;
