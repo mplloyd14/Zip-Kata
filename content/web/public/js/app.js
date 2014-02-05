@@ -5,7 +5,7 @@ cai.module('peApp', ['cai.services', 'peControllers', 'ngCookies', 'ngRoute']).
     config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'hello',
+                templateUrl: 'core-ui',
                 controller: 'MainController'
             });
         $locationProvider.html5Mode(true);
