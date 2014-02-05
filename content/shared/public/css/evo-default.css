@@ -106,6 +106,7 @@ a, a:hover {
 .cai-nav .btn {
     color: #393c45;
     background: #72b842;
+    text-shadow: none;
 }
 
 /* buttons - used in header footer nav  */
