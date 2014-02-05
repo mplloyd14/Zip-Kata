@@ -20,7 +20,7 @@ a, a:hover {
 }
 
 /* handles the background color band running the width of the pag */
-.colorband{
+.cai-colorband{
     margin-top:50px;
     width: 100%;
     height:25px;
@@ -90,6 +90,8 @@ a, a:hover {
 }
 .cai-nav .app-logo{
     display: inline-block;
+    max-width:200px;
+    max-height: 50px;
     width: 50px;
     height: 40px;
     background: url('../img/icon-app-green-commerce.png') no-repeat;
