@@ -10,8 +10,8 @@ script#core-ui(type='text/ng-template')
 			| .cai-nav .btn.active
 			br
 			| .cai-nav .btn.disabled
-		p styles of button used in main header navigation at the top of the app
-	div.right(align="center")
+		p button in main header navigation at the top of the app and .btn must be a child of .cai-nav
+	div.right
 		header
 			div.navbar.cai-nav
 				nav
@@ -80,20 +80,22 @@ script#core-ui(type='text/ng-template')
 	hr
 	h3 .cai-nav-pills
 	div.left
-		p this custom selector can be used to extend the default bootstrap nav-pills selector for branding purposes
+		p this custom selector should extend the default bootstrap .nav-pills class for branding, as shown in the code snippet on the right
 		br
 
 	div.right
-		p the code snippet below shows examples of use cases for this selector
+		p the code snippet below shows an basic example use case for this selector
+		pre
+			code
+				strong div.tabbable(type="'pills'")
+				br
+				strong &nbsp;&nbsp;ul.nav-pills.cai-nav-pills
+				br
+				strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab1
+				br
+				strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab2
 		br
-		strong div.tabbable(type="'pills'")
-		br
-		strong ul.nav-pills.cai-nav-pills
-		br
-		strong li
-		br
-		br
-		div.tabbable(type="'pills'", align="center")
+		div.tabbable(type="'pills'", align="center", style="width:350px; margin:0 auto; text-align:center")
 			ul.nav.nav-pills.cai-nav-pills(tabset-titles="tabsAbove")
 				li.active
 					a Tab1
@@ -132,7 +134,7 @@ script#core-ui(type='text/ng-template')
 	br
 	pre
 		code
-			strong variable usage: @color-primary
+			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 .cai-label
 	div.left
@@ -173,13 +175,15 @@ script#core-ui(type='text/ng-template')
 		code
 			strong variable usage: @color-secondary
 	hr
-	h3 .cai-dropdown
+	h3 .cai-nav .cai-dropdown
 	div.left
-		p style of button used for toggling the drop down menu in the header nav
+		p style of button used for toggling the drop down menu in the header nav and .cai-dropdown must be a child of .cai-nav
 		br
-	div.right.cai-nav(align="center")
-		button.btn.cai-dropdown.dropdown-toggle
-			i.icon-reorder
+	div.right
+		header
+			div.cai-nav(align="center")
+				button.btn.cai-dropdown.dropdown-toggle
+					i.icon-reorder
 	pre
 		code
-			strong variable usage: @color-primary
+			strong variable usage: @color-primary, @color-secondary
