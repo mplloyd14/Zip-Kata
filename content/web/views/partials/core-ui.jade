@@ -36,8 +36,8 @@ script#core-ui(type='text/ng-template')
 	h3 .cai-icon
 	div.left
 		p icons are inherited from the font-awesome library
-		p all classes that use this selector
-			span , in the apps center content area will be assigned the primary color
+		p all elements that use this selector
+			span , in center content area will be assigned the primary color as shown on the right
 		br
 	div.right(align="center")
 		p sample of icons available in font awesome library
@@ -79,7 +79,7 @@ script#core-ui(type='text/ng-template')
 	hr
 	h3 .cai-nav-pills
 	div.left
-		p this custom selector can be used to extend the default bootstrap nav-pills selector for branding purposes. can also be used to brand pills that are stacked vertically
+		p this custom selector can be used to extend the default bootstrap nav-pills selector for branding purposes
 		br
 
 	div.right
@@ -92,9 +92,9 @@ script#core-ui(type='text/ng-template')
 		strong li
 		br
 		br
-		div(class="tabbable", type="'pills'", align="center")
-			ul(class="nav nav-pills cai-nav-pills", tabset-titles="tabsAbove")
-				li(class="active")
+		div.tabbable(type="'pills'", align="center")
+			ul.nav.nav-pills.cai-nav-pills(tabset-titles="tabsAbove")
+				li.active
 					a Tab1
 				li
 					a Tab2
@@ -115,17 +115,17 @@ script#core-ui(type='text/ng-template')
 	h3 .cai-header
 	div.left
 		p use .cai-header when you need to identify the head of a new section.
-		p refer to some examples on the right
+		p refer to examples on the right
 		br
 	div.right
-		header(class="cai-header")
+		header.cai-header
 			span Example of a header tag
 		br
 		br
 		span OR
 		br
 		br
-		header(class="cai-header")
+		header.cai-header
 			span Recent list of customers
 	br
 	br
@@ -139,14 +139,14 @@ script#core-ui(type='text/ng-template')
 		p refer to examples on the right
 		br
 	div.right
-		label(class="cai-label") Example of a project Label:
+		label.cai-label Example of a project Label:
 		span Hello label
 		br
 		br
 		span OR
 		br
 		br
-		label(class="cai-label") Truck:
+		label.cai-label Truck:
 		span Front Discharge
 	pre
 		code
@@ -154,7 +154,6 @@ script#core-ui(type='text/ng-template')
 	hr
 	h3 .cai-color-primary
 	div.left
-		h4 .cai-color-primary
 		p this custom selector can be used when you need to brand an element, like some text for example, with the apps primary color
 		br
 	div.right
@@ -165,7 +164,6 @@ script#core-ui(type='text/ng-template')
 	hr
 	h3 .cai-color-secondary
 	div.left
-		h4 .cai-color-secondary
 		p this custom selector can be used when you need to brand an element, like some text for example, with the apps secondary color
 		br
 	div.right

@@ -1,21 +1,18 @@
 
 /* required core layout */
-/* fallback for colors if there is an error compiling evo branding on server */
-
+/* and fallback for colors if there is an error compiling evo branding on server */
 @font-face {
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 400;
     src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(fonts/titilliumweb.woff) format('woff');
 }
-
 html,body{
     width: 100%;
     height: 100%;
     background: #f5f5f5;
     font-family: 'Titillium Web';
     font-weight: 400;
-
 }
 body{
     margin: 0;
@@ -26,7 +23,7 @@ a, a:hover {
     color:#72b842;
 }
 
-/* handles the background color band running the width of the pag */
+/* handles the background color rectangular band extending the width of the page */
 .cai-colorband{
     margin-top:50px;
     width: 100%;
@@ -34,10 +31,9 @@ a, a:hover {
     background:  #72b842;
 }
 .cai-pagebackground{
-    width:100%;
     display: block;
-    height: 78%;
-    min-height: 400px; /* added remove if poss */
+    width:100%;
+    height: 100%;
     background-color: #494c57;
     background-image: -moz-linear-gradient(top, #494c57, #f5f5f5);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#494c57, to(#f5f5f5)));
@@ -47,26 +43,24 @@ a, a:hover {
     background-repeat: repeat;
     border-top:solid 5px #ffffff;
 }
-
+.cai-scrollable{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 100px;
+}
 /* layout - handles center main content area in application */
-.cai-pagebackground > section{
+.cai-scrollable > section{
+    display: block;
     margin:0 auto;
     border:0;
-    padding:10px 20px;
+    padding:10px 20px 50px 20px;
     width: 980px;
-    height: 100%;
     background: #ffffff;
-    position: relative;
-    top: -50px;
-    bottom: 0px;
     box-shadow: 0px 6px 16px 2px #494c57;
-    overflow: scroll;
-    /*position: fixed;*/
-    /*top: 100px;*/
-    /*right: 2%;*/
-    /*bottom: 25px;*/
-    /*left: 2%;*/
 }
+
 /* layout - stripes overlay .cai-pagebackground */
 .cai-stripes{
     float: left;
@@ -95,7 +89,6 @@ a, a:hover {
     text-align: left;
     border-bottom: solid 1px #72b842;
 }
-
 .cai-nav{
     border-top: solid 5px #72b842;
     color: #f5f5f5;
@@ -110,17 +103,27 @@ a, a:hover {
     background: url('../img/icon-app-green-commerce.png') no-repeat;
     vertical-align: middle;
 }
-.cai-nav .divider {
-    top:5px;
-    border-right: 1px solid #72b842;
+.cai-nav ul li {
+    display: inline-block;
+    margin-top:5px;
+}
+.cai-nav h1{
+    display: inline;
+    padding: 0 0 0 10px;
+    color: #ffffff;
+    font-family: 'Titillium Web';
+    font-size: 2em;
+    line-height: 2.5em;
 }
 .cai-nav .btn {
+    margin: 10px 5px;
+    padding: 10px 20px;
     color: #393c45;
     background: #72b842;
     text-shadow: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
 }
-
-/* buttons - used in header footer nav  */
 .cai-nav .btn.disabled,
 .cai-nav .btn[disabled] {
     background: #72b842;
@@ -134,11 +137,23 @@ a, a:hover {
 .cai-nav i[class^='icon-']{
     color: #393c45;
 }
-
+.cai-nav .search-query {
+    color: #000000;
+}
+.cai-nav .divider {
+    position: relative;
+    top: 3px;
+    right: -2px;
+    border-right: 1px solid #72b842;
+}
+.cai-nav > p {
+    color: #e5e8f9;
+    text-align: center;
+    margin: 2px 0 2px 0;
+}
 .cai-icon{
     font-size: 48px;
 }
-/* content area - handles button style */
 .cai-btn {
     display: inline-block;
     margin: 0px auto;
@@ -153,7 +168,6 @@ a, a:hover {
     text-align: center;
     border-width: 4px;
     border-style: solid;
-    /*border-color: lighten(#72b842, 20%);*/
     border-radius: 0px;
     box-shadow: 0;
     text-shadow: 0 0 0 rgba(255,255,255,0.75);
@@ -163,20 +177,15 @@ a, a:hover {
 }
 .cai-btn:hover {
     background: #f9f9f9;
-    /*border-color: lighten(#72b842, 10%);*/
     box-shadow: 0;
-    text-shadow: 0 0 0 rgba(255,255,255,0.75);
+    text-shadow: none;
 }
-
-/* content area - handles assigning primary and secndary color */
 .cai-color-primary{
     color: #72b842;
 }
 .cai-color-secondary{
     color: #393c45;
 }
-
-/* content area - handles navigation - pills */
 .cai-nav-pills>li{
     list-style: none;
 }
@@ -187,96 +196,9 @@ a, a:hover {
     color: white;
     background-color: #72b842;
 }
-.cai-nav-pills>li>a:hover, .cai-nav-pills>li>a:focus {
-    /*background-color: lighten(#72b842, 40%);*/
-}
-
-/* labels - handles labels used in forms */
 .cai-label{
     display: inline-block;
     padding: 0 10px;
     color: #72b842;
     font-weight: bold;
 }
-
-
-
-
-
-/* everything below handles header elements like title and buttons */
-/* if these can not be shared between desktop and mobile then move these outta here */
-
-/* branding overwrites bootstrap */
-
-.navbar a,
-.navbar a:hover,
-.navbar a:visited {
-    color: #ffffff;
-}
-.navbar .btn {
-    margin: 2px 5px;
-    border: 0px;
-    border-radius: 5px;
-}
-.navbar ul li {
-    display: inline-block;
-    margin-top:5px;
-}
-.navbar-fixed-bottom {
-    margin: 0;
-    z-index: 1;
-}
-.navbar-fixed-bottom.cai-nav{
-    position: fixed;
-    bottom: 0;
-}
-.navbar-fixed-bottom p {
-    color: #e5e8f9;
-    text-align: center;
-    margin: 2px 0 2px 0;
-}
-.navbar-inner {
-    min-height: 50px;
-}
-.navbar-fixed-bottom ul {
-    margin: 0;
-}
-.navbar-fixed-bottom ul a > li {
-    padding: 0 10px;
-    display: inline-block;
-}
-.navbar .divider {
-    position: relative;
-    top: 3px;
-    right: -2px;
-    width: 1px;
-}
-.navbar h1 {
-    display: inline;
-    padding: 0 0 0 10px;
-    color: #ffffff;
-    font-family: 'Titillium Web';
-    font-size: 2em;
-    line-height: 2.5em;
-}
-.navbar-search .search-query {
-    color: #000000;
-}
-/* buttons - header footer nav  */
-header > .navbar .btn {
-    padding: 10px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 18px;
-}
-/*header > .navbar .btn.disabled,*/
-/*header > .navbar .btn[disabled] {*/
-    /*text-shadow: none;*/
-/*}*/
-/*header > .navbar .btn:hover,*/
-/*header > .navbar .btn:focus,*/
-/*header > .navbar .btn.active {*/
-    /*background: #ffffff;*/
-    /*text-shadow: none;*/
-/*}*/
