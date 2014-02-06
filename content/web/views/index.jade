@@ -2,33 +2,31 @@ extends layout
 block body
 	script(src='/web/js/controllers/mainController.js')
 	script(src='/web/js/app.js')
-	#cai-commerce-nav
-		header
-			div.navbar.cai-nav
-				h1
-					div.app-logo
-					span  ACME CO
-				nav.pull-right.dropdown
-					ul
-						li
-							button.btn(type="button")
-								i.icon-check
-								span &nbsp; Button One
-						li
-							button.btn(type="button")
-								i.icon-check
-								span &nbsp; Button Two
-						span.divider
-						li.toggle
-							button.btn.dropdown-toggle(type="button")
-								i.icon-reorder
+	header.cai-nav.navbar-fixed-top
+		h1
+			div.app-logo
+			span  ACME CO
+		nav.pull-right.dropdown
+			ul
+				li
+					button.btn(type="button")
+						i.icon-check
+						span &nbsp; Button One
+				li
+					button.btn(type="button")
+						i.icon-check
+						span &nbsp; Button Two
+				span.divider
+				li.toggle
+					button.btn.dropdown-toggle(type="button")
+						i.icon-reorder
 	div.cai-colorband
-	div.cai-pagebackground
+	div.cai-gradient
 		div.cai-stripes
-	div.cai-scrollable
+	div.cai-content
 		section
 			div(ng-view)
 
-	footer.navbar.navbar-fixed-bottom.cai-nav
+	footer.cai-nav.navbar-fixed-bottom
 		p ACME CO &copy; 2000 - 2014 Command Alkon. All rights reserved.
 	include partials/core-ui.jade
