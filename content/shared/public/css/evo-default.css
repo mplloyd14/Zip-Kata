@@ -26,7 +26,6 @@ a, a:hover {
     height:25px;
     background:  #72b842;
 }
-
 .cai-pagebackground{
     width:100%;
     display: block;
@@ -197,27 +196,11 @@ a, a:hover {
 /* if these can not be shared between desktop and mobile then move these outta here */
 
 /* branding overwrites bootstrap */
-.navbar-inverse .navbar-inner {
-    padding: 0;
-    border-radius: 0;
-}
 
-/* header title */
-.navbar-inverse .brand {
-    color: #999999;
-}
-
-/* header title :hover */
-.navbar-inverse .brand:hover {
-    color: #ffffff;
-}
 .navbar a,
 .navbar a:hover,
 .navbar a:visited {
     color: #ffffff;
-}
-.navbar ul li i span {
-    font-family: "Titillium Web";
 }
 .navbar .btn {
     margin: 2px 5px;
@@ -256,23 +239,20 @@ a, a:hover {
     display: inline;
     padding: 0 0 0 10px;
     color: #ffffff;
-    font-family: "Titillium Web", sans-serif;
     font-size: 2em;
     line-height: 2.5em;
 }
-.navbar-inverse .navbar-search .search-query {
+.navbar-search .search-query {
     color: #000000;
 }
-/* header footer buttons  */
+/* buttons - header footer nav  */
 header > .navbar .btn {
-    padding: 5px 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
     margin-bottom: 0;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 1.2em;
-    line-height: 1em;
-    text-align: center;
+    font-size: 18px;
 }
-/* buttons - used in header footer nav  */
 header > .navbar .btn.disabled,
 header > .navbar .btn[disabled] {
     text-shadow: none;
@@ -283,11 +263,3 @@ header > .navbar .btn.active {
     background: #ffffff;
     text-shadow: none;
 }
-header > .navbar .btn {
-    padding: 10px 20px;
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 18px;
-}
-
