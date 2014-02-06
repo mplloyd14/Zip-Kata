@@ -10,10 +10,17 @@
 }
 
 html,body{
+    width: 100%;
+    height: 100%;
     background: #f5f5f5;
     font-family: 'Titillium Web';
-}
+    font-weight: 400;
 
+}
+body{
+    margin: 0;
+    height: 100%;
+}
 a, a:hover {
     text-decoration: none;
     color:#72b842;
@@ -29,7 +36,7 @@ a, a:hover {
 .cai-pagebackground{
     width:100%;
     display: block;
-    height: 70%;
+    height: 78%;
     min-height: 400px; /* added remove if poss */
     background-color: #494c57;
     background-image: -moz-linear-gradient(top, #494c57, #f5f5f5);
@@ -53,6 +60,12 @@ a, a:hover {
     top: -50px;
     bottom: 0px;
     box-shadow: 0px 6px 16px 2px #494c57;
+    overflow: scroll;
+    /*position: fixed;*/
+    /*top: 100px;*/
+    /*right: 2%;*/
+    /*bottom: 25px;*/
+    /*left: 2%;*/
 }
 /* layout - stripes overlay .cai-pagebackground */
 .cai-stripes{
@@ -85,6 +98,7 @@ a, a:hover {
 
 .cai-nav{
     border-top: solid 5px #72b842;
+    color: #f5f5f5;
     background: #393c45;
 }
 .cai-nav .app-logo{
@@ -95,10 +109,6 @@ a, a:hover {
     height: 40px;
     background: url('../img/icon-app-green-commerce.png') no-repeat;
     vertical-align: middle;
-}
-.navbar-fixed-bottom.cai-nav{
-    position: fixed;
-    bottom: 0;
 }
 .cai-nav .divider {
     top:5px;
@@ -123,13 +133,15 @@ a, a:hover {
 }
 .cai-nav i[class^='icon-']{
     color: #393c45;
-    font-size: 30px;
 }
 
+.cai-icon{
+    font-size: 48px;
+}
 /* content area - handles button style */
 .cai-btn {
     display: inline-block;
-    margin: 20px 0px 0px 20px;
+    margin: 0px auto;
     padding: 20px 0;
     font-family: 'Titillium Web', sans-serif;
     font-size: 18px;
@@ -150,8 +162,7 @@ a, a:hover {
     cursor: pointer;
 }
 .cai-btn:hover {
-    background: -webkit-linear-gradient(top, #71b741 0%, #66af3f 100%);
-    background: -moz-linear-gradient(top, #71b741 0%, #66af3f 100%);
+    background: #f9f9f9;
     /*border-color: lighten(#72b842, 10%);*/
     box-shadow: 0;
     text-shadow: 0 0 0 rgba(255,255,255,0.75);
@@ -209,10 +220,15 @@ a, a:hover {
 }
 .navbar ul li {
     display: inline-block;
+    margin-top:5px;
 }
 .navbar-fixed-bottom {
     margin: 0;
     z-index: 1;
+}
+.navbar-fixed-bottom.cai-nav{
+    position: fixed;
+    bottom: 0;
 }
 .navbar-fixed-bottom p {
     color: #e5e8f9;
@@ -239,6 +255,7 @@ a, a:hover {
     display: inline;
     padding: 0 0 0 10px;
     color: #ffffff;
+    font-family: 'Titillium Web';
     font-size: 2em;
     line-height: 2.5em;
 }
@@ -249,17 +266,17 @@ a, a:hover {
 header > .navbar .btn {
     padding: 10px 20px;
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     font-family: 'Titillium Web', sans-serif;
     font-size: 18px;
 }
-header > .navbar .btn.disabled,
-header > .navbar .btn[disabled] {
-    text-shadow: none;
-}
-header > .navbar .btn:hover,
-header > .navbar .btn:focus,
-header > .navbar .btn.active {
-    background: #ffffff;
-    text-shadow: none;
-}
+/*header > .navbar .btn.disabled,*/
+/*header > .navbar .btn[disabled] {*/
+    /*text-shadow: none;*/
+/*}*/
+/*header > .navbar .btn:hover,*/
+/*header > .navbar .btn:focus,*/
+/*header > .navbar .btn.active {*/
+    /*background: #ffffff;*/
+    /*text-shadow: none;*/
+/*}*/

@@ -1,26 +1,175 @@
 script#core-ui(type='text/ng-template')
 	h2 ProjectEvo-Core UI Components
-	h3 .cai-nav
-	p placeholder for .cai-nav example
-	hr
 	h3 .cai-nav .btn
-	p placeholder for .cai-nav .btn example
-	hr
-	h3 .cai-btn
-	p placeholder for .cai-btn example
-	hr
-	h3 .cai-nav-pills
-	p placeholder for .cai-nav-pills example
-	hr
-	h3 .cai-header
-	p placeholder for .cai-header example
-	hr
-	h3 .cai-modal
-	p placeholder for .cai-modal example
+	div.left
+		h4
+			| .cai-nav .btn
+			br
+			| .cai-nav .btn.active
+			br
+			| .cai-nav .btn.disabled
+		p styles of button used in main header navigation at the top of the app
+	div.right(align="center")
+
+		header
+			div.navbar.cai-nav
+				nav
+					ul
+						li
+							button.btn(type="button")
+								i.icon-check
+								span &nbsp; .btn
+						li
+							button.btn.active(type="button")
+								i.icon-check
+								span &nbsp; .btn.active
+						li
+							button.btn.disabled(type="button")
+								i.icon-check
+								span &nbsp; .btn.disabled
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 .cai-icon
-	p placeholder for .cai-icon example
+	div.left
+		p icons are inherited from the font-awesome library
+		p all classes that use this selector
+			span , in the apps center content area will be assigned the primary color
+		br
+	div.right(align="center")
+		p sample of icons available in font awesome library
+		div.icon-examples
+			i.icon-home.cai-icon(title="icon-home")
+			i.icon-print.cai-icon(title="icon-print")
+			i.icon-reorder.cai-icon(title="icon-reorder")
+			i.icon-question-sign.cai-icon(title="icon-question-sign")
+			i.icon-cog.cai-icon(title="icon-cog")
+			i.icon-user.cai-icon(title="icon-user")
+			i.icon-zoom-in.cai-icon(title="icon-zoom-in")
+			i.icon-zoom-out.cai-icon(title="icon-zoom-out")
+			i.icon-plus.cai-icon(title="icon-plus")
+			i.icon-globe.cai-icon(title="icon-globe")
+			i.icon-world.cai-icon(title="icon-world")
+			i.icon-map-marker.cai-icon(title="icon-map-marker")
+			i.icon-backward.cai-icon(title="icon-backward")
+			i.icon-calendar.cai-icon(title="icon-calendar")
+			i.icon-dollar.cai-icon(title="icon-dollar")
+			i.icon-edit.cai-icon(title="icon-edit")
+			i.icon-mail-reply.cai-icon(title="icon-mail-reply")
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary
+	hr
+	h3 .cai-btn
+	div.left
+		p uses for this button can be as a submit button in a form, or as a button in a modal window, to name a few
+		br
+	div.right
+		div.cai-btn Button
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary
+	hr
+	h3 .cai-nav-pills
+	div.left
+		p this custom selector can be used to extend the default bootstrap nav-pills selector for branding purposes. can also be used to brand pills that are stacked vertically
+		br
+
+	div.right
+		p the code snippet below shows examples of use cases for this selector
+		br
+		strong div.tabbable(type="'pills'")
+		br
+		strong ul.nav-pills.cai-nav-pills
+		br
+		strong li
+		br
+		br
+		div(class="tabbable", type="'pills'", align="center")
+			ul(class="nav nav-pills cai-nav-pills", tabset-titles="tabsAbove")
+				li(class="active")
+					a Tab1
+				li
+					a Tab2
+				li
+					a Tab3
+				li
+					a Tab4
+				li
+					a Tab5
+				li
+					a Tab6
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary
+	hr
+	h3 .cai-header
+	div.left
+		p use .cai-header when you need to identify the head of a new section.
+		p refer to some examples on the right
+		br
+	div.right
+		header(class="cai-header")
+			span Example of a header tag
+		br
+		br
+		span OR
+		br
+		br
+		header(class="cai-header")
+			span Recent list of customers
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary
 	hr
 	h3 .cai-label
-	p placeholder for .cai-label example
+	div.left
+		p labels are typically used within a modal window or a form
+		p refer to examples on the right
+		br
+	div.right
+		label(class="cai-label") Example of a project Label:
+		span Hello label
+		br
+		br
+		span OR
+		br
+		br
+		label(class="cai-label") Truck:
+		span Front Discharge
+	pre
+		code
+			strong variable usage: @color-primary
 	hr
+	h3 .cai-color-primary
+	div.left
+		h4 .cai-color-primary
+		p this custom selector can be used when you need to brand an element, like some text for example, with the apps primary color
+		br
+	div.right
+		div.cai-color-primary branding some text the using primary color
+	pre
+		code
+			strong variable usage: @color-primary
+	hr
+	h3 .cai-color-secondary
+	div.left
+		h4 .cai-color-secondary
+		p this custom selector can be used when you need to brand an element, like some text for example, with the apps secondary color
+		br
+	div.right
+		div.cai-color-secondary branding some text using the secondary color
+	pre
+		code
+			strong variable usage: @color-secondary
