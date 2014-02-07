@@ -5,7 +5,7 @@ angular.module('peApp', ['cai.services', 'peControllers']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/mobile', {
-		templateUrl: 'hello',
+		templateUrl: 'core-ui',
         controller: 'MainController'
       });
     $locationProvider.html5Mode(true);

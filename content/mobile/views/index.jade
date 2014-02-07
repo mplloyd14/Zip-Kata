@@ -1,11 +1,42 @@
 extends layout
 
 block body
-    script(src='/shared/underscore/underscore-min.js')    
-    script(src='/mobile/js/controllers/mainController.js')
-    script(src='/mobile/js/app.js')	
-
-    h1 Mobile
-    div(ng-view)
-        
-    include partials/hello.jade
+	script(src='/shared/underscore/underscore-min.js')
+	script(src='/mobile/js/controllers/mainController.js')
+	script(src='/mobile/js/app.js')
+	header.cai-nav.navbar-fixed-top
+		h1
+			div.app-logo
+			span  ACME CO
+		nav.pull-right.dropdown
+			ul
+				li
+					button.btn(type="button")
+						i.icon-check
+						span &nbsp; Button One
+				li
+					button.btn(type="button")
+						i.icon-check
+						span &nbsp; Button Two
+				span.divider
+				li.toggle
+					button.btn.dropdown-toggle(type="button")
+						i.icon-reorder
+					ul.dropdown-menu
+						li
+							a
+								i.icon-cog.icon-small
+								span link1
+						li
+							a
+								i.icon-user.icon-small
+								span link2
+		div.cai-colorband
+		div.cai-gradient
+			div.cai-stripes
+		div.cai-content
+			section
+				div(ng-view)
+		footer.cai-nav.navbar-fixed-bottom
+			p ACME CO &copy; 2000 - 2014 Command Alkon. All rights reserved.
+		include partials/core-ui.jade
