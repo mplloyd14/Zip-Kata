@@ -1,7 +1,6 @@
 extends layout
 
 block body
-	script(src='/shared/underscore/underscore-min.js')
 	script(src='/mobile/js/controllers/mainController.js')
 	script(src='/mobile/js/app.js')
 	header.cai-nav.navbar-fixed-top
@@ -10,15 +9,6 @@ block body
 			span  ACME CO
 		nav.pull-right.dropdown
 			ul
-				li
-					button.btn(type="button")
-						i.icon-check
-						span &nbsp; Button One
-				li
-					button.btn(type="button")
-						i.icon-check
-						span &nbsp; Button Two
-				span.divider
 				li.toggle
 					button.btn.dropdown-toggle(type="button")
 						i.icon-reorder
@@ -31,9 +21,7 @@ block body
 							a
 								i.icon-user.icon-small
 								span link2
-	div.cai-colorband
 	div.cai-gradient
-		div.cai-stripes
 	div.cai-content
 		section
 			div(ng-view)
