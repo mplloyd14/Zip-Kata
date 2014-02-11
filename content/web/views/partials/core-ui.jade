@@ -2,6 +2,22 @@ link(rel='stylesheet', href='/web/css/peseed.css')
 script#core-ui(type='text/ng-template')
 
 	h2 ProjectEvo-Core UI Components
+	h3 .cai-nav
+	div.left
+		p .cai-nav is used for the header and footer giving them their properties for background color, border-top, width and height
+	div.right
+		div.navbar.cai-nav
+		pre
+			code
+				strong Basic code example:
+				br
+				| div.navbar.cai-nav
+	br
+	br
+	pre
+		code
+			strong variable usage: @color-primary, @color-secondary
+	hr
 	h3 .cai-nav .btn
 	div.left
 		h4
@@ -28,6 +44,15 @@ script#core-ui(type='text/ng-template')
 							button.btn.disabled(type="button")
 								i.icon-check
 								span &nbsp; .btn.disabled
+
+		pre
+			code
+				strong Basic code example:
+				br
+				|           div.navbar.cai-nav
+				|   button.btn(type="button")
+				|       i.icon-check
+				|       span &nbsp; .btn
 	br
 	br
 	pre
@@ -64,7 +89,7 @@ script#core-ui(type='text/ng-template')
 		br
 		pre
 			code
-				strong code usage: i.icon-home.cai-icon(title="icon-home")
+				strong Basic code example: i.icon-home.cai-icon(title="icon-home")
 	br
 	br
 	pre
@@ -81,7 +106,7 @@ script#core-ui(type='text/ng-template')
 		br
 		pre
 			code
-				strong code usage: div.cai-btn Button
+				strong Basic code example: div.cai-btn Button
 
 	br
 	br
@@ -98,7 +123,7 @@ script#core-ui(type='text/ng-template')
 		p the code snippet below shows an basic example use case for this selector
 		pre
 			code
-				strong code usage:
+				strong Basic code example:
 				br
 				br
 				strong div.tabbable(type="'pills'")
@@ -142,8 +167,16 @@ script#core-ui(type='text/ng-template')
 		span OR
 		br
 		br
-		header.cai-header
-			span Recent list of customers
+		div.cai-header Recent list of customers
+		br
+		br
+		pre
+			code
+				strong Basic code example:
+				br
+				| div.cai-header Recent list of customers
+		br
+		br
 	br
 	br
 	pre

@@ -109,6 +109,7 @@ a, a:hover {
 .cai-nav{
     width: 100%;
     min-width: 100%;
+    min-height: 30px;
     max-height: 75px;
     border-top: solid 5px #72b842;
     color: #f5f5f5;
