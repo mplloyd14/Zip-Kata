@@ -37,8 +37,8 @@ script#core-ui(type='text/ng-template')
 	h3 .cai-icon
 	div.left
 		p icons are inherited from the font-awesome library
-		p all elements that use this selector
-			span , in center content area will be assigned the primary color as shown on the right
+		p all elements using this selector
+			span , in center content area of an app, will be assigned the primary color and a font size, as shown on the right
 		br
 	div.right(align="center")
 		p sample of icons available in font awesome library
@@ -60,6 +60,11 @@ script#core-ui(type='text/ng-template')
 			i.icon-dollar.cai-icon(title="icon-dollar")
 			i.icon-edit.cai-icon(title="icon-edit")
 			i.icon-mail-reply.cai-icon(title="icon-mail-reply")
+		br
+		br
+		pre
+			code
+				strong code usage: i.icon-home.cai-icon(title="icon-home")
 	br
 	br
 	pre
@@ -72,6 +77,12 @@ script#core-ui(type='text/ng-template')
 		br
 	div.right
 		div.cai-btn Button
+		br
+		br
+		pre
+			code
+				strong code usage: div.cai-btn Button
+
 	br
 	br
 	pre
@@ -87,6 +98,9 @@ script#core-ui(type='text/ng-template')
 		p the code snippet below shows an basic example use case for this selector
 		pre
 			code
+				strong code usage:
+				br
+				br
 				strong div.tabbable(type="'pills'")
 				br
 				strong &nbsp;&nbsp;ul.nav-pills.cai-nav-pills
@@ -187,3 +201,25 @@ script#core-ui(type='text/ng-template')
 	pre
 		code
 			strong variable usage: @color-primary, @color-secondary
+	hr
+	h3 How to customize
+	div.left
+		p How to customize new ui elements added throughout a project that are not included in the branding core
+		strong Note: if you need to customize an element in your project that does not have any class created for it already, just append one of these classes to the element:
+			br
+			| .cai-color-primary or .cai-color-secondary
+			br
+			br
+	div.right(align="center")
+		p Examples of using another color for an icon or some text
+		i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
+		pre
+			code
+				strong i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
+		br
+		br
+		div.cai-color-primary branding some text using primary color
+		pre
+			code
+				strong span.cai-color-primary branding some text using primary color
+	hr
