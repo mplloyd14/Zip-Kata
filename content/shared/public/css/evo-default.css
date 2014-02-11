@@ -83,8 +83,8 @@ a, a:hover {
     height: 100%;
     min-height: 100%;
     background: transparent;
-    position: absolute;
-    top: 83px;
+    position: relative;
+    top: 80px;
 }
 /* layout - handles center main content area in application */
 .cai-content > section{
@@ -160,6 +160,7 @@ a, a:hover {
 }
 .cai-nav i[class^='icon-']{
     color: #393c45;
+    font-weight: bold;
 }
 .cai-nav .search-query {
     color: #000000;
