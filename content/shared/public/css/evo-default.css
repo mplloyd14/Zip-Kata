@@ -36,6 +36,7 @@ a, a:hover {
     background:  #72b842;
     position: fixed;
     top: 125px;
+    bottom: 0px;
 }
 .cai-gradient{
     display: block;
@@ -253,7 +254,7 @@ a, a:hover {
     color: #ffffff;
 }
 
-.dropdown-menu li .btn.active, .dropdown-menu li .btn.active i[class^='icon-']{
+.dropdown-menu li .btn.active, .dropdown-menu li .btn.active .icon-small{
     background: #72b842;
     color: #ffffff;
 }
