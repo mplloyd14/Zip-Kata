@@ -243,18 +243,18 @@ a, a:hover {
 .dropdown-menu li a:link, .dropdown-menu li a:visited{
     color: #393c45;
 }
-.dropdown-menu li a:hover, .dropdown-menu li a:hover .icon-small{
-    background: @color-secondary;
+.dropdown-menu li a:hover, .dropdown-menu li a:hover i[class^='icon-']{
+    background: #72b842;
     color: #ffffff;
 }
 
-.dropdown-menu li a.active, .dropdown-menu li a.active .icon-small{
-    background: @color-secondary;
+.dropdown-menu li a.active, .dropdown-menu li a.active i[class^='icon-']{
+    background: #72b842;
     color: #ffffff;
 }
 
-.dropdown-menu li .btn.active, .dropdown-menu li .btn.active .icon-small{
-    background: @color-secondary;
+.dropdown-menu li .btn.active, .dropdown-menu li .btn.active i[class^='icon-']{
+    background: #72b842;
     color: #ffffff;
 }
 @media (max-width: 979px){
