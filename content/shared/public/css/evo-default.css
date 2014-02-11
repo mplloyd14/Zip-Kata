@@ -114,6 +114,7 @@ a, a:hover {
     border-top: solid 5px #72b842;
     color: #f5f5f5;
     background: #393c45;
+    font-family: 'Titillium Web';
 }
 .cai-nav .app-logo{
     display: inline-block;
@@ -132,7 +133,6 @@ a, a:hover {
     display: inline;
     padding: 0 0 0 10px;
     color: #ffffff;
-    font-family: 'Titillium Web';
     font-size: 2em;
     line-height: 2.5em;
 }
@@ -142,7 +142,7 @@ a, a:hover {
     color: #393c45;
     background: #72b842;
     text-shadow: none;
-    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
     font-size: 1.2em;
 }
 .cai-nav .btn.disabled,
@@ -182,12 +182,10 @@ a, a:hover {
 .cai-btn {
     display: inline-block;
     margin: 0px auto;
-    padding: 20px 0;
-    font-family: 'Titillium Web', sans-serif;
+    padding: 20px 40px;
     color: #ffffff;
     font-weight: bold;
     height: auto;
-    width: 40%;
     text-align: center;
     border-width: 4px;
     border-style: solid;

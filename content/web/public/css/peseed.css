@@ -1,19 +1,27 @@
-.left{
-    display:inline-block;
-    padding-right:20px;
-    margin-bottom: 20px;
-    width:30%;
-    vertical-align: top;
-    border-right: solid 1px #cccccc;
-}
-.right{
-    display:inline-block;
-    padding-left:20px;
-    width:64%;
-    min-height: 15%;
-}
 
 .icon-examples i{
     padding: 10px
+}
+
+.core-css {
+    display: inline-block;
+    width: 100%;
+    height: 250px;
+}
+.left {
+    display: inline-block;
+    padding-right:20px;
+    margin-bottom: 20px;
+    width:30%;
+    height: 100%;
+    vertical-align: top;
+    border-right: solid 1px #cccccc;
+}
+.right {
+    display: inline-block;
+    padding-left:20px;
+    width: 64%;
+    height: 100%;
+
 }
 

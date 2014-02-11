@@ -3,256 +3,287 @@ script#core-ui(type='text/ng-template')
 
 	h2 ProjectEvo-Core UI Components
 	h3 .cai-nav
-	div.left
-		p .cai-nav is used for the header and footer giving them their properties for background color, border-top, width and height
-	div.right
-		div.navbar.cai-nav
-		pre
-			code
-				strong Basic code example:
-				br
-				| div.navbar.cai-nav
-	br
-	br
+	div.core-css
+		div.left
+			p .cai-nav is used for the header and footer providing properties for background color, border-top, width and height
+			p .cai-nav extends the bootstrap class, .navbar
+		div.right
+			div.cai-nav
+			br
+			br
+			pre
+				code
+					strong Basic code example:
+					br
+					| div.navbar.cai-nav
 	pre
 		code
 			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 .cai-nav .btn
-	div.left
-		h4
-			| .cai-nav .btn
-			br
-			| .cai-nav .btn.active
-			br
-			| .cai-nav .btn.disabled
-		p button in main header navigation at the top of the app and .btn must be a child of .cai-nav
-	div.right
-		header
-			div.navbar.cai-nav
-				nav
-					ul
-						li
-							button.btn(type="button")
-								i.icon-check
-								span &nbsp; .btn
-						li
-							button.btn.active(type="button")
-								i.icon-check
-								span &nbsp; .btn.active
-						li
-							button.btn.disabled(type="button")
-								i.icon-check
-								span &nbsp; .btn.disabled
-
-		pre
-			code
-				strong Basic code example:
+	div.core-css
+		div.left
+			h4
+				| .cai-nav .btn
 				br
-				|           div.navbar.cai-nav
-				|   button.btn(type="button")
-				|       i.icon-check
-				|       span &nbsp; .btn
-	br
-	br
+				| .cai-nav .btn.active
+				br
+				| .cai-nav .btn.disabled
+			p button in main header navigation at the top of the app and .btn must be a child of .cai-nav
+		div.right
+			header
+				div.navbar.cai-nav
+					nav
+						ul
+							li
+								button.btn(type="button")
+									i.icon-check
+									span &nbsp; .btn
+							li
+								button.btn.active(type="button")
+									i.icon-check
+									span &nbsp; .btn.active
+							li
+								button.btn.disabled(type="button")
+									i.icon-check
+									span &nbsp; .btn.disabled
+
+			pre
+				code
+					strong Basic code example:
+					br
+					|           div.navbar.cai-nav
+					|   button.btn(type="button")
+					|       i.icon-check
+					|       span &nbsp; .btn
 	pre
 		code
 			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 .cai-icon
-	div.left
-		p icons are inherited from the font-awesome library
-		p all elements using this selector
-			span , in center content area of an app, will be assigned the primary color and a font size, as shown on the right
-		br
-	div.right(align="center")
-		p sample of icons available in font awesome library
-		div.icon-examples
-			i.icon-home.cai-icon(title="icon-home")
-			i.icon-print.cai-icon(title="icon-print")
-			i.icon-reorder.cai-icon(title="icon-reorder")
-			i.icon-question-sign.cai-icon(title="icon-question-sign")
-			i.icon-cog.cai-icon(title="icon-cog")
-			i.icon-user.cai-icon(title="icon-user")
-			i.icon-zoom-in.cai-icon(title="icon-zoom-in")
-			i.icon-zoom-out.cai-icon(title="icon-zoom-out")
-			i.icon-plus.cai-icon(title="icon-plus")
-			i.icon-globe.cai-icon(title="icon-globe")
-			i.icon-world.cai-icon(title="icon-world")
-			i.icon-map-marker.cai-icon(title="icon-map-marker")
-			i.icon-backward.cai-icon(title="icon-backward")
-			i.icon-calendar.cai-icon(title="icon-calendar")
-			i.icon-dollar.cai-icon(title="icon-dollar")
-			i.icon-edit.cai-icon(title="icon-edit")
-			i.icon-mail-reply.cai-icon(title="icon-mail-reply")
-		br
-		br
-		pre
-			code
-				strong Basic code example: i.icon-home.cai-icon(title="icon-home")
-	br
-	br
+	div.core-css
+		div.left
+			p icons are inherited from the font-awesome library
+			p all elements using this selector
+				span , in center content area of an app, will be assigned the primary color and a font size, as shown on the right
+			br
+		div.right(align="center")
+			p sample of icons available in font awesome library
+			div.icon-examples
+				i.icon-home.cai-icon(title="icon-home")
+				i.icon-print.cai-icon(title="icon-print")
+				i.icon-reorder.cai-icon(title="icon-reorder")
+				i.icon-question-sign.cai-icon(title="icon-question-sign")
+				i.icon-cog.cai-icon(title="icon-cog")
+				i.icon-user.cai-icon(title="icon-user")
+				i.icon-zoom-in.cai-icon(title="icon-zoom-in")
+				i.icon-zoom-out.cai-icon(title="icon-zoom-out")
+				i.icon-plus.cai-icon(title="icon-plus")
+				i.icon-globe.cai-icon(title="icon-globe")
+				i.icon-world.cai-icon(title="icon-world")
+				i.icon-map-marker.cai-icon(title="icon-map-marker")
+				i.icon-backward.cai-icon(title="icon-backward")
+				i.icon-calendar.cai-icon(title="icon-calendar")
+				i.icon-dollar.cai-icon(title="icon-dollar")
+				i.icon-edit.cai-icon(title="icon-edit")
+				i.icon-mail-reply.cai-icon(title="icon-mail-reply")
+			br
+			br
+			pre
+				code
+					strong Basic code example: i.icon-home.cai-icon(title="icon-home")
 	pre
 		code
 			strong variable usage: @color-primary
 	hr
 	h3 .cai-btn
-	div.left
-		p uses for this button can be as a submit button in a form, or as a button in a modal window, to name a few
-		br
-	div.right
-		div.cai-btn Button
-		br
-		br
-		pre
-			code
-				strong Basic code example: div.cai-btn Button
-
-	br
-	br
+	div.core-css
+		div.left
+			p uses for this button can be as a submit button in a form, or as a button in a modal window, to name a few
+			br
+		div.right
+			div.cai-btn Button
+			br
+			br
+			pre
+				code
+					strong Basic code example: div.cai-btn Button
 	pre
 		code
 			strong variable usage: @color-primary
 	hr
 	h3 .cai-nav-pills
-	div.left
-		p this custom selector should extend the default bootstrap .nav-pills class for branding, as shown in the code snippet on the right
-		br
+	div.core-css
+		div.left
+			p this custom selector should extend the default bootstrap .nav-pills class for branding, as shown in the code snippet on the right
+			br
 
-	div.right
-		p the code snippet below shows an basic example use case for this selector
-		pre
-			code
-				strong Basic code example:
-				br
-				br
-				strong div.tabbable(type="'pills'")
-				br
-				strong &nbsp;&nbsp;ul.nav-pills.cai-nav-pills
-				br
-				strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab1
-				br
-				strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab2
-		br
-		div.tabbable(type="'pills'", align="center", style="width:350px; margin:0 auto; text-align:center")
-			ul.nav.nav-pills.cai-nav-pills(tabset-titles="tabsAbove")
-				li.active
-					a Tab1
-				li
-					a Tab2
-				li
-					a Tab3
-				li
-					a Tab4
-				li
-					a Tab5
-				li
-					a Tab6
-	br
-	br
+		div.right
+			p the code snippet below shows an basic example use case for this selector
+			pre
+				code
+					strong Basic code example:
+					br
+					br
+					strong div.tabbable(type="'pills'")
+					br
+					strong &nbsp;&nbsp;ul.nav-pills.cai-nav-pills
+					br
+					strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab1
+					br
+					strong &nbsp;&nbsp;&nbsp;&nbsp; li Tab2
+			br
+			div.tabbable(type="'pills'", align="center", style="width:350px; margin:0 auto; text-align:center")
+				ul.nav.nav-pills.cai-nav-pills(tabset-titles="tabsAbove")
+					li.active
+						a Tab1
+					li
+						a Tab2
+					li
+						a Tab3
+					li
+						a Tab4
+					li
+						a Tab5
+					li
+						a Tab6
 	pre
 		code
 			strong variable usage: @color-primary
 	hr
 	h3 .cai-header
-	div.left
-		p use .cai-header when you need to identify the head of a new section.
-		p refer to examples on the right
-		br
-	div.right
-		header.cai-header
-			span Example of a header tag
-		br
-		br
-		span OR
-		br
-		br
-		div.cai-header Recent list of customers
-		br
-		br
-		pre
-			code
-				strong Basic code example:
-				br
-				| div.cai-header Recent list of customers
-		br
-		br
-	br
-	br
+	div.core-css
+		div.left
+			p use .cai-header when you need to identify the head of a new section.
+			p refer to examples on the right
+			br
+		div.right
+			header.cai-header
+				span Example of a header tag
+			br
+			br
+			span OR
+			br
+			br
+			div.cai-header Recent list of customers
+			br
+			br
+			pre
+				code
+					strong Basic code example:
+					br
+					| div.cai-header Recent list of customers
+			br
+			br
 	pre
 		code
 			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 .cai-label
-	div.left
-		p labels are typically used within a modal window or a form
-		p refer to examples on the right
-		br
-	div.right
-		label.cai-label Example of a project Label:
-		span Hello label
-		br
-		br
-		span OR
-		br
-		br
-		label.cai-label Truck:
-		span Front Discharge
+	div.core-css
+		div.left
+			p labels are typically used within a modal window or a form
+			p refer to examples on the right
+			br
+		div.right
+			label.cai-label Example of a project Label:
+			span Hello label
+			br
+			br
+			span OR
+			br
+			br
+			label.cai-label Truck:
+			span Front Discharge
+			br
+			br
+			pre
+				code
+					strong Basic code example:
+					br
+					|             div.cai-label Truck:
+					| span Front Discharge
 	pre
 		code
 			strong variable usage: @color-primary
 	hr
 	h3 .cai-color-primary
-	div.left
-		p this custom selector can be used when you need to brand an element, like some text for example, with the apps primary color
-		br
-	div.right
-		div.cai-color-primary branding some text the using primary color
+	div.core-css
+		div.left
+			p this custom selector can be used when you need to brand an element, like some text for example, with the apps primary color
+			br
+		div.right
+			div.cai-color-primary branding some text using the primary color
+			pre
+				code
+					strong Basic code example:
+					br
+					| div.cai-color-primary branding some text using the primary color
 	pre
 		code
 			strong variable usage: @color-primary
 	hr
 	h3 .cai-color-secondary
-	div.left
-		p this custom selector can be used when you need to brand an element, like some text for example, with the apps secondary color
-		br
-	div.right
-		div.cai-color-secondary branding some text using the secondary color
+	div.core-css
+		div.left
+			p this custom selector can be used when you need to brand an element, like some text for example, with the apps secondary color
+			br
+		div.right
+			div.cai-color-secondary branding some text using the secondary color
+			pre
+				code
+					strong Basic code example:
+					br
+					| div.cai-color-secondary branding some text using the secondary color
 	pre
 		code
 			strong variable usage: @color-secondary
 	hr
-	h3 .cai-nav .cai-dropdown
-	div.left
-		p style of button used for toggling the drop down menu in the header nav and .cai-dropdown must be a child of .cai-nav
-		br
-	div.right
-		header
-			div.cai-nav(align="center")
-				button.btn.cai-dropdown.dropdown-toggle
-					i.icon-reorder
+	h3 .cai-nav .btn.cai-dropdown
+	div.core-css
+		div.left
+			p style of button used for toggling the drop down menu in the header nav and .cai-dropdown must be a child of .cai-nav
+			br
+		div.right
+			header
+				div.navbar.cai-nav(align="center")
+					button.btn.cai-dropdown.dropdown-toggle
+						i.icon-reorder
+			pre
+				code
+					strong Basic code example:
+					br
+					|          div.navbar.cai-nav
+					| button.btn.cai-dropdown.dropdown-toggle
+					|       i.icon-reorder
 	pre
 		code
 			strong variable usage: @color-primary, @color-secondary
 	hr
 	h3 How to customize
-	div.left
-		p How to customize new ui elements added throughout a project that are not included in the branding core
-		strong Note: if you need to customize an element in your project that does not have any class created for it already, just append one of these classes to the element:
+	div.core-css
+		div.left
+			p How to brand new ui elements added throughout a project that are not included in the branding core
+			strong Note: if you need to brand an element, or some text, in your project that can not be branded using one of the core classes listed on this page, then you may have to append one of these classes listed below to the element:
+				br
+				br
+				| .cai-color-primary
+				br
+				| .cai-color-secondary
+				br
+				| .cai-color-tertiary (if it exists for your application)
+				br
+				br
+		div.right(align="center")
+			p Examples of using another color for an icon or some text
+			i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
+			pre
+				code
+					strong i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
 			br
-			| .cai-color-primary or .cai-color-secondary
 			br
-			br
-	div.right(align="center")
-		p Examples of using another color for an icon or some text
-		i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
-		pre
-			code
-				strong i.icon-home.cai-icon.cai-color-secondary(title="icon-home")
-		br
-		br
-		div.cai-color-primary branding some text using primary color
-		pre
-			code
-				strong span.cai-color-primary branding some text using primary color
+			div.cai-color-primary branding some text using primary color
+			pre
+				code
+					strong span.cai-color-primary branding some text using primary color
 	hr
