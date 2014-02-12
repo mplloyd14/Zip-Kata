@@ -242,10 +242,13 @@ script#core-ui(type='text/ng-template')
 			p style of button used for toggling the drop down menu in the header nav and .cai-dropdown must be a child of .cai-nav
 			br
 		div.right
-			header
+			div.dropdown
 				div.navbar.cai-nav(align="center")
-					button.btn.cai-dropdown.dropdown-toggle
-						i.icon-reorder
+					ul
+						li.toggle
+							button.btn.cai-dropdown.dropdown-toggle
+								i.icon-reorder
+
 			pre
 				code
 					strong Basic code example:

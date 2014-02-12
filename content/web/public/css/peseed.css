@@ -1,3 +1,6 @@
+/* this files purpose is to create structure in the main content area for the ui component examples */
+/* and this file will not be needed when starting a new app */
+
 
 .icon-examples i{
     padding: 10px
@@ -32,7 +35,7 @@
         display: none;
     }
     .core-css{
-        float: left;
+        display: block;
         width: 100%;
         height: auto;
     }

@@ -7,7 +7,6 @@
     font-weight: 400;
     src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(fonts/titilliumweb.woff) format('woff');
 }
-
 html,body{
     width: 100%;
     min-width: 100%;
@@ -240,8 +239,13 @@ a, a:hover {
 }
 .dropdown-menu li i{
     float: left;
-    width: 30px;
-    padding-left:10px;
+    width: auto;
+    padding:0 10px;
+}
+
+/* need this for ie9 hover removes bootstrap blue bg color */
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+    filter: none;
 }
 .dropdown-menu li a:link, .dropdown-menu li a:visited{
     color: #393c45;
@@ -259,9 +263,4 @@ a, a:hover {
 .dropdown-menu li .btn.active, .dropdown-menu li .btn.active .icon-small{
     background: #72b842;
     color: #ffffff;
-}
-@media (max-width: 979px){
-    .navbar-fixed-top, .navbar-fixed-bottom {
-        position: fixed;
-    }
 }
