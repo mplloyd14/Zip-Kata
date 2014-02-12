@@ -24,4 +24,36 @@
     height: 100%;
 
 }
-
+@media (max-width: 800px){
+    .dropdown ul li:not(:last-child){
+        display: none;
+    }
+    .divider{
+        display: none;
+    }
+    .core-css{
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    div.core-css + pre{
+        float: left;
+        width: 96%;
+        height: auto;
+    }
+    .left{
+        display: block;
+        float: left;
+        width: 100%;
+        border-right: solid 0px #ff0000;
+        padding:0;
+        margin: 0;
+    }
+    .right{
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
