@@ -287,3 +287,53 @@ script#core-ui(type='text/ng-template')
 				code
 					strong span.cai-color-primary branding some text using primary color
 	hr
+
+	br
+	br
+	h2 Seed Application Directory Layout (related to branding)
+	h3 Files that are used with evo cai/core branding
+		div.core-css
+			pre
+				code
+					table
+						tr.level0
+							td pe-seed/
+							td --> root directory of your application
+						tr.level1
+							td content/
+							td --> where web/ mobile/ and shared/ live
+						tr.level2
+							td shared/
+							td --> all files that can be shared between desktop and mobile
+						tr.level3
+							td public/
+							td
+						tr.level4
+							td img/
+							td --> application level images ie the app logo
+						tr.level5
+							td app-logo-foo.png
+							td --> the company logo for the application belongs here
+						tr.level4
+							td css/
+							td
+						tr.level5
+							td evo-default.css
+							td --> fallback css colors and layout incase the evo core doesn't compile
+						tr.level2
+							td web/
+							td --> all files that are used for desktop version
+						tr.level3
+							td views/
+							td
+						tr.level4
+							td index.jade
+							td --> has all layout elements ie div.cai-colorband, div.cai-gradient and div.cai-stripes
+						tr.level4
+							td layout.jade
+							td --> file has the include for /core/shared/branding
+
+
+	hr
+	br
+	br

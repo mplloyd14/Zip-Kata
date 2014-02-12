@@ -1,7 +1,12 @@
 
 /* this is the required core layout */
 /* and fallback for colors if there is an error compiling evo branding on server */
-
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(fonts/titilliumweb.woff) format('woff');
+}
 html,body{
     width: 100%;
     min-width: 100%;
@@ -138,6 +143,7 @@ a, a:hover {
     color: #393c45;
     background: #72b842;
     text-shadow: none;
+    font-family: 'Titillium Web';
     font-weight: bold;
     font-size: 1.2em;
 }

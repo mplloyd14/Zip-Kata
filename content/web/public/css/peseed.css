@@ -27,6 +27,30 @@
     height: 100%;
 
 }
+.level0 td:nth-child(1){
+    padding-left: 0px;
+    padding-right: 20px;
+}
+.level1 td:nth-child(1){
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.level2 td:nth-child(1){
+    padding-left: 40px;
+    padding-right: 20px;
+}
+.level3 td:nth-child(1){
+    padding-left: 60px;
+    padding-right: 20px;
+}
+.level4 td:nth-child(1){
+    padding-left: 80px;
+    padding-right: 20px;
+}
+.level5 td:nth-child(1){
+    padding-left: 100px;
+    padding-right: 20px;
+}
 @media (max-width: 800px){
     .dropdown ul li:not(:last-child){
         display: none;
