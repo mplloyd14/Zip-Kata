@@ -1,12 +1,7 @@
 
 /* this is the required core layout */
 /* and fallback for colors if there is an error compiling evo branding on server */
-@font-face {
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(fonts/titilliumweb.woff) format('woff');
-}
+
 html,body{
     width: 100%;
     min-width: 100%;
@@ -201,11 +196,18 @@ a, a:hover {
     text-shadow: none;
 }
 .cai-color-primary{
-    color: #72b842;
-}
+     color: #72b842;
+ }
 .cai-color-secondary{
     color: #393c45;
 }
+.cai-background-color-primary{
+    background: #72b842;
+}
+.cai-background-color-secondary{
+    background: #393c45;
+}
+
 .cai-nav-pills > li{
     list-style: none;
 }
