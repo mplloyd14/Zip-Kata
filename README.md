@@ -9,6 +9,15 @@ Create a new git repo and commit the HEAD of the master branch of this repo to t
 
 DO NOT WORK DIRECTLY AGAINST THIS REPO!
 
+Create a develop branch and commit to the new repo:
+
+```
+git checkout -b develop
+git push -u origin develop
+```
+
+Follow the [gitflow] (http://nvie.com/posts/a-successful-git-branching-model/) procedures (mostly) for working on features, bugs, etc.
+
 ## Install Dependencies
 From a git shell, change to the repo working folder and execute the command:
 
