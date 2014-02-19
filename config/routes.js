@@ -4,26 +4,38 @@ module.exports = exports = function(i18n) {
 	{
     	method: 'get',
         route: '/',
-        render: {
-        	title: 'Hello World',
-            template: '/web/index'
+        redirect: {
+            desktop: '/product/mcsg/desktop',
+            mobile: '/product/mcsg/mobile'
         },
         protected: false
     },
     {
           method: 'get',
-          route: '/product/shared',
+          route: '/product/:product',
+          redirect: {
+              desktop: '/product/:product/desktop',
+              mobile: '/product/:product/mobile'
+          },
+          protected: false
+    },
+
+    {
+          method: 'get',
+          route: '/product/:product/desktop',
+          base: '/product/:product/desktop',
           render: {
-              title: 'Hello World',
+              title: 'MOBIlEconnect Style Guide',
               template: '/web/index'
           },
           protected: false
     },
 	{
     	method: 'get',
-        route: '/mobile',
+        route: '/product/:product/mobile',
+        base: '/product/:product/mobile',
         render: {
-        	title: 'Hello World',
+        	title: 'MOBIlEconnect Style Guide',
             template: '/mobile/index'
         },
         protected: false

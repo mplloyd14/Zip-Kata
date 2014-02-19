@@ -1,0 +1,76 @@
+[
+    {
+        "userName" : "ssuser",
+        "firstName": "SS",
+        "lastName": "User",
+        "email" : "admin@ssprockets.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "ss",
+		"defaultProduct": "mcsg",
+		"products": [
+            {
+                "product": "mcsg",
+                "instance": "mcsg",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                }
+            }
+		]
+    },
+
+    {
+        "userName" : "ccsuser",
+        "firstName": "CC",
+        "lastName": "User",
+        "email" : "user@ccogs.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "cc",
+		"defaultProduct": "mcsg",
+		"products": [
+            {
+                "product": "mcsg",
+                "instance": "mcsg",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                }
+            }
+		]
+    },
+
+    {
+        "userName" : "acsuser",
+        "firstName": "ACME",
+        "lastName": "User",
+        "email" : "user@acme.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "acme",
+        "defaultProduct": "mcsg",
+        "products": [
+            {
+                "product": "mcsg",
+                "instance": "mcsg",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                }
+            }
+        ]
+    }
+]

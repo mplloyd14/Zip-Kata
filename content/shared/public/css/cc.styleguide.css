@@ -1,0 +1,131 @@
+/* to run your app with branding you will have to add a new branding object to your companies document and run a mongoimport to reseed your db */
+/* the example below uses the argos colors for branding */
+/*
+        "code": "argos",
+	    "status": "active",
+        branding: {
+            "primary": "@color-primary: #0b1b4c;",
+            "secondary" : "@color-secondary: #add500;",
+            "logo" : "@logo: 'logo-commerce.png';"
+        },
+        "products": [
+            {}
+        ]
+
+*/
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(/cai/core/shared/css/fonts/titilliumweb.woff) format('woff');
+}
+a,
+a:hover {
+  color: #323232;
+}
+.cai-colorband {
+  background: #f47836;
+}
+.cai-nav {
+  border-top: solid 5px #f47836;
+  background: #323232;
+}
+.cai-nav .app-logo {
+  background: url("/assets/cc/img/cc-logo.png") no-repeat;
+}
+.cai-nav .divider {
+  border-right: 1px solid #f47836;
+}
+.cai-nav .btn {
+  color: #323232;
+  background: #f47836;
+  text-shadow: none;
+}
+.cai-nav .cai-nav .btn:hover i[class^='icon-'] {
+  color: #323232;
+}
+.cai-nav .btn:hover,
+.cai-nav .btn:focus,
+.cai-nav .btn.active,
+.cai-nav .btn.disabled,
+.cai-nav .btn:hover.active,
+.cai-nav .btn:hover.disabled,
+.cai-nav .btn:hover[disabled] {
+  background: #ffffff;
+  color: #323232;
+}
+.cai-nav .btn.disabled i[class^='icon-'],
+.cai-nav .btn.active i[class^='icon-'] {
+  color: #323232;
+}
+.cai-nav .cai-dropdown {
+  background: #f47836;
+  color: #ffffff;
+  outline: none;
+}
+.cai-nav .cai-dropdown:hover {
+  background: #ffffff;
+  color: #323232;
+}
+.cai-nav .cai-dropdown:hover i[class^='icon-'] {
+  color: #323232;
+}
+.cai-icon {
+  color: #323232;
+}
+.cai-header {
+  color: #323232;
+  border-bottom: solid 1px #f47836;
+}
+.cai-color-primary {
+  color: #323232;
+}
+.cai-color-secondary {
+  color: #f47836;
+}
+.cai-background-color-primary {
+  background: #323232;
+}
+.cai-background-color-secondary {
+  background: #f47836;
+}
+.cai-btn {
+  border-color: #656565;
+  background: #323232;
+}
+.cai-btn:hover {
+  color: #f47836;
+  background: #252525;
+  border-color: #4c4c4c;
+}
+.cai-nav-pills > li > a {
+  color: #323232;
+}
+.cai-nav-pills > .active > a,
+.cai-nav-pills > .active > a:hover,
+.cai-nav-pills > .active > a:focus {
+  background-color: #323232;
+}
+.cai-nav-pills > li > a:hover,
+.cai-nav-pills > li > a:focus {
+  background-color: #cbcbcb;
+}
+.cai-label {
+  color: #323232;
+}
+.dropdown-menu li a,
+.dropdown-menu li a i[class^='icon-'] {
+  color: #323232;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:hover i[class^='icon-'] {
+  background: #f47836;
+}
+.dropdown-menu li a.active,
+.dropdown-menu li a.active i[class^='icon-'] {
+  background: #f47836;
+}
+.dropdown-menu li .btn.active,
+.dropdown-menu li .btn.active i[class^='icon-'] {
+  background: #f47836;
+}

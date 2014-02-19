@@ -1,0 +1,22 @@
+[
+	{
+		"code": "mcsg",
+	    "name": "MOBILEconnect style guide",
+	    "description": "MOBILEconnect style guide",
+	    "roles": [
+	    	"globaladmin",
+			"appadmin",
+			"appuser"
+	    ],
+	    "routes": [
+          '/'
+	    ],
+        "settings": {
+        },
+        "platforms": {
+            "desktop": "desktop",
+            "mobile": "mobile",
+            "tablet": "desktop"
+        }
+	}
+]    

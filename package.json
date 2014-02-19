@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/app",
+    "start": "node content/mobileconnect-styleguide",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {

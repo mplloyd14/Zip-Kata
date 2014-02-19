@@ -1,0 +1,9 @@
+[
+	{
+    	"code": "mcsg",
+	    "description": "MOBILEconnect style guide",
+		"product": "mcsg",
+	    "status": "active",
+	    "baseUrl": "http://localhost:4000/product/styleguide"
+	}
+]

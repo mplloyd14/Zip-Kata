@@ -1,5 +1,5 @@
 module.exports = {
-    port : '',
+    port: 6100,
     locales : ['en'],
     authenticationServer : 'localhost:3000',
     appBase : '',
@@ -39,7 +39,7 @@ module.exports = {
         socket : {
             server : {
                 host : '',
-                port :  '',
+    	        port: 6102,
                 flashPolicyPort : 10843,
                 matchOriginProtocol : false,
                 timeout : 10000
@@ -47,7 +47,7 @@ module.exports = {
         },
         REST : {
             server : {
-                port :  ''
+                port: 6101
             }
         }
     },
@@ -68,7 +68,7 @@ module.exports = {
                     level : 'warn',
                     enabled : true,
                     filepath : '',
-                    filename : '.app.log',
+                    filename : 'mobileconnect-styleguide.app.log',
                     maxFiles : 10,
                     maxsize : 5242880
                 },
@@ -95,7 +95,7 @@ module.exports = {
     db : {
         servers : {
             mobileconnect : {
-                host : '192.168.51.60',
+                host : 'localhost',
                 port : 27017,
                 options : {
                     server : { // mongodb - server options
@@ -132,12 +132,8 @@ module.exports = {
                 }
             }
         },
-
         databases: {
             mobileconnect: {
-                server: 'mobileconnect'
-            },
-            test: {
                 server: 'mobileconnect'
             }
         },
@@ -148,16 +144,10 @@ module.exports = {
             productDefinitions: {
                 database: 'mobileconnect'
             },
-            productInstances: {
-                database: 'mobileconnect'
-            },
             users: {
                 database: 'mobileconnect'
             },
             sessions: {
-                database: 'mobileconnect'
-            },
-            testCollection: {
                 database: 'mobileconnect'
             }
         }

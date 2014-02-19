@@ -1,197 +1,122 @@
-Project-Evolution Seed
-======================
+MOBILEconnect Style Guide
+=========================
 
-Retrieve this repo to start a new application using Project Evolution
+The repo represents a sample branded application
 
-# Getting started
+# Help and Demonstration
+The site is running on the development server at caidublin.com.
 
-Create a new git repo and commit the HEAD of the master branch of this repo to the new repo.
+## Browse the site
+The site is unsecured, so no login is necessary. Simply point a browser at a url.
 
-DO NOT WORK DIRECTLY AGAINST THIS REPO!
+For Spacely Sprockets
+```
+http://ss.caidublin.com/product/mcsg
+```
+
+For Cogswell Cogs
+```
+http://cc.caidublin.com/product/mcsg
+```
+
+For ACME
+```
+http://ac.caidublin.com/product/mcsg
+```
+
+# Working with the Code
+
+Clone the repo.
+
+DO NOT WORK DIRECTLY AGAINST THIS REPO! DO NOT COMMIT OR PUSH ANY CHANGES TO THIS REPO UNLESS AUTHORIZED!
+
+Switch to the sample app branch. From a git shell, change to the repo working folder and execute the command:
+
+`git checkout styleguide`
 
 ## Install Dependencies
+
 From a git shell, change to the repo working folder and execute the command:
 
 `npm install`
 
-## Main Entry Point
-To facilitate production deployment, the main entry point file must be given a "unique" name.
+## Seed Data
+The seed data is located in the data/ sub-folder. It consists of 3 fictitious companies.
 
-Be sure to rename the file content/app.js to something representative of the project that is under construction.
+* Spacely Sprockets
+    * ss
+* Cogswell Cogs
+    * cc
+* ACME Conglomerated
+    * ac
 
-For instance, for the evolution admin "product", the file has been renamed mobileconnect.js.
+Each company has a different set of branding information (and ACME has no logo).
 
+### Load the seed data
+Run the following commands to load the data
 
-## Package definition
-Customize the package definition to reflect the product/project being developed.
-
-Select a project/product name and enter it into the package.json file as shown below.
-Additionally, set the main entry point file name in the scripts/start setting, as shown below.
-
+#### windows
 ```
-{
-  "name": "PROVIDE A PROJECT/PRODUCT NAME",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node content/MAINENTRYPOINT",
-    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
-  },
+data\import.bat
+```
 
+#### *nix
+```
+data/import.bat
 ```
 
 ## Configuration
-A default configuration file is provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
+The default settings are largely acceptable.
 
-### Ports
-To support the production environment, each running instance must be configured with a unique port numbers for the web, socket, and REST server. All servers are optional and will be created based on the providers that are implemented. 
-In general, the ports will be grouped together into a contiguous range. Please consult with the Evo team when choosing a starting port number to use.
-Enter the port number into the configuration as presented below.
+The Web server port is set to 6100.
 
-#### Web Server Port
+### Customizations
+Override the default assets path. Company branding assets, such as logos, will be stored in a common area.
+
+To simulate this, create a folder elsewhere in your file system and supply a configuration that location.
+
+For example, when running in development mode, create a file named development.js and place it in the config/ folder under the repo working folder.
+
 ```
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
-	...
+    paths: {
+        static: {
+            assets: '/path/to/your/common/assets'
+        }
+    }
 };
 ```
 
-#### Socket Server Port
+Company branding assets will be served from that folder. The convention is to create folders under the common assets folder for each company, corresponding to the company code.
+
+For example, for Spacely Sprockets, the company code is "ss", so the common asset folder would contain a sub-folder named ss/.
+
+Within a company asset folder, images are by convention assumed to be within a sub-folder named img/.
+
+For Spacely Sprockets, the logo file would be located:
 ```
-module.exports = {
-	...
-	data : {
-		...
-		socket : {
-			server : {
-				...
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
-				...
-			}
-		},	
-	...
-};
+/path/to/your/common/assets/ss/img/spacley-logo-png
 ```
-
-#### REST Server Port
-```
-module.exports = {
-	...
-	data : {
-		...
-		REST : {
-			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
-			}
-		}
-	}
-};
-```
-
-### Log File Name
-```
-module.exports = {
-	...
-	log : {
-		...
-		server : {
-			...			
-			transports : {
-				...
-				file : {
-					...
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
-					...
-				},
-				...
-			}
-		},
-	},
-	...
-};
-```
-
-## Testing
-A set of default configuration files are provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
-
-All configuration files are in the test/config/ folder.
-
-A set of scripts are provided to execute tests. All scripts are in the scripts/ folder.
-
-### All Tests
-To execute all tests and generate output to files, execute the following command: 
-
-##### Windows
-`scripts\test.bat`
-
-##### *nix
-`./scripts/test.sh`
-
-### Unit Testing
-Unit testing is divided into Server and Client. Mocha is used in conjunction with Chai, Sinon, and other helpful libraries for both Server and Client testsing.
-
-#### Server
-To execute server tests (only), execute the following command: (obviously, write the tests first!)
-
-`npm test`
-
-Or, to capture the output to a file:
-
-##### Windows
-`scripts\server-test.bat`
-
-##### *nix
-`./scripts/server-test.sh`
-
-#### Client
-Client testing makes use of Karma in addition to the other tools. 
-
-##### Configuration
-There are 2 configuration files for Karma, 1 to run all tests and capture the output to a file and another for development purposes that can be used to isolate testing and interactively test.
-
-test/config/karma.conf.js is the configuration that will run ALL tests and capture the output to a file. This configuration should not be used (or modified) during development.
-
-test/config/karma-dev.conf.js is the configuration that can be used during development to perform isolated and interactive testing. This configuration should be used (and modified) during development.
-
-To execute client tests (only), execute the following command: (obviously, write the tests first!)
-
-##### Windows
-`scripts\client-test.bat`
-
-##### *nix
-`./scripts/client-test.sh`
-
-
-### End to End (e2e) Testing
-Protractor is used in conjunction with Selenium. Protractor uses a flavor of Jasmine and the syntax of tests is slightly different from the Server/Client tests.
-
-##### Selenium
-To start the selenium server, execute the following command:
-
-###### Windows
-`scripts\start-selenium.bat`
-
-###### *nix
-`./scripts/start-selenium.sh`
-
-
-##### Configuration
-There are 2 configuration files for Protractor, 1 to run all tests and capture the output to a file and another for development purposes that can be used to isolate testing.
-
-test/config/protractor.conf.js is the configuration that will run ALL tests and capture the output to a file. This configuration should not be used (or modified) during development.
-
-test/config/protractor-dev.conf.js is the configuration that can be used during development to perform isolated and interactive testing. This configuration should be used (and modified) during development.
-
-To execute e2e tests (only), execute the following command: (obviously, write the tests first!)
-
-##### Windows
-`scripts\e2e-test.bat`
-
-##### *nix
-`./scripts/e2e-test.sh`
-
 
 ## Start the project
 From a command shell, execute the following command:
 
 `npm start`
+
+## Browse the site
+The site is unsecured, so no login is necessary. Simply point a browser at a url.
+
+For Spacely Sprockets
+```
+http://ss.localhost:6100/product/mcsg
+```
+
+For Cogswell Cogs
+```
+http://cc.localhost:6100/product/mcsg
+```
+
+For ACME
+```
+http://ac.localhost:6100/product/mcsg
+```
