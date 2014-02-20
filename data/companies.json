@@ -10,8 +10,8 @@
         },
         "products": [
             {
-                "code": "mcsg",
-                "instance": "mcsg",
+                "code": "styleguide",
+                "instance": "styleguide",
                 "settings": {
                 }
             }
@@ -29,8 +29,8 @@
         },
         "products": [
             {
-                "code": "mcsg",
-                "instance": "mcsg",
+                "code": "styleguide",
+                "instance": "styleguide",
                 "settings": {
                 }
             }
@@ -49,8 +49,8 @@
 
         "products": [
             {
-                "code": "mcsg",
-                "instance": "mcsg",
+                "code": "styleguide",
+                "instance": "styleguide",
                 "settings": {
                 }
             }

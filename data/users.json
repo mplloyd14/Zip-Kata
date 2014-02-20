@@ -10,11 +10,11 @@
         "pass": "go",
         "status": "Active",
         "company": "ss",
-		"defaultProduct": "mcsg",
+		"defaultProduct": "styleguide",
 		"products": [
             {
-                "product": "mcsg",
-                "instance": "mcsg",
+                "product": "styleguide",
+                "instance": "styleguide",
                 "roles": [
                     "appuser"
                 ],
@@ -35,11 +35,11 @@
         "pass": "go",
         "status": "Active",
         "company": "cc",
-		"defaultProduct": "mcsg",
+		"defaultProduct": "styleguide",
 		"products": [
             {
-                "product": "mcsg",
-                "instance": "mcsg",
+                "product": "styleguide",
+                "instance": "styleguide",
                 "roles": [
                     "appuser"
                 ],
@@ -60,11 +60,11 @@
         "pass": "go",
         "status": "Active",
         "company": "acme",
-        "defaultProduct": "mcsg",
+        "defaultProduct": "styleguide",
         "products": [
             {
-                "product": "mcsg",
-                "instance": "mcsg",
+                "product": "styleguide",
+                "instance": "styleguide",
                 "roles": [
                     "appuser"
                 ],
