@@ -5,8 +5,8 @@ module.exports = exports = function(i18n) {
     	method: 'get',
         route: '/',
         redirect: {
-            desktop: '/product/mcsg/desktop',
-            mobile: '/product/mcsg/mobile'
+            desktop: '/product/styleguide/desktop',
+            mobile: '/product/styleguide/mobile'
         },
         protected: false
     },

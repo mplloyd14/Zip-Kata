@@ -11,17 +11,17 @@ The site is unsecured, so no login is necessary. Simply point a browser at a url
 
 For Spacely Sprockets
 ```
-http://ss.caidublin.com/product/mcsg
+http://ss.caidublin.com/product/styleguide
 ```
 
 For Cogswell Cogs
 ```
-http://cc.caidublin.com/product/mcsg
+http://cc.caidublin.com/product/styleguide
 ```
 
 For ACME
 ```
-http://ac.caidublin.com/product/mcsg
+http://ac.caidublin.com/product/styleguide
 ```
 
 # Working with the Code
@@ -108,15 +108,15 @@ The site is unsecured, so no login is necessary. Simply point a browser at a url
 
 For Spacely Sprockets
 ```
-http://ss.localhost:6100/product/mcsg
+http://ss.localhost:6100/product/styleguide
 ```
 
 For Cogswell Cogs
 ```
-http://cc.localhost:6100/product/mcsg
+http://cc.localhost:6100/product/styleguide
 ```
 
 For ACME
 ```
-http://ac.localhost:6100/product/mcsg
+http://ac.localhost:6100/product/styleguide
 ```
