@@ -4,11 +4,11 @@ html(ng-app="peApp")
 		meta(charset='utf8')
 		//base(href='/')
 		title #{title}
-		script(src="/shared/bootstrap/js/bootstrap.js")
-		link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/shared/font-awesome/css/font-awesome.min.css')
-		link(rel='stylesheet', href='/web/css/app.css')
-		link(rel='stylesheet', href='/cai/core/shared/css/evo-default.css')
+		script(src="#{config.appBase}/shared/bootstrap/js/bootstrap.js")
+		link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
+		link(rel='stylesheet', href='#{config.appBase}/cai/core/shared/css/evo-default.css')
 		meta(name='viewport', content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, user-scalable=no')
 	body
 		include /core/shared/scripts

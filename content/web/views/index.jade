@@ -1,7 +1,7 @@
 extends layout
 block body
-	script(src='/web/js/controllers/mainController.js')
-	script(src='/web/js/app.js')
+	script(src='#{config.appBase}/web/js/controllers/mainController.js')
+	script(src='#{config.appBase}/web/js/app.js')
 	header.cai-nav.navbar-fixed-top
 		h1
 			div.app-logo
