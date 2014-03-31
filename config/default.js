@@ -35,18 +35,20 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			'SocketProvider.js',
+			'RestProvider.js'
 		],
 		socket : {
 			server : {
-				host : '',
 				port :  4002,
-				matchOriginProtocol : false,
+				//matchOriginProtocol : false,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
 				port :  4001
+				//port: 8181
 			}
 		}
 	},
