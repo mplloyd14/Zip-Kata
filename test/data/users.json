@@ -23,7 +23,7 @@
 		]
     },
     {
-        "userName" : "t2user",
+        "userName" : "dev2user",
         "firstName": "test",
         "lastName": "User",
         "email" : "user@cai-mobileconnect.com",
@@ -32,12 +32,12 @@
         "loginAttempts" : 0,
         "pass": "go",
         "status": "Active",
-        "company": "t2",
-        "defaultProduct": "peseed-t2",
+        "company": "dev2",
+        "defaultProduct": "peseed-dev2",
         "products": [
             {
                 "product": "peseed",
-                "instance": "peseed-t2",
+                "instance": "peseed-dev2",
                 "roles": [
                     "user"
                 ],

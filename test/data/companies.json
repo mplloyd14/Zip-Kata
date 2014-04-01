@@ -34,13 +34,13 @@
         ]
 	},
 	{
-		"code": "t2",
+		"code": "dev2",
 		"description": "Development Company Tenant2",
 		"status": "active",
 		"products": [
 			{
 				"code": "peseed",
-				"instance": "peseed-t2",
+				"instance": "peseed-dev2",
 				"settings": {
 					"dataEndPoints": {
 						"PeSeedPushService" : {
