@@ -11,7 +11,7 @@ module.exports = {
 			handler: function(data){
 				var name = data.name
 				//return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
-				Q.resolve({
+				return Q.resolve({
 					"name": "Dev company User",
 					"first": "BigDaddy",
 					"last": "Brant",

@@ -2,17 +2,12 @@ var Q = require('q');
 module.exports = {
     'type' : 'REST',
     'services' : {
-		"/name/:name" : [{
+		"/peseed/name/:name" : [{
             "method" : "post",
             "version" : "0.1.0",
             "event": "dataReceived"
 
-        }]/*,
-        "/peseed/name/:name/status" : [{
-            "method" : "post",
-            "version" : "0.1.0",
-            "event": "statusReceived"
-        }]*/
+        }]
     },
     'requests' : [
         {
@@ -23,7 +18,7 @@ module.exports = {
                 'event': 'roomCreated',
 				'regEx': '/peseed/name/.*',
                 'reoccur' : {
-                    'interval' : '*/10 * * * * *',
+                    'interval' : '*/30 * * * * *',
                     'terminationEvent' : 'roomClosed'
                 }
 

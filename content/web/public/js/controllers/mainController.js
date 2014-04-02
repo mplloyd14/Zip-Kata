@@ -13,9 +13,8 @@ cai.module('peControllers', ['cai.services'])
 		$scope.submitName = function(){
 			apiProvider.callFunction('getPESeedData',{name: $scope.enteredName}).then(function(message){
 				console.log("Result of getPESeedData is " + message.result);
-				//var data = JSON.parse(message.result);
-				$scope.userData = JSON.parse(message.result);
-				$scope.message = 'Hello ' + data.name;
+				$scope.userData = message.result;
+				$scope.message = 'Hello ' + $scope.userData;
 			});
 		};
 
@@ -23,9 +22,8 @@ cai.module('peControllers', ['cai.services'])
 
 		$rootScope.$on("dataReceived", function (event, message) {
 			console.log("Event dataReceived fired with : " + message);
-			//var data = JSON.parse(message.data);
 			$scope.postCount = $scope.postCount + 1;
-			$scope.userData = JSON.parse(message.data);
+			$scope.userData = message.data.body;
 			$scope.message = 'Post Received: ' + $scope.postCount;
 
 			$scope.$apply();
@@ -33,7 +31,6 @@ cai.module('peControllers', ['cai.services'])
 		});
 
 		$rootScope.$on("dataGot", function (event, message) {
-			//var data = JSON.parse(message.data);
 			$scope.userData = JSON.parse(message.data);
 			$scope.count = $scope.count + 1;
 			$scope.message = 'Event Received: ' + $scope.count;
