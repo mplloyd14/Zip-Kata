@@ -13,8 +13,8 @@ module.exports = {
 				//return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
 				return Q.resolve({
 					"name": "Dev company User",
-					"first": "BigDaddy",
-					"last": "Brant",
+					"first": name,
+					"last": "User",
 					"eye": "Green",
 					"hair": "Blonde"});
 			},

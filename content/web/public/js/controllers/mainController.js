@@ -14,7 +14,7 @@ cai.module('peControllers', ['cai.services'])
 			apiProvider.callFunction('getPESeedData',{name: $scope.enteredName}).then(function(message){
 				console.log("Result of getPESeedData is " + message.result);
 				$scope.userData = message.result;
-				$scope.message = 'Hello ' + $scope.userData;
+				$scope.message = 'Hello ' + $scope.userData.first;
 			});
 		};
 
@@ -39,9 +39,6 @@ cai.module('peControllers', ['cai.services'])
 			console.log("Event dataGot fired with : " + message);
 		});
 
-/*		$rootScope.$on("statusReceived", function (event, message) {
-			console.log("Event statusReceived fired with : " + message);
-		});*/
 	});
 
 
