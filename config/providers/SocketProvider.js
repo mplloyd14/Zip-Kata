@@ -16,8 +16,7 @@ module.exports = {
 					"first": "BigDaddy",
 					"last": "Brant",
 					"eye": "Green",
-					"hair": "Blonde",
-					"sex": "Yes Please"});
+					"hair": "Blonde"});
 			},
 			room: {
 				id: "|URL|",
