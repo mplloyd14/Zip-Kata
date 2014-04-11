@@ -12,11 +12,11 @@ module.exports = {
 				var name = data.name
 				//return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
 				return Q.resolve({
-					"name": "Dev company User",
+					"name": "TweetyBird",
 					"first": name,
-					"last": "User",
+					"last": "Bird",
 					"eye": "Green",
-					"hair": "Blonde"});
+					"hair": "Yellow"});
 			},
 			room: {
 				id: "|URL|",
