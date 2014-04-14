@@ -13,7 +13,7 @@ module.exports = {
 				return Q.resolve({
 					"name": "DevUser",
 					"first": name,
-					"last": "Last",
+					"last": "",
 					"eye": "Green",
 					"hair": "Yellow"});
 			}

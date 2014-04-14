@@ -1,5 +1,5 @@
 module.exports = {
-	port  :4000,
+	//port  :4000,
 	locales : ['en'],
 	authenticationServer : '',
 	appBase : '',
