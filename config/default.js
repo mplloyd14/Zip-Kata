@@ -35,6 +35,8 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			'SocketProvider.js',
+			'workaround.js'
 		],
 		socket : {
 			server : {
