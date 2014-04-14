@@ -1,0 +1,17 @@
+[=
+	{
+		"code": "peseed",
+	    "name": "MOBILEpeseed",
+	    "description": "COMMANDalkon's peseed solution",
+	    "roles": [
+	    	"admin",
+			"user"
+	    ],
+	    "routes": [
+          "/root"
+	    ],
+        "settings": {
+        },
+        "platforms": ["desktop"]
+	}
+]    

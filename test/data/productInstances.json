@@ -1,0 +1,16 @@
+[
+	{
+    	"code": "peseed-dev",
+	    "description": "Pe-seed for dev",
+		"product": "peseed",
+	    "status": "active",
+	    "baseUrl": "http://dev.localhost:4000/product/peseed"
+	},
+	{
+		"code": "peseed-dev2",
+		"description": "Pe-seed for dev2",
+		"product": "peseed",
+		"status": "active",
+		"baseUrl": "http://dev2.localhost:4000/product/peseed"
+	}
+]

@@ -1,9 +1,9 @@
 {
-  "name": "pe-seed",
+  "name": "pe-seedContextBranch",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/app",
+    "start": "node content/context",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
@@ -24,6 +24,9 @@
     "protractor": "*",
 	"jasmine-reporters": "~0.2.1",
     "karma": "*",
+	"karma-mocha" : "*",
+	"karma-chrome-launcher" : "*",
+	"karma-junit-reporter" : "*",
     "mocha": "=1.10.0",
     "chai": "=1.5.0",
     "sinon": "=1.6.0",

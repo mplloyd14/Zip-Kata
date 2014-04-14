@@ -20,14 +20,14 @@ set BASE_DIR=%~dp0
 @echo -------------------------------------------------------------------
 
 
-@echo Running server tests...
-node "%BASE_DIR%\..\node_modules\mocha\bin\mocha" -R xunit "%BASE_DIR%\..\test\unit\server" --globals "NODE_CONFIG,exportscoffeeScript" > "%BASE_DIR%\..\test\out\unit_server.xml"
+REM @echo Running server tests...
+REM node "%BASE_DIR%\..\node_modules\mocha\bin\mocha" -R xunit "%BASE_DIR%\..\test\unit\server" --globals "NODE_CONFIG,exportscoffeeScript" > "%BASE_DIR%\..\test\out\unit_server.xml"
 
 @echo Running client tests...
 node "%BASE_DIR%\..\node_modules\karma\bin\karma" start "%BASE_DIR%\..\test\config\karma.conf.js" %*
 
-@echo Running e2e tests...
-node "%BASE_DIR%\..\node_modules\protractor\bin\protractor" "%BASE_DIR%\..\test\config\protractor.conf.js" %*
+REM @echo Running e2e tests...
+REM node "%BASE_DIR%\..\node_modules\protractor\bin\protractor" "%BASE_DIR%\..\test\config\protractor.conf.js" %*
 
 @echo all test suites complete
 @echo -------------------------------------------------------------------

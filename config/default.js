@@ -1,8 +1,9 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	//port  :4000,
 	locales : ['en'],
-	authenticationServer : 'localhost:3000',
+	authenticationServer : '',
 	appBase : '',
+    product_code : '',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -37,16 +38,15 @@ module.exports = {
 		],
 		socket : {
 			server : {
-				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
-				flashPolicyPort : 10843,
-				matchOriginProtocol : false,
-				timeout : 10000
+				//port :  ,
+				//matchOriginProtocol : false,
+				//timeout :
 			}
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				//port :  4001
+				//port: 8181
 			}
 		}
 	},
@@ -54,28 +54,6 @@ module.exports = {
 		loggly : {
 			subdomain : 'cai', // loggly user account subdomain
 			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
-		},
-		server : { // server-side logging parameters
-			levels : ['error', 'warn', 'info', 'debug'], // available log levels
-			transports : { // supported logging transports
-				console : {
-					level : 'info', // maximum level of logged messages
-					colorize : true, // color levels
-					enabled : true // this switch can be used to easily toggle use of a given transport
-				},
-				file : {
-					level : 'warn',
-					enabled : true,
-					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
-					maxFiles : 10,
-					maxsize : 5242880
-				},
-				loggly : {
-					level : 'warn',
-					enabled : false
-				}
-			}
 		},
 		client : { // client-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
@@ -136,10 +114,19 @@ module.exports = {
 				server : 'mobileconnect'
 			}
 		},
-		collections : {
-			sessions : {
-				database : 'mobileconnect'
-			}
-		}
+        collections: {
+            sessions: {
+                database: 'mobileconnect'
+            },
+            users: {
+                database: 'mobileconnect'
+            },
+            companies: {
+                database: 'mobileconnect'
+            },
+            productDefinitions: {
+                database: 'mobileconnect'
+            }
+        }
 	}
 };
