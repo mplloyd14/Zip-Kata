@@ -1,9 +1,9 @@
 module.exports = {
 	port  :4000,
 	locales : ['en'],
-	authenticationServer : 'localhost:3000',
+	authenticationServer : '',
 	appBase : '',
-    product_code : 'peseed',
+    product_code : '',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -35,20 +35,17 @@ module.exports = {
 	},
 	data : {
 		providers : [
-			'SocketProvider.js',
-			'RestProvider.js',
-			'workaround.js'
 		],
 		socket : {
 			server : {
-				port :  4002,
+				//port :  ,
 				//matchOriginProtocol : false,
-				timeout : 10000
+				//timeout :
 			}
 		},
 		REST : {
 			server : {
-				port :  4001
+				//port :  4001
 				//port: 8181
 			}
 		}

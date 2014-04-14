@@ -10,23 +10,12 @@ module.exports = {
 		getPESeedData: {
 			handler: function(data){
 				var name = data.name
-				//return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
 				return Q.resolve({
-					"name": "TweetyBird",
+					"name": "DevUser",
 					"first": name,
-					"last": "Bird",
+					"last": "Last",
 					"eye": "Green",
 					"hair": "Yellow"});
-			},
-			room: {
-				id: "|URL|",
-				client: true,
-				url: "/peseed/{name}",
-				announce: true
 			}
-		}},
-    emitters : {
-        events : [{'event' :  "dataReceived", 'room': '|URL|'},{'event' :  "dataGot", 'room': '|URL|'}]
-
-    }
+		}}
 };
