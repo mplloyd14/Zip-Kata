@@ -1,9 +1,9 @@
 module.exports = {
-	//port  :4000,
-	locales : ['en'],
-	authenticationServer : '',
+	port  : 5000,
+	locales : ['en', 'es'],
+	authenticationServer : 'localhost:3000',
 	appBase : '',
-    product_code : '',
+    product_code : 'localedemo',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -35,19 +35,13 @@ module.exports = {
 	},
 	data : {
 		providers : [
-			'workaround.js'
+			'statesProvider.js'
 		],
 		socket : {
 			server : {
-				//port :  ,
-				//matchOriginProtocol : false,
-				//timeout :
-			}
-		},
-		REST : {
-			server : {
-				//port :  4001
-				//port: 8181
+				port :  5002,
+				matchOriginProtocol : false,
+				timeout : 30000
 			}
 		}
 	},
@@ -56,6 +50,28 @@ module.exports = {
 			subdomain : 'cai', // loggly user account subdomain
 			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
 		},
+        server: { // server-side logging parameters
+            levels: ['error', 'warn', 'info', 'debug'], // available log levels
+            transports: { // array of logging transports
+                console: {
+                    level: 'info', // maximum level of logged messages
+                    colorize: true, // color levels
+                    enabled: true // this switch can be used to easily toggle use of a given transport
+                },
+                file: {
+                    level: 'warn',
+                    enabled: true,
+                    filepath: '',
+                    filename: 'localedemo.app.log',
+                    maxFiles: 10,
+                    maxsize: 5242880
+                },
+                loggly: {
+                    level: 'warn',
+                    enabled: false
+                }
+            }
+        },        
 		client : { // client-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : {	// supported logging transports
@@ -113,6 +129,9 @@ module.exports = {
 		databases : {
 			mobileconnect : {
 				server : 'mobileconnect'
+			},
+			localedemo: {
+				server : 'mobileconnect'
 			}
 		},
         collections: {
@@ -127,6 +146,9 @@ module.exports = {
             },
             productDefinitions: {
                 database: 'mobileconnect'
+            },
+            states: {
+                database: 'localedemo'
             }
         }
 	}

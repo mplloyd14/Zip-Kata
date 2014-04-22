@@ -1,0 +1,73 @@
+[
+    {
+        "userName" : "ssuser",
+        "firstName": "SS",
+        "lastName": "User",
+        "email" : "admin@ssprockets.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "ss",
+        "products": [
+            {
+                "code": "localedemo",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                    "state": "WI"
+                }
+            }
+        ]
+    },
+
+    {
+        "userName" : "ccsuser",
+        "firstName": "CC",
+        "lastName": "User",
+        "email" : "user@ccogs.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "cc",
+        "products": [
+            {
+                "code": "localedemo",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                    "state": "OH"
+                }
+            }
+        ]
+    },
+
+    {
+        "userName" : "acsuser",
+        "firstName": "ACME",
+        "lastName": "User",
+        "email" : "user@acme.com",
+        "passwordLifetime": 0,
+        "resetPassword" : false,
+        "loginAttempts" : 0,
+        "pass": "go",
+        "status": "Active",
+        "company": "acme",
+        "products": [
+            {
+                "code": "localedemo",
+                "roles": [
+                    "appuser"
+                ],
+                "settings": {
+                    "state": "UT"
+                }
+            }
+        ]
+    }
+]
