@@ -1,2 +1,29 @@
 script#hello(type='text/ng-template')
-	h2#hellomsg {{message}}
+    h2#titleGreeting #{__("txtHello")} {{firstName}} {{lastName}}
+
+    h3#titleStates #{__("txtCitiesInState")} : {{state.state}}
+
+    div#top-pagination(class="paginate", ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")
+
+    div
+        table#citylist.table.table-striped
+            thead
+                th #{__("txtCity")}
+                th #{__("txtZip")}
+                th #{__("txtPopulation")}
+                th #{__("txtLat")}
+                th #{__("txtLng")}
+            tbody
+                tr(ng-repeat="city in state.cities | pageUpdate:update_paginate() | pageStart:(currentPage-1)*maxPerPage | limitTo:maxPerPage", id="city_{{$index}}", style="cursor:pointer;")
+                    td {{city.city}}
+                    td.colcenter {{city.zip}}
+                    td.colcenter {{city.pop | number}}
+                    td.colcenter {{city.loc[0] | number:5}}
+                    td.colcenter {{city.loc[1] | number:5}}
+
+    div#bottom-pagination(class="paginate", ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")
+
+    div#footer
+        p {{localMsg}}

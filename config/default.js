@@ -27,7 +27,8 @@ module.exports = {
 		static : {
 			web : 'content/web/public',
 			mobile : 'content/mobile/public',
-			shared : 'content/shared/public'
+			shared : 'content/shared/public',
+            locales : 'content/locales'
 		},
 		locales : 'content/locales',
 		providers : 'config/providers',
@@ -43,7 +44,12 @@ module.exports = {
 				matchOriginProtocol : false,
 				timeout : 30000
 			}
-		}
+        },
+        REST: {
+            server : {
+                port: 5001
+            }
+        }
 	},
 	log : {
 		loggly : {

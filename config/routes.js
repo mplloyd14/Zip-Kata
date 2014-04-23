@@ -30,7 +30,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
 			render: {
-				title: 'PESeed',
+				title: 'MOBILEconnect Locale Demo',
 				template: '/web/index'
 			},
 			protected: true
