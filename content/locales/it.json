@@ -1,0 +1,10 @@
+{
+    "txtHello": "Ciao",
+    "txtCitiesInState": "Queste sono le città nel tuo stato",
+    "txtCity": "Città",
+    "txtZip": "Codice Postale",
+    "txtPopulation": "Popolazione",
+    "txtLat": "Latitudine",
+    "txtLng": "Longitudine",
+    "txtLocalMsg": "Questo è un messaggio che deve essere tradotto nel client"
+}

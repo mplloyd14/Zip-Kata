@@ -7,7 +7,11 @@ cai.module('peControllers', ['cai.services'])
 
         $scope.firstName = user.data.firstName;
         $scope.lastName = user.data.lastName;
-        $scope.localMsg = i18n.__('txtLocalMsg');
+
+        i18n.ensureLocaleIsLoaded().then( function() {
+            // Chaining on the promise returned from ensureLocaleIsLoaded() will make sure the translation is loaded.
+            $scope.localMsg = i18n.__('txtLocalMsg');
+        });
 
         $scope.paginationSettings = settings.pagination;
 

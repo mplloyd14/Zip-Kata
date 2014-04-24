@@ -1,6 +1,6 @@
 module.exports = {
 	port  : 5000,
-	locales : ['en', 'es'],
+	locales : ['en', 'es', 'it'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
     product_code : 'localedemo',
