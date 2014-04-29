@@ -1,1 +1,10 @@
-{}
+{
+	"Simple": "Simple",
+	"Complex": "Complex",
+	"Table": "Table",
+	"Simple View": "Simple View",
+	"This is for everyone": "This is for everyone",
+	"Complex View": "Complex View",
+	"Table View": "Table View",
+	"Logout": "Logout"
+}

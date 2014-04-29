@@ -1,0 +1,21 @@
+extends layout
+
+block body
+    div(ng-controller="MainController")
+        h1 Web
+        div
+            a(href="#/simple") #{__('Simple')} |
+            a(href="#/complex") #{__('Complex')} |
+            a(href="#/table") #{__('Table')}
+            a(href="#", ng-click="logout()", style="padding-left: 80%;") #{__('Logout')} {{firstName}} {{lastName}}
+    div(ng-view)
+        
+    include partials/simpleView.jade
+    include partials/complexView.jade
+    include partials/tableView.jade
+
+    script(src='/web/js/controllers/mainController.js')
+    script(src='/web/js/controllers/simpleViewController.js')
+    script(src='/web/js/controllers/complexViewController.js')
+    script(src='/web/js/controllers/tableViewController.js')
+    script(src='/web/js/app.js')

@@ -1,11 +1,22 @@
 var mongo = require('mongodb'),
 	Q = require('q'),
 	config = require('config');
+    
+function getConnectInfo(name) {
+    var collCfg = config.db.collections[name];
+    var dbCfg = collCfg ? config.db.databases[collCfg.database] : null;
+    var srvCfg = dbCfg ? config.db.servers[dbCfg.server] : {};
+    return {
+    	host: srvCfg.host, 
+        port: srvCfg.port,
+        database: collCfg.database
+	};
+}    
 
 function resetAll(name, data) {
-	var cfg = config.db[name],
-    	server = new mongo.Server(cfg.host, cfg.port),
-        conn = new mongo.Db(cfg.name, server, {safe: true});	
+	var connInfo = getConnectInfo(name);
+    var server = new mongo.Server(connInfo.host, connInfo.port),
+        conn = new mongo.Db(connInfo.database, server, {safe: true});	
         
 	//console.log('reset ' + name + ' on database ' + cfg.name);
 	//console.log('open');
@@ -47,9 +58,9 @@ function resetAll(name, data) {
 }
 
 function retrieveAll(name) {
-	var cfg = config.db[name],
-    	server = new mongo.Server(cfg.host, cfg.port),
-        conn = new mongo.Db(cfg.name, server, {safe: true});	
+	var connInfo = getConnectInfo(name);
+    var server = new mongo.Server(connInfo.host, connInfo.port),
+        conn = new mongo.Db(connInfo.database, server, {safe: true});	
         
 	return Q.ninvoke(conn, 'open')
     	.then(function(db) {

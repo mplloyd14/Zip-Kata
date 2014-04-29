@@ -1,0 +1,19 @@
+!!!
+html(ng-app="peApp")
+  head
+    meta(charset='utf8')
+    //base(href='/')
+    title #{title}
+    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/cai/core/shared/css/evo-default.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // load branding styles
+    include /core/shared/branding
+
+  body(i18n-locale=i18n.getLocale())
+    include /core/shared/scripts
+
+    block body

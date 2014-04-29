@@ -1,0 +1,10 @@
+script#simpleView(type='text/ng-template')
+    h1 #{__('Simple View')}
+    div.well
+        label #{__('This is for everyone')}
+        input(ng-model="input0")
+        ng-include(src="'canInput1Template'")
+        ng-include(src="'canInput2Template'")
+        ng-include(src="'canInput3Template'")
+    //div.well
+        a(href="#", ng-click="logout()") Logout

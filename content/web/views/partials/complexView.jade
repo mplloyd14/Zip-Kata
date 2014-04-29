@@ -1,0 +1,7 @@
+script#complexView(type='text/ng-template')
+    h1 #{__('Complex View')}
+    div.well
+        label #{__('This is for everyone')}
+        input(ng-model="input0")
+    ng-include(src="'canInput1_ViewOneTemplate'")
+    ng-include(src="'canInput1_ViewTwoTemplate'")

@@ -1,33 +1,39 @@
 // Routes
 module.exports = exports = function(i18n) {
-  return [
-	{
-    	method: 'get',
-        route: '/peseed/simple',
-        render: {
-        	title: 'Simple',
-            template: '/web/simpleView'
-        },
-        protected: true
-    },
-	{
-    	method: 'get',
-        route: '/peseed/complex',
-        render: {
-        	title: 'Complex',
-            template: '/web/complexView'
-        },
-        protected: true
-    },
-    {
-        method: 'get',
-        route: '/peseed/table',
-        render: {
-            title: 'Table',
-            template: '/web/tableView'
-        },
-        protected: true
-    }
+	return [
+		{
+			method: 'get',
+			route: '/',
+			redirect: '/product/permissiondemo',
+			protected: false
+		},
 
-  ];
+		{
+			method: 'get',
+			route: '/product/:product',
+			redirect: '/product/permissiondemo/root',
+			protected: true
+		},
+
+		{
+			method: 'get',
+			route: '/product/:product/root',
+			redirect: {
+				desktop: '/product/:product/desktop',
+				mobile: '/product/:product/mobile'
+			},
+			protected: true
+		},
+
+		{
+			method: 'get',
+			route: '/product/:product/desktop*',
+			base: '/product/:product/desktop',
+			render: {
+				title: 'MOBILEconnect Permissions Demo',
+				template: '/web/index'
+			},
+			protected: true
+		}
+	];
 }
