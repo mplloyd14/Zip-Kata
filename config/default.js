@@ -158,4 +158,11 @@ module.exports = {
             }
         }
 	}
+	,backdoor: {
+        user: 'ssuser',
+        context: {
+            company: 'ss',
+            product: 'localedemo'
+        }
+    }	
 };
