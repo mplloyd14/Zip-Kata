@@ -14,7 +14,7 @@
             {
                 "code": "permissiondemo",
                 "roles": [
-                    "userA"
+                    "roleA"
                 ],
                 "settings": {
                     "permissions": {
@@ -43,7 +43,7 @@
             {
                 "code": "permissiondemo",
                 "roles": [
-                    "userB"
+                    "roleB"
                 ],
                 "settings": {
                     "permissions": {
@@ -72,7 +72,7 @@
             {
                 "code": "permissiondemo",
                 "roles": [
-                    "userC"
+                    "roleC"
                 ],
                 "settings": {
                     "permissions": {
