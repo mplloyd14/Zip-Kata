@@ -34,11 +34,11 @@ From a command shell, change to the demo working folder and execute the command:
 `./scripts/import.sh`
 
 ## Start the project
-From a command shell, change to the demo working forlder and execute the following command:
+From a command shell, change to the demo working folder and execute the following command:
 
 `npm start`
 
-From another command shell, change to the Project-Evolution working forlder and execute the following command:
+From another command shell, change to the Project-Evolution working folder and execute the following command:
 
 `npm start`
 

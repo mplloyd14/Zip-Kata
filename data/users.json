@@ -43,6 +43,7 @@
             {
                 "code": "permissiondemo",
                 "roles": [
+                    "roleA",
                     "roleB"
                 ],
                 "settings": {

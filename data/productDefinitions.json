@@ -6,9 +6,9 @@
 	    "roles": [
 	    	"globaladmin",
 			"appadmin",
-			"userA",
-            "userB",
-            "userC"
+			"roleA",
+            "roleB",
+            "roleC"
 	    ],
         "settings": {
             "timeZone": {
