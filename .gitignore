@@ -30,6 +30,7 @@ config/production.js
 ############
 ## Misc
 ############
+content/shared/public/css/*styleguide.css
 test/out/
 logs/*.log
 *.pst
