@@ -10,7 +10,7 @@
                 "settings": {
                     "dataEndPoints": {
                         "PeSeedPushService" : {
-                            "EndPointAddress" : "127.0.0.1",
+                            "EndPointAddress" : "192.168.50.74",
                             "Port" : "4001",
                             "Type" : "REST",
                             "SubType" : "Server"
@@ -44,7 +44,7 @@
 				"settings": {
 					"dataEndPoints": {
 						"PeSeedPushService" : {
-							"EndPointAddress" : "127.0.0.1",
+							"EndPointAddress" : "contextdemo",
 							"Port" : "4001",
 							"Type" : "REST",
 							"SubType" : "Server"
