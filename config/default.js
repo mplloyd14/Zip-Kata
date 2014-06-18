@@ -2,6 +2,7 @@ module.exports = {
 	port  :4000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
+	authTokenSecret: 'ds4234ds22',
 	appBase : '',
     product_code : 'peseed',
 	client : {
@@ -131,5 +132,10 @@ module.exports = {
                 database: 'mobileconnect'
             }
         }
-	}
+	},
+  apiServer: {
+    host: 'http://localhost:4010',
+    routeRegistrationPath: '/routes/refresh'
+  }
+
 };
