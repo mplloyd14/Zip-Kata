@@ -1,24 +1,17 @@
 {
-  "name": "pe-seedContextBranch",
+  "name": "pe-seed",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/context",
+    "start": "node content/app",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
     "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",
     "express": "3.1.0",
     "jade": "=0.33.0",
-    "mongodb": "=1.2.13",
     "q": "=0.9.2",
-    "underscore": "=1.4.4",
-    "i18n": "=0.4.0",
-    "generic-pool": "=2.0.3",
-    "config": "=0.4.21",
-    "socket.io": "~0.9.13",
-    "request": "~2.21.0",
-    "express-expose": "~0.3.3"   
+    "lodash-node": "=2.2.1"
   },
   "devDependencies": {
     "protractor": "*",
