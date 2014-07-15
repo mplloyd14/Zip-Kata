@@ -1,5 +1,5 @@
 {
-  "name": "pe-seed",
+  "name": "pe-seed-etl",
   "version": "0.0.1",
   "private": true,
   "scripts": {

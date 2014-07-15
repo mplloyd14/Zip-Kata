@@ -1,0 +1,19 @@
+[
+    {
+        "code": "etldemo",
+        "name": "ETL Demo",
+        "description": "Demonstration of ETL",
+        "roles": [
+            "globaladmin",
+            "appadmin",
+            "appuser"
+        ],
+        "settings": {
+        },
+        "platforms": {
+            "desktop": "desktop",
+            "mobile": "mobile",
+            "tablet": "desktop"
+        }
+    }
+]
