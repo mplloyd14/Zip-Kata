@@ -1,0 +1,21 @@
+{
+    "code": "",
+    "name": "",
+    "nickname": "",
+    "city": "",
+    "conference": "",
+    "division": "",
+    "record": {
+        "wins": 0,
+        "losses": 0,
+        "overtimelosses": 0
+    },
+    "roster": [
+        {
+            "fname": "",
+            "lname": "",
+            "number": 0,
+            "position": ""
+        }
+    ]
+}

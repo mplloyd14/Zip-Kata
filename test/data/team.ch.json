@@ -1,0 +1,21 @@
+{
+    "code": "ch",
+    "name": "Carolina Hurricanes",
+    "nickname": "Hurricanes",
+    "city": "Raleigh",
+    "conference": "east",
+    "division": "metro",
+    "record": {
+        "wins": 0,
+        "losses": 0,
+        "overtimelosses": 0
+    },
+    "roster": [
+        {
+            "fname": "Eric",
+            "lname": "Staal",
+            "number": 12,
+            "position": "C"
+        }
+    ]
+}

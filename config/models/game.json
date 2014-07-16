@@ -1,0 +1,27 @@
+{
+    "home": "code",
+    "visitor": "code",
+    "date": "",
+    "periods": [
+        {
+            "number": 1,
+            "scoring": [
+                {
+                    "team": "",
+                    "player": 0,
+                    "time": "",
+                    "type": ""
+                }
+            ],
+            "penalties": [
+                {
+                    "team": "",
+                    "player": 0,
+                    "infraction": "",
+                    "duration": "",
+                    "time": ""
+                }
+            ]
+        }
+    ]
+}

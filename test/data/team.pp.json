@@ -1,0 +1,21 @@
+{
+    "code": "pp",
+    "name": "Pittsburgh Penguins",
+    "nickname": "Penguins",
+    "city": "Pittsburgh",
+    "conference": "east",
+    "division": "metro",
+    "record": {
+        "wins": 0,
+        "losses": 0,
+        "overtimelosses": 0
+    },
+    "roster": [
+        {
+            "fname": "Sidney",
+            "lname": "Crosby",
+            "number": 87,
+            "position": "C"
+        }
+    ]
+}

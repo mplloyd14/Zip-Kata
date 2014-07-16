@@ -1,0 +1,27 @@
+{
+    "home": "cbj",
+    "visitor": "pp",
+    "date": "2014-11-17T21:00:00Z",
+    "periods": [
+        {
+            "number": 1,
+            "scoring": [
+            	{
+                    "team": "cbj",
+                    "player": 13,
+                    "time": "4:56",
+                    "type": "pp"
+                }
+            ],
+            "penalties": [
+                {
+                    "team": "pp",
+                    "player": 9,
+                    "infraction": "Roughing",
+                    "duration": 2,
+                    "time": "3:38"
+                }
+            ]
+        }
+    ]
+}

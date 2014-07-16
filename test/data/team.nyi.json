@@ -1,0 +1,21 @@
+{
+    "code": "nyi",
+    "name": "New York Islanders",
+    "nickname": "Islanders",
+    "city": "Brooklyn",
+    "conference": "east",
+    "division": "metro",
+    "record": {
+        "wins": 0,
+        "losses": 0,
+        "overtimelosses": 0
+    },
+    "roster": [
+        {
+            "fname": "John",
+            "lname": "Tavares",
+            "number": 91,
+            "position": "C"
+        }
+    ]
+}

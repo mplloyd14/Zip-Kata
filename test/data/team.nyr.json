@@ -1,0 +1,21 @@
+{
+    "code": "nyr",
+    "name": "New York Rangers",
+    "nickname": "Rangers",
+    "city": "New York City",
+    "conference": "east",
+    "division": "metro",
+    "record": {
+        "wins": 0,
+        "losses": 0,
+        "overtimelosses": 0
+    },
+    "roster": [
+        {
+            "fname": "Henrik",
+            "lname": "Lundqvist",
+            "number": 30,
+            "position": "G"
+        }
+    ]
+}
