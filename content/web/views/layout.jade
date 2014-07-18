@@ -4,12 +4,20 @@ html(ng-app="peApp")
     meta(charset='utf8')
     //base(href='/')
     title #{title}
-    link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/web/css/app.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/cai/core/shared/css/evo-default.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  body
+    // load branding styles
+    include /core/shared/branding
+
+  body(i18n-locale=i18n.getLocale())
     include /core/shared/scripts
+
+    script(src='#{config.appBase}/shared/angular-ui-bootstrap/ui-bootstrap-tpls-0.6.0.min.js')
+    script(src='#{config.appBase}/web/js/filters/pageStart.js')
+    script(src='#{config.appBase}/web/js/filters/pageUpdate.js')
 
     block body

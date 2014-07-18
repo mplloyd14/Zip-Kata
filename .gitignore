@@ -31,7 +31,8 @@ config/runtime.json
 ############
 ## Misc
 ############
+content/shared/public/css/*styleguide*
 test/out/
 logs/*.log
 *.pst
-/test/selenium
+test/selenium/

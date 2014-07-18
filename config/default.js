@@ -34,6 +34,8 @@ module.exports = {
 	},
 	data : {
 		providers : [
+        	'socketProvider',
+            'restProvider'
 		],
 		socket : {
 			server : {
@@ -133,7 +135,13 @@ module.exports = {
 		databases : {
 			mobileconnect : {
 				server : 'mobileconnect'
-			}
+			},
+            ss : {
+                server : 'mobileconnect'
+            },
+            cc : {
+                server : 'mobileconnect'
+            }
 		},
 		collections : {
 			sessions : {
@@ -147,6 +155,15 @@ module.exports = {
             },
             productDefinitions: {
                 database: 'mobileconnect'
+            },
+            conferences: {
+                database: 'peseed-etl'
+            },
+            teams: {
+                database: 'peseed-etl'
+            },
+            games: {
+                database: 'peseed-etl'
             }
 		}
 	}

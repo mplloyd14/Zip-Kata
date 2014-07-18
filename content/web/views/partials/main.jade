@@ -1,0 +1,30 @@
+script#main(type='text/ng-template')
+    h2 #{__("txtConference")}
+    select(data-ng-model='conference', data-ng-options="c.name for c in conferences", data-ng-change='onConferenceChange()')
+
+    h3 #{__("txtTeamsInThe")} {{conference.name}} #{__("txtConference")}
+
+    div#top-pagination(class="paginate", data-ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")
+
+    div
+        table.table.table-striped
+            thead
+                th #{__("txtName")}
+                th #{__("txtCity")}
+                th #{__("txtDivision")}
+                th #{__("txtWins")}
+                th #{__("txtLosses")}
+                th #{__("txtOvertimeLosses")}
+            tbody
+                tr(ng-repeat="team in teams | pageUpdate:update_paginate() | pageStart:(currentPage-1)*maxPerPage | limitTo:maxPerPage", id="team_{{$index}}", style="cursor:pointer;")
+                    td
+                        a(href="#team/{{team.code}}") {{team.name}}
+                    td.colcenter {{team.city}}
+                    td.colcenter {{team.division}}
+                    td.colcenter {{team.record.wins | number}}
+                    td.colcenter {{team.record.losses | number}}
+                    td.colcenter {{team.record.overtimelosses | number}}
+
+    div#bottom-pagination(class="paginate", ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")

@@ -1,39 +1,39 @@
 // Routes
 module.exports = exports = function(i18n) {
 	return [
-		{
-			method: 'get',
-			route: '/',
-			redirect: '/product/peseed',
-			protected: false
-		},
+        {
+            method: 'get',
+            route: '/',
+            redirect: '/product/etldemo',
+            protected: false
+        },
 
-		{
-			method: 'get',
-			route: '/product/:product',
-			redirect: '/product/peseed/root',
-			protected: true
-		},
+        {
+            method: 'get',
+            route: '/product/etldemo',
+            redirect: '/product/etldemo/root',
+            protected: true
+        },
 
-		{
-			method: 'get',
-			route: '/product/:product/root',
-			redirect: {
-				desktop: '/product/:product/desktop',
-				mobile: '/product/:product/mobile'
-			},
-			protected: true
-		},
+        {
+            method: 'get',
+            route: '/product/etldemo/root',
+            redirect: {
+                desktop: '/product/etldemo/desktop',
+                mobile: '/product/etldemo/mobile'
+            },
+            protected: true
+        },
 
-		{
-			method: 'get',
-			route: '/product/:product/desktop*',
-			base: '/product/:product/desktop',
-			render: {
-				title: 'PESeed',
-				template: '/web/index'
-			},
-			protected: true
-		}
+        {
+            method: 'get',
+            route: '/product/etldemo/desktop*',
+            base: '/product/etldemo/desktop',
+            render: {
+                title: 'MOBILEconnect ETL Demo',
+                template: '/web/index'
+            },
+            protected: true
+        }
 	];
-}
+};

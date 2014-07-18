@@ -1,32 +1,56 @@
-var pec = require('projevo-core');
-var rest = pec.RestClient;
-var utils = pec.CoreUtilities;
-var Q = require('q')
-
+var log = require('../../lib/log')(),
+    Q = require('q'),
+    conferences = require('../../lib/conferences'),
+    teams = require('../../lib/teams'),
+    games = require('../../lib/games');
+    
 module.exports = {
     type: "Socket",
     services: {
-        getTeam: {
-            handler: function(data){
-                var name = data.name
-                //return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
-                return Q.resolve({
-                    "name": name,
-                    "conference": 'east',
-                    "nickname": 'blue jackets'
-                });
+        getConference: {
+            handler: function(data, context){
+            	log.info('Get conferences for ' + JSON.stringify(context));
+                return conferences.get(context, data);
             },
             room: {
                 id: "|URL|",
                 client: true,
-                url: "/etldemo/team/{name}",
+                url: "/conference/{code}",
+                announce: true
+            }
+        },
+        
+        getTeam: {
+            handler: function(data, context){
+            	log.info('Get teams for ' + JSON.stringify(context));
+                return teams.get(context, data);
+            },
+            room: {
+                id: "|URL|",
+                client: true,
+                url: "/team/{code}",
+                announce: true
+            }
+        },
+        
+        getGame: {
+            handler: function(data, context){
+            	log.info('Get games for ' + JSON.stringify(context));
+                return games.get(context, data);
+            },
+            room: {
+                id: "|URL|",
+                client: true,
+                url: "/game/{home}/{visitor}/{date}",
                 announce: true
             }
         }
     },
     emitters : {
         events : [
-            {'event' :  "teamUpdate", 'room': '|URL|'},{'event' :  "teamUpdate", 'room': '|URL|'}
+            {'event' :  "conferenceUpdate", 'room': '|URL|'},
+            {'event' :  "teamUpdate", 'room': '|URL|'},
+            {'event' :  "gameUpdate", 'room': '|URL|'}
         ]
     }
 };

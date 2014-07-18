@@ -1,1 +1,18 @@
-{}
+{
+	"txtConference": "txtConference",
+	"txtTeams": "txtTeams",
+	"txtName": "txtName",
+	"txtCity": "txtCity",
+	"txtDivision": "txtDivision",
+	"txtWins": "txtWins",
+	"txtLosses": "txtLosses",
+	"txtOvertimeLosses": "txtOvertimeLosses",
+	"txtTeamsInThe": "txtTeamsInThe",
+	"txtTeam": "txtTeam",
+	"txtGame": "txtGame",
+	"txtGames": "txtGames",
+	"txtHome": "txtHome",
+	"txtVisitor": "txtVisitor",
+	"txtDate": "txtDate",
+	"txtScore": "txtScore"
+}

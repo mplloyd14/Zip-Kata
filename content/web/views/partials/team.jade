@@ -1,0 +1,23 @@
+script#team(type='text/ng-template')
+    h2 {{team.name}}
+
+    h3 #{__("txtGames")}
+    div#top-pagination(class="paginate", data-ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")
+    div
+        table.table.table-striped
+            thead
+                th #{__("txtHome")}
+                th #{__("txtVisitor")}
+                th #{__("txtDate")}
+                th #{__("txtScore")}
+            tbody
+                tr(ng-repeat="game in games | pageUpdate:update_paginate() | pageStart:(currentPage-1)*maxPerPage | limitTo:maxPerPage", id="game_{{$index}}", style="cursor:pointer;")
+                    td
+                        a(href="#game/{{game.home}}/{{game.visitor}}/{{game.date}}") {{game.home}}
+                    td.colcenter {{game.visitor}}
+                    td.colcenter {{game.date | date : 'medium'}}
+                    td.colcenter {{game.score}}
+
+    div#bottom-pagination(class="paginate", ng-show="isPaginate")
+        pagination.pagination-large(rotate="false", total-items="totalCount", num-pages="pages", max-size="paginationSettings.maxSize", page="currentPage", on-select-page="setPage(page)", items-per-page="maxPerPage", boundary-links="true")

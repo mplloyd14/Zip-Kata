@@ -1,12 +1,29 @@
-var Q = require('q');
 
 module.exports = {
     'type' : 'REST',
     'services' : {
-        "/etldemo/team/name/:name" : [{
-            "method" : "post",
-            "version" : "0.1.0",
-            "event": "teamUpdate"
-        }]
+        "/etldemo/conference/code/:code" : [
+	        {
+	            "method" : "post",
+	            "version" : "0.0.1",
+	            "event": "conferenceUpdate"
+	        }
+		],
+        
+        "/etldemo/team/code/:code" : [
+	        {
+	            "method" : "post",
+	            "version" : "0.0.1",
+	            "event": "teamUpdate"
+	        }
+		],
+        
+        "/etldemo/game/home/:home/visitor/:vistor/date/:date" : [
+	        {
+	            "method" : "post",
+	            "version" : "0.0.1",
+	            "event": "gameUpdate"
+	        }
+		]
     }
 };
