@@ -1,28 +1,32 @@
+'use strict';
 
 module.exports = {
     'type' : 'REST',
     'services' : {
-        "/etldemo/conference/code/:code" : [
+        "/conference/code/:code" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",
-	            "event": "conferenceUpdate"
+	            "event": "conferenceUpdate",
+                "external": true
 	        }
 		],
         
-        "/etldemo/team/code/:code" : [
+        "/team/code/:code" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",
-	            "event": "teamUpdate"
+	            "event": "teamUpdate",
+                "external": true
 	        }
 		],
         
-        "/etldemo/game/home/:home/visitor/:vistor/date/:date" : [
+        "/game/home/:home/visitor/:visitor/date/:date" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",
-	            "event": "gameUpdate"
+	            "event": "gameUpdate",
+                "external": true
 	        }
 		]
     }

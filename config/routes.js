@@ -1,3 +1,5 @@
+'use strict';
+
 // Routes
 module.exports = exports = function(i18n) {
 	return [

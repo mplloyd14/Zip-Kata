@@ -2,6 +2,7 @@ module.exports = {
 	port : 6600,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
+    product_code : 'etldemo',
 	appBase : '',
 	client : {
 		auth_server : 'authenticationServer',
@@ -166,5 +167,9 @@ module.exports = {
                 database: 'peseed-etl'
             }
 		}
-	}
+	},
+    apiServer: {
+        host: 'http://localhost:4010',
+        routeRegistrationPath: '/routes/refresh'
+    }
 };
