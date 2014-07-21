@@ -17,17 +17,6 @@ module.exports = {
                     return "DATA FROM PE_SEED: " + data;
                 });
             }
-        }],
-        "/product/peseed/name/:name" : [
-        {
-            "external": true,
-            "method" : "get",
-            "version" : "0.1.0",
-            handler: function(data) {
-                return Q.fcall(function() {
-                    return "DATA FROM PE_SEED: " + data;
-                });
-            }
         }]
     },
     'requests' : [
