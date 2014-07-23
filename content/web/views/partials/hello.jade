@@ -1,9 +1,11 @@
 script#hello(type='text/ng-template')
-	h2#hellomsg {{message}}
-	h2#hellomsg {{userData.first}} {{userData.last}}
-	h2#hellomsg {{userData.hair}}
-	h2#hellomsg {{userData.eye}}
+  h2#hellomsg {{message}}
+  h2#hellomsg {{locationMessage}}
+  h2#hellomsg {{deliveryMessage}}
+  h2#hellomsg {{userData.first}} {{userData.last}}
+  h2#hellomsg {{userData.hair}}
+  h2#hellomsg {{userData.eye}}
 
-	form
-		input#nameInput(type="text", ng-model='enteredName')
-		button(ng-click="submitName()") Submit Name
+  form
+    input#nameInput(type="text", ng-model='enteredName')
+    button(ng-click="submitName()") Submit Name
