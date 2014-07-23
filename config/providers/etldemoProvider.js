@@ -6,7 +6,7 @@ module.exports = {
         {
             domain: 'conferences',
             schedule: '0 * * * * *',
-            routes: ['/etldemo/conference/code/:code'],
+            routes: ['/conference/code/:code'],
             selector: function(conference) {
                 return {code: conference.code};
             },
@@ -17,7 +17,7 @@ module.exports = {
         {
             domain: 'teams',
             schedule: '0 * * * * *',
-            routes: ['/etldemo/team/code/:code'],
+            routes: ['/team/code/:code'],
             selector: function(team) {
                 return {code: team.code};
             },
@@ -28,7 +28,7 @@ module.exports = {
         {
             domain: 'games',
             schedule: '0 * * * * *',
-            routes: ['/etldemo/game/home/:home/visitor/:visitor/date/:date'],
+            routes: ['/game/home/:home/visitor/:visitor/date/:date'],
             selector: function(game) {
                 return {
                     home: game.home,

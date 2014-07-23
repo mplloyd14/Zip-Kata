@@ -12,6 +12,14 @@
             {
                 "code": "etldemo",
                 "settings": {
+                    "dataEndPoints": {
+                        "IncomingData" : {
+                            "EndPointAddress" : "127.0.0.1",
+                            "Port" : "6601",
+                            "Type" : "REST",
+                            "SubType" : "Server"
+                        }
+                    }
                 }
             }
         ]
@@ -30,6 +38,14 @@
             {
                 "code": "etldemo",
                 "settings": {
+                    "dataEndPoints": {
+                        "IncomingData" : {
+                            "EndPointAddress" : "127.0.0.1",
+                            "Port" : "6601",
+                            "Type" : "REST",
+                            "SubType" : "Server"
+                        }
+                    }
                 }
             }
         ]
