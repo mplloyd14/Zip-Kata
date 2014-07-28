@@ -15,9 +15,11 @@ module.exports = {
                 return conferences.get(context, data);
             },
             room: {
-                id: "|URL|",
+                //id: "|URL|",
+                id: "|PATTERN|",
                 client: true,
-                url: "/conference/{code}",
+                //url: "/conference/{code}",
+                pattern: "/conference/{code}",
                 announce: true
             }
         },
@@ -28,9 +30,11 @@ module.exports = {
                 return teams.get(context, data);
             },
             room: {
-                id: "|URL|",
+                //id: "|URL|",
+                id: "|PATTERN|",
                 client: true,
-                url: "/team/{code}",
+                //url: "/team/{conference}/{code}",
+                pattern: "/team/{conference}/{code}",
                 announce: true
             }
         },
@@ -41,9 +45,11 @@ module.exports = {
                 return games.get(context, data);
             },
             room: {
-                id: "|URL|",
+                //id: "|URL|",
+                id: "|PATTERN|",
                 client: true,
-                url: "/game/{home}/{visitor}/{date}",
+                //url: "/game/{conference}/{home}/{visitor}/{date}",
+                pattern: "/game/{conference}/{home}/{visitor}/{date}",
                 announce: true
             }
         }

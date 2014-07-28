@@ -12,7 +12,7 @@ module.exports = {
 	        }
 		],
 
-        "/team/code/:code" : [
+        "/team/conference/:conference/code/:code" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",
@@ -21,7 +21,7 @@ module.exports = {
 	        }
 		],
 
-        "/game/home/:home/visitor/:visitor/date/:date" : [
+        "/game/conference/:conference/home/:home/visitor/:visitor/date/:date" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",

@@ -42,7 +42,7 @@ cai.module('peApp', ['cai.services', 'peControllers', 'peFilters', 'ngCookies', 
 		        templateUrl: 'main',
                 controller: 'MainController'
             })
-            .when('/team/:code', {
+            .when('/team/:conference/:code', {
                 templateUrl: 'team',
                 controller: 'TeamController'
             })

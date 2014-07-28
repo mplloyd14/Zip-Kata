@@ -25,9 +25,9 @@ cai.module('peControllers', ['cai.services'])
             $scope.currentPage = page;
         }
 
-        function retrieveTeam(code) {
+        function retrieveTeam(conference, code) {
             $log.info('Retrieve team for : ' + code);
-            apiProvider.callFunction('getTeam', {code: code})
+            apiProvider.callFunction('getTeam', {conference: conference, code: code})
                 .then(function(result) {
                     $log.info('Retrieved team for: ' + code);
                     $scope.team = result.result.length ? result.result[0] : {};
@@ -60,7 +60,7 @@ cai.module('peControllers', ['cai.services'])
                 });
         }
 
-        retrieveTeam($routeParams.code || '');
+        retrieveTeam($routeParams.conference || '', $routeParams.code || '');
 	}]);
 
 

@@ -28,10 +28,27 @@ cai.module('peControllers', ['cai.services'])
         }
 
         $scope.onConferenceChange = function() {
-            $log.info('Retrieve teams for conference: ' + $scope.conference.name);
-            apiProvider.callFunction('getTeam', {conference: $scope.conference.code})
+            getConference($scope.conference.code)
                 .then(function(result) {
-                    $log.info('Retrieved teams for conference: ' + $scope.conference.name);
+                    $log.info('Retrieved conference');
+                    getTeams($scope.conference);
+                },
+                function(err) {
+                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
+                });
+        }
+
+        function getConference(conference) {
+            var query = conference ? {code: conference} : {};
+            $log.info('Retrieve conference: ' + JSON.stringify(conference));
+            return apiProvider.callFunction('getConference', query);
+        }
+
+        function getTeams(conference) {
+            $log.info('Retrieve teams for conference: ' + conference.name);
+            apiProvider.callFunction('getTeam', {conference: conference.code})
+                .then(function(result) {
+                    $log.info('Retrieved teams for conference: ' + conference.name);
                     $scope.teams = result.result.length ? result.result : [];
                     //$log.debug(JSON.stringify($scope.teams));
 
@@ -45,7 +62,7 @@ cai.module('peControllers', ['cai.services'])
         }
 
         $log.info('Retrieve conferences');
-        apiProvider.callFunction('getConference', {})
+        getConference()
             .then(function(result) {
                 $log.info('Retrieved conferences');
                 $scope.conferences = result.result.length ? result.result : [];
@@ -54,7 +71,7 @@ cai.module('peControllers', ['cai.services'])
             function(err) {
                 $log.error('Failed to retrieve conferences: ' + (err.result ? err.result.toString() : err.toString()));
             });
-	}]);
+    }]);
 
 
 
