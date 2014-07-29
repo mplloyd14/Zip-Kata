@@ -57,9 +57,9 @@ module.exports = {
             {'event' :  "barUpdate", 'room': '|URL|'},
             {'event' :  "fubarUpdate", 'room': '|URL|'}
             */
-            {'event' :  "fuUpdate", 'room': '|URL|'},
-            {'event' :  "barUpdate", 'room': '|URL|'},
-            {'event' :  "fubarUpdate", 'room': '|URL|'}
+            {'event' :  "fuUpdate", 'room': '|PATTERN|', 'pattern': '/{fu}'},
+            {'event' :  "barUpdate", 'room': '|PATTERN|', 'pattern': '/{bar}'},
+            {'event' :  "fubarUpdate", 'room': '|PATTERN|', 'pattern': '/{fu}/{bar}'}
         ]
     }
 };
