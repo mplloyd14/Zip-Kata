@@ -2,12 +2,8 @@ extends layout
 
 block body
     script(src='#{config.appBase}/web/js/controllers/mainController.js')
-    script(src='#{config.appBase}/web/js/controllers/teamController.js')
-    script(src='#{config.appBase}/web/js/controllers/gameController.js')
     script(src='#{config.appBase}/web/js/app.js')
 
     div(ng-view)
         
     include partials/main.jade
-    include partials/team.jade
-    include partials/game.jade

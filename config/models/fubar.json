@@ -1,0 +1,5 @@
+{
+	"fu": "string",
+    "bar": "string",
+    "value": int
+}

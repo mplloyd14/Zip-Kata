@@ -4,37 +4,15 @@ module.exports = {
     type: 'ETL',
     transforms: [
         {
-            domain: 'conferences',
+            domain: 'fubars',
             schedule: '0 * * * * *',
-            routes: ['/conference/code/:code'],
-            selector: function(conference) {
-                return {code: conference.code};
-            },
-            transformer: function(payload) {
-                return payload.body;
-            }
-        },
-        {
-            domain: 'teams',
-            schedule: '0 * * * * *',
-            routes: ['/team/code/:code'],
-            selector: function(team) {
-                return {code: team.code};
-            },
-            transformer: function(payload) {
-                return payload.body;
-            }
-        },
-        {
-            domain: 'games',
-            schedule: '0 * * * * *',
-            routes: ['/game/home/:home/visitor/:visitor/date/:date'],
-            selector: function(game) {
-                return {
-                    home: game.home,
-                    visitor: game.visitor,
-                    date: game.date
-                };
+            routes: [
+                '/fu/:fu',
+                '/fu/:fu/bar/:bar',
+                '/bar/:bar'
+            ],
+            selector: function(fubar) {
+                return {fu: fubar.fu};
             },
             transformer: function(payload) {
                 return payload.body;

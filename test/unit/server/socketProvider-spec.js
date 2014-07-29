@@ -18,43 +18,35 @@ describe('Socket Provider', function() {
         
         env.log = require('../../mocks/mockLogger');
         
-        env.conferences = {
-        	get: sinon.stub()
-        };
-        env.teams = {
-        	get: sinon.stub()
-        };
-        env.games = {
+        env.fubars = {
         	get: sinon.stub()
         };
         
 		env.Provider = sandbox.require('../../../config/providers/socketProvider', {
         	requires: {
             	'../../lib/log': env.log,
-            	'../../lib/conferences': env.conferences,
-            	'../../lib/teams': env.teams,
-            	'../../lib/games': env.games
+            	'../../lib/fubars': env.fubars
 			}
 		});
 	});        
     
 	describe('interface', function() {
-        it('should support get conference', function() {
+        it('should support get fu', function() {
         	expect(env.Provider).to.have.property('services');
-        	expect(env.Provider.services).to.have.property('getConference');
-            expect(env.Provider.services.getConference).to.respondTo('handler');
+        	expect(env.Provider.services).to.have.property('getFu');
+            expect(env.Provider.services.getFu).to.respondTo('handler');
         });
     
-        it('should support get team', function() {
+        it('should support get bar', function() {
         	expect(env.Provider).to.have.property('services');
-        	expect(env.Provider.services).to.have.property('getTeam');
-            expect(env.Provider.services.getTeam).to.respondTo('handler');
+        	expect(env.Provider.services).to.have.property('getBar');
+            expect(env.Provider.services.getBar).to.respondTo('handler');
         });
         
-        it('should support get team', function() {
+        it('should support get fubar', function() {
         	expect(env.Provider).to.have.property('services');
-        	expect(env.Provider.services).to.have.property('getGame');
-            expect(env.Provider.services.getGame).to.respondTo('handler');
+        	expect(env.Provider.services).to.have.property('getFubar');
+            expect(env.Provider.services.getFubar).to.respondTo('handler');
         });
         
     });

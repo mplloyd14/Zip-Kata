@@ -10,7 +10,7 @@ var chai = require('chai'),
 chai.use(require("chai-as-promised"));
 chai.use(require('sinon-chai'));
 
-describe('Conferences', function() {
+describe('Fubars', function() {
 
 	var env = {};
     process.setMaxListeners(0);	// avoid Q promise library warning
@@ -24,49 +24,32 @@ describe('Conferences', function() {
         };
         
 		env.log = require('../../mocks/mockLogger');
-        env.collection = mockCollection();
-        env.mockContextCollection = function() {
-        	return env.collection;
-        }
-        
-        env.mockConferences = [
+
+        env.mockFubars = [
 			{
-			    "code": "fu",
-			    "name": "FUBAR",
-			    "divisions": [
-			        {
-			            "code": "a",
-			            "name": "A",
-			            "teams": [
-			                "1",
-			                "2"
-			            ]
-			        }
-			    ]
+			    "fu": "fu",
+			    "bar": "FUBAR",
+                "value": 1
 			},
 			{
-			    "code": "bar",
-			    "name": "BARFU",
-			    "divisions": [
-			        {
-			            "code": "1",
-			            "name": "One",
-			            "teams": [
-			                "a",
-			                "b"
-			            ]
-			        }
-			    ]
+			    "fu": "bar",
+			    "bar": "BARFU",
+                "value": 2
 			}
 		];
 	});        
     
 	describe('Mock DB', function() {
     	beforeEach(function() {
-			env.conferences = sandbox.require('../../../lib/conferences', {
+            env.collection = mockCollection();
+            env.mockGenericCollection = function() {
+                return env.collection;
+            }
+
+			env.fubars = sandbox.require('../../../lib/fubars', {
             	requires: {
                 	'../lib/log': env.log,
-                	'../lib/context-collection' : env.mockContextCollection
+                	'projevo-core' : {GenericCollection: env.mockGenericCollection}
 				}
 			});
 		});
@@ -74,8 +57,8 @@ describe('Conferences', function() {
         describe('get', function() {
 	        describe('all', function() {
 	        	beforeEach(function(done) {
-	            	env.collection.find.returns(Q(env.mockConferences)); 
-	                env.promise = env.conferences.get(env.context);
+	            	env.collection.find.returns(Q(env.mockFubars)); 
+	                env.promise = env.fubars.get(env.context);
 	                env.promise
 	                	.then(function(data) {
                         	env.data = data;
@@ -87,7 +70,7 @@ describe('Conferences', function() {
 	            });
 
 	        	it('should make the proper request', function() {
-	            	expect(env.collection.find).to.have.been.calledWith({}, {sort: ['name','asc']});
+	            	expect(env.collection.find).to.have.been.calledWith({}, {sort: ['value','asc']});
 	            });
 
 	        	it('should return a promise', function() {
@@ -97,23 +80,23 @@ describe('Conferences', function() {
 
 	        	it('promise should return data', function() {
                 	expect(env.data).to.exist;
-                    expect(env.data).to.have.length(env.mockConferences.length);
+                    expect(env.data).to.have.length(env.mockFubars.length);
 	            });
 
 		    	it('data should contain correct information', function() {
-                	expect(env.data[0]).to.have.property('code', 'fu');
-                	expect(env.data[0]).to.have.property('divisions');
-                	expect(env.data[1]).to.have.property('code', 'bar');
-                	expect(env.data[1]).to.have.property('divisions');
+                	expect(env.data[0]).to.have.property('fu', 'fu');
+                	expect(env.data[0]).to.have.property('bar');
+                	expect(env.data[1]).to.have.property('fu', 'bar');
+                	expect(env.data[1]).to.have.property('bar');
 		        });
 	        });
             
-	        describe('by code', function() {
+	        describe('by fu', function() {
 	        	beforeEach(function(done) {
-	            	env.collection.find.returns(Q(_.filter(env.mockConferences, function(c) {
-                    	return c.code == 'fu';
+	            	env.collection.find.returns(Q(_.filter(env.mockFubars, function(c) {
+                    	return c.fu == 'fu';
                     }))); 
-	                env.promise = env.conferences.get(env.context, {code: 'fu'});
+	                env.promise = env.fubars.get(env.context, {fu: 'fu'});
 	                env.promise
 	                	.then(function(data) {
                         	env.data = data;
@@ -125,7 +108,7 @@ describe('Conferences', function() {
 	            });
 
 	        	it('should make the proper request', function() {
-	            	expect(env.collection.find).to.have.been.calledWith({code: 'fu'}, {sort: ['name','asc']});
+	            	expect(env.collection.find).to.have.been.calledWith({fu: 'fu'}, {sort: ['value','asc']});
 	            });
 
 	        	it('should return a promise', function() {
@@ -139,8 +122,9 @@ describe('Conferences', function() {
 	            });
 
 		    	it('data should contain correct information', function() {
-                	expect(env.data[0]).to.have.property('code', 'fu');
-                	expect(env.data[0]).to.have.property('divisions');
+                	expect(env.data[0]).to.have.property('fu', 'fu');
+                	expect(env.data[0]).to.have.property('bar');
+                	expect(env.data[0]).to.have.property('value');
 		        });
 			});
 		});
@@ -155,7 +139,7 @@ describe('Conferences', function() {
         
         	env.config = require('config');
             env.config.db.databases['etldemo-tests'] = {server: 'mobileconnect'};
-            env.config.db.collections.conferences.database = env.context.company;
+            env.config.db.collections.fubars.database = env.context.company;
 
         	env.helpers = sandbox.require('../../lib/dbhelper', {
             	requires: {
@@ -170,23 +154,22 @@ describe('Conferences', function() {
 				}
 			});
             
-            env.contextCollection = sandbox.require('../../../lib/context-collection', {
+            env.genericCollection = sandbox.require('../../../node_modules/projevo-core/lib/genericCollection', {
             	requires: {
                     'projevo-core' : {Collection: env.collection},
                 	'config': env.config
 				}
 			});
 
-			env.conferences = sandbox.require('../../../lib/conferences', {
+			env.fubars = sandbox.require('../../../lib/fubars', {
             	requires: {
                 	'../lib/log': env.log,
-                    '../lib/context-collection' : env.contextCollection
+                	'projevo-core' : {GenericCollection: env.genericCollection}
 				}
 			});
 
             //reset the db
-            
-            env.helpers.resetAll('conferences', env.mockConferences)
+            env.helpers.resetAll('fubars', env.mockFubars)
             	.then(function() {
                 	done();
                 })
@@ -203,7 +186,7 @@ describe('Conferences', function() {
         describe('get', function() {
 	        describe('all', function() {
 	        	beforeEach(function(done) {
-	                env.promise = env.conferences.get(env.context);
+	                env.promise = env.fubars.get(env.context);
 	                env.promise
 	                	.then(function(data) {
                         	env.data = data;
@@ -221,20 +204,20 @@ describe('Conferences', function() {
 
 	        	it('promise should return data', function() {
                 	expect(env.data).to.exist;
-                    expect(env.data).to.have.length(env.mockConferences.length);
+                    expect(env.data).to.have.length(env.mockFubars.length);
 	            });
 
 		    	it('data should contain correct information', function() {
-                	expect(env.data[0]).to.have.property('code', 'bar');
-                	expect(env.data[0]).to.have.property('divisions');
-                	expect(env.data[1]).to.have.property('code', 'fu');
-                	expect(env.data[1]).to.have.property('divisions');
+                	expect(env.data[0]).to.have.property('fu', 'fu');
+                	expect(env.data[0]).to.have.property('bar');
+                	expect(env.data[1]).to.have.property('fu', 'bar');
+                	expect(env.data[1]).to.have.property('bar');
 				});
 	        });
             
-	        describe('by code', function() {
+	        describe('by fu', function() {
 	        	beforeEach(function(done) {
-	                env.promise = env.conferences.get(env.context, {code: 'fu'});
+	                env.promise = env.fubars.get(env.context, {fu: 'fu'});
 	                env.promise
 	                	.then(function(data) {
                         	env.data = data;
@@ -256,8 +239,8 @@ describe('Conferences', function() {
 	            });
 
 		    	it('data should contain correct information', function() {
-                	expect(env.data[0]).to.have.property('code', 'fu');
-                	expect(env.data[0]).to.have.property('divisions');
+                	expect(env.data[0]).to.have.property('fu', 'fu');
+                	expect(env.data[0]).to.have.property('bar');
 		        });
 	        });
 		});

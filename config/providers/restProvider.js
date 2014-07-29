@@ -3,31 +3,29 @@
 module.exports = {
     'type' : 'REST',
     'services' : {
-        "/conference/code/:code" : [
+        "/fu/:fu" : [
 	        {
 	            "method" : "post",
 	            "version" : "0.0.1",
-	            "event": "conferenceUpdate",
+	            "event": "fuUpdate",
                 "external": true
 	        }
 		],
-
-        "/team/conference/:conference/code/:code" : [
-	        {
-	            "method" : "post",
-	            "version" : "0.0.1",
-	            "event": "teamUpdate",
+        "/bar/:bar" : [
+            {
+                "method" : "post",
+                "version" : "0.0.1",
+                "event": "barUpdate",
                 "external": true
-	        }
-		],
-
-        "/game/conference/:conference/home/:home/visitor/:visitor/date/:date" : [
-	        {
-	            "method" : "post",
-	            "version" : "0.0.1",
-	            "event": "gameUpdate",
+            }
+        ],
+        "/fu/:fu/bar/:bar" : [
+            {
+                "method" : "post",
+                "version" : "0.0.1",
+                "event": "fubarUpdate",
                 "external": true
-	        }
-		]
+            }
+        ]
     }
 };

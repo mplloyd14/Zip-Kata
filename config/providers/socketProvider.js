@@ -2,63 +2,64 @@
 
 var log = require('../../lib/log')(),
     Q = require('q'),
-    conferences = require('../../lib/conferences'),
-    teams = require('../../lib/teams'),
-    games = require('../../lib/games');
+    fubars = require('../../lib/fubars');
     
 module.exports = {
     type: "Socket",
     services: {
-        getConference: {
+        getFu: {
             handler: function(data, context){
-            	log.info('Get conferences for ' + JSON.stringify(context));
-                return conferences.get(context, data);
+            	log.info('Get Fu for ' + JSON.stringify(context));
+                return fubars.get(context, data);
             },
             room: {
                 //id: "|URL|",
+                //url: "/{fu}",
                 id: "|PATTERN|",
+                pattern: "/{fu}",
                 client: true,
-                //url: "/conference/{code}",
-                pattern: "/conference/{code}",
                 announce: true
             }
         },
-        
-        getTeam: {
+        getBar: {
             handler: function(data, context){
-            	log.info('Get teams for ' + JSON.stringify(context));
-                return teams.get(context, data);
+                log.info('Get Bar for ' + JSON.stringify(context));
+                return fubars.get(context, data);
             },
             room: {
                 //id: "|URL|",
+                //url: "/{bar}",
                 id: "|PATTERN|",
+                pattern: "/{bar}",
                 client: true,
-                //url: "/team/{conference}/{code}",
-                pattern: "/team/{conference}/{code}",
                 announce: true
             }
         },
-        
-        getGame: {
+        getFubar: {
             handler: function(data, context){
-            	log.info('Get games for ' + JSON.stringify(context));
-                return games.get(context, data);
+                log.info('Get Fubar for ' + JSON.stringify(context));
+                return fubars.get(context, data);
             },
             room: {
                 //id: "|URL|",
+                //url: "/{fu}/{bar}",
                 id: "|PATTERN|",
+                pattern: "/{fu}/{bar}",
                 client: true,
-                //url: "/game/{conference}/{home}/{visitor}/{date}",
-                pattern: "/game/{conference}/{home}/{visitor}/{date}",
                 announce: true
             }
         }
     },
     emitters : {
         events : [
-            {'event' :  "conferenceUpdate", 'room': '|URL|'},
-            {'event' :  "teamUpdate", 'room': '|URL|'},
-            {'event' :  "gameUpdate", 'room': '|URL|'}
+            /*
+            {'event' :  "fuUpdate", 'room': '|URL|'},
+            {'event' :  "barUpdate", 'room': '|URL|'},
+            {'event' :  "fubarUpdate", 'room': '|URL|'}
+            */
+            {'event' :  "fuUpdate", 'room': '|URL|'},
+            {'event' :  "barUpdate", 'room': '|URL|'},
+            {'event' :  "fubarUpdate", 'room': '|URL|'}
         ]
     }
 };

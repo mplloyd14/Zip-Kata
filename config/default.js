@@ -142,8 +142,12 @@ module.exports = {
             },
             cc : {
                 server : 'mobileconnect'
+            },
+            "etldemo-tests" : {
+                server : 'mobileconnect'
             }
-		},
+
+        },
 		collections : {
 			sessions : {
 				database : 'mobileconnect'
@@ -157,13 +161,7 @@ module.exports = {
             productDefinitions: {
                 database: 'mobileconnect'
             },
-            conferences: {
-                database: 'peseed-etl'
-            },
-            teams: {
-                database: 'peseed-etl'
-            },
-            games: {
+            fubars: {
                 database: 'peseed-etl'
             }
 		}

@@ -1,0 +1,12 @@
+[
+	{
+		"fu": "fu",
+	    "bar": "bar",
+	    "value": 0
+	},
+	{
+		"fu": "bar",
+	    "bar": "fu",
+	    "value": 99
+	}
+]    

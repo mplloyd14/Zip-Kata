@@ -2,75 +2,82 @@
 
 /* Controllers */
 cai.module('peControllers', ['cai.services'])
-	.controller('MainController', ['$rootScope', '$scope', '$log', 'user', 'settings', 'apiProvider', function($rootScope, $scope, $log, user, settings, apiProvider) {
+	.controller('MainController', ['$rootScope', '$scope', '$log', 'user', 'apiProvider', function($rootScope, $scope, $log, user, apiProvider) {
 		$log.info('Loading web main controller');
-        $scope.conferences = [];
-        $scope.conference = null;
-        $scope.teams = [];
-        $scope.team = null;
+        $scope.fus = [];
+        $scope.searchFu = '';
+        $scope.bars = [];
+        $scope.searchBar = '';
+        $scope.fubars = [];
+        $scope.searchFubarFu = '';
+        $scope.searchFubarBar = '';
 
-        $scope.paginationSettings = settings.pagination;
-
-        // Pagination Pieces
-        $scope.totalCount = 0;
-        $scope.currentPage = 1;
-        $scope.maxPerPage = 10;
-        $scope.isPaginate = false;
-
-        $scope.update_paginate = function () {
-            return function pages(input) {
-                $scope.pages = Math.ceil(input.length / $scope.maxPerPage);
-            };
-        }
-
-        $scope.setPage = function(page) {
-            $scope.currentPage = page;
-        }
-
-        $scope.onConferenceChange = function() {
-            getConference($scope.conference.code)
+        $scope.getFu = function() {
+            $log.info('Retrieve fu: ' + $scope.searchFu);
+            apiProvider.callFunction('getFu', {fu: $scope.searchFu})
                 .then(function(result) {
-                    $log.info('Retrieved conference');
-                    getTeams($scope.conference);
+                    $log.info('Retrieved fubars');
+                    $scope.fus = result.result.length ? result.result : [];
                 },
                 function(err) {
                     $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
                 });
         }
 
-        function getConference(conference) {
-            var query = conference ? {code: conference} : {};
-            $log.info('Retrieve conference: ' + JSON.stringify(conference));
-            return apiProvider.callFunction('getConference', query);
-        }
-
-        function getTeams(conference) {
-            $log.info('Retrieve teams for conference: ' + conference.name);
-            apiProvider.callFunction('getTeam', {conference: conference.code})
+        $scope.getBar = function() {
+            $log.info('Retrieve bar: ' + $scope.searchBar);
+            apiProvider.callFunction('getBar', {bar: $scope.searchBar})
                 .then(function(result) {
-                    $log.info('Retrieved teams for conference: ' + conference.name);
-                    $scope.teams = result.result.length ? result.result : [];
-                    //$log.debug(JSON.stringify($scope.teams));
-
-                    $scope.totalCount = $scope.teams.length;
-                    $scope.currentPage = 1;
-                    $scope.isPaginate = !!(($scope.totalCount > $scope.maxPerPage));
+                    $log.info('Retrieved fubars');
+                    $scope.bars = result.result.length ? result.result : [];
                 },
                 function(err) {
-                    $log.error('Failed to retrieve teams for conference: ' + $scope.conference.name + '. ' + (err.result ? err.result.toString() : err.toString()));
+                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
                 });
         }
 
-        $log.info('Retrieve conferences');
-        getConference()
-            .then(function(result) {
-                $log.info('Retrieved conferences');
-                $scope.conferences = result.result.length ? result.result : [];
-                //$log.debug(JSON.stringify($scope.conferences));
-            },
-            function(err) {
-                $log.error('Failed to retrieve conferences: ' + (err.result ? err.result.toString() : err.toString()));
-            });
+        $scope.getFubar = function() {
+            $log.info('Retrieve fubar: ' + $scope.searchFubarFu + '/' + $scope.searchFubarBar);
+            apiProvider.callFunction('getFubar', {fu: $scope.searchFubarFu, bar: $scope.searchFubarBar})
+                .then(function(result) {
+                    $log.info('Retrieved fubars');
+                    $scope.fubars = result.result.length ? result.result : [];
+                },
+                function(err) {
+                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
+                });
+        }
+
+        $rootScope.$on("fuUpdate", function (event, message) {
+            $log.info("Event fuUpdate fired with : " + JSON.stringify(message));
+            //$scope.postCount = $scope.postCount + 1;
+            //$scope.userData = message.data.body;
+            //$scope.message = 'Post Received: ' + $scope.postCount;
+            //$scope.fus.push(message.data.body);
+
+            $scope.$apply();
+        });
+
+        $rootScope.$on("barUpdate", function (event, message) {
+            $log.info("Event barUpdate fired with : " + JSON.stringify(message));
+            //$scope.postCount = $scope.postCount + 1;
+            //$scope.userData = message.data.body;
+            //$scope.message = 'Post Received: ' + $scope.postCount;
+            //$scope.bars.push(message.data.body);
+
+            $scope.$apply();
+        });
+
+        $rootScope.$on("fubarUpdate", function (event, message) {
+            $log.info("Event fubarUpdate fired with : " + JSON.stringify(message));
+            //$scope.postCount = $scope.postCount + 1;
+            //$scope.userData = message.data.body;
+            //$scope.message = 'Post Received: ' + $scope.postCount;
+            //$scope.fubars.push(message.data.body);
+
+            $scope.$apply();
+        });
+
     }]);
 
 

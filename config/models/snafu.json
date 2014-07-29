@@ -1,0 +1,4 @@
+{
+	"snafu": "string",
+    "value": int
+}

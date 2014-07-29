@@ -1,18 +1,6 @@
 {
-	"txtConference": "Conference",
-	"txtTeams": "Teams",
-	"txtName": "Name",
-	"txtCity": "City",
-	"txtDivision": "Division",
-	"txtWins": "Wins",
-	"txtLosses": "Losses",
-	"txtOvertimeLosses": "Overtime Losses",
-	"txtTeamsInThe": "Teams in the",
-	"txtTeam": "Team",
-	"txtGame": "Game",
-	"txtGames": "Games",
-	"txtHome": "Home",
-	"txtVisitor": "Visitor",
-	"txtDate": "Date",
-	"txtScore": "Score"
+	"txtFu": "Fu",
+	"txtBar": "Bar",
+	"txtFubar": "Fubar",
+    "txtValue": "Value"
 }

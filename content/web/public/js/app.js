@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-cai.module('peApp', ['cai.services', 'peControllers', 'peFilters', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'i18n'])
+cai.module('peApp', ['cai.services', 'peControllers', 'ngCookies', 'ngRoute', 'ui.bootstrap', 'i18n'])
     .value('settings', {
         pagination: {
             maxSize: 5, //number of pages to show in the pagination widget before an ellipsis is displayed
@@ -41,14 +41,6 @@ cai.module('peApp', ['cai.services', 'peControllers', 'peFilters', 'ngCookies', 
             .when('/', {
 		        templateUrl: 'main',
                 controller: 'MainController'
-            })
-            .when('/team/:conference/:code', {
-                templateUrl: 'team',
-                controller: 'TeamController'
-            })
-            .when('/game/:home/:visitor/:date', {
-                templateUrl: 'game',
-                controller: 'GameController'
             });
 
         $locationProvider.html5Mode(true);
