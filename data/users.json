@@ -7,7 +7,6 @@
         "passwordLifetime": 0,
         "resetPassword" : false,
         "loginAttempts" : 0,
-        "pass": "go",
         "status": "Active",
         "company": "ss",
         "products": [
@@ -25,7 +24,9 @@
                     }
                 }
             }
-        ]
+        ],
+        "salt": "jhiTdj5dl0m6hURrCD5tki0/MRK4tTlU8UVvG49BZsJjeKOrIBI2/aapNkqg/d0SXAZQ1e8PmwLvwqjtLO5Qbzhyzg2cNV6R8IZOm3xInk/eQ+w3PsuGbpxZBwO86DHT",
+        "hash": "Fr0+G3uT27Or+XqAezsoz+EwuPWUSg7/S27LPGNZhf2SLKB10jb6ELvNUFpHShuAu73BO4nycteXw58Xuo3sGumBqHlUL9VuThdY1uEdKdWMaxw2bpYTrIxvDi+EY6XoWAnG9pTW7vGNJIV7yiEjlmOv+LV2+VfeVpx9sxDotz4="
     },
 
     {
@@ -36,7 +37,6 @@
         "passwordLifetime": 0,
         "resetPassword" : false,
         "loginAttempts" : 0,
-        "pass": "go",
         "status": "Active",
         "company": "cc",
         "products": [
@@ -55,7 +55,9 @@
                     }
                 }
             }
-        ]
+        ],
+        "salt": "jhiTdj5dl0m6hURrCD5tki0/MRK4tTlU8UVvG49BZsJjeKOrIBI2/aapNkqg/d0SXAZQ1e8PmwLvwqjtLO5Qbzhyzg2cNV6R8IZOm3xInk/eQ+w3PsuGbpxZBwO86DHT",
+        "hash": "Fr0+G3uT27Or+XqAezsoz+EwuPWUSg7/S27LPGNZhf2SLKB10jb6ELvNUFpHShuAu73BO4nycteXw58Xuo3sGumBqHlUL9VuThdY1uEdKdWMaxw2bpYTrIxvDi+EY6XoWAnG9pTW7vGNJIV7yiEjlmOv+LV2+VfeVpx9sxDotz4="
     },
 
     {
@@ -66,7 +68,6 @@
         "passwordLifetime": 0,
         "resetPassword" : false,
         "loginAttempts" : 0,
-        "pass": "go",
         "status": "Active",
         "company": "acme",
         "products": [
@@ -84,6 +85,8 @@
                     }
                 }
             }
-        ]
+        ],
+        "salt": "jhiTdj5dl0m6hURrCD5tki0/MRK4tTlU8UVvG49BZsJjeKOrIBI2/aapNkqg/d0SXAZQ1e8PmwLvwqjtLO5Qbzhyzg2cNV6R8IZOm3xInk/eQ+w3PsuGbpxZBwO86DHT",
+        "hash": "Fr0+G3uT27Or+XqAezsoz+EwuPWUSg7/S27LPGNZhf2SLKB10jb6ELvNUFpHShuAu73BO4nycteXw58Xuo3sGumBqHlUL9VuThdY1uEdKdWMaxw2bpYTrIxvDi+EY6XoWAnG9pTW7vGNJIV7yiEjlmOv+LV2+VfeVpx9sxDotz4="
     }
 ]

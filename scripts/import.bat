@@ -10,5 +10,4 @@ mongoimport -h localhost --port 27017 -d mobileconnect -c productDefinitions --d
 mongoimport -h localhost --port 27017 -d mobileconnect -c companies --drop --jsonArray --stopOnError --file "%BASE_DIR%\..\data\companies.json"
 
 @echo Loading users...
-mongo localhost:27017/mobileconnect --eval "db.users.drop()"
-node "%BASE_DIR%\..\..\Project-Evolution\test\util\seed_users.js" "%BASE_DIR%\..\data\users.json"
+mongoimport -h localhost --port 27017 -d mobileconnect -c users --drop --jsonArray --stopOnError --file "%BASE_DIR%\..\data\users.json"

@@ -1,8 +1,8 @@
 Project-Evolution Permission Demo
 ======================
 
-This simple demonstration presents permission based content and data delivery: the markup and/or data presented is determined by the particular role and/or permissions
-associated with the logged on user.
+This simple demonstration presents role and permission based content and data delivery: the markup and/or data presented is determined by the particular role and/or permissions
+associated with the logged on user. Additionally, role based control of routes is also presented.
 
 # Getting started
 
@@ -75,3 +75,22 @@ Logon as a different user: all user passwords are "go"
 * Company ss / User ssuser
 * Company acme / User acuser
 
+
+## Browse to the restricted page
+
+From either a desktop or mobile browser
+
+`http://<COMPANY>.localhost:9000/product/permissiondemo/restricted`
+
+Substitute one of the mock company codes for <COMPANY>.
+
+`http://cc.localhost:9000/product/permissiondemo/restricted`
+
+(Substitute the DNS name or IP address for localhost when browsing from a mobile device)
+
+### To view different permission settings
+Logon as a different user: all user passwords are "go"
+
+* Company cc / User ccuser
+* Company ss / User ssuser
+* Company acme / User acuser

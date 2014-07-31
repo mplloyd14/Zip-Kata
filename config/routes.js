@@ -25,15 +25,40 @@ module.exports = exports = function(i18n) {
 			protected: true
 		},
 
-		{
-			method: 'get',
-			route: '/product/:product/desktop*',
-			base: '/product/:product/desktop',
-			render: {
-				title: 'MOBILEconnect Permissions Demo',
-				template: '/web/index'
-			},
-			protected: true
-		}
+        {
+            method: 'get',
+            route: '/product/:product/desktop*',
+            base: '/product/:product/desktop',
+            render: {
+                title: 'MOBILEconnect Permissions Demo',
+                template: '/web/index'
+            },
+            protected: true
+        },
+
+        {
+            method: 'get',
+            route: '/product/:product/restricted',
+            redirect: {
+                desktop: '/product/:product/restricted/desktop',
+                mobile: '/product/:product/restricted/mobile/'
+            },
+            protected: true
+        },
+
+        {
+            method: 'get',
+            route: '/product/:product/restricted/desktop*',
+            base: '/product/:product/restricted/desktop',
+            render: {
+                title: 'MOBILEconnect Permissions Demo',
+                template: '/web/restricted'
+            },
+            roles: [
+                'roleA'
+            ],
+            protected: true
+        }
+
 	];
 }
