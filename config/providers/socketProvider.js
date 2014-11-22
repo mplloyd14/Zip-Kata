@@ -3,7 +3,10 @@
 var log = require('../../lib/log')(),
     Q = require('q'),
     fubars = require('../../lib/fubars');
-    
+
+
+var throwError = false;
+
 module.exports = {
     type: "Socket",
     services: {
@@ -46,7 +49,17 @@ module.exports = {
                 id: "|PATTERN|",
                 pattern: "/{fu}/{bar}",
                 client: true,
-                announce: true
+                announce: true,
+                filter: function(data, perms) {
+                    log.info('Filtering for getFubar room');
+                    if (throwError) {
+                        log.warn('About to throw an error, man');
+                        throw new Error('Bad things, man');
+                    }
+                    log.debug('No prob, dude');
+                    throwError = !throwError;
+                    return Q(data);
+                }
             }
         }
     },

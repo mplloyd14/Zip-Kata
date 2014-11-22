@@ -11,12 +11,7 @@ module.exports = {
                 '/fu/:fu/bar/:bar',
                 '/bar/:bar'
             ],
-            selector: function(fubar) {
-                return {fu: fubar.fu};
-            },
-            transformer: function(payload) {
-                return payload.body;
-            }
+            module: 'lib/demoETL.js'
         }
     ]
 };

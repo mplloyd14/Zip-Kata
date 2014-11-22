@@ -42,14 +42,14 @@ describe('Fubars', function() {
 	describe('Mock DB', function() {
     	beforeEach(function() {
             env.collection = mockCollection();
-            env.mockGenericCollection = function() {
+            env.mockCollection = function() {
                 return env.collection;
             }
 
 			env.fubars = sandbox.require('../../../lib/fubars', {
             	requires: {
                 	'../lib/log': env.log,
-                	'projevo-core' : {GenericCollection: env.mockGenericCollection}
+                	'projevo-core' : {Collection: env.mockCollection}
 				}
 			});
 		});
@@ -154,7 +154,7 @@ describe('Fubars', function() {
 				}
 			});
             
-            env.genericCollection = sandbox.require('../../../node_modules/projevo-core/lib/genericCollection', {
+            env.Collection = sandbox.require('../../../node_modules/projevo-core/lib/Collection', {
             	requires: {
                     'projevo-core' : {Collection: env.collection},
                 	'config': env.config
@@ -164,7 +164,7 @@ describe('Fubars', function() {
 			env.fubars = sandbox.require('../../../lib/fubars', {
             	requires: {
                 	'../lib/log': env.log,
-                	'projevo-core' : {GenericCollection: env.genericCollection}
+                	'projevo-core' : {Collection: env.Collection}
 				}
 			});
 

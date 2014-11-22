@@ -36,7 +36,8 @@ module.exports = {
 	data : {
 		providers : [
         	'socketProvider',
-            'restProvider'
+            'restProvider',
+			'etlProvider'
 		],
 		socket : {
 			server : {
@@ -168,6 +169,7 @@ module.exports = {
 	},
     apiServer: {
         host: 'http://localhost:4010',
-        routeRegistrationPath: '/routes/refresh'
+        routeRegistrationPath: '/routes/refresh',
+		etlRegistrationPath: '/etls/refresh'
     }
 };
