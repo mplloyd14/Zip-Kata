@@ -138,12 +138,6 @@ module.exports = {
 			mobileconnect : {
 				server : 'mobileconnect'
 			},
-            ss : {
-                server : 'mobileconnect'
-            },
-            cc : {
-                server : 'mobileconnect'
-            },
             "etldemo-tests" : {
                 server : 'mobileconnect'
             }
@@ -163,7 +157,7 @@ module.exports = {
                 database: 'mobileconnect'
             },
             fubars: {
-                database: 'peseed-etl'
+                database: 'mobileconnect'
             }
 		}
 	},

@@ -16,10 +16,10 @@ module.exports = {
                 return fubars.get(context, data);
             },
             room: {
-                //id: "|URL|",
-                //url: "/{fu}",
-                id: "|PATTERN|",
-                pattern: "/{fu}",
+                id: "|URL|",
+                url: "/{fu}",
+                //id: "|PATTERN|",
+                //pattern: "/{fu}",
                 client: true,
                 announce: true
             }
@@ -30,10 +30,10 @@ module.exports = {
                 return fubars.get(context, data);
             },
             room: {
-                //id: "|URL|",
-                //url: "/{bar}",
-                id: "|PATTERN|",
-                pattern: "/{bar}",
+                id: "|URL|",
+                url: "/{bar}",
+                //id: "|PATTERN|",
+                //pattern: "/{bar}",
                 client: true,
                 announce: true
             }
@@ -44,10 +44,10 @@ module.exports = {
                 return fubars.get(context, data);
             },
             room: {
-                //id: "|URL|",
-                //url: "/{fu}/{bar}",
-                id: "|PATTERN|",
-                pattern: "/{fu}/{bar}",
+                id: "|URL|",
+                url: "/{fu}/{bar}",
+                //id: "|PATTERN|",
+                //pattern: "/{fu}/{bar}",
                 client: true,
                 announce: true,
                 filter: function(data, perms) {
@@ -65,14 +65,14 @@ module.exports = {
     },
     emitters : {
         events : [
-            /*
             {'event' :  "fuUpdate", 'room': '|URL|'},
             {'event' :  "barUpdate", 'room': '|URL|'},
             {'event' :  "fubarUpdate", 'room': '|URL|'}
-            */
+            /*
             {'event' :  "fuUpdate", 'room': '|PATTERN|', 'pattern': '/{fu}'},
             {'event' :  "barUpdate", 'room': '|PATTERN|', 'pattern': '/{bar}'},
             {'event' :  "fubarUpdate", 'room': '|PATTERN|', 'pattern': '/{fu}/{bar}'}
+            */
         ]
     }
 };

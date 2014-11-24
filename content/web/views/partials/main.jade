@@ -13,7 +13,7 @@ script#main(type='text/ng-template')
                         th #{__("txtBar")}
                         th #{__("txtValue")}
                     tbody
-                        tr(ng-repeat="f in fus", id="fu_{{$index}}", style="cursor:pointer;")
+                        tr(ng-repeat="f in fus track by $index", id="fu_{{$index}}", style="cursor:pointer;")
                             td.colcenter {{f.fu}}
                             td.colcenter {{f.bar}}
                             td.colcenter {{f.value | number}}
@@ -31,7 +31,7 @@ script#main(type='text/ng-template')
                         th #{__("txtBar")}
                         th #{__("txtValue")}
                     tbody
-                        tr(ng-repeat="b in bars", id="bar_{{$index}}", style="cursor:pointer;")
+                        tr(ng-repeat="b in bars track by $index", id="bar_{{$index}}", style="cursor:pointer;")
                             td.colcenter {{b.fu}}
                             td.colcenter {{b.bar}}
                             td.colcenter {{b.value | number}}
@@ -50,7 +50,7 @@ script#main(type='text/ng-template')
                         th #{__("txtBar")}
                         th #{__("txtValue")}
                     tbody
-                        tr(ng-repeat="fb in fubars", id="fubar_{{$index}}", style="cursor:pointer;")
+                        tr(ng-repeat="fb in fubars track by $index", id="fubar_{{$index}}", style="cursor:pointer;")
                             td.colcenter {{fb.fu}}
                             td.colcenter {{fb.bar}}
                             td.colcenter {{fb.value | number}}

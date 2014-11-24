@@ -32,7 +32,7 @@ module.exports = exports = function(i18n) {
             route: '/product/etldemo/desktop*',
             base: '/product/etldemo/desktop',
             render: {
-                title: 'MOBILEconnect ETL Demo',
+                title: 'Evolution ETL Demo',
                 template: '/web/index'
             },
             protected: true

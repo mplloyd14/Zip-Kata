@@ -5,7 +5,8 @@ module.exports = {
     transforms: [
         {
             domain: 'fubars',
-            schedule: '0 * * * * *',
+            method: 'post',
+            mode: 'upsert',
             routes: [
                 '/fu/:fu',
                 '/fu/:fu/bar/:bar',
