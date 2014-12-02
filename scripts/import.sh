@@ -10,8 +10,3 @@ mongoimport -h localhost --port 27017 -d mobileconnect -c companies --drop --jso
 
 echo "Importing users..."
 mongoimport -h localhost --port 27017 -d mobileconnect -c users --drop --jsonArray --stopOnError --file $BASE_DIR/../data/users.json
-
-
-echo "Importing Fubars..."
-mongoimport -h localhost --port 27017 -d ss -c fubars --drop --jsonArray --stopOnError --file $BASE_DIR/../test/data/fubars.json
-mongoimport -h localhost --port 27017 -d cc -c fubars --drop --jsonArray --stopOnError --file $BASE_DIR/../test/data/fubars.json
