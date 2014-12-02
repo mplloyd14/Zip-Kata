@@ -1,0 +1,19 @@
+[
+    {
+        "code": "peseed",
+        "name": "PESeed Master",
+        "description": "PESeed Master",
+        "roles": [
+            "globaladmin",
+            "appadmin",
+            "appuser"
+        ],
+        "settings": {
+        },
+        "platforms": {
+            "desktop": "desktop",
+            "mobile": "mobile",
+            "tablet": "desktop"
+        }
+    }
+]
