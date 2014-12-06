@@ -26,6 +26,14 @@ module.exports = {
                 "event": "fubarUpdate",
                 "external": true
             }
+        ],
+        "/fu/export" : [
+            {
+                "method": "post",
+                "version": "0.0.1",
+                "external": true,
+                "outbound": true
+            }
         ]
     }
 };

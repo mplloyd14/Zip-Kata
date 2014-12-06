@@ -8,6 +8,16 @@
             "secondary" : "@color-secondary: #add500;",
             "logo" : "@logo: 'ss-logo.png';"
         },
+        "settings": {
+            "dataEndPoints": {
+                "CustomerService" : {
+                    "EndPointAddress" : "127.0.0.1",
+                    "Port" : "5901",
+                    "Type" : "REST",
+                    "SubType" : "Client"
+                }
+            }
+        },
         "products": [
             {
                 "code": "etldemo",
@@ -24,7 +34,6 @@
             }
         ]
     },
-
     {
         "code": "cc",
         "description": "Cogswell Cogs",
@@ -33,6 +42,16 @@
             "primary" : "@color-primary: #323232;",
             "secondary" : "@color-secondary: #f47836;",
             "logo" : "@logo: 'cc-logo.png';"
+        },
+        "settings": {
+            "dataEndPoints": {
+                "CustomerService" : {
+                    "EndPointAddress" : "127.0.0.1",
+                    "Port" : "6901",
+                    "Type" : "REST",
+                    "SubType" : "Client"
+                }
+            }
         },
         "products": [
             {

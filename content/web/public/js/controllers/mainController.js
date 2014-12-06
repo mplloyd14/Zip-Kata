@@ -16,11 +16,22 @@ cai.module('peControllers', ['cai.services'])
             $log.info('Retrieve fu: ' + $scope.searchFu);
             apiProvider.callFunction('getFu', {fu: $scope.searchFu})
                 .then(function(result) {
-                    $log.info('Retrieved fubars');
+                    $log.info('Retrieved fus');
                     $scope.fus = result.result.length ? result.result : [];
                 },
                 function(err) {
-                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
+                    $log.error('Failed to retrieve fus: ' + (err.result ? err.result.toString() : err.toString()));
+                });
+        }
+        $scope.exportFu = function() {
+            $log.info('Export fu');
+            apiProvider.callFunction('exportFu', {fu: $scope.searchFu})
+                .then(function(result) {
+                    $log.info('Exported fus');
+                    $scope.fus = result.result.length ? result.result : [];
+                },
+                function(err) {
+                    $log.error('Failed to export fus: ' + (err.result ? err.result.toString() : err.toString()));
                 });
         }
 
@@ -28,11 +39,11 @@ cai.module('peControllers', ['cai.services'])
             $log.info('Retrieve bar: ' + $scope.searchBar);
             apiProvider.callFunction('getBar', {bar: $scope.searchBar})
                 .then(function(result) {
-                    $log.info('Retrieved fubars');
+                    $log.info('Retrieved bars');
                     $scope.bars = result.result.length ? result.result : [];
                 },
                 function(err) {
-                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
+                    $log.error('Failed to retrieve fubars: ' + (err.result ? err.result.toString() : err.toString()));
                 });
         }
 
@@ -44,7 +55,7 @@ cai.module('peControllers', ['cai.services'])
                     $scope.fubars = result.result.length ? result.result : [];
                 },
                 function(err) {
-                    $log.error('Failed to retrieve conference: ' + (err.result ? err.result.toString() : err.toString()));
+                    $log.error('Failed to retrieve fubars: ' + (err.result ? err.result.toString() : err.toString()));
                 });
         }
 

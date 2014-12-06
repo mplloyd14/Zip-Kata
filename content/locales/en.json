@@ -2,5 +2,7 @@
 	"txtFu": "Fu",
 	"txtBar": "Bar",
 	"txtFubar": "Fubar",
-    "txtValue": "Value"
+	"txtValue": "Value",
+	"Get": "Get",
+	"Export": "Export"
 }

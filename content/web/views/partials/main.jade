@@ -4,7 +4,8 @@ script#main(type='text/ng-template')
         div
             form
                 input#fu(type="text", ng-model='searchFu')
-                button(ng-click="getFu()") Get
+                button(ng-click="getFu()") #{__('Get')}
+                button(ng-click="exportFu()") #{__('Export')}
 
             div
                 table.table.table-striped
@@ -23,7 +24,7 @@ script#main(type='text/ng-template')
         div
             form
                 input#bar(type="text", ng-model='searchBar')
-                button(ng-click="getBar()") Get
+                button(ng-click="getBar()") #{__('Get')}
             div
                 table.table.table-striped
                     thead
@@ -42,7 +43,7 @@ script#main(type='text/ng-template')
             form
                 input#fubarFu(type="text", ng-model='searchFubarFu')
                 input#fubarBar(type="text", ng-model='searchFubarBar')
-                button(ng-click="getFubar()") Get
+                button(ng-click="getFubar()") #{__('Get')}
             div
                 table.table.table-striped
                     thead

@@ -1,7 +1,9 @@
 'use strict';
 
-var log = require('../../lib/log')(),
+var config = require('config'),
+    log = require('../../lib/log')(),
     Q = require('q'),
+    rest = require('projevo-core').RestClient,
     fubars = require('../../lib/fubars');
 
 
@@ -14,6 +16,31 @@ module.exports = {
             handler: function(data, context){
             	log.info('Get Fu for ' + JSON.stringify(context));
                 return fubars.get(context, data);
+            },
+            room: {
+                id: "|URL|",
+                url: "/{fu}",
+                //id: "|PATTERN|",
+                //pattern: "/{fu}",
+                client: true,
+                announce: true
+            }
+        },
+        exportFu: {
+            handler: function(data, context){
+                log.info('Export Fu for ' + JSON.stringify(context));
+                var url = config.apiServer.host + '/company/' + context.company + '/product/' + context.product + '/fu/export';
+                log.debug('POST ' + url);
+                return rest.post(url, data, {json: true})
+                    .then(function(rsp) {
+                        log.debug('Export complete');
+                        return rsp;
+                    })
+                    .fail(function(err) {
+                        log.error('Export failed');
+                        log.error(JSON.stringify(err));
+                        return Q.reject(err);
+                    });
             },
             room: {
                 id: "|URL|",
