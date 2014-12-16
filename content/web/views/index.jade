@@ -9,7 +9,8 @@ block body
             a(href="#/table") #{__('Table')}
             a(href="#", ng-click="logout()", style="padding-left: 80%;") #{__('Logout')} {{firstName}} {{lastName}}
     div(ng-view)
-        
+
+    include partials/canInput6_default.jade
     include partials/simpleView.jade
     include partials/complexView.jade
     include partials/tableView.jade
