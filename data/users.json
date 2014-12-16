@@ -51,7 +51,8 @@
                         "canInput1": false,
                         "canInput2": true,
                         "canInput3": false,
-                        "canInput4": true
+                        "canInput4": true,
+						"canInput6": true
                     }
                 }
             }
@@ -81,7 +82,8 @@
                         "canInput1": true,
                         "canInput2": false,
                         "canInput3": true,
-                        "canInput4": false
+                        "canInput4": false,
+						"canInput6": false
                     }
                 }
             }
