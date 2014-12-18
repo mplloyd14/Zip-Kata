@@ -13,7 +13,8 @@ cai.module('peControllers', ['cai.services'])
 			//default to nothing when canInput5 permission is missing from user
 			{name: 'canInput5Template'},
 			//default to template id "canInput6Default" if canInput6 permission is missing from user
-			{name: 'canInput6Template', reference: 'canInput6Default' }
+			{name: 'canInput6Template', reference: 'canInput6Default' },
+			{name: 'canInput7Template', reference: 'canInput7Default'}
 		]);
 
         $scope.logout = function() {
