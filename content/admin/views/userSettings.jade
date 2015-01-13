@@ -1,0 +1,119 @@
+script#commerceUserSettings(type='text/ng-template')
+    h4.title #{__("txtCommerceSettings")}
+    div(data-ng-controller="commerceSettingsCtrl")
+
+        // company settings display here
+        div.form-control-group(ng-show="showCompanies")
+            h4 #{__("txtCompanyAccess")}
+                a
+                    i.icon-info-sign.icon(popover-placement="top", popover-trigger="mouseenter", popover="#{__('txtCompanyAccessHelp')}")
+            ul.unstyled
+                li(ng-repeat="company in companies | orderBy:'name'")
+                    label.checkbox(for="enable-company-{{company.code}}") {{company.name}} ({{company.code}})
+                        input(id="enable-company-{{company.code}}", type="checkbox", ng-model="company.enabled", ng-change="updateCompanies()")
+            hr
+
+        div(class="row-fluid", data-ng-show="userChangeCustomer")
+            tabset
+                tab(data-heading="#{__('txtCustomerUser')}", data-select="userTypeChange('Customer')")
+                    div(class="form-control-group")
+                        h4 #{__("txtRestrictByCustomer")}
+                        div(id="input-customer-search-container")
+                            ul.unstyled
+                                li(ng-repeat="company in companies | filter: { enabled: true }", ng-show="companiesEnabled")
+                                    {{company.name}}:
+                                    input.span9(id="input-company-{{company.code}}-customer-search", type="text", readonly, placeholder="#{__("txtCustomerRequired")}", ng-model="getRestrictedCustomer(company.code).name", ng-required="companiesEnabled && userType === 'Customer'")
+                                    button.btn.pull-right(id="btn-company-{{company.code}}-customer-search", type="button", ng-click="showSearch(company.code)", style="position:relative")
+                                        i.icon-search
+                                        |  #{__("search")}
+                                li(ng-show="!companiesEnabled")
+                                    input.span9(id="input-company-customer-search", type="text", readonly, placeholder="#{__("txtCustomerRequired")}", ng-model="getRestrictedCustomer(null).name", ng-required="!companiesEnabled && userType === 'Customer'")
+                                    button.btn.pull-right(id="btn-company-customer-search", type="button", ng-click="showSearch(null)", style="position:relative")
+                                        i.icon-search
+                                        |  #{__("search")}
+
+                tab(data-heading="#{__('txtCompanyUser')}", data-select="userTypeChange('Company')", active="product.settings.permissions.changeCustomer")
+                    div(class="form-control-group")
+                        label(class="title") #{__("txtSalesAssociation")}
+                            a
+                                i(class="icon-info-sign icon", popover-placement="left", popover-trigger="mouseenter", popover="#{__('txtCompanyUserHelp')}")
+                        div(data-ng-repeat="sales in salespeople | orderBy: ['companyCode','fullName'] ")
+                            label(for="input-salesperson-{{$index}}", class="checkbox title") {{sales.fullName}} ({{sales.code}})
+                                |  <span ng-show="companies && companies.length > 0">- {{sales.companyCode }}</span>
+                                input(id="input-salesperson-{{$index}}", type="checkbox", data-ng-model="sales.status", data-ng-change="setSalesPeople(sales, sales.status)")
+        hr(data-ng-show="userChangeCustomer")
+        div(class="row-fluid")
+            div(class="span6")
+                div(class="form-control-group")
+                    label(for="input-sms", class="title") #{__("txtSMS")}
+                        a
+                            i(class="icon-info-sign icon", popover-placement="top", popover-trigger="mouseenter", popover="#{__('txtMobileNumberEntryHelp')}")
+                    input(id="input-sms", type="text", class="span12", data-ng-model="product.settings.sms")
+
+                hr.visible-phone
+                div(class="form-control-group")
+                    label.title #{__("txtTimeZone")}
+                    div(class="form-control-group alert alert-warning")
+                        label(data-ng-show="isCompDefault") #{__("txtUserTZdefault")} {{companyTZOperator}}{{companyTZHour}}:{{companyTZMin}}
+                        label(data-ng-show="!isCompDefault") #{__("txtCompanyTZcustom")} {{companyTZOperator}}{{companyTZHour}}:{{companyTZMin}}
+                        label(data-ng-show="!isCompDefault") #{__("txtUserTZcustom")} {{product.settings.timeZone.operator}}{{product.settings.timeZone.hours}}:{{product.settings.timeZone.minutes}}
+                    button(id="btnShowControl", data-ng-click='toggleTZControl()', class="btn", data-ng-hide="showTZControl") #{__("txtShowTimeZoneControl")}
+                    button(id="btnHideControl", data-ng-click='toggleTZControl()', class="btn", data-ng-show="showTZControl") #{__("txtHideTimeZoneControl")}
+                div#timeZoneControls(data-ng-show="showTZControl")
+                    div(class="form-control-group")
+                        select(id="select-time-zone-operator", class="span12", data-ng-model="product.settings.timeZone.operator", data-ng-options="c for c in operatorOpts", data-ng-change="changeOperator()")
+                            option(value="") #{__("txtSelectTimeZoneOperator")}
+                    div(class="form-control-group")
+                        select(id="select-time-zone-hour", class="span12", data-ng-model="product.settings.timeZone.hours", data-ng-options="h for h in hoursOpts", data-ng-change="timeChange()")
+                            option(value="") #{__("txtSelectTimeZoneHour")}
+                    div(class="form-control-group")
+                        select(id="select-time-zone-min", class="span12", data-ng-model="product.settings.timeZone.minutes", data-ng-options="m for m in minutesOpts", data-ng-change="timeChange()")
+                            option(value="") #{__("txtSelectTimeZoneMinute")}
+            hr.visible-phone
+            div(class="span6")
+                div(class="form-control-group", data-ng-show="!product.settings.permissions.changeCustomer")
+                    label(for="input-future-email", class="checkbox title") #{__("txtFutureEmail")}
+                        input(id="input-future-email", type="checkbox", data-ng-model="product.settings.permissions.futureOrderEmail")
+                div(class="form-control-group")
+                    label(for="input-batch-weights", class="checkbox title") #{__("txtBatchWeight")}
+                        input(id="input-batch-weights", type="checkbox", data-ng-model="product.settings.permissions.batchWeights")
+                div(class="form-control-group")
+                    label(for="input-truck-times", class="checkbox title") #{__("txtTruckTimes")}
+                        input(id="input-truck-times", type="checkbox", data-ng-model="product.settings.permissions.truckTimes")
+                div(class="form-control-group")
+                    label(for="input-truck-mapping", class="checkbox title") #{__("txtTruckMapping")}
+                        input(id="input-truck-mapping", type="checkbox", data-ng-model="product.settings.permissions.mapping")
+                div(class="form-control-group")
+                    label(for="input-pricing", class="checkbox title") #{__("txtPricing")}
+                        input(id="input-pricing", type="checkbox", data-ng-model="product.settings.permissions.pricing")
+                div(class="form-control-group", data-ng-show="hasAcctInfo")
+                    label(for="input-account-info", class="checkbox title") #{__("txtAcctInfo")}
+                        input(id="input-account-info", type="checkbox", data-ng-model="product.settings.permissions.acctInfo")
+                div(class="form-control-group", data-ng-show="hasDocImage")
+                    label(for="input-doc-image", class="checkbox title") #{__("txtDocImage")}
+                        input(id="input-doc-image", type="checkbox", data-ng-model="product.settings.permissions.docImage")
+                div(class="form-control-group")
+                    label(for="input-admin-perms", class="checkbox title") #{__("txtAdminPermissions")}
+                        input(id="input-admin-perms", type="checkbox", data-ng-model="product.settings.permissions.isAdmin", data-ng-change="roleChange()")
+
+        div(id="modal-commerce-name-search", data-ng-show="customerListModal")
+            div.modal
+                div.modal-header
+                    h3.title #{__('txtCustomerSearch')}
+                    input.span9(id="input-customer-search", type="text", placeholder="#{__('txtCustomerSearch')}", ng-model="customerSearchValue")
+                    button.btn.pull-right(id="btn-customer-search", type="button", ng-click="searchCustomers(customerSearchValue)", style="position:relative")
+                        i.icon-search
+                        |  #{__("search")}
+                div.modal-body
+                    table(class="table table-striped table-condensed")
+                        thead
+                            th.title #{__("txtCustomerCode")}
+                            th.title #{__("txtCustomerName")}
+                        tbody
+                            tr(data-ng-repeat="cust in customers", ng-click="selectRestrictedCustomer(cust.code, cust.name)")
+                                td {{cust.code}}
+                                td.title {{cust.name}}
+                div.modal-footer
+                    button(data-ng-click='clearCustomerListModal()', class="btn") #{__("Cancel")}
+            div(class="modal-backdrop", data-ng-click="customerListModal = !customerListModal")
+        // end #modal-commerce-name-searchl

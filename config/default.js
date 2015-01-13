@@ -1,5 +1,5 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 5000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
@@ -34,18 +34,18 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			'adminProvider.js'
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
-				matchOriginProtocol : false,
+				port :  5002,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  5001
 			}
 		}
 	},
@@ -58,15 +58,15 @@ module.exports = {
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
 				console : {
-					level : 'info', // maximum level of logged messages
+					level : 'debug', // maximum level of logged messages
 					colorize : true, // color levels
 					enabled : true // this switch can be used to easily toggle use of a given transport
 				},
 				file : {
 					level : 'warn',
-					enabled : true,
+					enabled : false,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'custom-admin-demo.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				},
