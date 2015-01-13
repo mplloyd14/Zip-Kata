@@ -1,5 +1,23 @@
 [
     {
+        "code": "acme",
+        "description": "ACME",
+        "status": "active",
+        "branding" : {
+            "primary" : "@color-primary: #0b1b4c;",
+            "secondary" : "@color-secondary: #add500;",
+            "logo" : "@logo: 'ss-logo.png';"
+        },
+        "products": [
+            {
+                "code": "customadmindemo",
+                "settings": {
+                }
+            }
+        ]
+    },
+
+    {
         "code": "ss",
         "description": "Spacely Sprockets",
         "status": "active",
@@ -10,16 +28,8 @@
         },
         "products": [
             {
-                "code": "etldemo",
+                "code": "customadmindemo",
                 "settings": {
-                    "dataEndPoints": {
-                        "IncomingData" : {
-                            "EndPointAddress" : "127.0.0.1",
-                            "Port" : "6601",
-                            "Type" : "REST",
-                            "SubType" : "Server"
-                        }
-                    }
                 }
             }
         ]
@@ -36,16 +46,8 @@
         },
         "products": [
             {
-                "code": "etldemo",
+                "code": "customadmindemo",
                 "settings": {
-                    "dataEndPoints": {
-                        "IncomingData" : {
-                            "EndPointAddress" : "127.0.0.1",
-                            "Port" : "6601",
-                            "Type" : "REST",
-                            "SubType" : "Server"
-                        }
-                    }
                 }
             }
         ]

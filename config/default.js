@@ -2,6 +2,7 @@ module.exports = {
 	port : 5000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
+	product_code: 'customadmindemo',
 	appBase : '',
 	client : {
 		auth_server : 'authenticationServer',

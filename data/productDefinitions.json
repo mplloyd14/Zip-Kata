@@ -1,8 +1,8 @@
 [
     {
-        "code": "peseed",
-        "name": "PESeed Master",
-        "description": "PESeed Master",
+        "code": "customadmindemo",
+        "name": "Custom Admin Demo",
+        "description": "Custom Admin Demo",
         "roles": [
             "globaladmin",
             "appadmin",
