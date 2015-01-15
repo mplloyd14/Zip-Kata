@@ -1,2 +1,4 @@
 script#hello(type='text/ng-template')
 	h2#hellomsg {{message}}
+	button(class="btn btn-primary", data-ng-click="aboutModal = true") #{__("btnOpenAbout")}
+	cai-About(data-ng-model="aboutModal")

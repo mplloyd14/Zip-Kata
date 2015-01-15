@@ -11,5 +11,7 @@ html(ng-app="peApp")
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
     include /core/shared/scripts
+    script(type='text/javascript', src='#{config.appBase}/cai/core/shared/js/lib/moment/momentjs.js')
+    script(type='text/javascript', src='#{config.appBase}/cai/core/shared/js/directives/caiAbout.js')
 
     block body
