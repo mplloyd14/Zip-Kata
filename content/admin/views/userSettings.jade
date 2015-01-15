@@ -1,6 +1,4 @@
 script#customadmindemoUserSettings(type='text/ng-template')
     div(data-ng-controller="customadmindemoSettingsCtrl")
         h2 #{__("Custom Admin Demo")}
-        div
-            label.mycheck #{__("Check")}
-            input(type="checkbox", ng-model="product.settings.check")
+        include ./partials/check.jade
