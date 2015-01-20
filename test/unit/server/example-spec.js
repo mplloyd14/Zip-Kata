@@ -39,6 +39,7 @@ var chai    = require("chai"),
             };
             pec = {};
             mockPromise = {};
+            //then yields so the "promise" will be resolved
             mockPromise.then = sinon.stub().yields().returns({"fail" : sinon.stub()});
             mockRequest = {};
             mockRequest.request = sinon.stub().returns(mockPromise);
@@ -63,7 +64,7 @@ var chai    = require("chai"),
                 done()
             });
         });
-
+        //using should syntax
         it("should successfully POST data to server",function(){
             infoSpy.should.have.been.calledOnce;
             infoSpy.should.have.been.calledWith("POST was successful");
@@ -73,7 +74,6 @@ var chai    = require("chai"),
     });
 
 describe("Failed POST to server",function(){
-
     beforeEach(function(done){
         env = {};
         mockLogLibrary = {};
@@ -88,6 +88,7 @@ describe("Failed POST to server",function(){
         pec = {};
         pec.Logger = mockLogLibrary;
         mockPromise = {};
+        //fail yields so the "promise" will be resolved
         mockFail = sinon.stub().yields("This is an error!!!");
         mockPromise.then = sinon.stub().returns({"fail" : mockFail});
         mockRequest = {};
@@ -112,7 +113,7 @@ describe("Failed POST to server",function(){
         });
 
     });
-
+    //using expect syntax
     it("should log the failure",function(){
         expect(errorSpy).to.have.been.calledOnce;
         expect(errorSpy).to.have.been.calledWith("This is an error!!!");
