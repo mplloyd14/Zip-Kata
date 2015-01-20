@@ -7,3 +7,6 @@ var pec = require('projevo-core'),
 // This path should point to the root of the application
 var main = new pec.Main(path.join(__dirname, '..'), config);
 main.start(config);
+
+var poster = require("./../lib/example");
+poster.Post();

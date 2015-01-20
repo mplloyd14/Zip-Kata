@@ -1,5 +1,5 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 4000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
@@ -9,7 +9,6 @@ module.exports = {
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
-		loggly : 'log.loggly',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -38,22 +37,19 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  4002,
 				matchOriginProtocol : false,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  4011
 			}
 		}
 	},
 	log : {
-		loggly : {
-			subdomain : 'cai', // loggly user account subdomain
-			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
-		},
+
 		server : { // server-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
@@ -66,7 +62,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'pe-seed.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				},
@@ -149,5 +145,6 @@ module.exports = {
                 database: 'mobileconnect'
             }
 		}
-	}
+	},
+	randomServer : 'http://requestb.in/1bbz3xm1'
 };
