@@ -22,12 +22,12 @@
 	"karma-mocha" : "*",
 	"karma-chrome-launcher" : "*",
 	"karma-junit-reporter" : "*",
-    "mocha": "=1.10.0",
+    "mocha": "*",
     "chai": "*",
     "sinon": "*",
     "sinon-chai": "*",
     "chai-as-promised": "*",
     "supertest": "=0.5.1",
-    "sandboxed-module": "=0.2.0"
+    "sandboxed-module": "*"
   }
 }

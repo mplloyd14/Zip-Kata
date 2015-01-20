@@ -13,36 +13,39 @@ var chai    = require("chai"),
 
     process.setMaxListeners(0);	// avoid warnings
 
-    var env,infoStub, errorStub, mockLogger,mockRandom, mockData, mockLogLibrary,pec, config, mockRequest,mockPromise, mockFail;
+    var env,infoSpy, errorSpy, mockLogger,mockRandom, mockData, mockLogLibrary,pec, config, mockRequest,mockPromise, mockFail;
 
-
+    describe("Initial Sanity Test",function(){
+        beforeEach(function() {
+            env = {};
+            env.poster = require("../../../lib/example.js");
+        });
+        it("should exist",function() {
+            env.poster.should.exist;
+        })
+    });
 
     describe("Successful POST data to server",function(){
-
         beforeEach(function(done){
             env = {};
             mockLogLibrary = {};
-            infoStub = sinon.stub();
-            errorStub = sinon.stub();
+            infoSpy = sinon.spy();
+            errorSpy = sinon.spy();
             mockLogLibrary.logger = function() {
                 return {
-                    "error" : errorStub,
-                    "info" : infoStub
+                    "error" : errorSpy,
+                    "info" : infoSpy
                     }
             };
-
-
-
             pec = {};
-            pec.Logger = mockLogLibrary;
             mockPromise = {};
             mockPromise.then = sinon.stub().yields().returns({"fail" : sinon.stub()});
             mockRequest = {};
             mockRequest.request = sinon.stub().returns(mockPromise);
             pec.RestClient = mockRequest;
+
+            pec.Logger = mockLogLibrary;
             config = {"randomServer" : 'http://example.com'};
-
-
 
             mockRandom = {};
             mockData = ['a','b','c'];
@@ -54,12 +57,16 @@ var chai    = require("chai"),
                     'node-random' : mockRandom
                 }
             });
-            env.poster.Post().then(done()).fail(done());
+            env.poster.Post().then(function(){
+                done()
+            }).fail(function (err) {
+                done()
+            });
         });
 
         it("should successfully POST data to server",function(){
-            infoStub.should.have.been.calledOnce;
-            infoStub.should.have.been.calledWith("POST was successful");
+            infoSpy.should.have.been.calledOnce;
+            infoSpy.should.have.been.calledWith("POST was successful");
             mockRequest.request.should.have.been.calledOnce;
             mockRequest.request.should.have.been.calledWith('POST', 'http://example.com',sinon.match(mockData), sinon.match({'json' : true}));
         });
@@ -70,12 +77,12 @@ describe("Failed POST to server",function(){
     beforeEach(function(done){
         env = {};
         mockLogLibrary = {};
-        infoStub = sinon.stub();
-        errorStub = sinon.stub();
+        infoSpy = sinon.spy();
+        errorSpy = sinon.spy();
         mockLogLibrary.logger = function() {
             return {
-                "error" : errorStub,
-                "info" : infoStub
+                "error" : errorSpy,
+                "info" : infoSpy
             }
         };
         pec = {};
@@ -107,9 +114,9 @@ describe("Failed POST to server",function(){
     });
 
     it("should log the failure",function(){
-        errorStub.should.have.been.calledOnce;
-        errorStub.should.have.been.calledWith("This is an error!!!");
-        mockRequest.request.should.have.been.calledOnce;
-        mockRequest.request.should.have.been.calledWith('POST', 'http://example.com',sinon.match(mockData), sinon.match({'json' : true}));
+        expect(errorSpy).to.have.been.calledOnce;
+        expect(errorSpy).to.have.been.calledWith("This is an error!!!");
+        expect(mockRequest.request).to.have.been.calledOnce;
+        expect(mockRequest.request).to.have.been.calledWith('POST', 'http://example.com',sinon.match(mockData), sinon.match({'json' : true}));
     });
 });
