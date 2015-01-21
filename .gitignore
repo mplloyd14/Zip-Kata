@@ -35,3 +35,5 @@ test/out/
 logs/*.log
 *.pst
 /test/selenium
+pe-seed.sln
+pe-seed.v12.suo
