@@ -1,8 +1,9 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 6020,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
-	appBase : '',
+	appBase: '',
+    product_code : 'etldemo',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -38,14 +39,14 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  6021,
 				matchOriginProtocol : false,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  6022
 			}
 		}
 	},
@@ -66,7 +67,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'etldemo.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				},

@@ -2,9 +2,10 @@ extends layout
 
 block body
     script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')	
+    script(src='/web/js/app.js')	    
 
     h1 Web
     div(ng-view)
         
     include partials/hello.jade
+    include /core/shared/caiAbout

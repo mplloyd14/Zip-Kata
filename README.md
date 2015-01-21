@@ -119,6 +119,34 @@ module.exports = {
 	...
 };
 ```
+### Grunt build
+
+#### **Product Version** and **Product Build Date**
+
+The version and build date are updated automatically when grunt build is executed.
+
+To execute the grunt build, execute the following command:
+
+`grunt build`
+
+The **grunt-bumpup** task uses information of package.json.
+```json
+{
+  "version": "0.0.1",
+  "date": "2015-01-21 11:44:06 +00:00"
+}
+```
+It is created a **build.json** in **content\shared\public\dist** folder.
+
+You can use the information of build.json with injecting **core** module in a **angular.js controller**.
+```javascript
+var version = core.meta.build.app.version;
+var date = core.meta.build.app.date;
+```
+To format date build using moment.js
+```javascript
+var date = moment(core.meta.build.app.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
+```
 
 ## Testing
 A set of default configuration files are provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.

@@ -1,1 +1,12 @@
-{}
+{
+	"btnOpenAbout": "Open About",
+	"txtAbout": "About",
+	"txtProductName": "Command Alkon PESeed",
+	"txtProductVersion": "Product Version",
+	"txtProductBuildDate": "Product Build Date",
+	"txtCoreLibraryVersion": "Core Library Version",
+	"txtCoreLibraryBuildDate": "Core Library Build Date",
+	"txtCopyrightInformation": "Copyright Information",
+	"txtAllRightsReserved.": "All rights reserved.",
+	"btnClose": "Close"
+}
