@@ -148,6 +148,29 @@ To format date build using moment.js
 var date = moment(core.meta.build.app.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
 ```
 
+###AngularJS Directive
+
+Steps to use "about" directive.
+
+* Add the line below in layout.jade
+```jade
+    include /core/shared/scripts
+```
+
+* Add the line below in index.jade
+```jade
+    include /core/shared/caiAbout
+```
+* Add the line below in your page
+```jade
+    cai-About(data-ng-model="aboutModal")
+```
+* You can use the below example to show the "about modal"
+```jade
+    button(class="btn btn-primary", data-ng-click="aboutModal = true") #{__("btnOpenAbout")}
+```
+
+
 ## Testing
 A set of default configuration files are provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
 
