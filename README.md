@@ -150,7 +150,9 @@ var date = moment(core.meta.build.app.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
 
 ###AngularJS Directive
 
-Steps to use "about" directive.
+####cai-About
+ 
+ Steps to use
 
 * Add the line below in layout.jade
 ```jade
