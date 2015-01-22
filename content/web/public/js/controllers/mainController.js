@@ -2,7 +2,8 @@
 
 /* Controllers */
 cai.module('peControllers', ['cai.services'])
-	.controller('MainController', ['$rootScope', '$scope', '$log', "$http", "$window", 'user', 'core', 'templates', function($rootScope, $scope, $log, $http, $window, user, core, templates) {
+	.controller('MainController', ['$rootScope', '$scope', '$log', "$http", "$window", 'user', 'core', 'templates',
+		function($rootScope, $scope, $log, $http, $window, user, core, templates) {
 		$log.log('Loading web main controller');
 
         $scope.firstName = user.data.firstName;
