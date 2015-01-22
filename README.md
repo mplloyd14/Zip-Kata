@@ -174,6 +174,20 @@ var currenctYear = core.meta.copyright.currentYear;
 ```jade
     cai-About(data-ng-model="aboutModal")
 ```
+* Add these variables in locale files
+```json
+{	
+	"txtAbout": "About",
+	"txtProductName": "Command Alkon PESeed",
+	"txtProductVersion": "Product Version",
+	"txtProductBuildDate": "Product Build Date",
+	"txtCoreLibraryVersion": "Core Library Version",
+	"txtCoreLibraryBuildDate": "Core Library Build Date",
+	"txtCopyrightInformation": "Copyright Information",
+	"txtAllRightsReserved.": "All rights reserved.",
+	"btnClose": "Close"
+}
+```
 * You can use the below example to show the "about modal"
 ```jade
     button(class="btn btn-primary", data-ng-click="aboutModal = true") #{__("btnOpenAbout")}
