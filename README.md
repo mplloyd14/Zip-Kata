@@ -110,7 +110,7 @@ The server does process the reload request and deliver a page.
 
 But, looking at the routes.js, the route for our restricted page is protected and limited to the roleA role. Why did the server return the page instead of responding with a 401/Unauthorized status?
 
-For older browsers like IE9 angularjs uses #! to perform client side navigation (tricking the browser). When a URI with the #! in the path is 'reloaded', the browser actually only sends the URI portion to the left of the #, not the full client path.
+For older browsers like IE9 angularjs uses #! to perform client side navigation (tricking the browser). When a URI with the #! in the path is 'reloaded' in a "new" browser, the browser actually only sends the URI portion to the left of the #, not the full client path.
 
 The effect is that the server only receives a portion of the path and matches it's routes accordingly; in this case it matches on a route that is not protected by a role and therefore delivers the page.
 
