@@ -36,6 +36,22 @@ module.exports = exports = function(i18n) {
             protected: true
         },
 
+        // protected client side page
+        {
+            method: 'get',
+            route: '/product/:product/desktop/:token/restricted',
+            base: '/product/:product/desktop',
+            render: {
+                title: 'MOBILEconnect Permissions Demo',
+                template: '/web/index'
+            },
+            roles: [
+                'roleA'
+            ],
+            protected: true
+        },
+
+        // protected server side page
         {
             method: 'get',
             route: '/product/:product/restricted',

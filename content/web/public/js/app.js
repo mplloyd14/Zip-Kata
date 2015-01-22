@@ -16,6 +16,10 @@ cai.module('peApp', ['cai.services', 'peControllers', 'ngCookies', 'ngRoute'])
                 templateUrl: 'tableView',
                 controller: 'TableViewController'
             })
+            .when('/:token/restricted', {
+                templateUrl: 'restrictedView',
+                controller: 'RestrictedViewController'
+            })
             .otherwise({redirectTo: '/simple'});
 
         $locationProvider.html5Mode(true);

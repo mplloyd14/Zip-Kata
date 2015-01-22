@@ -93,4 +93,26 @@ Logon as a different user: all user passwords are "go"
 
 * Company cc / User ccuser
 * Company ss / User ssuser
+* Company acme / User aauser
 * Company acme / User acuser
+
+# NOTE: Restricted Routes and Client Side Navigation
+
+Check out the client side navigation for the "restricted view".
+
+Logon as acme/aauser and it's possible to click a link that will navigate on the client to a restricted view.
+
+Logon as acme/acuser and the link is not present.
+
+Now, using IE, logon as acme/aauser, copy the link from the browser navigation bar. Using Chrome login as acme/acuser, paste the previously copied link into the browser navigation bar and load the page.
+
+The server does process the reload request and deliver a page.
+
+But, looking at the routes.js, the route for our restricted page is protected and limited to the roleA role. Why did the server return the page instead of responding with a 401/Unauthorized status?
+
+For older browsers like IE9 angularjs uses #! to perform client side navigation (tricking the browser). When a URI with the #! in the path is 'reloaded', the browser actually only sends the URI portion to the left of the #, not the full client path.
+
+The effect is that the server only receives a portion of the path and matches it's routes accordingly; in this case it matches on a route that is not protected by a role and therefore delivers the page.
+
+The saving grace is the use of role based content delivery to ensure that no unauthorized content is delivered to the browser, regardless of the route used to deliver the SPA.
+
