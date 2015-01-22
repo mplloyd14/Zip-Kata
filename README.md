@@ -148,6 +148,13 @@ To format date build using moment.js
 var date = moment(core.meta.build.app.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
 ```
 
+#### Copyright Information - Current Year
+
+You can use below code to show current year in Copyright Information.
+```javascript
+var currenctYear = core.meta.copyright.currentYear;
+```
+
 ###AngularJS Directive
 
 ####cai-About
