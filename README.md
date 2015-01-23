@@ -136,9 +136,9 @@ The **grunt-bumpup** task uses information of package.json.
   "date": "2015-01-21 11:44:06 +00:00"
 }
 ```
-It is created a **build.json** in **content\shared\public\dist** folder.
+It creates a **build.json** in **content\shared\public\dist** folder.
 
-You can use the information of build.json with injecting **core** module in a **angular.js controller**.
+You can use the information of build.json by injecting **core** module in an **angular.js controller**.
 ```javascript
 var version = core.meta.build.app.version;
 var date = core.meta.build.app.date;
