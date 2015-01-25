@@ -10,7 +10,6 @@ module.exports = {
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
-		loggly : 'log.loggly',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -51,32 +50,17 @@ module.exports = {
         }
 	},
 	log : {
-		loggly : {
-			subdomain : 'cai', // loggly user account subdomain
-			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
+		server : { // server-side logging parameters
+			levels : ['error', 'warn', 'info', 'debug', 'trace'], // available log levels
+			transports : { // supported logging transports
+				console : {
+					level : 'debug', // maximum level of logged messages
+					colorize : true, // color levels
+                    json: false,	// output as json
+					enabled : true // this switch can be used to easily toggle use of a given transport
+				}
+			}
 		},
-        server: { // server-side logging parameters
-            levels: ['error', 'warn', 'info', 'debug'], // available log levels
-            transports: { // array of logging transports
-                console: {
-                    level: 'info', // maximum level of logged messages
-                    colorize: true, // color levels
-                    enabled: true // this switch can be used to easily toggle use of a given transport
-                },
-                file: {
-                    level: 'warn',
-                    enabled: true,
-                    filepath: '',
-                    filename: 'localedemo.app.log',
-                    maxFiles: 10,
-                    maxsize: 5242880
-                },
-                loggly: {
-                    level: 'warn',
-                    enabled: false
-                }
-            }
-        },        
 		client : { // client-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : {	// supported logging transports
@@ -84,10 +68,14 @@ module.exports = {
 					level : 'debug', // maximum level of logged messages
 					enabled : true // this switch can be used to easily toggle use of a given transport
 				},
-				loggly : {
-					level : 'debug',
-					enabled : false
-				}
+                server: {
+                	level: 'debug', // maximum level of logged messages
+                    enabled: false, // this switch can be used to easily toggle use of a given transport
+                    buffer: {
+                    	interval: 2000,
+                        limit: 500
+					}
+	            }                
 			}
 		}
 	},
@@ -100,7 +88,7 @@ module.exports = {
 					server : { // mongodb - server options
 						// auto_reconnect - to reconnect automatically, default:false
 						// poolSize - specify the number of connections in the pool default:5
-						poolSize : 10
+						maxPoolSize : 10
 						// socketOptions - a collection of pr socket settings
 						// socketOptions: {
 						// timeout - set seconds before connection times out default:0

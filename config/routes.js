@@ -67,7 +67,7 @@ module.exports = exports = function(i18n) {
             route: '/product/:product/restricted/desktop*',
             base: '/product/:product/restricted/desktop',
             render: {
-                title: 'MOBILEconnect Permissions Demo',
+                title: 'Evolution Permissions Demo',
                 template: '/web/restricted'
             },
             roles: [
