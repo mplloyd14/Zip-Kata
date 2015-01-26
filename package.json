@@ -1,9 +1,9 @@
 {
-  "name": "pe-seed",
+  "name": "PROVIDE A PROJECT/PRODUCT NAME",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/app",
+    "start": "node content/MAINENTRYPOINT",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
@@ -38,6 +38,8 @@
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.9.0",
     "grunt-bumpup": "~0.5.2"
   }
 }

@@ -120,6 +120,27 @@ module.exports = {
 };
 ```
 
+## Build Process
+The grunt utility is used to "build" applications. In general the "build" accomplishes 2 goals: set version number/date and concatenate and minify resources.
+
+### Configuration
+The configuration for grunt is contained in a file named Gruntfile.js that resides in the project root folder. Different project will require different build activities, but the base file provides a starting point.
+
+#### Resource name
+At the very least, the generated resource files should be named in accordance with the product/project. Replace the token <MAINENTRYPOINT> with a unique name. Typically, the same name as was used for the main entry point file will suffice.
+
+```
+	...
+	uglify: {
+		webJS: {
+			files: {
+				'<%= meta.webDistDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.min.js': ['<%= meta.webTempDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.js']
+			}
+		}
+	},
+	...
+```
+
 ## Testing
 A set of default configuration files are provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
 
