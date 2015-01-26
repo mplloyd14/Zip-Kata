@@ -39,7 +39,6 @@ module.exports = {
 			server : {
 				host : '',
 				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
-				matchOriginProtocol : false,
 				timeout : 10000
 			}
 		},
@@ -99,7 +98,7 @@ module.exports = {
 					server : { // mongodb - server options
 						// auto_reconnect - to reconnect automatically, default:false
 						// poolSize - specify the number of connections in the pool default:5
-						poolSize : 10
+						maxPoolSize : 10
 						// socketOptions - a collection of pr socket settings
 						// socketOptions: {
 						// timeout - set seconds before connection times out default:0
