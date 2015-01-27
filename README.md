@@ -278,3 +278,5 @@ To execute e2e tests (only), execute the following command: (obviously, write th
 From a command shell, execute the following command:
 
 `npm start`
+
+Test-Pivotal-Tracker-GitHub
