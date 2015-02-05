@@ -4,11 +4,21 @@
 	    "name": "Permission Demo",
 	    "description": "Demonstration of permission techniques",
 	    "roles": [
-	    	"globaladmin",
-			"appadmin",
-			"roleA",
-            "roleB",
-            "roleC"
+          {
+            code: "globaladmin"
+          },
+          {
+            code: "appadmin"
+          },
+          {
+            code: "roleA"
+          },
+          {
+            code: "roleB"
+          },
+          {
+            code: "roleC"
+          }
 	    ],
         "settings": {
             "timeZone": {
