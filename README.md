@@ -166,10 +166,6 @@ var currenctYear = core.meta.copyright.currentYear;
     include /core/shared/scripts
 ```
 
-* Add the line below in index.jade
-```jade
-    include /core/shared/caiAbout
-```
 * Add the line below in your page
 ```jade
     cai-About(data-ng-model="aboutModal")
