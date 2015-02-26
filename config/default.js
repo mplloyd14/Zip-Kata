@@ -71,7 +71,7 @@ module.exports = {
 				file : {
 					level : 'warn',
 					enabled : true,
-					filepath : '',
+					filepath : '.',
 					filename : 'patterns.app.log',
 					maxFiles : 10,
 					maxsize : 5242880

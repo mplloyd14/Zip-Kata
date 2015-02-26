@@ -5,13 +5,13 @@ cai.module('peControllers', ['cai.services'])
 	.controller('MainController', function($rootScope, $scope, $log, apiProvider) {
 		$log.log('Loading web main controller');
 		$scope.message = 'Hello world';
+
+        $rootScope.$on("testReceived", function (event, message) {
+            console.log("Event testReceived fired with : " + message);
+        });
         $scope.createRoom = function(){
             apiProvider.callFunction('createRoom',{id:7}).then(function(message){
                 console.log("Result of createRoom is " + message.result);
-            });
-
-            $rootScope.$on("testReceived", function (event, message) {
-                console.log("Event testReceived fired with : " + message);
             });
         };
         $scope.createVendorRoom = function(){
@@ -19,9 +19,12 @@ cai.module('peControllers', ['cai.services'])
                 console.log("Result of createVendorRoom is " + message.result);
             });
 
-            $rootScope.$on("testReceived", function (event, message) {
-                console.log("Event testReceived fired with : " + message);
+        };
+        $scope.createAnotherRoom = function(){
+            apiProvider.callFunction('createAnotherRoom',{id:7}).then(function(message){
+                console.log("Result of createAnotherRoom is " + message.result);
             });
+
         };
 	});
 

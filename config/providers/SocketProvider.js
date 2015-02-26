@@ -30,10 +30,23 @@ var provider = {
                 url: "/test/{id}/{vendor}",
                 announce: true
             }
+        },
+        createAnotherRoom: {
+            handler: function(data){
+                var name = data.name
+                return Q.resolve({
+                    "id": data.id});
+            },
+            room: {
+                id: "|URL|",
+                client: true,
+                url: "another/test/{id}/",
+                announce: true
+            }
         }
     },
     emitters : {
-        events : [{'event' :  "testReceived", 'room': '|PATTERN|', pattern: "/test/{id}"}]
+        events : [{'event' :  "testReceived", 'room': '|PATH_BEG|', pattern: "/test/{id}"}]
 
     }
 }
