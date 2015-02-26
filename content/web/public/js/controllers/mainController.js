@@ -4,10 +4,13 @@
 cai.module('peControllers', ['cai.services'])
 	.controller('MainController', function($rootScope, $scope, $log, apiProvider) {
 		$log.log('Loading web main controller');
-		$scope.message = 'Hello world';
+		$scope.message = 'Create Some Rooms';
 
         $rootScope.$on("testReceived", function (event, message) {
             console.log("Event testReceived fired with : " + message);
+        });
+        $rootScope.$on("companyReceived", function (event, message) {
+            console.log("Event companyReceived fired with : " + message);
         });
         $scope.createRoom = function(){
             apiProvider.callFunction('createRoom',{id:7}).then(function(message){
@@ -23,6 +26,12 @@ cai.module('peControllers', ['cai.services'])
         $scope.createAnotherRoom = function(){
             apiProvider.callFunction('createAnotherRoom',{id:7}).then(function(message){
                 console.log("Result of createAnotherRoom is " + message.result);
+            });
+
+        };
+        $scope.createCompanyRoom = function(){
+            apiProvider.callFunction('createCompanyRoom',{company: 'acme'}).then(function(message){
+                console.log("Result of createCompanyRoom is " + message.result);
             });
 
         };

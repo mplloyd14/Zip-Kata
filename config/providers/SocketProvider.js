@@ -15,7 +15,7 @@ var provider = {
                 id: "|URL|",
                 client: true,
                 url: "/test/{id}",
-                announce: true
+                announce: false
             }
         },
         createVendorRoom: {
@@ -28,7 +28,7 @@ var provider = {
                 id: "|URL|",
                 client: true,
                 url: "/test/{id}/{vendor}",
-                announce: true
+                announce: false
             }
         },
         createAnotherRoom: {
@@ -40,13 +40,26 @@ var provider = {
             room: {
                 id: "|URL|",
                 client: true,
-                url: "another/test/{id}/",
-                announce: true
+                url: "/another/test/{id}",
+                announce: false
+            }
+        },
+        createCompanyRoom: {
+            handler: function(data){
+                var name = data.name
+                return Q.resolve({
+                    "id": data.id});
+            },
+            room: {
+                id: "|URL|",
+                client: true,
+                url: "/test/{company}",
+                announce: false
             }
         }
     },
     emitters : {
-        events : [{'event' :  "testReceived", 'room': '|PATH_BEG|', pattern: "/test/{id}"}]
+        events : [{'event' :  "testReceived", 'room': '|PATH_BEG|', pattern: "/test/{id}"},{'event' : 'companyReceived', 'room' : '|URL|'}]
 
     }
 }
