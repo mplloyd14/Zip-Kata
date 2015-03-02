@@ -5,7 +5,7 @@ var timer = require('timers');
 var provider = {
     type: "Socket",
     services: {
-        createRoom: {
+        createPathBegRoom: {
             handler: function(data){
                 var name = data.name
                 return Q.resolve({
@@ -28,10 +28,11 @@ var provider = {
                 id: "|URL|",
                 client: true,
                 url: "/test/{id}/{vendor}",
+                exactMatch : true,
                 announce: false
             }
         },
-        createAnotherRoom: {
+        createUrlRoom: {
             handler: function(data){
                 var name = data.name
                 return Q.resolve({
@@ -40,26 +41,13 @@ var provider = {
             room: {
                 id: "|URL|",
                 client: true,
-                url: "/another/test/{id}",
-                announce: false
-            }
-        },
-        createCompanyRoom: {
-            handler: function(data){
-                var name = data.name
-                return Q.resolve({
-                    "id": data.id});
-            },
-            room: {
-                id: "|URL|",
-                client: true,
-                url: "/test/{company}",
+                url: "/test",
                 announce: false
             }
         }
     },
     emitters : {
-        events : [{'event' :  "testReceived", 'room': '|PATH_BEG|', pattern: "/test/{id}"},{'event' : 'companyReceived', 'room' : '|URL|'}]
+        events : [{'event' : 'urlReceived', 'room' : '|URL|'},{'event' :  "pathBegReceived", 'room': '|PATH_BEG|', pattern: "/test/{id}"},{'event' : 'broadcastReceived', 'room' : '*'}]
 
     }
 }

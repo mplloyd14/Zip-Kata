@@ -1,6 +1,6 @@
 module.exports = {
 	port : 4000,
-    product_code : 'patterns',
+    product_code : 'emitters',
 	locales : ['en'],
 	appBase : '',
     backdoor: {
@@ -9,7 +9,7 @@ module.exports = {
             email: 'pe@commandalkon.com'
     },
         context: {
-            product: 'patterns',
+            product: 'emitters',
             company: 'cai'
         }
     },

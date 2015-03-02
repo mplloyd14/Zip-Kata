@@ -4,14 +4,14 @@ module.exports = exports = function(i18n) {
 		{
 			method: 'get',
 			route: '/',
-			redirect: '/product/patterns',
+			redirect: '/product/emitters',
 			protected: false
 		},
 
 		{
 			method: 'get',
 			route: '/product/:product',
-			redirect: '/product/patterns/root',
+			redirect: '/product/emitters/root',
 			protected: true
 		},
 
@@ -30,7 +30,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
 			render: {
-				title: 'Patterns',
+				title: 'Emitters',
 				template: '/web/index'
 			},
 			protected: true

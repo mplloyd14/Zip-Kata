@@ -6,15 +6,23 @@ cai.module('peControllers', ['cai.services'])
 		$log.log('Loading web main controller');
 		$scope.message = 'Create Some Rooms';
 
-        $rootScope.$on("testReceived", function (event, message) {
-            console.log("Event testReceived fired with : " + message);
+        $rootScope.$on("urlReceived", function (event, message) {
+            console.log("Event urlReceived fired with : " + message);
         });
-        $rootScope.$on("companyReceived", function (event, message) {
-            console.log("Event companyReceived fired with : " + message);
+        $rootScope.$on("pathBegReceived", function (event, message) {
+            console.log("Event pathBegReceived fired with : " + message);
         });
-        $scope.createRoom = function(){
-            apiProvider.callFunction('createRoom',{id:7}).then(function(message){
-                console.log("Result of createRoom is " + message.result);
+        $rootScope.$on("broadcastReceived", function (event, message) {
+            console.log("Event broadcastReceived fired with : " + message);
+        });
+        $scope.createUrlRoom = function(){
+            apiProvider.callFunction('createUrlRoom',{}).then(function(message){
+                console.log("Result of createUrlRoom is " + message.result);
+            });
+        };
+        $scope.createPathBegRoom = function(){
+            apiProvider.callFunction('createPathBegRoom',{id:7}).then(function(message){
+                console.log("Result of createPathBegRoom is " + message.result);
             });
         };
         $scope.createVendorRoom = function(){
@@ -23,19 +31,7 @@ cai.module('peControllers', ['cai.services'])
             });
 
         };
-        $scope.createAnotherRoom = function(){
-            apiProvider.callFunction('createAnotherRoom',{id:7}).then(function(message){
-                console.log("Result of createAnotherRoom is " + message.result);
-            });
-
-        };
-        $scope.createCompanyRoom = function(){
-            apiProvider.callFunction('createCompanyRoom',{company: 'acme'}).then(function(message){
-                console.log("Result of createCompanyRoom is " + message.result);
-            });
-
-        };
-	});
+ 	});
 
 
 
