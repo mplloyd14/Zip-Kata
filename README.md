@@ -13,12 +13,12 @@ Establishes 4 REST listeners
 
 When an POST comes in to one of the routes, an event is fired on the Project Evo message bus.  The follow table should the routes and their events.
 
-Route | Event
-_____ | _____
-/test | urlReceived
-/test/id/:id | pathBegReceived
-/test/id/:id/vendor/:vendor | pathBegReceived
-/test/broadcast | broadcastReceived
+| Route | Event |
+| ------ | ------ |
+| /test | urlReceived |
+| /test/id/:id | pathBegReceived |
+| /test/id/:id/vendor/:vendor | pathBegReceived |
+| /test/broadcast | broadcastReceived |  
 
 
 
