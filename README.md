@@ -90,8 +90,8 @@ http://localhost:4001/company/cai/product/emitters/test/broadcast
 
 #Understanding the example
 In order to understand the example, think about the following questions.  Based on the overview, does it make sense which emitters fired each time?  Notice that both of the routes "/test/id/7" and "/test/id/7/vendor/abc"
-fired in browser where you created the "Test/id Room" but only "/test/id/7/vendor/abc" caused the event to fire in the "Test/id/vendor" room.  Since both rooms are marked path begin, why didn't they both receive two events?
-When you opened the page and created rooms, you did not create one for the broadcast event?
+fired in browser where you created the "Test/id Room" but only "/test/id/7/vendor/abc" caused the event to fire in the "Test/id/vendor" room.  Since both rooms are marked |PATH_BEG|, why didn't they both receive two events?
+When you opened the page and created rooms, you did not create one for the broadcast events yet they reached the browser.  Why?
 
 
 
