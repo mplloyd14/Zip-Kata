@@ -22,7 +22,9 @@ var provider = {
             handler: function(data){
                 var name = data.name
                 return Q.resolve({
-                    "id": data.id});
+                    "id": data.id,
+                    "vendor" : data.id
+                });
             },
             room: {
                 id: "|URL|",
@@ -35,8 +37,7 @@ var provider = {
         createUrlRoom: {
             handler: function(data){
                 var name = data.name
-                return Q.resolve({
-                    "id": data.id});
+                return Q.resolve({});
             },
             room: {
                 id: "|URL|",
