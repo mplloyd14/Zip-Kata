@@ -48,7 +48,7 @@ and anyone beginning with "/test/id/7" will be a match. While this contrived exa
 value of "7" for id would still have been extracted and used to inflate the pattern.  The result would still be "/test/id/7".
 
 
-###Creating the rooms via the UI
+#Creating the rooms via the UI
 When the Angular front end calls one of the websocket handlers in the SocketProvider, if the handler is configured to create a room it will do so.  If the rooms "id" field is set to "|URL|" then the pattern
 in the "url" field is inflated with the values passed into the handler.  For example, if { id : 7, vendor : "abc" } were passed into a handler configured with the following room, the pattern would be inflated
 to "/test/id/7/vendor/abc".  This would then become the room's id.
@@ -63,7 +63,7 @@ room: {
 ```
 
 
-###Receiving emitted events in Angular
+#Receiving emitted events in Angular
 
 Every event listed in the emitter declaration must have corresponding code in Angular to receive the event.  Code in either a controller or service must listen for the event on
 rootScope.  Below is an example.
