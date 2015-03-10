@@ -1,0 +1,23 @@
+script#main(type='text/ng-template')
+    h2 #{__('API Server Demo')}
+    form
+        div
+            label(for="name") #{__('Name')}
+            input#name(type="text", ng-model='name', name="name", required)
+
+        //div
+            label(for="level") #{__('Level')}
+            select(data-ng-model="level", name="documenttype", required)
+                option(value="none") #{__('None')}
+                option(value="basic") #{__('Basic')}
+                option(value="enhanced") #{__('Enhanced')}
+
+        div
+            button(ng-click="sendData()") #{__('Send')}
+
+    div
+        h3 #{__('Messages')}
+        table.table.table-striped
+            tbody
+                tr(ng-repeat="m in messages track by $index", id="m_{{$index}}", style="cursor:pointer;")
+                    td {{m}}

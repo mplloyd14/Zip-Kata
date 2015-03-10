@@ -1,1 +1,21 @@
-{}
+{
+	"txtAbout": "txtAbout",
+	"txtProductName": "txtProductName",
+	"txtProductVersion": "txtProductVersion",
+	"txtProductBuildDate": "txtProductBuildDate",
+	"txtCoreLibraryVersion": "txtCoreLibraryVersion",
+	"txtCoreLibraryBuildDate": "txtCoreLibraryBuildDate",
+	"txtCopyrightInformation": "txtCopyrightInformation",
+	"txtAllRightsReserved.": "txtAllRightsReserved.",
+	"btnClose": "btnClose",
+	"Name": "Name",
+	"Level": "Level",
+	"None": "None",
+	"Basic": "Basic",
+	"Enhanced": "Enhanced",
+	"Send": "Send",
+	"Event": "Event",
+	"API Server Demo": "API Server Demo",
+	"Messages": "Messages",
+	"Message": "Message"
+}

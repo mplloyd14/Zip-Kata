@@ -1,32 +1,45 @@
-var pec = require('projevo-core');
-var rest = pec.RestClient;
-var utils = pec.CoreUtilities;
-var eventBus = pec.EventBus;
-var Q = require('q')
+var config = require('config'),
+    Q = require('q'),
+    pec = require('projevo-core'),
+    log = pec.Logger.getLogger(),
+    restClient = pec.RestClient;
 
 module.exports = {
-    type: "Socket",
+    type: 'Socket',
     services: {
-		getPESeedData: {
-			handler: function(data){
-				var name = data.name
-				//return rest.request('GET', 'http://dev.localhost:8181/peseed/name/' + name);
-				return Q.resolve({
-					"name": "TweetyBird",
-					"first": name,
-					"last": "Bird",
-					"eye": "Green",
-					"hair": "Yellow"});
+		sendData: {
+			handler: function(data, context){
+                var data = {
+                    //level: (data.level || 'none').toLowerCase(),
+                    name: data.name || 'noname'
+                };
+
+                var apiserver = config.apiServer.host;
+                var url = '/company/' + context.company + '/product/' + context.product + '/outbound/name/' + data.name;
+                log.info('POST ' + url);
+                return restClient.post(apiserver + url, data, {json: true})
+                    .then(function() {
+                        return Q.resolve(true);
+                    })
+                    .fail(function(err) {
+                        log.error('Failed to send data');
+                        log.error(err);
+                        return Q.reject(err);
+                    });
 			},
 			room: {
-				id: "|URL|",
+				id: '|URL|',
 				client: true,
-				url: "/peseed/{name}",
+				url: '/inbound/{name}',
 				announce: true
 			}
 		}},
     emitters : {
-        events : [{'event' :  "dataReceived", 'room': '|URL|'},{'event' :  "dataGot", 'room': '|URL|'}]
-
+        events : [
+            {
+                event: 'dataReceived',
+                room: '|URL|'
+            }
+        ]
     }
 };

@@ -1,0 +1,19 @@
+[
+    {
+        "code": "apiserverdemo",
+        "name": "API Server Demo",
+        "description": "Demonstration of API Server features",
+        "roles": [
+            "globaladmin",
+            "appadmin",
+            "appuser"
+        ],
+        "settings": {
+        },
+        "platforms": {
+            "desktop": "desktop",
+            "mobile": "mobile",
+            "tablet": "desktop"
+        }
+    }
+]

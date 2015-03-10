@@ -1,0 +1,110 @@
+[
+    {
+        "code": "acme",
+        "description": "ACME Congolomerated",
+        "status": "active",
+        "branding": {
+            "primary": "@color-primary: #393c45;",
+            "secondary" : "@color-secondary: #F16E43;",
+            "logo" : "@logo: '';"
+        },
+        "settings": {
+            "dataEndPoints": {
+                "PartnerService": {
+                    "EndPointAddress": "http://localhost",
+                    "Port": 4005,
+                    "Type": "REST",
+                    "SubType": "Client",
+                    "authentication": {
+                        "level": "None"
+                    }
+                }
+            }
+        },
+        "products": [
+            {
+                "code": "apiserverdemo",
+                "settings": {
+                }
+            }
+        ]
+    },
+
+    {
+        "code": "ss",
+        "description": "Spacely Sprockets",
+        "status": "active",
+        "branding" : {
+            "primary" : "@color-primary: #5D7FE8;",
+            "secondary" : "@color-secondary: #add500;",
+            "logo" : "@logo: 'ss-logo.png';"
+        },
+        "settings": {
+            "dataEndPoints": {
+                "PartnerService": {
+                    "EndPointAddress": "http://localhost",
+                    "Port": 4005,
+                    "Type": "REST",
+                    "SubType": "Client",
+                    "authentication": {
+                        "level": "None"
+                    }
+                }
+            }
+        },
+        "products": [
+            {
+                "code": "apiserverdemo",
+                "settings": {
+                    "dataEndPoints": {
+                        "PartnerService": {
+                            "EndPointAddress": "http://localhost",
+                            "Port": 4006,
+                            "Type": "REST",
+                            "SubType": "Client",
+                            "authentication": {
+                                "level": "Basic",
+                                "username": "edx",
+                                "password": "edx"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+
+    {
+        "code": "cc",
+        "description": "Cogswell Cogs",
+        "status": "active",
+        "branding": {
+            "primary" : "@color-primary: #328532;",
+            "secondary" : "@color-secondary: #0033FD;",
+            "logo" : "@logo: 'cc-logo.png';"
+        },
+        "settings": {
+            "dataEndPoints": {
+                "PartnerService": {
+                    "EndPointAddress": "http://localhost",
+                    "Port": 4007,
+                    "Type": "REST",
+                    "SubType": "Client",
+                    "authentication": {
+                        "level": "Enhanced",
+                        "username": "edx",
+                        "password": "edx",
+                        "secret": "thisismyrifle.therearemanyjustlikeitbutthisoneismine."
+                    }
+                }
+            }
+        },
+        "products": [
+            {
+                "code": "apiserverdemo",
+                "settings": {
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,190 @@
+/* core branding file  */
+/* includes ONLY properties relating to colors and branding ONLY */
+a,
+a:hover {
+  color: #393c45;
+}
+.cai-colorband {
+  background: #f16e43;
+}
+.cai-nav {
+  border-top: solid 5px #f16e43;
+  background: #393c45;
+}
+.cai-nav .app-logo {
+  background: url("/assets/acme/img/") no-repeat;
+}
+.cai-nav .divider {
+  border-right: 1px solid #f16e43;
+}
+.cai-nav .btn {
+  color: #393c45;
+  background: #f16e43;
+  text-shadow: none;
+}
+.cai-nav .cai-nav .btn:hover i[class^='icon-'] {
+  color: #393c45;
+}
+.cai-nav .btn:hover,
+.cai-nav .btn:focus,
+.cai-nav .btn.active,
+.cai-nav .btn.disabled,
+.cai-nav .btn:hover.active,
+.cai-nav .btn:hover.disabled,
+.cai-nav .btn:hover[disabled] {
+  background: #ffffff;
+  color: #393c45;
+}
+.cai-nav .btn.disabled i[class^='icon-'],
+.cai-nav .btn.active i[class^='icon-'] {
+  color: #393c45;
+}
+.cai-nav .cai-dropdown {
+  background: #f16e43;
+  color: #ffffff;
+  outline: none;
+}
+.cai-nav .cai-dropdown:hover {
+  background: #ffffff;
+  color: #393c45;
+}
+.cai-nav .cai-dropdown:hover i[class^='icon-'] {
+  color: #393c45;
+}
+.cai-icon {
+  color: #393c45;
+}
+.cai-header {
+  color: #393c45;
+  border-bottom: solid 1px #f16e43;
+}
+.cai-line-header {
+  border-top: solid 5px #393c45;
+}
+.cai-color-primary {
+  color: #393c45;
+}
+.cai-color-secondary {
+  color: #f16e43;
+}
+.cai-background-color-primary {
+  background: #393c45;
+}
+.cai-background-color-secondary {
+  background: #f16e43;
+}
+.cai-btn {
+  border-color: #676d7d;
+  background: #393c45;
+}
+.cai-btn:hover {
+  color: #f16e43;
+  background: #2d3037;
+  border-color: #505461;
+}
+/* todo - start */
+.nav-pills > li > a {
+  color: #f16e43;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  background-color: #f16e43;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  background-color: #f16e43;
+}
+.nav-pills.cai-nav-pills > li > a {
+  color: #393c45;
+}
+.nav-pills.cai-nav-pills > .active > a,
+.nav-pills.cai-nav-pills > .active > a:hover,
+.nav-pills.cai-nav-pills > .active > a:focus {
+  background-color: #393c45;
+}
+.nav-pills.cai-nav-pills > li > a:hover,
+.nav-pills.cai-nav-pills > li > a:focus {
+  background-color: #d4d6dc;
+}
+.kalendae .k-days span.k-selected.k-active {
+  background: #393c45;
+}
+.kalendae .k-btn-previous-month,
+.kalendae .k-btn-next-month,
+.kalendae .k-btn-previous-year,
+.kalendae .k-btn-next-year {
+  color: #393c45;
+}
+.kalendae .k-btn-close {
+  color: #393c45;
+}
+.kalendae .k-btn-close:hover {
+  color: #f16e43;
+  border-color: #f16e43;
+}
+.kalendae .k-btn-previous-year:hover,
+.kalendae .k-btn-next-year:hover {
+  color: #f16e43;
+}
+.kalendae .k-btn-previous-month:hover,
+.kalendae .k-btn-next-month:hover {
+  color: #f16e43;
+}
+.cai-modal {
+  border: 4px solid #393c45;
+}
+.cai-link-color-secondary {
+  border-color: transparent transparent #f16e43 transparent;
+}
+.cai-link-color-primary {
+  border-color: transparent transparent #393c45 transparent;
+}
+.cai-line {
+  border-bottom: solid 1px #f16e43;
+}
+/* todo - end */
+.cai-label {
+  color: #393c45;
+}
+.dropdown-menu li a,
+.dropdown-menu li a i[class^='icon-'] {
+  color: #393c45;
+  cursor: pointer;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:hover i[class^='icon-'] {
+  background: #f16e43;
+}
+.dropdown-menu li a.active,
+.dropdown-menu li a.active i[class^='icon-'] {
+  background: #f16e43;
+}
+.dropdown-menu li .btn.active,
+.dropdown-menu li .btn.active i[class^='icon-'] {
+  background: #f16e43;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+    background: #393c45;
+  }
+  to {
+    opacity: 0.0;
+    background: #393c45;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 1;
+    background: #393c45;
+  }
+  to {
+    opacity: 0.0;
+    background: #393c45;
+  }
+}
+.usspinner div div {
+  background: #f16e43 !important;
+}
