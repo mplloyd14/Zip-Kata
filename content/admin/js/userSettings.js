@@ -18,7 +18,7 @@ function customadmindemoSettingsCtrl ($scope, $log, i18n) {
     });
 
     $scope.$on('editUser', function(){
-        log.debug('here as an edit');
+        $log.debug('here as an edit');
 
     });
 }

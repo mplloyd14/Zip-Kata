@@ -1,0 +1,9 @@
+extends layout
+
+block body
+    script(src='#{config.appBase}/web/js/controllers/mainController.js')
+    script(src='#{config.appBase}/web/js/app.js')
+
+    div(ng-view)
+        
+    include partials/main.jade

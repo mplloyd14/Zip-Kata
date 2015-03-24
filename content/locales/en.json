@@ -1,7 +1,17 @@
 {
-  "Check": "Check and Mate",
-  "txtLocalMsg": "This is from the pe-seed/custom-admin-demo",
-  "globaladmin": "Total World Dominator",
-  "appadmin": "Poser",
-  "appuser": "Just a Feeb"
+	"Check": "Check and Mate",
+	"txtLocalMsg": "This is from the pe-seed/custom-admin-demo",
+	"globaladmin": "Total World Dominator",
+	"appadmin": "Poser",
+	"appuser": "Just a Feeb",
+	"txtAbout": "txtAbout",
+	"txtProductName": "txtProductName",
+	"txtProductVersion": "txtProductVersion",
+	"txtProductBuildDate": "txtProductBuildDate",
+	"txtCoreLibraryVersion": "txtCoreLibraryVersion",
+	"txtCoreLibraryBuildDate": "txtCoreLibraryBuildDate",
+	"txtCopyrightInformation": "txtCopyrightInformation",
+	"txtAllRightsReserved.": "txtAllRightsReserved.",
+	"btnClose": "btnClose",
+	"Admin": "Admin"
 }
