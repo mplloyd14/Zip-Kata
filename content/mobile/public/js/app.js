@@ -7,7 +7,7 @@ cai.module('peApp', ['cai.services', 'peControllers', 'ngCookies', 'ngRoute']).
     $routeProvider.
       when('/', {
 		templateUrl: 'hello',
-		controller: 'MobileController'
+		controller: 'MainController'
 
       });
     $locationProvider.html5Mode(true);
