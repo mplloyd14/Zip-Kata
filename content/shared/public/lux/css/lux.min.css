@@ -1,0 +1,1 @@
+ul.breadcrumb>li>a.disabled,ul.breadcrumb>li>a.disabled:hover{color:#969696;text-decoration:none;cursor:default}lux-grid{position:relative;display:block}lux-grid>cell{position:absolute;margin:0;padding:0}lux-table>table.table-bordered>thead th{border-bottom:1px solid #ddd}lux-table>table.table-bordered>thead th.link{cursor:pointer}
