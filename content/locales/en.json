@@ -1,1 +1,11 @@
-{}
+{
+	"txtAbout": "txtAbout",
+	"txtProductName": "txtProductName",
+	"txtProductVersion": "txtProductVersion",
+	"txtProductBuildDate": "txtProductBuildDate",
+	"txtCoreLibraryVersion": "txtCoreLibraryVersion",
+	"txtCoreLibraryBuildDate": "txtCoreLibraryBuildDate",
+	"txtCopyrightInformation": "txtCopyrightInformation",
+	"txtAllRightsReserved.": "txtAllRightsReserved.",
+	"btnClose": "btnClose"
+}

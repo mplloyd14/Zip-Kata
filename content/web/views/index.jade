@@ -1,10 +1,26 @@
 extends layout
 
 block body
-    script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')	
+    script(src="/web/js/controllers/mainController.js")
+    script(src="/web/js/controllers/aboutController.js")
+    script(src="/web/js/controllers/luxTableController.js")
+    script(src="/web/js/app.js")
 
-    h1 Web
-    div(ng-view)
-        
-    include partials/hello.jade
+    div(id="main", role="main", class="ng-cloak container-fluid")
+        header
+            h2 Lux
+            h4 A collection of mediocre angular components
+            nav
+                ul(class="nav nav-pills")
+                    li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
+                        a(href="", ng-href="{{ route }}")
+                            {{ route.substr(1) || "home" }}
+        section(class="ng-view")
+        //- /.ng-view
+        footer
+            small(role="contentinfo")
+                &copy; 2015 Command Alkon. All Rights Reserved.
+    //- /#main
+    include partials/hello
+    include partials/about
+    include partials/lux-table
