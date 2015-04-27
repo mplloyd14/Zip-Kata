@@ -3,7 +3,7 @@ evo.module("demo.controllers", [])
         "$scope",
         function (scope) {
             "use strict";
-            scope.message = "Hello world!";
+            scope.message = "Wapendwa Dunia.";
         }
     ]);
 
