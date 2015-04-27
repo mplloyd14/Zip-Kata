@@ -5,7 +5,7 @@ evo.module("demo.controllers", [])
             "use strict";
             scope.table = {
                 options: {
-                    height: "120px",
+                    height: "135px",
                     columns: {
                         "rk": "uint",
                         "player": {
@@ -21,6 +21,26 @@ evo.module("demo.controllers", [])
                             fmt: "uppercase"
                         },
                         "avg": "string"
+                    },
+                    toolbar: {
+                        search: {
+                            by: "player",
+                            placeholder: "Search by Player"
+                        },
+                        buttons: [
+                            {
+                                text: "Add Player",
+                                onclick: function () {
+                                    scope.table.data.push({
+                                        "rk": 20,
+                                        "player": "john santiago",
+                                        "team": "nca",
+                                        "pos": "c",
+                                        "avg": ".280"
+                                    });
+                                }
+                            }
+                        ]
                     },
                     thead: {
                         rename: {
@@ -62,6 +82,7 @@ evo.module("demo.controllers", [])
                     {
                         "rk": 9,
                         "player": "curtis granderson",
+                        "pos": "rf",
                         "team": "nym",
                         "avg": ".222"
                     }
