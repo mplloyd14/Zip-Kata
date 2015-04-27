@@ -12,7 +12,7 @@ module.exports = exports = function(i18n) {
 			method: 'get',
 			route: '/product/:product',
 			redirect: '/product/peseed/root',
-			protected: true
+			protected: false
 		},
 
 		{
@@ -22,7 +22,7 @@ module.exports = exports = function(i18n) {
 				desktop: '/product/:product/desktop',
 				mobile: '/product/:product/mobile'
 			},
-			protected: true
+			protected: false
 		},
 
 		{
@@ -33,7 +33,7 @@ module.exports = exports = function(i18n) {
 				title: 'PESeed',
 				template: '/web/index'
 			},
-			protected: true
+			protected: false
 		}
 	];
 }
