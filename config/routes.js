@@ -45,6 +45,17 @@ module.exports = exports = function(i18n) {
 				template: '/mobile/index'
 			},
 			protected: true
-		}
+		}/*,
+
+		{
+			method: 'get',
+			route: '/product/:product/mobile/tabs',
+			//base: '/product/:product/mobile',
+			render: {
+				title: 'ION',
+				template: '/mobile/index'
+			},
+			protected: true
+		}*/
 	];
 }

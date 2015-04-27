@@ -1,2 +1,20 @@
-script#hello(type='text/ng-template')
-    h2#hellomsg {{message}}
+script#login(type='text/ng-template')
+	ion-view(title='PESeed Ionic', left-buttons='leftButtons', right-buttons='right-buttons')
+		ion-content(has-header='true', has-footer='true', padding='true')
+			div.list
+				label.item.item-input
+					span.input-label Ionic input 1
+					input(type='text', ng-model='data.username')
+				label.item.item-input
+					span.input-label Ionic input 2
+					input(type='text', ng-model='data.password')
+				label.item.item-input.item-select
+					div.input-label Ionic input 3
+					select(ng-model='data.company')
+						option(value='1') Selection 1
+						option(value='2') Selection 2
+						option(value='3') Selection 3
+			div.padding
+				button.button.button-block.button-energized(ng-click="login()") Go
+			//h2 LOGIN TEST 32
+

@@ -1,10 +1,12 @@
 extends layout
 
 block body
-    script(src='/mobile/js/controllers/mainController.js')
-    script(src='/mobile/js/app.js')	
 
-    h1 Mobile
-    div(ng-view)
-        
-    include partials/hello.jade
+	script(src='/mobile/js/controllers/mainController.js')
+	script(src='/mobile/js/app.js')
+
+	ion-nav-bar.bar-stable(type="bar-positive", back-button-type="button-icon", back-button-icon="ion-arrow-left-c")
+	ion-nav-view(animation="slide-left-right")
+
+	include partials/hello.jade
+	include partials/home.jade
