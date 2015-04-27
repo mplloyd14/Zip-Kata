@@ -42,6 +42,9 @@ evo.module("demo.controllers", [])
                             }
                         ]
                     },
+                    pagination: {
+                        itemsPerPage: 3
+                    },
                     thead: {
                         rename: {
                             "rk": "rank",
