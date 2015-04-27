@@ -5,8 +5,13 @@ block body
     script(src="/web/js/controllers/tableCntrl.js")
     script(src="/web/js/app.js")
 
-    h1 Web
-    div(class="ng-view ng-cloak")
-
+    div(id="main", role="main", class="container-fluid")
+        header
+            h1 Monkeynaut
+            h4 Command Alkon Angular Components.
+            ul(class="nav nav-pills")
+                li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
+                    a(href="", ng-href="{{ route }}") {{ route.substr(1) || "home" }}
+        div(class="ng-view ng-cloak")
     include partials/hello.jade
     include partials/table.jade

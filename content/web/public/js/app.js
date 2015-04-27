@@ -5,24 +5,29 @@ evo.module("demo", [
     "demo.controllers"])
     .config([
         "$routeProvider",
-        function (r) {
-            r.when("/", {
+        "$locationProvider",
+        function (route, location) {
+            route.when("/", {
                 controller: "MainCntrl",
                 templateUrl: "hello"
             });
-            r.when("/table", {
+            route.when("/table", {
                 controller: "TableCntrl",
                 templateUrl: "table"
             });
-            r.otherwise({
+            route.otherwise({
                 redirectTo: "/"
             });
-            // $locationProvider.html5Mode(true);
+            location.html5Mode(true);
         }
     ])
     .run([
-        "$log",
-        function (log) {
-            log.info("Demo running.");
+        "$rootScope",
+        "$route",
+        function (root, route) {
+            (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) {  if (/^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
+            root.$on("$routeChangeSuccess", function (e, current) {
+                try { root.currentRoute = current.$$route.originalPath } catch (e) { /* pass */ };
+            });
         }
     ]);
