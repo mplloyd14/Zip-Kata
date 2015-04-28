@@ -1,6 +1,5 @@
 {
   "name": "monkeynaut",
-  "version": "0.9.1",
   "homepage": "https://github.com/CommandAlkon/monkeynaut",
   "license": "MIT",
   "ignore": [
@@ -25,5 +24,15 @@
     "moment": "2.9.0",
     "angular-bootstrap": "~0.12.1",
     "ionic": "~0.9.27"
-  }
+  },
+  "_release": "725b7f27be",
+  "_resolution": {
+    "type": "branch",
+    "branch": "develop",
+    "commit": "725b7f27beb5979ab8e7364d46e4b68b9d98fa70"
+  },
+  "_source": "https://github.com/CommandAlkon/monkeynaut.git",
+  "_target": "develop",
+  "_originalSource": "https://github.com/CommandAlkon/monkeynaut.git",
+  "_direct": true
 }
