@@ -1,8 +1,8 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-//cai.module('peApp', ['cai.services', 'peControllers', 'ngCookies', 'ngRoute']).
-cai.module('peApp', ['ionic', 'cai.services', 'peControllers', 'ngCookies']).
+//cai.module('peApp', ['ionic', 'cai.services', 'peControllers', 'ngCookies']).
+evo.module('peApp', ['ionic', 'evo', 'peControllers', 'ngCookies']).
  /* config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {

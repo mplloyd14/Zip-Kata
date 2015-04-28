@@ -1,0 +1,8 @@
+{
+	"name": "pe-seed",
+	"private": "true",
+	"dependencies": {
+		"evo": "git@github.com:CommandAlkon/monkeynaut.git#develop"
+
+	}
+}
