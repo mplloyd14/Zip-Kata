@@ -1,0 +1,38 @@
+{
+  "name": "monkeynaut",
+  "homepage": "https://github.com/CommandAlkon/monkeynaut",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "docs",
+    "tests",
+    "src",
+    "lib",
+    "Gruntfile.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "1.3.15",
+    "angular-cookies": "1.3.15",
+    "angular-mocks": "1.3.15",
+    "angular-route": "1.3.15",
+    "angular-touch": "1.3.15",
+    "bootstrap": "3.3.4",
+    "moment": "2.9.0",
+    "angular-bootstrap": "~0.12.1",
+    "ionic": "~0.9.27"
+  },
+  "_release": "3bc011a25d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "develop",
+    "commit": "3bc011a25dfe02bd1fcb5bc2ecab252ad5d5c410"
+  },
+  "_source": "git@github.com:CommandAlkon/monkeynaut.git",
+  "_target": "develop",
+  "_originalSource": "git@github.com:CommandAlkon/monkeynaut.git",
+  "_direct": true
+}
