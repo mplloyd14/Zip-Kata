@@ -2,6 +2,7 @@ evo.module("demo", [
     "ngCookies",
     "ngRoute",
     "evo",
+    "evo.common",
     "demo.controllers"])
     .config([
         "$routeProvider",
