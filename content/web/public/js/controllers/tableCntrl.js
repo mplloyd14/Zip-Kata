@@ -43,7 +43,7 @@ evo.module("demo.controllers", [])
                         ]
                     },
                     pagination: {
-                        itemsPerPage: 3
+                        itemsPerPage: 4
                     },
                     thead: {
                         rename: {
