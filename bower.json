@@ -1,0 +1,20 @@
+{
+  "name": "pe-seed",
+  "version": "0.0.0",
+  "homepage": "https://github.com/CommandAlkon/pe-seed",
+  "authors": [
+    "John Santiago Jr. <jdsantiagojr@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "content/shared/public",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git"
+  }
+}
