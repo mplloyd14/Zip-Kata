@@ -22,6 +22,7 @@ Follow the [gitflow] (http://nvie.com/posts/a-successful-git-branching-model/) p
 From a git shell, change to the repo working folder and execute the command:
 
 `npm install`
+`bower install`
 
 ## Main Entry Point
 To facilitate production deployment, the main entry point file must be given a "unique" name.
