@@ -3,15 +3,7 @@
 // Declare app level module which depends on filters, and services
 //cai.module('peApp', ['ionic', 'cai.services', 'peControllers', 'ngCookies']).
 evo.module('peApp', ['ionic', 'evo', 'peControllers', 'ngCookies']).
- /* config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider.
-      when('/', {
-		templateUrl: 'hello',
-		controller: 'MainController'
 
-      });
-    $locationProvider.html5Mode(true);
-}])*/
 	config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 		$stateProvider.state('mobileView', {
 			url: '/',
@@ -25,7 +17,6 @@ evo.module('peApp', ['ionic', 'evo', 'peControllers', 'ngCookies']).
 
 		$urlRouterProvider.otherwise('/');
 	}])
-
 ;
 
 
