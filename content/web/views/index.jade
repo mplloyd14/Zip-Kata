@@ -11,7 +11,7 @@ block body
             h4 Command Alkon Angular Components.
             ul(class="nav nav-pills")
                 li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
-                    a(href="", ng-href="{{ route }}") {{ route.substr(1) || "home" }}
+                    a(href="", ng-href="#{basePath}{{ route }}") {{ route.substr(1) || "home" }}
         hr
         div(class="ng-view ng-cloak")
     include partials/hello.jade
