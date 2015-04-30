@@ -3,6 +3,7 @@ module.exports = {
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
+	product_code : 'peSeed',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
