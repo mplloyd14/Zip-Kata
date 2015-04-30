@@ -10,6 +10,6 @@ html(ng-app="demo")
     link(rel="stylesheet", href="#{config.appBase}/web/css/app.css")
   body
     script(src="#{config.appBase}/shared/monkeynaut/dist/js/projevo-full.pkg.js")
-
-    base(href="/")
+    include /core/shared/branding
+    include /core/shared/scripts
     block body
