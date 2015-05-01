@@ -24,64 +24,85 @@ All the content listed below will be installed in the directory specified in the
 ```
 dist/
 ├── css
-│   ├── projevo-core.pkg.css
-│   └── projevo-ionic.pkg.css
+│   ├── projevo-core.pkg.css
+│   └── projevo.min.css
 ├── fonts
-│   ├── ionicons.eot
-│   ├── ionicons.svg
-│   ├── ionicons.ttf
-│   └── ionicons.woff
-├── js
-│   ├── projevo-core.js
-│   ├── projevo-core.pkg.js
-│   ├── projevo-full.js
-│   ├── projevo-full.pkg.js
-│   └── projevo-ionic.pkg.js
-└── vendor
-    ├── angular
-    ├── angular-animate
-    ├── angular-bootstrap
-    ├── angular-cookies
-    ├── angular-mocks
-    ├── angular-route
-    ├── angular-sanitize
-    ├── angular-touch
-    ├── angular-ui-router
-    ├── base64.js
-    ├── bootstrap
-    ├── i18n-node-angular.js
-    ├── ionic
-    ├── jquery
-    ├── moment
-    └── primus
+│   ├── glyphicons-halflings-regular.eot
+│   ├── glyphicons-halflings-regular.svg
+│   ├── glyphicons-halflings-regular.ttf
+│   ├── glyphicons-halflings-regular.woff
+│   ├── glyphicons-halflings-regular.woff2
+│   ├── ionicons.eot
+│   ├── ionicons.svg
+│   ├── ionicons.ttf
+│   └── ionicons.woff
+└── js
+    ├── bundle-core.js
+    ├── bundle-core.min.js
+    ├── bundle-full.js
+    ├── bundle-full.min.js
+    ├── bundle-ionic.js
+    ├── bundle-ionic.min.js
+    ├── projevo-core.pkg.js
+    ├── projevo-core.pkg.min.js
+    ├── projevo-full.pkg.js
+    ├── projevo-full.pkg.min.js
+    ├── projevo-templates.js
+    ├── vendor-core.pkg.js
+    ├── vendor-core.pkg.min.js
+    ├── vendor-full.pkg.js
+    ├── vendor-full.pkg.min.js
+    ├── vendor-ionic.pkg.js
+    └── vendor-ionic.pkg.min.js
 ```
+
+***vendor-core.pkg.js***
+
+Required third-party libraries.
+
+* base64 Encoder
+* primus *(configured to work with project-evolution server)*
+* angular v1.3.15
+* angular-route v1.3.15
+* angular-cookies v1.3.15
+* angular-sanitize v1.3.15
+* angular-touch v1.3.15
+* moment v2.9.0
+* i18n-node-angular
+
+***vendor-full.pkg.js***
+
+All libraries included in the vendor-core file with the addition of bootstrap ui components.
+
+* angular-bootstrap
+
+***vendor-ionic.pkg.js***
+
+Third-party libraries included in vendor-core and ionic/ionic-angular.
+
+* ionic v1.0.0-rc.5
+* ionic-angular v1.0.0-rc.5
 
 ***projevo-core.pkg.js***
 
-Core servies and third-party libraries required to build mobile and/or desktop web-application.
+Command Alkon core angular services.
 
-* base64 encode/decode
-* i18n-node-angular
-* angular v1.3.15
-* angular-cookies v1.3.15
-* angular-animate v1.3.15
-* angular-route v1.3.15
-* angular-touch v1.3.15
-* angular-sanitize v1.3.15
-* moment v2.9.0
-* monkeynaut v0.9.1 *(Core services only.)*
+* monkeynaut v0.9.1
 
 ***projevo-full.pkg.js***
 
-Core services and re-usable monkeynaut angular components.
+Command Alkon core angular services, and common directives.
 
-* projevo-core.pkg.js
-* angular-bootstrap v0.12.1
-* monkeynaut v0.9.1 *(Core services and re-usable components.)*
+* monkeynaut v0.9.1 *(evo.common, evo.templates)*
 
-***projevo-ionic.js***
+***bundle-core.js***
 
-Core services packaged with ionic angular components.
+Third-party libraries and Command Alkon core angular services.
 
-* projevo-core.pkg.js
-* ionic v1.0.0-rc.5
+***bundle-full.js***
+
+Third-party libraries, Command Alkon core angular services, and ui components.
+
+***bundle-ionic.js***
+
+Everything inlcluded in the bundle-core and vendor-ionic files.

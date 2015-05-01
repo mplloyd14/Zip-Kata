@@ -6,6 +6,3 @@ evo.module("demo.controllers", [])
             scope.message = "Wapendwa Dunia.";
         }
     ]);
-
-
-
