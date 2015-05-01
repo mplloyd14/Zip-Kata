@@ -27,11 +27,11 @@
     "angular-bootstrap": "~0.12.1",
     "ionic": "1.0.0-rc.5"
   },
-  "_release": "be9942271f",
+  "_release": "a3e715670f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "be9942271f31ea47c304699d0a24d8ff06155de9"
+    "commit": "a3e715670f7c5790bb030707da45c2e1bca6fc76"
   },
   "_source": "git@github.com:CommandAlkon/monkeynaut.git",
   "_target": "*",

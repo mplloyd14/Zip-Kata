@@ -53,7 +53,7 @@ angular.module("evo.utils.uuid", []);
 angular.module('evo.templates').
 run(['$templateCache', function($templateCache) {
   $templateCache.put('common/directives/breadcrumb/breadcrumb.html', '<ul class="breadcrumb"> <li ng-repeat="route in crumbs"> <a href="" ng-href="{{ route.path }}" ng-class="{ disabled: $last }">{{ route.label }}</a> </li> </ul> <!-- /.breadcrumb -->');
-  $templateCache.put('common/directives/table/table.html', '<div class="evo-table-toolbar" ng-show="options.toolbar"> <form role="search" class="form-inline"> <div class="form-group"> <input type="text" class="form-control evo-control" evo-placeholder="{{ getPlaceholder(options.toolbar.search) }}" ng-model="search" ng-show="options.toolbar.search" ng-change="onSearch()"> </div> <div class="form-group"> <div class="btn-group evo-btn-group"> <a href="" ng-click="button.onclick()" ng-class="setGetButtonClass(button, \'toolbar\')" ng-repeat="button in options.toolbar.buttons"> <i ng-show="hasIcon(button)" ng-class="button.icon"></i> {{ button.text || \'\' }} </a> </div> </div> </form> </div> <!-- /.evo-table-toolbar --> <div class="evo-table-container"> <div class="evo-thead"> <table class="table table-bordered"> <thead> <tr> <th ng-repeat="column in columns" ng-click="onTheadClick($event, column, options.columns.indexOf(column))" class="evo-link" ng-class="{\'evo-selected\': isSelectedOrder(column)}"> {{ options.thead.rename[column] || column | type : "string" : "title" }} </th> </tr> </thead> </table> </div> <!-- /.evo-thead --> <div class="evo-tbody"> <table class="table table-bordered"> <tbody> <tr ng-repeat="item in dados | orderBy: order | startFrom : (pagination.currentPage - 1) * pagination.itemsPerPage | limitTo: pagination.itemsPerPage"> <td ng-repeat="column in columns" ng-class="{\'evo-selected\': isSelectedOrder(column)}"> <a href="" ng-click="options.columns[column].onclick($event, item[column], column, data.indexOf(item))" ng-show="isButton(options.columns[column])" ng-class="setGetButtonClass(options.columns[column])"> <i ng-show="hasIcon(options.columns[column])" ng-class="options.columns[columns].icon"></i> {{ options.columns[column].text || item[column] }} </a> <span ng-hide="isButton(options.columns[column])"> {{ item[column] | type : options.columns[column].type : options.columns[column].fmt }} </span> </td> </tr> </tbody> </table> </div> <!-- /.evo-tbody --> </div> <!--/.evo-table-container --> <div class="evo-tfoot"> <pagination ng-show="isPaginationVisible()" ng-model="pagination.currentPage" items-per-page="pagination.itemsPerPage" class="pagination-sm" total-items="dados.length" rotate="false"></pagination> </div> <!-- /.evo-tfoot -->');
+  $templateCache.put('common/directives/table/table.html', '<div class="evo-table-toolbar" ng-show="hasToolbar()" ng-class="{ inactive: !hasToolbar() }"> <form role="search" class="form-inline"> <div class="form-group"> <div class="input-group"> <input type="text" class="form-control evo-control" evo-placeholder="{{ getPlaceholder(options.toolbar.search) || \'Search\' }}" ng-model="search.query" ng-show="options.toolbar.search" ng-change="onSearch()"> <div class="input-group-btn" ng-show="hasSearchBy()" dropdown> <button type="button" class="btn btn-default" dropdown-toggle>{{ options.thead.rename[search.by] || search.by || "" || "" | type : "string" : "title" }} <span class="caret"></span></button> <ul class="dropdown-menu" role="menu"> <li ng-repeat="option in options.toolbar.search.by"> <a href="" ng-click="onSearchByClick(option)">{{ options.thead.rename[option] || option | type : "string" : "title" }}</a> </li> </ul> </div> </div> <!-- /.input-group --> </div> <div class="form-group"> <div class="btn-group evo-btn-group"> <a href="" ng-click="button.onclick()" ng-class="setGetButtonClass(button, \'toolbar\')" ng-repeat="button in options.toolbar.buttons"> <i ng-show="hasIcon(button)" ng-class="button.icon"></i> {{ button.text || \'\' }} </a> </div> </div> </form> </div> <!-- /.evo-table-toolbar --> <div class="evo-table-container"> <div class="evo-thead"> <table class="table table-bordered"> <thead> <tr> <th ng-repeat="column in columns" ng-click="onTheadClick($event, column, options.columns.indexOf(column))" class="evo-link" ng-class="{\'evo-selected\': isSelectedOrder(column)}"> {{ options.thead.rename[column] || column | type : "string" : "title" }} </th> </tr> </thead> </table> </div> <!-- /.evo-thead --> <div class="evo-tbody"> <table class="table table-bordered"> <tbody> <tr ng-repeat="item in dados | orderBy: order | startFrom : (pagination.currentPage - 1) * pagination.itemsPerPage | limitTo: pagination.itemsPerPage"> <td ng-repeat="column in columns" ng-class="{\'evo-selected\': isSelectedOrder(column)}"> <a href="" ng-click="options.columns[column].onclick($event, item[column], column, data.indexOf(item))" ng-show="isButton(options.columns[column])" ng-class="setGetButtonClass(options.columns[column])"> <i ng-show="hasIcon(options.columns[column])" ng-class="options.columns[columns].icon"></i> {{ options.columns[column].text || item[column] }} </a> <span ng-hide="isButton(options.columns[column])"> {{ item[column] | type : options.columns[column].type : options.columns[column].fmt }} </span> </td> </tr> </tbody> </table> </div> <!-- /.evo-tbody --> </div> <!--/.evo-table-container --> <div class="evo-tfoot"> <pagination ng-show="isPaginationVisible()" ng-model="pagination.currentPage" items-per-page="pagination.itemsPerPage" class="pagination-sm" total-items="dados.length" rotate="false"></pagination> </div> <!-- /.evo-tfoot -->');
 }]);
 
 angular.module("evo.api")
@@ -627,17 +627,35 @@ angular.module("evo.common.directives")
                             col.splice(i, 1);
                     }
 
-                    if (!angular.isObject(opt.toolbar)) opt.toolbar = {};
                     if (!angular.isObject(opt.thead)) opt.thead = {};
+                    if (!angular.isObject(opt.toolbar)) opt.toolbar = {};
+
+                    function hasSearchBy() {
+                        return angular.isObject(opt.toolbar.search) && opt.toolbar.search.hasOwnProperty("by");
+                    }
+
+                    if (hasSearchBy()) {
+                        if (opt.toolbar.search.by === "all" || !angular.isArray(opt.toolbar.search.by)) opt.toolbar.search.by = angular.copy(col);
+                    }
 
                     scope.options    = opt;
                     scope.columns    = col;
                     scope.order      = "";
                     scope.dados      = [];
                     scope.pagination = angular.extend({}, { currentPage: 1, itemsPerPage: 10 }, (opt.pagination || {}));
+                    scope.search     = {
+                        query: "",
+                        by: (hasSearchBy()) ? opt.toolbar.search.by[0] : void 0
+                    };
 
                     scope.hasIcon = function (o) {
                         return !!o.icon;
+                    };
+
+                    scope.hasSearchBy = hasSearchBy;
+
+                    scope.hasToolbar = function () {
+                        return Object.keys(opt.toolbar).length;
                     };
 
                     scope.isPaginationVisible = function () {
@@ -653,7 +671,7 @@ angular.module("evo.common.directives")
                     };
 
                     scope.getPlaceholder = function (o) {
-                        return (angular.isObject(o) && o.hasOwnProperty("placeholder")) && o.placeholder || "Search";
+                        return (angular.isObject(o) && o.hasOwnProperty("placeholder")) && o.placeholder;
                     };
 
                     scope.onTheadClick = function (e, column, index) {
@@ -666,9 +684,13 @@ angular.module("evo.common.directives")
                         return scope.order.search(column) !== -1;
                     };
 
+                    scope.onSearchByClick = function (str) {
+                        scope.search.by = str;
+                    };
+
                     scope.onSearch = function () {
                         var o = {};
-                        o[angular.isObject(opt.toolbar.search) && opt.toolbar.search.by || "$"] = scope.search || "";
+                        o[scope.search.by || "$"] = scope.search.query || "";
                         scope.dados = filter("filter")(scope.data, o);
                     };
                     scope.$watch("data", scope.onSearch, true);

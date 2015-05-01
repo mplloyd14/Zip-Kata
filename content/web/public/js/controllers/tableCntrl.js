@@ -12,11 +12,11 @@ evo.module("demo.controllers", [])
                             type: "string",
                             fmt: "title"
                         },
-                        "team": {
+                        "pos": {
                             type: "string",
                             fmt: "uppercase"
                         },
-                        "pos": {
+                        "team": {
                             type: "string",
                             fmt: "uppercase"
                         },
@@ -24,8 +24,7 @@ evo.module("demo.controllers", [])
                     },
                     toolbar: {
                         search: {
-                            by: "player",
-                            placeholder: "Search by Player"
+                            by: "all"
                         },
                         buttons: [
                             {
@@ -38,6 +37,14 @@ evo.module("demo.controllers", [])
                                         "pos": "c",
                                         "avg": ".280"
                                     });
+                                    console.log("added a player!");
+                                }
+                            },
+                            {
+                                text: "Say Hello",
+                                class: "btn-warning",
+                                onclick: function () {
+                                    alert("hello world!");
                                 }
                             }
                         ]
