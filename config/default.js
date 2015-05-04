@@ -42,6 +42,9 @@ module.exports = {
 				timeout : 10000
 			}
 		},
+		client: {
+			port: 443
+		},
 		REST : {
 			server : {
 				port :  9001
