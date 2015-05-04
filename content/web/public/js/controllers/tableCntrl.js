@@ -1,7 +1,8 @@
 evo.module("demo.controllers", [])
     .controller("TableCntrl", [
         "$scope",
-        function (scope) {
+        "evoAbout",
+        function (scope, about) {
             "use strict";
             scope.table = {
                 options: {

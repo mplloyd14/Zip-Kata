@@ -5,14 +5,15 @@ block body
     script(src="/web/js/controllers/tableCntrl.js")
     script(src="/web/js/app.js")
 
-    div(id="main", role="main", class="container-fluid")
+    div(id="main", role="main", class="container-fluid ng-cloak")
         header
             h1 Monkeynaut
             h4 Command Alkon Angular Components.
             ul(class="nav nav-pills")
                 li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
-                    a(href="", ng-href="#{basePath}{{ route }}") {{ route.substr(1) || "home" }}
+                    a(href="", ng-href="#{basePath}{{ route }}", ng-click="onNavButtonClick($event, route)") {{ route.substr(1) || "home" }}
         hr
-        div(class="ng-view ng-cloak")
+        div(class="ng-view")
+    evo-about-modal(product-title="#{title}")
     include partials/hello.jade
     include partials/table.jade
