@@ -8,8 +8,6 @@ evo.module("demo", [
         "$scope",
         "evoAbout",
         function (scope, evoAbout) {
-            console.log(evoAbout);
-
             scope.onclick = function (e, r) {
                 if (r === "/about") {
                     e.preventDefault();
