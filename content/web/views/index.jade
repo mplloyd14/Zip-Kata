@@ -9,9 +9,9 @@ block body
         header
             h1 Monkeynaut
             h4 Command Alkon Angular Components.
-            ul(class="nav nav-pills")
+            ul(class="nav nav-pills", ng-controller="NavCntrl")
                 li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
-                    a(href="", ng-href="#{basePath}{{ route }}", ng-click="onNavButtonClick($event, route)") {{ route.substr(1) || "home" }}
+                    a(href="", ng-href="#{basePath}{{ route }}", ng-click="onclick($event, route)") {{ route.substr(1) || "home" }}
         hr
         div(class="ng-view")
     evo-about-modal(product-title="#{title}")

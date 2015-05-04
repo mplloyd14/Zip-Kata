@@ -4,6 +4,20 @@ evo.module("demo", [
     "evo",
     "evo.common",
     "demo.controllers"])
+    .controller("NavCntrl", [
+        "$scope",
+        "evoAbout",
+        function (scope, evoAbout) {
+            console.log(evoAbout);
+
+            scope.onclick = function (e, r) {
+                if (r === "/about") {
+                    e.preventDefault();
+                    evoAbout.openModal();
+                }
+            }
+        }
+    ])
     .config([
         "$routeProvider",
         "$locationProvider",
@@ -27,18 +41,10 @@ evo.module("demo", [
         "$rootScope",
         "$route",
         "$location",
-        "evoAbout",
         function (root, route, location, evoAbout) {
             (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) {  if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
             root.$on("$routeChangeSuccess", function (e, current, previous) {
                 try { root.currentRoute = current.$$route.originalPath } catch (e) { /* pass */ };
             });
-
-            root.onNavButtonClick = function (e, str) {
-                if (str === "/about") {
-                    evoAbout.openModal();
-                    e.preventDefault();
-                }
-            };
         }
     ]);
