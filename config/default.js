@@ -64,10 +64,6 @@ module.exports = {
 					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
-				},
-				loggly : {
-					level : 'warn',
-					enabled : false
 				}
 			}
 		},
