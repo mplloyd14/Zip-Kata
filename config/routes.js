@@ -34,6 +34,16 @@ module.exports = exports = function(i18n) {
 				template: '/web/index'
 			},
 			protected: true
+		},
+		{
+			method: 'get',
+			route: '/product/:product/mobile*',
+			base: '/product/:product/mobile',
+			render: {
+				title: 'PESeed',
+				template: '/mobile/index'
+			},
+			protected: true
 		}
 	];
 }

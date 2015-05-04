@@ -9,7 +9,6 @@ module.exports = {
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
-		loggly : 'log.loggly',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -42,6 +41,9 @@ module.exports = {
 				timeout : 10000
 			}
 		},
+		client: {
+			port: 443
+		},
 		REST : {
 			server : {
 				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
@@ -49,10 +51,6 @@ module.exports = {
 		}
 	},
 	log : {
-		loggly : {
-			subdomain : 'cai', // loggly user account subdomain
-			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
-		},
 		server : { // server-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
@@ -68,10 +66,6 @@ module.exports = {
 					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
-				},
-				loggly : {
-					level : 'warn',
-					enabled : false
 				}
 			}
 		},
@@ -81,10 +75,6 @@ module.exports = {
 				console : {
 					level : 'debug', // maximum level of logged messages
 					enabled : true // this switch can be used to easily toggle use of a given transport
-				},
-				loggly : {
-					level : 'debug',
-					enabled : false
 				}
 			}
 		}

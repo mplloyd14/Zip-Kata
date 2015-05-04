@@ -10,6 +10,11 @@
         "status": "Active",
         "company": "ss",
         "products": [
+			{
+				"code": "peseed",
+				"roles": [],
+				"settings":{}
+			},
             {
                 "code": "etldemo",
                 "roles": [
@@ -34,6 +39,11 @@
         "status": "Active",
         "company": "cc",
         "products": [
+			{
+				"code": "peseed",
+				"roles": [],
+				"settings":{}
+			},
             {
                 "code": "etldemo",
                 "roles": [

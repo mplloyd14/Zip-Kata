@@ -9,6 +9,9 @@
             "logo" : "@logo: 'ss-logo.png';"
         },
         "products": [
+			{ 	"code": "peseed",
+				"settings": {}
+			},
             {
                 "code": "etldemo",
                 "settings": {
@@ -35,6 +38,9 @@
             "logo" : "@logo: 'cc-logo.png';"
         },
         "products": [
+			{ 	"code": "peseed",
+				"settings": {}
+			},
             {
                 "code": "etldemo",
                 "settings": {
