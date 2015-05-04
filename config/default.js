@@ -77,10 +77,6 @@ module.exports = {
 				console : {
 					level : 'debug', // maximum level of logged messages
 					enabled : true // this switch can be used to easily toggle use of a given transport
-				},
-				loggly : {
-					level : 'debug',
-					enabled : false
 				}
 			}
 		}
