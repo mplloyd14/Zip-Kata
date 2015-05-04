@@ -49,10 +49,6 @@ module.exports = {
 		}
 	},
 	log : {
-		loggly : {
-			subdomain : 'cai', // loggly user account subdomain
-			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
-		},
 		server : { // server-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
