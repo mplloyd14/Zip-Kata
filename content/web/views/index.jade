@@ -14,6 +14,6 @@ block body
                     a(href="", ng-href="#{basePath}{{ route }}", ng-click="onclick($event, route)") {{ route.substr(1) || "home" }}
         hr
         div(class="ng-view")
-    evo-about-modal(product-title="#{title}")
+    evo-about-modal(data-product-title="#{title}", data-logo="#{config.appBase}/shared/img/logo-48.png")
     include partials/hello.jade
     include partials/table.jade
