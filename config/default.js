@@ -1,16 +1,15 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 9000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
-	product_code : 'peSeed',
+	product_code : 'peseed',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
-		loggly : 'log.loggly',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -39,13 +38,13 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  9002,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  9001
 			}
 		}
 	},
