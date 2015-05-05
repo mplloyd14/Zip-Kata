@@ -1,11 +1,8 @@
 {
 	"txtAbout": "About",
-	"lblProductName": "Product Name",
 	"lblProductVersion": "Product Version",
 	"lblProductBuildDate": "Product Build Date",
 	"lblCoreLibraryVersion": "Core Library Version",
-	"lblCoreLibraryBuildDate": "Core Library Build Date",
-	"txtCopyrightInformation": "Copyright Information",
-	"txtAllRightsReserved.": "All Rights Reserved.",
-	"btnClose": "Close",
+    "lblCoreLibraryBuildDate": "Core Library Build Date",
+	"txtClose": "Close"
 }
