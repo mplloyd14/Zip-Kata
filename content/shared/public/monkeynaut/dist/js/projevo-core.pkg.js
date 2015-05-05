@@ -1,7 +1,7 @@
 'use strict';
 angular.module('evo.templates').
 run(['$templateCache', function($templateCache) {
-  $templateCache.put('client/about/about.html', '<div id="evo-about-container" ng-show="isOpen"> <div class="modal"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <img ng-src="{{ logo }}" ng-show="logo.length"> <h3>{{ "txtAbout" | i18n }}</h3> </div> <!-- /.modal-header --> <div class="modal-body"> <div class="evo-about-product"> <h4>{{ productTitle }}</h4> <ul> <li class="evo-about-version"> <label>{{ "lblAppVersion" | i18n }}:</label>&nbsp;{{ meta.build.app.version }} </li> <li class="evo-about-date"> <label>{{ "lblProductBuildDate" | i18n }}:</label>&nbsp;{{ meta.build.app.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-product --> <div class="evo-about-core"> <h4>Core</h4> <ul> <li class="evo-about-version"> <label>{{ "lblCoreLibraryVersion" | i18n }}:</label>&nbsp;{{ meta.build.core.version }} </li> <li class="evo-about-date"> <label>{{ "lblCoreDate" | i18n }}:</label>&nbsp;{{ meta.build.core.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-core --> </div> <!-- /.modal-body --> <div class="modal-footer"> <button class="btn btn-primary" ng-click="closeModal()">{{ "txtClose" | i18n }}</button> </div> <!-- /.modal-footer --> </div> </div> </div> <!-- /.modal --> <div class="modal-backdrop"></div> </div> <!-- /#evo-about-modal -->');
+  $templateCache.put('client/about/about.html', '<div id="evo-about-container" ng-show="isOpen"> <div class="modal"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <img ng-src="{{ logo }}" ng-show="logo.length"> <h3>{{ "txtAbout" | i18n }}</h3> </div> <!-- /.modal-header --> <div class="modal-body"> <div class="evo-about-product"> <h4>{{ productTitle }}</h4> <ul> <li class="evo-about-version"> <label>{{ "lblProductVersion" | i18n }}:</label>&nbsp;{{ meta.build.app.version }} </li> <li class="evo-about-date"> <label>{{ "lblProductBuildDate" | i18n }}:</label>&nbsp;{{ meta.build.app.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-product --> <div class="evo-about-core"> <h4>Core</h4> <ul> <li class="evo-about-version"> <label>{{ "lblCoreLibraryVersion" | i18n }}:</label>&nbsp;{{ meta.build.core.version }} </li> <li class="evo-about-date"> <label>{{ "lblCoreLibraryBuildDate" | i18n }}:</label>&nbsp;{{ meta.build.core.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-core --> </div> <!-- /.modal-body --> <div class="modal-footer"> <button class="btn btn-primary evo-btn-primary" ng-click="closeModal()">{{ "txtClose" | i18n }}</button> </div> <!-- /.modal-footer --> </div> </div> </div> <!-- /.modal --> <div class="modal-backdrop"></div> </div> <!-- /#evo-about-modal -->');
 }]);
 
 angular.module("evo.api", [
@@ -373,19 +373,7 @@ angular.module("evo.client.config")
     ]);
 
 
-angular.module("evo.locale", []);
-
-angular.module("evo.locale")
-    .factory("evoLocale", [
-        "$filter",
-        function (filter) {
-            return {
-                localize: function () {
-                    return filter("i18n")();
-                }
-            };
-        }
-    ]);
+angular.module("evo.locale", ["i18n"]);
 
 angular.module("evo.templates", []);
 

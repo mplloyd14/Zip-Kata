@@ -9,6 +9,8 @@
     "test",
     "docs",
     "tests",
+    "test",
+    "scripts",
     "src",
     "lib",
     "Gruntfile.js"
@@ -22,16 +24,17 @@
     "angular-route": "1.3.15",
     "angular-touch": "1.3.15",
     "angular-sanitize": "1.3.15",
+    "angular-i18n": "~1.3.15",
     "bootstrap": "3.3.4",
     "moment": "2.9.0",
     "angular-bootstrap": "~0.12.1",
     "ionic": "1.0.0-rc.5"
   },
-  "_release": "a7c4e7c4a0",
+  "_release": "6ddb982db9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a7c4e7c4a0b8d07f349985e2e32c182547b06d71"
+    "commit": "6ddb982db969af57b415b3b6599162f9d2212cf3"
   },
   "_source": "git@github.com:CommandAlkon/monkeynaut.git",
   "_target": "*",
