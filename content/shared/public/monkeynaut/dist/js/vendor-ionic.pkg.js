@@ -39434,7 +39434,6 @@ makeSwipeDirective('ngSwipeRight', 1, 'swiperight');
             }
 
             var filter = function( input ) {
-                console.log(input);
                 // If the input is a number, assume pluralization is requested.
                 if( isNumber( input ) ) {
                     return i18n.__n.apply( i18n, arguments );

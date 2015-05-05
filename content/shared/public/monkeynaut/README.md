@@ -17,25 +17,26 @@ Monkeynaut is a package of vendor libraries and core services that are required 
     ```
 2. `bower install git@github.com:CommandAlkon/monkeynaut.git`
 
-#### Package Content
 
-All the content listed below will be installed in the directory specified in the `.bowerrc` file.
+**Package Contents:**
+
+All the content of monkeynaut will be installed in the directory specified in the `.bowerrc` file.
 
 ```
 dist/
 ├── css
-│   ├── projevo-core.pkg.css
-│   └── projevo.min.css
+│   ├── projevo-core.pkg.css
+│   └── projevo.min.css
 ├── fonts
-│   ├── glyphicons-halflings-regular.eot
-│   ├── glyphicons-halflings-regular.svg
-│   ├── glyphicons-halflings-regular.ttf
-│   ├── glyphicons-halflings-regular.woff
-│   ├── glyphicons-halflings-regular.woff2
-│   ├── ionicons.eot
-│   ├── ionicons.svg
-│   ├── ionicons.ttf
-│   └── ionicons.woff
+│   ├── glyphicons-halflings-regular.eot
+│   ├── glyphicons-halflings-regular.svg
+│   ├── glyphicons-halflings-regular.ttf
+│   ├── glyphicons-halflings-regular.woff
+│   ├── glyphicons-halflings-regular.woff2
+│   ├── ionicons.eot
+│   ├── ionicons.svg
+│   ├── ionicons.ttf
+│   └── ionicons.woff
 └── js
     ├── bundle-core.js
     ├── bundle-core.min.js
@@ -43,11 +44,14 @@ dist/
     ├── bundle-full.min.js
     ├── bundle-ionic.js
     ├── bundle-ionic.min.js
+    ├── i18n
+    │   ├── angular-locale_*.js
     ├── projevo-core.pkg.js
     ├── projevo-core.pkg.min.js
     ├── projevo-full.pkg.js
     ├── projevo-full.pkg.min.js
-    ├── projevo-templates.js
+    ├── projevo-tpls-core.js
+    ├── projevo-tpls-full.js
     ├── vendor-core.pkg.js
     ├── vendor-core.pkg.min.js
     ├── vendor-full.pkg.js
@@ -55,7 +59,7 @@ dist/
     ├── vendor-ionic.pkg.js
     └── vendor-ionic.pkg.min.js
 ```
-
+I18n angular services will be inserted by project-evolution server and reference files stored in `monkeynaut/dist/js/i18n/`.
 ***vendor-core.pkg.js***
 
 Required third-party libraries.
@@ -67,6 +71,7 @@ Required third-party libraries.
 * angular-cookies v1.3.15
 * angular-sanitize v1.3.15
 * angular-touch v1.3.15
+* angular-18n v1.3.15
 * moment v2.9.0
 * i18n-node-angular
 
@@ -106,3 +111,32 @@ Third-party libraries, Command Alkon core angular services, and ui components.
 ***bundle-ionic.js***
 
 Everything inlcluded in the bundle-core and vendor-ionic files.
+
+#### Changelog**
+
+Moved all client side content out of project-evolution and into [monkeynaut](https://github.com/CommandAlkon/monkeynaut). To add new changes to old projects the following changes will need to be made.
+
+
+**Breaking Changes:**
+
+* v0.9.1
+	* All references to *cai* will need to be removed or changed.
+	* The *cai.services* module does not exist and had been renamed to *evo*.
+	* Re-usable Command Alkon angular components are not part of core services. They can be included by using `projevo-full.min.js` and referencing *evo.common* in  required array of main module.
+    * Default Command Alkon branding font, and class styles can be applied using the .cai-titillium-font and cai-link class.
+
+
+Table below list all the module names that will need to change if a developer chooses to use this package with an older Command Alkon project.
+
+| **Old Module**  | **New Module**    |
+|-------------------------|-----------------------------|
+| User                       | evoUser                      |
+| Core                       | evoClientData           |
+| Config                    | evoConfig                   |
+| Templates            | evoTemplates<sup>1</sup> |
+| apiProvider           | evoAPI                         |
+| Validation              | evoValidation            |
+| Utils                        | evoUtils                      |
+| Browser                 | evoBrowser              |
+
+<sup>1.</sup> Templates service method to cache templates has renamed to cacheTemplates from defaultMissingTemplates.
