@@ -1,11 +1,11 @@
 {
-	"txtAbout": "txtAbout",
-	"txtProductName": "txtProductName",
-	"txtProductVersion": "txtProductVersion",
-	"txtProductBuildDate": "txtProductBuildDate",
-	"txtCoreLibraryVersion": "txtCoreLibraryVersion",
-	"txtCoreLibraryBuildDate": "txtCoreLibraryBuildDate",
-	"txtCopyrightInformation": "txtCopyrightInformation",
-	"txtAllRightsReserved.": "txtAllRightsReserved.",
-	"btnClose": "btnClose"
+	"txtAbout": "About",
+	"lblProductName": "Product Name",
+	"lblProductVersion": "Product Version",
+	"lblProductBuildDate": "Product Build Date",
+	"lblCoreLibraryVersion": "Core Library Version",
+	"lblCoreLibraryBuildDate": "Core Library Build Date",
+	"txtCopyrightInformation": "Copyright Information",
+	"txtAllRightsReserved.": "All Rights Reserved.",
+	"btnClose": "Close",
 }

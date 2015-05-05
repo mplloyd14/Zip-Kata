@@ -39447,6 +39447,11 @@ makeSwipeDirective('ngSwipeRight', 1, 'swiperight');
 }());
 
 'use strict';
+angular.module('evo.templates').
+run(['$templateCache', function($templateCache) {
+  $templateCache.put('client/about/about.html', '<div id="evo-about-container" ng-show="isOpen"> <div class="modal"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <img ng-src="{{ logo }}" ng-show="logo.length"> <h3>{{ "txtAbout" | i18n }}</h3> </div> <!-- /.modal-header --> <div class="modal-body"> <div class="evo-about-product"> <h4>{{ productTitle }}</h4> <ul> <li class="evo-about-version"> <label>{{ "lblAppVersion" | i18n }}:</label>&nbsp;{{ meta.build.app.version }} </li> <li class="evo-about-date"> <label>{{ "lblProductBuildDate" | i18n }}:</label>&nbsp;{{ meta.build.app.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-product --> <div class="evo-about-core"> <h4>Core</h4> <ul> <li class="evo-about-version"> <label>{{ "lblCoreLibraryVersion" | i18n }}:</label>&nbsp;{{ meta.build.core.version }} </li> <li class="evo-about-date"> <label>{{ "lblCoreDate" | i18n }}:</label>&nbsp;{{ meta.build.core.date | date: "longDate" }} </li> </ul> </div> <!-- /.evo-about-core --> </div> <!-- /.modal-body --> <div class="modal-footer"> <button class="btn btn-primary" ng-click="closeModal()">{{ "txtClose" | i18n }}</button> </div> <!-- /.modal-footer --> </div> </div> </div> <!-- /.modal --> <div class="modal-backdrop"></div> </div> <!-- /#evo-about-modal -->');
+}]);
+
 angular.module("evo.api", [
                "evo.utils",
                "evo.user",
@@ -39568,6 +39573,56 @@ angular.module("evo.api")
             };
 
             return srvc;
+        }
+    ]);
+
+
+angular.module("evo.client.about")
+    .directive("evoAboutModal", [
+        "evoAbout",
+        function (about) {
+            return {
+                restrict: "E",
+                templateUrl: "client/about/about.html",
+                link: function (scope, elem, attrs) {
+                    scope.productTitle = attrs.productTitle;
+                    scope.logo         = attrs.logo;
+                    scope.meta         = about.meta;
+
+                    scope.closeModal = about.closeModal;
+
+                    scope.$watch(function () { return about.isOpen }, function () { scope.isOpen = arguments[0] });
+                }
+            };
+        }
+    ]);
+
+angular.module("evo.client.about", ["evo.client.config"]);
+
+angular.module("evo.client.about")
+    .service("evoAbout", [
+        "$window",
+        "evoConfig",
+        function (win, config) {
+
+            if (!win.moment) throw new Error("Missing third-party library 'Moment'.");
+
+            var srvc = this;
+
+            srvc.meta = config.get("meta", {});
+
+            try {
+                srvc.meta.build.core.date = moment(srvc.meta.build.core.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
+                srvc.meta.build.app.date  = moment(srvc.meta.build.app.date,'YYYY-MM-DD HH:mm:ss Z').toDate();
+            } catch (err) { /* pass */ }
+
+            srvc.openModal = function () {
+                if (!srvc.isOpen) srvc.isOpen = !0;
+            };
+
+            srvc.closeModal = function () {
+                if (srvc.isOpen) srvc.isOpen = 0;
+            };
         }
     ]);
 
@@ -39699,7 +39754,11 @@ angular.module("evo.client.browser")
     ]);
 
 
-angular.module("evo.client", ["ngCookies", "evo.utils"]);
+angular.module("evo.client", [
+               "ngCookies",
+               "evo.utils",
+               "evo.client.browser",
+               "evo.client.about"]);
 
 angular.module("evo.client")
     .factory("evoClientData", [
@@ -39754,7 +39813,7 @@ angular.module("evo.client.config")
              * @return {*}
              */
             srvc.get = function (k, d) {
-                return clientData.config[k] || d;
+                return clientData[k] || clientData.config[k] || d;
             };
 
             return srvc;
@@ -39763,6 +39822,18 @@ angular.module("evo.client.config")
 
 
 angular.module("evo.locale", []);
+
+angular.module("evo.locale")
+    .factory("evoLocale", [
+        "$filter",
+        function (filter) {
+            return {
+                localize: function () {
+                    return filter("i18n")();
+                }
+            };
+        }
+    ]);
 
 angular.module("evo.templates", []);
 

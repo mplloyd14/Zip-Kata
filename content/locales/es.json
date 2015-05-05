@@ -1,0 +1,11 @@
+{
+    "txtAbout": "Acerca de",
+    "txtProductName": "Nombre",
+    "txtProductVersion": "Versión del producto",
+    "txtProductBuildDate": "Producto Build Date",
+    "txtCoreLibraryVersion": "Core Library Version",
+    "txtCoreLibraryBuildDate": "Biblioteca Core Fecha de producción",
+    "txtCopyrightInformation": "Información de copyright",
+    "txtAllRightsReserved.": "Todos los derechos reservados.",
+    "btnClose": "Cierre"
+}

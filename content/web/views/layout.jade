@@ -9,7 +9,7 @@ html(ng-app="demo")
     link(rel="stylesheet", href="#{config.appBase}/shared/monkeynaut/dist/css/projevo-core.pkg.css")
     include /core/shared/branding
     link(rel="stylesheet", href="#{config.appBase}/web/css/app.css")
-  body
+  body(i18n-locale=i18n.getLocale())
     script(src="#{config.appBase}/shared/monkeynaut/dist/js/bundle-full.min.js")
     include /core/shared/scripts
     block body
