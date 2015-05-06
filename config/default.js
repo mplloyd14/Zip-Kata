@@ -1,5 +1,5 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 9000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
@@ -37,7 +37,7 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  9002,
 				timeout : 10000
 			}
 		},
@@ -46,7 +46,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  9001
 			}
 		}
 	},
@@ -63,7 +63,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'peseed.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}

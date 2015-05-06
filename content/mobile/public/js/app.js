@@ -13,7 +13,7 @@ angular.module('peApp', ['cai.services', 'peControllers']).
 }]);
 */
 
-evo.module('peApp', ['ionic', 'evo', 'peControllers', 'ngCookies']).
+angular.module('peApp', ['ionic', 'evo', 'peControllers', 'ngCookies']).
 
 	config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 		$stateProvider.state('mobileView', {
