@@ -21,7 +21,12 @@ evo.module("demo.controllers", [])
                             type: "string",
                             fmt: "uppercase"
                         },
-                        "avg": "string"
+                        "avg": {
+                            type: "float",
+                            fmt: {
+                                precision: 3
+                            }
+                        }
                     },
                     toolbar: {
                         search: {

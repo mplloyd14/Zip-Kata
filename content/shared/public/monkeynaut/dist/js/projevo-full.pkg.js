@@ -849,7 +849,7 @@ angular.module("evo.common.filters")
                 return Math.abs(types.int(a));
             };
 
-            types.float = function (a) {
+            types.float = function (a, fmt) {
                 if (isNaN(a)) {
                     throw new Error("Attempting to convert a string that is not a number to type float.");
                 }
@@ -858,7 +858,7 @@ angular.module("evo.common.filters")
                         precision = Math.abs(num[1]) + num[0].split('.')[1].length;
                     return parseFloat(a).toFixed(precision);
                 }
-                return parseFloat(a);
+                return (angular.isObject(fmt) && typeof fmt.precision === "number") ? parseFloat(a).toFixed(fmt.precision) : parseFloat(a);
             };
 
             types.number = function (a, fmt) {
@@ -1140,10 +1140,10 @@ angular.module("evo.utils")
             };
 
             /**
-             * [roundNumber description]
-             * @param  {number} num    [description]
-             * @param  {number} digits [description]
-             * @return {number}        [description]
+             * Returns number rounded with specified precision.
+             * @param  {number} num
+             * @param  {number} digits Decimal Precision
+             * @return {number}
              */
             srvc.roundNumber = function (num, digits) {
                 if(empty(num) || isNaN(num) || isNaN(digits)) throw new Error("Incorrect argument type(s).");

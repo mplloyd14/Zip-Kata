@@ -40053,10 +40053,10 @@ angular.module("evo.utils")
             };
 
             /**
-             * [roundNumber description]
-             * @param  {number} num    [description]
-             * @param  {number} digits [description]
-             * @return {number}        [description]
+             * Returns number rounded with specified precision.
+             * @param  {number} num
+             * @param  {number} digits Decimal Precision
+             * @return {number}
              */
             srvc.roundNumber = function (num, digits) {
                 if(empty(num) || isNaN(num) || isNaN(digits)) throw new Error("Incorrect argument type(s).");
