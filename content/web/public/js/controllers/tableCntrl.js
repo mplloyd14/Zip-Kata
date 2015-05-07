@@ -25,7 +25,7 @@ evo.module("demo.controllers", [])
                     },
                     toolbar: {
                         search: {
-                            by: "all"
+                            by: "*"
                         },
                         buttons: [
                             {
