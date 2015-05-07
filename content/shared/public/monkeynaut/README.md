@@ -3,8 +3,14 @@ Monkeynaut
 > There's a lot of space out there to get lost in.
 > &mdash;*John Robinson*
 
-Monkeynaut is a package of vendor libraries and core services that are required for the development of Command Alkon web-applications.
+Monkeynaut is a package of third-party libraries and core services that are required for the development of Command Alkon web-applications.
 
+#### Dependencies
+
+* bower 1.4.1
+* grunt 0.4.5
+* node 0.10.25
+* npm 1.3.10
 
 #### Getting Started
 
@@ -16,7 +22,32 @@ Monkeynaut is a package of vendor libraries and core services that are required 
     }
     ```
 2. `bower install git@github.com:CommandAlkon/monkeynaut.git`
+3. Include monkeynaut scripts in `layout.jade`. *(Example below)*
+3. Add *evo* and *evo.common* to your angular required array.
 
+    ``` Javascript
+    angular.module("productCode", ["ngRoute", "evo", "evo.common"]);
+    ```
+
+**layout.jade file.**
+
+``` Jade
+!!!
+html(ng-app="demo")
+  head
+    meta(charset="utf8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    title #{title}
+
+    link(rel="stylesheet", href="#{config.appBase}/shared/monkeynaut/dist/css/projevo-core.pkg.css")
+    include /core/shared/branding
+    link(rel="stylesheet", href="#{config.appBase}/web/css/app.css")
+  body(i18n-locale=i18n.getLocale())
+    script(src="#{config.appBase}/shared/monkeynaut/dist/js/bundle-full.min.js")
+    include /core/shared/scripts
+    block body
+```
 
 **Package Contents:**
 
@@ -37,6 +68,7 @@ dist/
 │   ├── ionicons.svg
 │   ├── ionicons.ttf
 │   └── ionicons.woff
+│   └── titilliumweb.woff
 └── js
     ├── bundle-core.js
     ├── bundle-core.min.js
@@ -59,13 +91,15 @@ dist/
     ├── vendor-ionic.pkg.js
     └── vendor-ionic.pkg.min.js
 ```
-I18n angular services will be inserted by project-evolution server and reference files stored in `monkeynaut/dist/js/i18n/`.
+
+All available angular i18n services will be installed in sub-directory `monkeynaut/dist/js/i18n/` and will be referenced by [project-evolution](https://github.com/CommandAlkon/ProjectEvo-Core) dynamically.
+
 ***vendor-core.pkg.js***
 
 Required third-party libraries.
 
 * base64 Encoder
-* primus *(configured to work with project-evolution server)*
+* primus<sup>1</sup>
 * angular v1.3.15
 * angular-route v1.3.15
 * angular-cookies v1.3.15
@@ -73,7 +107,11 @@ Required third-party libraries.
 * angular-touch v1.3.15
 * angular-18n v1.3.15
 * moment v2.9.0
-* i18n-node-angular
+* i18n-node-angular<sup>2</sup>
+
+<sup>1.</sup> Configured to work with [project-evolution](https://github.com/CommandAlkon/ProjectEvo-Core).
+
+<sup>2.</sup> Modified to accept a configurable route prefix so that it can be used in multi-tenant environment at Command Alkon.
 
 ***vendor-full.pkg.js***
 
@@ -112,31 +150,29 @@ Third-party libraries, Command Alkon core angular services, and ui components.
 
 Everything inlcluded in the bundle-core and vendor-ionic files.
 
-#### Changelog**
+#### Changelog
 
-Moved all client side content out of project-evolution and into [monkeynaut](https://github.com/CommandAlkon/monkeynaut). To add new changes to old projects the following changes will need to be made.
+* v0.9.1 *(pre-release)*
 
+  Moved all client side content out of project-evolution and into [monkeynaut](https://github.com/CommandAlkon/monkeynaut). Please review the **breaking changes** information before including this package in any Command Alkon web-application project.
 
 **Breaking Changes:**
 
-* v0.9.1
-	* All references to *cai* will need to be removed or changed.
-	* The *cai.services* module does not exist and had been renamed to *evo*.
-	* Re-usable Command Alkon angular components are not part of core services. They can be included by using `projevo-full.min.js` and referencing *evo.common* in  required array of main module.
-    * Default Command Alkon branding font, and class styles can be applied using the .cai-titillium-font and cai-link class.
+1. All references to *cai* will need to be removed or changed.
+2. `cai.module` has been renamed to `evo.module`.
+2. The *cai.services* has been renamed to *evo*; any references to *cai.services* will not work.
+3. Excluding the about directive, a majority of the UI components are not part of core services. They can be included by using `bundle-full.min.js` and adding *evo.common* to angular required array.
 
 
-Table below list all the module names that will need to change if a developer chooses to use this package with an older Command Alkon project.
-
-| **Old Module**  | **New Module**    |
-|-------------------------|-----------------------------|
-| User                       | evoUser                      |
-| Core                       | evoClientData           |
-| Config                    | evoConfig                   |
-| Templates            | evoTemplates<sup>1</sup> |
-| apiProvider           | evoAPI                         |
-| Validation              | evoValidation            |
-| Utils                        | evoUtils                      |
-| Browser                 | evoBrowser              |
+| **Old Angular Module**  | **New Angular Module**    |
+|-------------------------|---------------------------|
+| User                    | evoUser                   |
+| Core                    | evoClientData             |
+| Config                  | evoConfig                 |
+| Templates               | evoTemplates<sup>1</sup>  |
+| apiProvider             | evoAPI                    |
+| Validation              | evoValidation             |
+| Utils                   | evoUtils                  |
+| Browser                 | evoBrowser                |
 
 <sup>1.</sup> Templates service method to cache templates has renamed to cacheTemplates from defaultMissingTemplates.
