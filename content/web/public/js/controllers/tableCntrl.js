@@ -28,7 +28,7 @@ evo.module("demo.controllers", [])
                         },
                         "edit": {
                             type: "button",
-                            icon: ["fa", "fa-pencil-square-o"],
+                            icon: "fa fa-pencil-square-o",
                             width: "50px",
                             textAlign: "center",
                             onclick: function () {
