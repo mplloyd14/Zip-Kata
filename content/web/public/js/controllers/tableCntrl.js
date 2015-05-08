@@ -71,6 +71,13 @@ evo.module("demo.controllers", [])
                                 onclick: function () {
                                     alert("Hello world!");
                                 }
+                            },
+                            {
+                                text: "Stalk Player",
+                                type: "link",
+                                onclick: function () {
+                                    console.log("weirdo...");
+                                }
                             }
                         ]
                     },
