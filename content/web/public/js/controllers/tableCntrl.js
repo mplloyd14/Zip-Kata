@@ -48,7 +48,8 @@ evo.module("demo.controllers", [])
                     },
                     toolbar: {
                         search: {
-                            by: "*"
+                            by: "*",
+                            exclude: ["edit", "delete"]
                         },
                         buttons: [
                             {

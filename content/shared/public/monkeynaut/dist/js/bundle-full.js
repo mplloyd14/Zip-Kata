@@ -48237,7 +48237,17 @@ angular.module("evo.common.directives")
                     }
 
                     if (hasSearchBy()) {
-                        if (opt.toolbar.search.by === '*' || !angular.isArray(opt.toolbar.search.by)) opt.toolbar.search.by = angular.copy(col);
+                        if (opt.toolbar.search.by === '*' || !angular.isArray(opt.toolbar.search.by))
+                            opt.toolbar.search.by = angular.copy(col);
+                        if (angular.isArray(opt.toolbar.search.exclude)) {
+                            for (var i = 0, n = opt.toolbar.search.exclude.length; i < n; i++) {
+                                for (var j = opt.toolbar.search.by.length - 1; j >= 0; j--) {
+                                    if (opt.toolbar.search.by[j] === opt.toolbar.search.exclude[i]) {
+                                        opt.toolbar.search.by.splice(j, 1);
+                                    }
+                                };
+                            };
+                        }
                     }
 
                     scope.options    = opt;
