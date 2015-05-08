@@ -31,8 +31,8 @@ evo.module("demo.controllers", [])
                             icon: "fa fa-pencil-square-o",
                             width: "50px",
                             textAlign: "center",
-                            onclick: function () {
-                                console.log("edit", arguments);
+                            onclick: function (e, item, column, index) {
+                                console.log("edit row", index);
                             }
                         },
                         "delete": {
@@ -41,8 +41,8 @@ evo.module("demo.controllers", [])
                             width: "60px",
                             textAlign: "center",
                             class: "btn-danger",
-                            onclick: function () {
-                                console.log("delete", arguments);
+                            onclick: function (e, item, column, index) {
+                                console.log("delete row", index);
                             }
                         }
                     },
