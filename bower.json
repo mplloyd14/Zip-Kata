@@ -2,7 +2,7 @@
 	"name": "peseed",
 	"private": "true",
 	"dependencies": {
-		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#0.0.1-alpha"
+		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop"
 
 	}
 }
