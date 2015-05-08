@@ -1,0 +1,7 @@
+{
+  "name": "custom-admin-demo",
+  "private": "true",
+  "dependencies": {
+    "monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop"
+  }
+}

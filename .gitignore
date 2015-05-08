@@ -34,4 +34,6 @@ config/runtime.json
 test/out/
 logs/*.log
 *.pst
-/test/selenium
+test/selenium/
+content/shared/public/monkeynaut
+
