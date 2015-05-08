@@ -8,6 +8,7 @@ evo.module("demo.controllers", [])
             scope.table = {
                 options: {
                     height: "135px",
+                    order: "+rk",
                     columns: {
                         "rk": "uint",
                         "player": {
