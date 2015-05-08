@@ -2,14 +2,13 @@
 html(ng-app="peApp")
   head
     meta(charset='utf8')
-    base(href='/product/peseed/')
     title #{title}
-    link(rel='stylesheet', href='/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/shared/evo/dist/projevo-core.pkg.css')
-    link(rel='stylesheet', href='/web/css/app.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
+    link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
     include /core/shared/branding
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
-    script(src='/shared/evo/dist/js/projevo-full.pkg.js')
+    script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-full.min.js')
     include /core/shared/scripts
     block body
