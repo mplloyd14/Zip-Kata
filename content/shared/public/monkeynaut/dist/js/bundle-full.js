@@ -48233,12 +48233,18 @@ angular.module("evo.common.directives")
                     if (!angular.isObject(opt.toolbar)) opt.toolbar = {};
 
                     function hasSearchBy() {
-                        return angular.isObject(opt.toolbar.search) && opt.toolbar.search.hasOwnProperty("by");
+                        if (angular.isObject(opt.toolbar.search)) {
+                            if (opt.toolbar.search.hasOwnProperty("by")) {
+                                return (angular.isArray(opt.toolbar.search.by) && opt.toolbar.search.by.length) || opt.toolbar.search.by;
+                            }
+                        }
+                        return false;
                     }
 
                     if (hasSearchBy()) {
-                        if (opt.toolbar.search.by === '*' || !angular.isArray(opt.toolbar.search.by))
+                        if (!angular.isArray(opt.toolbar.search.by))
                             opt.toolbar.search.by = angular.copy(col);
+
                         if (angular.isArray(opt.toolbar.search.exclude)) {
                             for (var i = 0, n = opt.toolbar.search.exclude.length; i < n; i++) {
                                 for (var j = opt.toolbar.search.by.length - 1; j >= 0; j--) {
@@ -48279,7 +48285,7 @@ angular.module("evo.common.directives")
                     };
 
                     scope.setGetButtonClass = function (o, parent) {
-                        return ((!o.type || o.type === "button") ? ["btn", "btn-default", (parent !== "toolbar" && "btn-block" || "")] : (o.type === "link") ? ["evo-link"] : []).concat(angular.isArray(o.class) ? o.class : [o.class]);
+                        return ((!o.type || o.type === "button") ? ["btn", "btn-default", (parent !== "toolbar" && "btn-block" || "")] : (o.type === "link") ? ["btn", "btn-link", "evo-link"] : []).concat(angular.isArray(o.class) ? o.class : [o.class]);
                     };
 
                     scope.getPlaceholder = function (o) {
@@ -48488,8 +48494,10 @@ angular.module("evo.user")
             var srvc = {}, privileges = {};
 
             try {
-                srvc.data    = JSON.parse(utils.base64Encoder("atob", "decode", cookies.userData)).user;
-                srvc.context = JSON.parse(cookies.contextData);
+                var data =  JSON.parse(utils.base64Encoder("atob", "decode", cookies.userData));
+                srvc.data = data.user;
+                srvc.context = data.context;
+                /* danger! in general we don't want privilege information to be accessible */
                 privileges   = srvc.data.product.roles.concat(Object.keys(srvc.data.product.settings.permissions).filter(function (v) { return srvc.data.product.settings.permissions[v] }));
             } catch(err) { /* pass */ }
 

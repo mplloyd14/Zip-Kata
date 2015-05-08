@@ -388,8 +388,10 @@ angular.module("evo.user")
             var srvc = {}, privileges = {};
 
             try {
-                srvc.data    = JSON.parse(utils.base64Encoder("atob", "decode", cookies.userData)).user;
-                srvc.context = JSON.parse(cookies.contextData);
+                var data =  JSON.parse(utils.base64Encoder("atob", "decode", cookies.userData));
+                srvc.data = data.user;
+                srvc.context = data.context;
+                /* danger! in general we don't want privilege information to be accessible */
                 privileges   = srvc.data.product.roles.concat(Object.keys(srvc.data.product.settings.permissions).filter(function (v) { return srvc.data.product.settings.permissions[v] }));
             } catch(err) { /* pass */ }
 
