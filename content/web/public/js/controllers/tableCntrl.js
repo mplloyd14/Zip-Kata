@@ -1,8 +1,9 @@
 evo.module("demo.controllers", [])
     .controller("TableCntrl", [
         "$scope",
+        "$log",
         "evoAbout",
-        function (scope, about) {
+        function (scope, log, about) {
             "use strict";
             scope.table = {
                 options: {
@@ -23,8 +24,25 @@ evo.module("demo.controllers", [])
                         },
                         "avg": {
                             type: "float",
-                            fmt: {
-                                precision: 3
+                            fmt: { precision: 3 }
+                        },
+                        "edit": {
+                            type: "button",
+                            icon: ["fa", "fa-pencil-square-o"],
+                            width: "50px",
+                            textAlign: "center",
+                            onclick: function () {
+                                console.log("edit", arguments);
+                            }
+                        },
+                        "delete": {
+                            type: "button",
+                            icon: ["fa", "fa-trash"],
+                            width: "60px",
+                            textAlign: "center",
+                            class: "btn-danger",
+                            onclick: function () {
+                                console.log("delete", arguments);
                             }
                         }
                     },
@@ -43,14 +61,13 @@ evo.module("demo.controllers", [])
                                         "pos": "c",
                                         "avg": ".280"
                                     });
-                                    console.log("added a player!");
+                                    log.info("added a player!");
                                 }
                             },
                             {
-                                text: "Say Hello",
-                                class: "btn-warning",
+                                text: "Message",
                                 onclick: function () {
-                                    alert("hello world!");
+                                    alert("Hello world!");
                                 }
                             }
                         ]
