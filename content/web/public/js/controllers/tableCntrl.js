@@ -2,8 +2,7 @@ evo.module("demo.controllers", [])
     .controller("TableCntrl", [
         "$scope",
         "$log",
-        "evoAbout",
-        function (scope, log, about) {
+        function (scope, log) {
             "use strict";
             scope.table = {
                 options: {
@@ -67,16 +66,9 @@ evo.module("demo.controllers", [])
                                 }
                             },
                             {
-                                text: "Message",
+                                text: "Information",
                                 onclick: function () {
                                     alert("Hello world!");
-                                }
-                            },
-                            {
-                                text: "Stalk Player",
-                                type: "link",
-                                onclick: function () {
-                                    console.log("weirdo...");
                                 }
                             }
                         ]
