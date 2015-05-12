@@ -80,7 +80,8 @@ evo.module("demo.controllers", [])
                         rename: {
                             "rk": "rank",
                             "pos": "position",
-                            "avg": "average"
+                            "avg": "average",
+                            "edit": "txtEdit"
                         }
                     }
                 },
