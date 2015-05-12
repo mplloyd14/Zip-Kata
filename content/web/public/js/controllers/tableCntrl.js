@@ -31,7 +31,6 @@ evo.module("demo.controllers", [])
                             icon: "fa fa-pencil-square-o",
                             width: "50px",
                             textAlign: "center",
-                            text: "txtEdit",
                             onclick: function (e, item, column, index) {
                                 console.log("edit row", index);
                             }
@@ -75,7 +74,7 @@ evo.module("demo.controllers", [])
                         ]
                     },
                     pagination: {
-                        itemsPerPage: 4
+                        itemsPerPage: 4,
                     },
                     thead: {
                         rename: {
