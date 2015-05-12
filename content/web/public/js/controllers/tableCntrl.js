@@ -31,6 +31,7 @@ evo.module("demo.controllers", [])
                             icon: "fa fa-pencil-square-o",
                             width: "50px",
                             textAlign: "center",
+                            text: "txtEdit",
                             onclick: function (e, item, column, index) {
                                 console.log("edit row", index);
                             }
@@ -53,7 +54,7 @@ evo.module("demo.controllers", [])
                         },
                         buttons: [
                             {
-                                text: "Add Player",
+                                text: "txtAddPlayer",
                                 onclick: function () {
                                     scope.table.data.push({
                                         "rk": 20,
@@ -66,9 +67,9 @@ evo.module("demo.controllers", [])
                                 }
                             },
                             {
-                                text: "Information",
+                                text: "txtVer",
                                 onclick: function () {
-                                    alert("Hello world!");
+                                    alert("Message!");
                                 }
                             }
                         ]
