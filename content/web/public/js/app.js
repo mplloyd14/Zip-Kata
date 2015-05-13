@@ -48,7 +48,7 @@ evo.module("demo", [
                     if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)
                 });
             } else {
-                (root.routes = arr).__proto__.forEach.call(Object.keys(route.routes), function (r) { if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
+                (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) { if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
             }
 
 
