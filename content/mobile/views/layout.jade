@@ -5,7 +5,11 @@ html(ng-app="peApp")
     title #{title}
     link(rel='stylesheet', href='#{config.appBase}/shared/monkeynaut/dist/css/projevo-ionic.pkg.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    include /core/shared/branding
   body
-    script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-ionic.js')
+    if process.env.NODE_ENV == 'production'
+      script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-ionic.min.js')
+    else
+      script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-ionic.js')
     include /core/shared/scripts
     block body

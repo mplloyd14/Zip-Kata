@@ -24,8 +24,8 @@ npm-debug.log
 ############
 ## Configuration
 ############
-config/development.js
-config/production.js
+config/development*.js
+config/production*.js
 config/runtime.json
 
 ############
@@ -34,4 +34,7 @@ config/runtime.json
 test/out/
 logs/*.log
 *.pst
-/test/selenium
+content/shared/public/css/*.styleguide.css
+content/shared/public/font-awesome
+content/shared/public/lodash
+content/shared/public/monkeynaut

@@ -39,14 +39,14 @@ module.exports = {
 				host : '',
 				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
 				timeout : 10000
+			},
+			client: {
+				port: 443
 			}
-		},
-		client: {
-			port: 443
 		},
 		REST : {
 			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
 			}
 		}
 	},
