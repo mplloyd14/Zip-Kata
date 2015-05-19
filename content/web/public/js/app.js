@@ -21,6 +21,9 @@ evo.module("demo", [
         "$locationProvider",
         function (route, location) {
             route.when("/", {
+                breadcrumb: {
+                    label: "home"
+                },
                 controller: "MainCntrl",
                 templateUrl: "hello"
             });

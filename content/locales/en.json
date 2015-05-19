@@ -1,14 +1,18 @@
 {
-    "txtAbout": "About",
-    "lblProductVersion": "Product Version",
-    "lblProductBuildDate": "Product Build Date",
-    "lblCoreLibraryVersion": "Core Library Version",
-    "lblCoreLibraryBuildDate": "Core Library Build Date",
-    "txtClose": "Close",
-    "txtSearch": "Search message..",
-    "txtVer": "Version",
-    "txtAddPlayer": "Add Player",
-    "txtEdit": "Edit",
-    "txtNext": "Next",
-    "txtPrevious": "Previous"
+	"txtAbout": "About",
+	"lblProductVersion": "Product Version",
+	"lblProductBuildDate": "Product Build Date",
+	"lblCoreLibraryVersion": "Core Library Version",
+	"lblCoreLibraryBuildDate": "Core Library Build Date",
+	"txtClose": "Close",
+	"txtSearch": "Search message..",
+	"txtVer": "Version",
+	"txtAddPlayer": "Add Player",
+	"txtEdit": "Edit",
+	"txtNext": "Next",
+	"txtPrevious": "Previous",
+	"[object Object]": {
+		"phrase": "rank",
+		"locale": "en"
+	}
 }

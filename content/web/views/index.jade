@@ -9,6 +9,7 @@ block body
         header
             h1 Monkeynaut
             h4 Command Alkon Angular Components.
+            evo-breadcrumb(dynamic)
             ul(class="nav nav-pills", ng-controller="NavCntrl")
                 li(ng-repeat="route in routes", ng-class="{ active: route === currentRoute }")
                     a(href="", ng-href="#{basePath}{{ route }}", ng-click="onclick($event, route)") {{ route.substr(1) || "home" }}
