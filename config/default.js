@@ -64,7 +64,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'pe-seed.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				},

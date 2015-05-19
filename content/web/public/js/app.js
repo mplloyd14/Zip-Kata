@@ -42,8 +42,19 @@ evo.module("demo", [
         "$rootScope",
         "$route",
         "$location",
-        function (root, route, location, evoAbout) {
-            (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) {  if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
+        "$log",
+        function (root, route, location, log) {
+            if (document.documentMode === 9) {
+                log.info("If Monday was a browser, it would be Internet Explorer.");
+                root.routes = [];
+                angular.forEach(Object.keys(route.routes), function (r) {
+                    if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)
+                });
+            } else {
+                (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) { if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
+            }
+
+
             root.$on("$routeChangeSuccess", function (e, current, previous) {
                 try { root.currentRoute = current.$$route.originalPath } catch (e) { /* pass */ };
             });
