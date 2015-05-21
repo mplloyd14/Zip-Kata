@@ -48,7 +48,8 @@ evo.module("demo", [
                 breadcrumb: {
                     label: "crumbs",
                     tooltip: {
-                        text: "Tooltips enabled!"
+                        text: "Tooltips enabled!",
+                        placement: "right"
                     }
                 }
             });
