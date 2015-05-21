@@ -25,10 +25,7 @@ evo.module("demo", [
                 templateUrl: "hello",
                 breadcrumb: {
                     label: "home",
-                    tooltip: {
-                        text: "Main controller.",
-                        placement: "bottom"
-                    }
+                    tooltip: { text: "Main controller." }
                 }
             });
             route.when("/about", { });
@@ -36,10 +33,7 @@ evo.module("demo", [
                 controller: "TableCntrl",
                 templateUrl: "table",
                 breadcrumb: {
-                    tooltip: {
-                        text: "Table controller.",
-                        placement: "bottom"
-                    }
+                    tooltip: { text: "Table controller.", placement: "bottom" }
                 }
             });
             route.when("/breadcrumb", {
@@ -47,10 +41,7 @@ evo.module("demo", [
                 templateUrl: "breadcrumb",
                 breadcrumb: {
                     label: "crumbs",
-                    tooltip: {
-                        text: "Tooltips enabled!",
-                        placement: "right"
-                    }
+                    tooltip: { text: "Tooltips enabled!", placement: "right" }
                 }
             });
             route.when("/breadcrumb/:number", {
