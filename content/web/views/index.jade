@@ -3,6 +3,7 @@ extends layout
 block body
     script(src="/web/js/controllers/mainCntrl.js")
     script(src="/web/js/controllers/tableCntrl.js")
+    script(src="/web/js/controllers/breadcrumbCntrl.js")
     script(src="/web/js/app.js")
 
     div(id="main", role="main", class="container-fluid ng-cloak")
@@ -18,3 +19,4 @@ block body
     evo-about-modal(data-product-title="#{title}", data-logo="#{config.appBase}/shared/img/logo-48.png")
     include partials/hello.jade
     include partials/table.jade
+    include partials/breadcrumb.jade

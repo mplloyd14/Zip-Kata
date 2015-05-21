@@ -21,16 +21,40 @@ evo.module("demo", [
         "$locationProvider",
         function (route, location) {
             route.when("/", {
-                breadcrumb: {
-                    label: "home"
-                },
                 controller: "MainCntrl",
-                templateUrl: "hello"
+                templateUrl: "hello",
+                breadcrumb: {
+                    label: "home",
+                    tooltip: {
+                        text: "Main controller.",
+                        placement: "bottom"
+                    }
+                }
             });
             route.when("/about", { });
             route.when("/table", {
                 controller: "TableCntrl",
-                templateUrl: "table"
+                templateUrl: "table",
+                breadcrumb: {
+                    tooltip: {
+                        text: "Table controller.",
+                        placement: "bottom"
+                    }
+                }
+            });
+            route.when("/breadcrumb", {
+                controller: "BreadcrumbCntrl",
+                templateUrl: "breadcrumb",
+                breadcrumb: {
+                    label: "crumbs",
+                    tooltip: {
+                        text: "Tooltips enabled!"
+                    }
+                }
+            });
+            route.when("/breadcrumb/:number", {
+                controller: "BreadcrumbNumberCntrl",
+                template: "<div><b>Breadcrumb number: {{ number }}</b></div>"
             });
             route.otherwise({
                 redirectTo: "/"
@@ -46,14 +70,10 @@ evo.module("demo", [
         function (root, route, location, log) {
             if (document.documentMode === 9) {
                 log.info("If Monday was a browser, it would be Internet Explorer.");
-                root.routes = [];
-                angular.forEach(Object.keys(route.routes), function (r) {
-                    if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)
-                });
-            } else {
-                (root.routes = []).__proto__.forEach.call(Object.keys(route.routes), function (r) { if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r)  });
             }
 
+            root.routes = [];
+            angular.forEach(Object.keys(route.routes), function (r) { if (r !== "null" && /^(\/|\/\w+)$/.test(r)) root.routes.push(r) });
 
             root.$on("$routeChangeSuccess", function (e, current, previous) {
                 try { root.currentRoute = current.$$route.originalPath } catch (e) { /* pass */ };
