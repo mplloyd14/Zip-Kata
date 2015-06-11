@@ -11,7 +11,7 @@ Establishing REST services allows an application to create a REST API so it can 
 - /test/id/:id/vendor/:vendor
 - /test/broadcast
 
-When an POST comes in to one of the routes, an event is fired on the Project Evo message bus.  The follow table should the routes and their events.
+When an POST comes in to one of the routes, an event is fired on the Project Evo message bus.  The follow table shows the routes and their events.
 
 | Route | Event |
 | ------ | ------ |
@@ -23,16 +23,16 @@ When an POST comes in to one of the routes, an event is fired on the Project Evo
 
 ###Socket Services
 
-Socket Services create listeners that will answer call from Angular Services and Controlled in EVO apps.  This example establishes 3 handlers.
+Socket Services create listeners that will answer call from Angular Services and Controllers in EVO apps.  This example establishes 3 handlers.
 
 * createPathBegRoom
 * createVendorRoom
 * createUrlRoom
 
 Each handler creates a room upon being called.  Rooms aggregate clients who want to be notified about data.  Each use |URL| for it's room id.  This means
-that the url declared in the "url" property will be inflated with the values passed into the handler by the javascript call on the frontend.  The subsequent url
-will then become the unique id of the room.  The "announce" setting on the room is set to false so that the room's
-creation and destruction will not be announced on the event bus.  Finally, the room created by the "createVendorRoom" is marked as "exactMatch : true".  This means
+that the url declared in the "url" property will be inflated with the values passed into the handler as JSON by the javascript call on the frontend.  The subsequent url
+will then become the unique id of the room.  If the "announce" setting on the room is set to false so that the room's
+creation and destruction will not be announced on the event bus, otherwise it will.  Finally, the room created by the "createVendorRoom" is marked as "exactMatch : true".  This means
 that the room will not allow events to be passed to it's members unless the source url of the information is the same as the room's id.
 
 ###Emitters
