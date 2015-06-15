@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-cai.module('peControllers', ['evo'])
+evo.module('peControllers', ['evo'])
 	.controller('MainController', ['$rootScope', '$scope', '$log', 'evoUser', 'evoAPI', function($rootScope, $scope, $log, user, apiProvider) {
 		$log.info('Loading web main controller');
         $scope.fus = [];

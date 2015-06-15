@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-cai.module('peApp', ['evo', 'peControllers', 'ngCookies', 'ngRoute'])
+evo.module('peApp', ['evo', 'peControllers', 'ngCookies', 'ngRoute'])
     .value('settings', {
         pagination: {
             maxSize: 5, //number of pages to show in the pagination widget before an ellipsis is displayed
