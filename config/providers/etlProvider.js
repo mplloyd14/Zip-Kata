@@ -7,6 +7,7 @@ module.exports = {
             domain: 'fubars',
             method: 'post',
             mode: 'upsert',
+			sendTransformedPayload: true,
             routes: [
                 '/fu/:fu',
                 '/fu/:fu/bar/:bar',
