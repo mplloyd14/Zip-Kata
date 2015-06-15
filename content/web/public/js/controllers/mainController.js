@@ -1,8 +1,8 @@
 'use strict';
 
 /* Controllers */
-cai.module('peControllers', ['cai.services'])
-	.controller('MainController', ['$rootScope', '$scope', '$log', 'user', 'apiProvider', function($rootScope, $scope, $log, user, apiProvider) {
+cai.module('peControllers', ['evo'])
+	.controller('MainController', ['$rootScope', '$scope', '$log', 'evoUser', 'evoAPI', function($rootScope, $scope, $log, user, apiProvider) {
 		$log.info('Loading web main controller');
         $scope.fus = [];
         $scope.searchFu = '';

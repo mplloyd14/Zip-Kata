@@ -1,7 +1,8 @@
 var sinon = require('sinon');
 
 module.exports = function() {
-	return {
+	var mock = {
+		ensureID: sinon.stub(),
 		aggregate: sinon.stub(),
 		get: sinon.stub(),
 		getById: sinon.stub(),
@@ -10,4 +11,6 @@ module.exports = function() {
         update: sinon.stub(),
 		remove: sinon.stub()
     };
+    mock.ensureID.returnsArg(0);
+    return mock;
 }

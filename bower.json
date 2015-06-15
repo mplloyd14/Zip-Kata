@@ -1,0 +1,8 @@
+{
+	"name": "peseed",
+	"private": "true",
+	"dependencies": {
+		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop",
+		"font-awesome": "~4.3.0"
+	}
+}

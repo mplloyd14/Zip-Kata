@@ -1,2 +1,7 @@
 script#hello(type='text/ng-template')
-    h2 {{message}}
+	ion-view(title='Mobile', left-buttons='leftButtons', right-buttons='right-buttons')
+		ion-content(has-header='true', has-footer='true', padding='true')
+			div.list
+				label.item.item-input
+					span.input-label {{message}}
+			div.padding

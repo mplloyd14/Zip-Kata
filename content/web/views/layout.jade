@@ -2,20 +2,14 @@
 html(ng-app="peApp")
   head
     meta(charset='utf8')
-    //base(href='/')
     title #{title}
-    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='#{config.appBase}/cai/core/shared/css/evo-default.css')
-    link(rel='stylesheet', href='#{config.appBase}/shared/bootstrap/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{config.appBase}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
     link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    // load branding styles
     include /core/shared/branding
-
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body(i18n-locale=i18n.getLocale())
+    script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-full.min.js')
     include /core/shared/scripts
-
-    script(src='#{config.appBase}/shared/angular-ui-bootstrap/ui-bootstrap-tpls-0.6.0.min.js')
 
     block body

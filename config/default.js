@@ -10,7 +10,6 @@ module.exports = {
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
-		loggly : 'log.loggly',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -43,8 +42,10 @@ module.exports = {
 			server : {
 				host : '',
 				port :  6602,
-				matchOriginProtocol : false,
 				timeout : 10000
+			},
+			client: {
+				port: 443
 			}
 		},
 		REST : {
@@ -54,10 +55,6 @@ module.exports = {
 		}
 	},
 	log : {
-		loggly : {
-			subdomain : 'cai', // loggly user account subdomain
-			inputToken : '1a21ae55-17e2-47d7-9000-3d7c4e317e20' // loggly input key
-		},
 		server : { // server-side logging parameters
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
@@ -73,10 +70,6 @@ module.exports = {
 					filename : 'etl-demo.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
-				},
-				loggly : {
-					level : 'warn',
-					enabled : false
 				}
 			}
 		},
@@ -86,10 +79,6 @@ module.exports = {
 				console : {
 					level : 'debug', // maximum level of logged messages
 					enabled : true // this switch can be used to easily toggle use of a given transport
-				},
-				loggly : {
-					level : 'debug',
-					enabled : false
 				}
 			}
 		}
@@ -103,7 +92,7 @@ module.exports = {
 					server : { // mongodb - server options
 						// auto_reconnect - to reconnect automatically, default:false
 						// poolSize - specify the number of connections in the pool default:5
-						poolSize : 10
+						maxPoolSize : 10
 						// socketOptions - a collection of pr socket settings
 						// socketOptions: {
 						// timeout - set seconds before connection times out default:0
