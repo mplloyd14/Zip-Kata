@@ -13,5 +13,7 @@
 	"txtCopyrightInformation": "txtCopyrightInformation",
 	"txtAllRightsReserved.": "txtAllRightsReserved.",
 	"btnClose": "btnClose",
-	"Admin": "Admin"
+	"Admin": "Admin",
+	"Logout": "Logout",
+	"Change Password": "Change Password"
 }

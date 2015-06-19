@@ -1,3 +1,9 @@
 script#main(type='text/ng-template')
-    a(href="{{adminUrl}}", target="_self") #{__('Admin')}
+    div
+        a(href="{{adminUrl}}", target="_self") #{__('Admin')}
+    div
+        a(href="{{changeUrl}}", target="_self") #{__('Change Password')}
+    div
+        form(method="post", action="#{logoutUrl}", name="logoutForm")
+            a(onclick="document.logoutForm.submit()") #{__('Logout')}
 
