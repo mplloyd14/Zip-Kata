@@ -10,13 +10,8 @@
         "status": "Active",
         "company": "ss",
         "products": [
-			{
-				"code": "peseed",
-				"roles": [],
-				"settings":{}
-			},
             {
-                "code": "etldemo",
+                "code": "providers",
                 "roles": [
                     "appuser"
                 ],
@@ -39,13 +34,8 @@
         "status": "Active",
         "company": "cc",
         "products": [
-			{
-				"code": "peseed",
-				"roles": [],
-				"settings":{}
-			},
             {
-                "code": "etldemo",
+                "code": "providers",
                 "roles": [
                     "appuser"
                 ],

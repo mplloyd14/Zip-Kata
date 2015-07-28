@@ -1,8 +1,8 @@
 [
     {
-        "code": "peseed",
-        "name": "PESeed Master",
-        "description": "PESeed Master",
+        "code": "providers",
+        "name": "PESeed Providers",
+        "description": "PESeed Providers",
         "roles": [
             "globaladmin",
             "appadmin",

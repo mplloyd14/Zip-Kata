@@ -1,2 +1,12 @@
 script#hello(type='text/ng-template')
 	h2#hellomsg {{message}}
+	div
+		label Deferred Call
+		button(ng-click="apiCallDeferred()") Click
+	div
+		label Non Deferred Call
+		button(ng-click="apiCallNonDeferred()") Click
+	div
+		label(ng-repeat="d in data track by $index") {{d.code}}
+	div
+			{{errmsg}}

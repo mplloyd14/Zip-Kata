@@ -1,14 +1,16 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 7500,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
+	product_code: 'providers',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
 		socket_port : 'data.socket.server.port',
 		socket_timeout : 'data.socket.server.timeout',
 		log : 'log.client',
+		product_code: 'product_code',
 		appBase : 'appBase'
 	},
 	paths : {
@@ -33,11 +35,12 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			'socketProviders.js'
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  7502,
 				timeout : 10000
 			},
 			client: {
@@ -46,7 +49,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port : 7501
 			}
 		}
 	},
@@ -55,15 +58,15 @@ module.exports = {
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
 				console : {
-					level : 'info', // maximum level of logged messages
+					level : 'debug', // maximum level of logged messages
 					colorize : true, // color levels
 					enabled : true // this switch can be used to easily toggle use of a given transport
 				},
 				file : {
 					level : 'warn',
-					enabled : true,
+					enabled : false,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'providers.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}

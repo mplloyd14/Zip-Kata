@@ -1,13 +1,14 @@
 {
-  "name": "peseed",
+  "name": "providers",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/MAINENTRYPOINT",
-    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
+    "start": "node content/providers.js",
+    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript",
+    "postinstall": "bower install"
   },
   "dependencies": {
-    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",
+    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#0.2.1",
     "config": "^1.7.0",
     "q": "=0.9.2",
     "lodash-node": "=2.2.1"

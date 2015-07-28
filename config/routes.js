@@ -1,17 +1,19 @@
+var config = require('config');
+
 // Routes
 module.exports = exports = function(i18n) {
 	return [
 		{
 			method: 'get',
 			route: '/',
-			redirect: '/product/peseed',
+			redirect: '/product/' + config.product_code,
 			protected: false
 		},
 
 		{
 			method: 'get',
 			route: '/product/:product',
-			redirect: '/product/peseed/root',
+			redirect: '/product/' + config.product_code + '/root',
 			protected: true
 		},
 
@@ -30,7 +32,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
 			render: {
-				title: 'PESeed',
+				title: 'PESeed Providers',
 				template: '/web/index'
 			},
 			protected: true
@@ -40,7 +42,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/mobile*',
 			base: '/product/:product/mobile',
 			render: {
-				title: 'PESeed',
+				title: 'PESeed Providers',
 				template: '/mobile/index'
 			},
 			protected: true
