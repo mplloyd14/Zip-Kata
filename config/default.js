@@ -2,7 +2,7 @@ module.exports = {
 	port : 4000,
     product_code : 'emitters',
 	locales : ['en'],
-	appBase : '',
+	appBase : '/emitters',
     backdoor: {
         user: {
             userName: 'commandalkon',
@@ -48,7 +48,7 @@ module.exports = {
 		],
 		socket : {
 			server : {
-				host : '',
+				host : 'bullshit',
 				port :  4002,
 				timeout : 10000
 			}
@@ -72,7 +72,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '.',
-					filename : 'patterns.app.log',
+					filename : 'emitters.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}
