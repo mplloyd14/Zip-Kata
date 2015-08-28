@@ -35,4 +35,5 @@ test/out/
 logs/*.log
 *.pst
 /test/selenium
+content/shared/public/font-awesome
 content/shared/public/monkeynaut
