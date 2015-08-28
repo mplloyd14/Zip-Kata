@@ -2,15 +2,13 @@ module.exports = {
 	port : 4000,
     product_code : 'emitters',
 	locales : ['en'],
-	appBase : '/emitters',
+	appBase : 'emitters',
+	authenticationServer : 'localhost:3000',
     backdoor: {
-        user: {
-            userName: 'commandalkon',
-            email: 'pe@commandalkon.com'
-    },
+        user: 'ccsuser',
         context: {
             product: 'emitters',
-            company: 'cai'
+            company: 'cc'
         }
     },
 	client : {
@@ -48,7 +46,7 @@ module.exports = {
 		],
 		socket : {
 			server : {
-				host : 'bullshit',
+				host : '',
 				port :  4002,
 				timeout : 10000
 			}
@@ -70,7 +68,7 @@ module.exports = {
 				},
 				file : {
 					level : 'warn',
-					enabled : true,
+					enabled : false,
 					filepath : '.',
 					filename : 'emitters.app.log',
 					maxFiles : 10,

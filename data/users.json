@@ -11,7 +11,7 @@
         "company": "ss",
         "products": [
             {
-                "code": "etldemo",
+                "code": "emitters",
                 "roles": [
                     "appuser"
                 ],
@@ -35,7 +35,7 @@
         "company": "cc",
         "products": [
             {
-                "code": "etldemo",
+                "code": "emitters",
                 "roles": [
                     "appuser"
                 ],
