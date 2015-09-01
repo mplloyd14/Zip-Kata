@@ -1,8 +1,8 @@
 [
     {
-        "code": "emitters",
-        "name": "PESeed Master",
-        "description": "PESeed Master",
+        "code": "breakfastStout",
+        "name": "Breakfast Stout",
+        "description": "Breakfast Stout",
         "roles": [
             "globaladmin",
             "appadmin",

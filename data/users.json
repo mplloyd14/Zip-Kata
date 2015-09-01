@@ -11,7 +11,7 @@
         "company": "ss",
         "products": [
             {
-                "code": "emitters",
+                "code": "breakfastStout",
                 "roles": [
                     "appuser"
                 ],
@@ -35,7 +35,7 @@
         "company": "cc",
         "products": [
             {
-                "code": "emitters",
+                "code": "breakfastStout",
                 "roles": [
                     "appuser"
                 ],

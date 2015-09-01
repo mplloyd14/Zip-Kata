@@ -23,11 +23,11 @@ module.exports = {
             "event": "pathBegReceived"
 
         }],
-      "/test/broadcast" : [{
-        "method" : "post",
-        "version" : "0.1.0",
-        "contextualized" : true,
-        "event": "broadcastReceived"
-    }]
+          "/test/broadcast" : [{
+            "method" : "post",
+            "version" : "0.1.0",
+            "contextualized" : true,
+            "event": "broadcastReceived"
+        }]
  }
 };

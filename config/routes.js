@@ -4,14 +4,14 @@ module.exports = exports = function(i18n) {
 		{
 			method: 'get',
 			route: '/',
-			redirect: '/product/emitters',
+			redirect: '/product/breakfastStout',
 			protected: false
 		},
 
 		{
 			method: 'get',
 			route: '/product/:product',
-			redirect: '/product/emitters/root',
+			redirect: '/product/breakfastStout/root',
 			protected: true
 		},
 
@@ -30,7 +30,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
 			render: {
-				title: 'Emitters',
+				title: 'Breakfast Stout',
 				template: '/web/index'
 			},
 			protected: true

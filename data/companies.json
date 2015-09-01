@@ -10,7 +10,7 @@
         },
         "products": [
             {
-                "code": "emitters",
+                "code": "breakfastStout",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {
@@ -26,17 +26,17 @@
     },
 
     {
-        "code": "cc",
-        "description": "Cogswell Cogs",
+        "code": "fb",
+        "description": "Founder's",
         "status": "active",
         "branding": {
-            "primary" : "@color-primary: #323232;",
-            "secondary" : "@color-secondary: #f47836;",
-            "logo" : "@logo: 'cc-logo.png';"
+            "primary" : "@color-primary: #9C3022;",
+            "secondary" : "@color-secondary: #FED731;",
+            "logo" : "@logo: 'fb-logo.png';"
         },
         "products": [
             {
-                "code": "emitters",
+                "code": "breakfastStout",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {

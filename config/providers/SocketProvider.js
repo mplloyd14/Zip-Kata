@@ -45,6 +45,18 @@ var provider = {
                 url: "/test",
                 announce: false
             }
+        },
+        createARoom: {
+            handler: function(data){
+                var name = data.name
+                return Q.resolve({});
+            },
+            room: {
+                id: "|URL|",
+                client: true,
+                url: "/test",
+                announce: false
+            }
         }
     },
     emitters : {

@@ -1,16 +1,16 @@
 module.exports = {
-	port : 4000,
-    product_code : 'emitters',
+	port : 1337,
+	product_code : 'breakfastStout',
 	locales : ['en'],
-	appBase : 'emitters',
+	appBase : 'breakfastStout',
 	authenticationServer : 'localhost:3000',
-    backdoor: {
-        user: 'ccsuser',
-        context: {
-            product: 'emitters',
-            company: 'cc'
-        }
-    },
+	backdoor: {
+	    user: 'ccsuser',
+	    context: {
+	        product: 'breakfastStout',
+	        company: 'cc'
+	    }
+	},
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -41,19 +41,19 @@ module.exports = {
 	},
 	data : {
 		providers : [
-            'RestProvider.js',
-            'SocketProvider.js'
+	    'RestProvider.js',
+	    'SocketProvider.js'
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  4002,
+				port : 1338,
 				timeout : 10000
 			}
 		},
 		REST : {
 			server : {
-				port :  4001
+				port : 1339
 			}
 		}
 	},
@@ -70,7 +70,7 @@ module.exports = {
 					level : 'warn',
 					enabled : false,
 					filepath : '.',
-					filename : 'emitters.app.log',
+					filename : 'breakfastStout.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}

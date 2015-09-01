@@ -10,3 +10,6 @@ mongoimport -h localhost --port 27017 -d mobileconnect -c companies --drop --jso
 
 echo "Importing users..."
 mongoimport -h localhost --port 27017 -d mobileconnect -c users --drop --jsonArray --stopOnError --file $BASE_DIR/../data/users.json
+
+echo "Importing state data..."
+mongoimport -h localhost --port 27017 -d mobileconnect -c states --drop --jsonArray --stopOnError --file $BASE_DIR/../data/states-cities.json
