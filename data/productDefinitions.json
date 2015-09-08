@@ -1,8 +1,25 @@
 [
     {
-        "code": "breakfastStout",
+        "code": "breakfaststout",
         "name": "Breakfast Stout",
         "description": "Breakfast Stout",
+        "roles": [
+            "globaladmin",
+            "appadmin",
+            "appuser"
+        ],
+        "settings": {
+        },
+        "platforms": {
+            "desktop": "desktop",
+            "mobile": "mobile",
+            "tablet": "desktop"
+        }
+    },
+    {
+        "code": "stiffarm",
+        "name": "Stiff Arm",
+        "description": "Stiff Arm IPA",
         "roles": [
             "globaladmin",
             "appadmin",

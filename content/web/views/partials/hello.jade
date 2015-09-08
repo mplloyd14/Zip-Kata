@@ -1,5 +1,10 @@
 script#hello(type='text/ng-template')
     h2#hellomsg {{message}}
-    button(ng-click="createUrlRoom()") Create Test Room
-    button(ng-click="createPathBegRoom()") Create Test/id Room
-    button(ng-click="createVendorRoom()") Create Test/id/vendor Room
+    button(class="btn btn-default", ng-click="getUsers()") Get Users
+    button(class="btn btn-default", ng-click="getCompanies()") Get Companies
+    button(class="btn btn-default", ng-click="getCompany(user)") Get User Company
+    button(class="btn btn-default", ng-click="getJobs()") View Jobs
+
+
+    div(ng-if="jobs")
+        evo-table(ng-model="jobs.data", data-options="jobs.options")

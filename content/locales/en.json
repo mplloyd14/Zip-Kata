@@ -7,5 +7,8 @@
 	"txtCoreLibraryBuildDate": "txtCoreLibraryBuildDate",
 	"txtCopyrightInformation": "txtCopyrightInformation",
 	"txtAllRightsReserved.": "txtAllRightsReserved.",
-	"btnClose": "btnClose"
+	"btnClose": "btnClose",
+	"txtSearch": "Search",
+	"txtNext": "Next",
+	"txtPrevious": "Previous"
 }

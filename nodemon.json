@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["content", "node_modules", ".idea"]
+}

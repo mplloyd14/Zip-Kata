@@ -27,6 +27,7 @@ npm-debug.log
 config/development.js
 config/production.js
 config/runtime.json
+content/shared/public/
 
 ############
 ## Misc

@@ -1,16 +1,16 @@
 [
     {
-        "code": "ss",
-        "description": "Spacely Sprockets",
+        "code": "lg",
+        "description": "Land Grant Brewing",
         "status": "active",
         "branding" : {
-            "primary" : "@color-primary: #0b1b4c;",
-            "secondary" : "@color-secondary: #add500;",
-            "logo" : "@logo: 'ss-logo.png';"
+            "primary" : "@color-primary: #C3272F;",
+            "secondary" : "@color-secondary: #231F20;",
+            "logo" : "@logo: 'lg-logo.png';"
         },
         "products": [
             {
-                "code": "breakfastStout",
+                "code": "stiffarm",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {
@@ -27,16 +27,16 @@
 
     {
         "code": "fb",
-        "description": "Founder's",
+        "description": "Founder's Brewing Company",
         "status": "active",
         "branding": {
-            "primary" : "@color-primary: #9C3022;",
-            "secondary" : "@color-secondary: #FED731;",
+            "primary" : "@color-primary: #7C2222;",
+            "secondary" : "@color-secondary: #FFD40B;",
             "logo" : "@logo: 'fb-logo.png';"
         },
         "products": [
             {
-                "code": "breakfastStout",
+                "code": "breakfaststout",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {

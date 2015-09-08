@@ -28,6 +28,12 @@ module.exports = {
             "version" : "0.1.0",
             "contextualized" : true,
             "event": "broadcastReceived"
+        }],
+        "/states" : [{
+          "method" : "get",
+          "version" : "0.1.0",
+          "contextualized" : true,
+          "event": "statesRequested"
         }]
  }
 };

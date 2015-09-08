@@ -1,14 +1,50 @@
 !!!
 html(ng-app="peApp")
-  head
-    meta(charset='utf8')
-    //base(href='/')
-    title #{title}
-    link(rel='stylesheet', href='#{productRoute}/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='#{productRoute}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  body
-      script(src='#{productRoute}/shared/monkeynaut/dist/js/bundle-full.js')
-      include /core/shared/scripts
+    head
+        meta(charset='utf8')
+        //base(href='/')
+        title #{title}
+        link(rel='stylesheet', href='#{productRoute}/shared/font-awesome/css/font-awesome.min.css')
+        link(rel='stylesheet', href='#{productRoute}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    body(i18n-locale=i18n.getLocale())
+          script(src='#{productRoute}/shared/monkeynaut/dist/js/bundle-full.js')
+          include /core/shared/scripts
+          include /core/shared/branding
+          script(src='#{productRoute}/shared/lodash/lodash.min.js')
+          script(src='#{productRoute}/shared/angular-google-maps/dist/angular-google-maps.min.js')
+          script(src="#{productRoute}/shared/angular-animate/angular-animate.min.js")
+          link(rel='stylesheet', href='#{productRoute}/web/css/app.css')
+          link(rel='stylesheet', href='#{productRoute}/shared/styles/app.css')
+          link(rel='stylesheet', href='#{productRoute}/shared/styles/Evo-Core.update.css')
+    nav.navbar.navbar-fixed-top.cai-nav
+        h1
+            div.app-logo
+            span {{ companyName }}
+        nav.pull-right.dropdown
+            ul
+                li
+                    span Hi, {{ user.data.firstName }}!
+                li
+                    a(class="btn", href='./') Home
+                li
+                    a(class="btn", href='./states') States
+                li.toggle
+                    span(dropdown, on-toggle='toggled(open)')
+                        a(class="btn cai-dropdown dropdown-toggle", dropdown-toggle)
+                            i.fa.fa-bars
+                        ul.dropdown-menu(aria-labelledby='simple-dropdown')
+                            li(role='menuitem')
+                                span Hi!
+                            li(role='menuitem')
+                                span Hi!
+                            li(role='menuitem')
+                                span Hi!
+                            li(role='menuitem')
+                                span Hi!
 
-    block body
+    div.cai-colorband
+    div.cai-content
+        section
+            evo-breadcrumb(dynamic)
+                block body

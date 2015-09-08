@@ -3,10 +3,8 @@ extends layout
 block body
     script(src='#{productRoute}/web/js/controllers/mainController.js')
     script(src='#{productRoute}/web/js/controllers/statesController.js')
-    script(src='#{productRoute}/web/js/directives/evoUser.js')
     script(src='#{productRoute}/web/js/app.js')
+    section
+        div(ng-view)
+        include partials/statesTable.jade
 
-    div(ng-view)
-
-    include partials/hello.jade
-    include partials/statesTable.jade

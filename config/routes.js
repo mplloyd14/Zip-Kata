@@ -4,14 +4,14 @@ module.exports = exports = function(i18n) {
 		{
 			method: 'get',
 			route: '/',
-			redirect: '/product/breakfastStout',
+			redirect: '/product/breakfaststout',
 			protected: false
 		},
 
 		{
 			method: 'get',
 			route: '/product/:product',
-			redirect: '/product/breakfastStout/root',
+			redirect: '/product/breakfaststout/root',
 			protected: true
 		},
 
@@ -29,6 +29,16 @@ module.exports = exports = function(i18n) {
 			method: 'get',
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
+			render: {
+				title: 'Breakfast Stout',
+				template: '/web/index'
+			},
+			protected: true
+		},
+		{
+			method: 'get',
+			route: '/product/:product/mobile*',
+			base: '/product/:product/mobile',
 			render: {
 				title: 'Breakfast Stout',
 				template: '/web/index'

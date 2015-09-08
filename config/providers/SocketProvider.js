@@ -1,4 +1,5 @@
 var pec = require('projevo-core');
+var log = require('projevo-core').Logger.getLogger();
 var Q = require('q');
 var timer = require('timers');
 
@@ -9,7 +10,8 @@ var provider = {
             handler: function(data){
                 var name = data.name
                 return Q.resolve({
-                    "id": data.id});
+                    "id": data.id
+                });
             },
             room: {
                 id: "|URL|",
@@ -45,18 +47,6 @@ var provider = {
                 url: "/test",
                 announce: false
             }
-        },
-        createARoom: {
-            handler: function(data){
-                var name = data.name
-                return Q.resolve({});
-            },
-            room: {
-                id: "|URL|",
-                client: true,
-                url: "/test",
-                announce: false
-            }
         }
     },
     emitters : {
@@ -64,4 +54,5 @@ var provider = {
 
     }
 }
+
 module.exports = provider;

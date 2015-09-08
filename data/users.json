@@ -1,17 +1,17 @@
 [
     {
-        "userName" : "ssuser",
-        "firstName": "SS",
-        "lastName": "User",
-        "email" : "admin@ssprockets.com",
+        "userName" : "lguser",
+        "firstName": "Land",
+        "lastName": "Grant",
+        "email" : "admin@landgrantbrewing.com",
         "passwordLifetime": 0,
         "resetPassword" : false,
         "loginAttempts" : 0,
         "status": "Active",
-        "company": "ss",
+        "company": "lg",
         "products": [
             {
-                "code": "breakfastStout",
+                "code": "stiffarm",
                 "roles": [
                     "appuser"
                 ],
@@ -24,18 +24,18 @@
     },
 
     {
-        "userName" : "ccsuser",
-        "firstName": "CC",
-        "lastName": "User",
-        "email" : "user@ccogs.com",
+        "userName" : "fbuser",
+        "firstName": "Founders",
+        "lastName": "Brewery",
+        "email" : "user@founders.com",
         "passwordLifetime": 0,
         "resetPassword" : false,
         "loginAttempts" : 0,
         "status": "Active",
-        "company": "cc",
+        "company": "fb",
         "products": [
             {
-                "code": "breakfastStout",
+                "code": "breakfaststout",
                 "roles": [
                     "appuser"
                 ],

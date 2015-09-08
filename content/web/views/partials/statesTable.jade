@@ -1,0 +1,44 @@
+script#statesTable(data-id="statesTable", type='text/ng-template')
+    h2 States
+    .row
+        .col-md-2
+            span(dropdown, on-toggle='toggled(open)')
+                a(class="btn btn-default", dropdown-toggle) States
+                    span.caret
+                ul.dropdown-menu(aria-labelledby='simple-dropdown')
+                    li(ng-repeat="state in list", role='menuitem')
+                        a(ng-click="getState(state)") {{ state.name }}
+        .col-md-10
+            ui-gmap-google-map(center='map.center', zoom='map.zoom')
+                ui-gmap-marker(
+                    idkey='marker.id',
+                    coords='marker.coords',
+                    options='marker.options',
+                    events='marker.events')
+                    ui-gmap-window(
+                        options="windowOptions",
+                        closeClick="closeMarkerWindow()")
+                            div {{ cityName }}
+
+
+            span(ng-repeat="state in states", id="{{ state.name }}", class="stateContainer")
+                span(ng-show="states.length > 1", class="stateName") {{ state.name }}
+                div(ng-show="states.length === 1")
+                    table.table
+                        thead
+                            tr
+                                th City
+                                th Population
+                                th Location
+                                th Zip Code
+                        tbody
+                            tr(ng-repeat="(key, city) in state.cities")
+                                td
+                                    a(ng-click="centerMap(city)", data-key="{{ key }}") {{ city.city }}
+                                td {{ city.pop }}
+                                td {{ city.loc }}
+                                td {{ city.zip }}
+                        //evo-table(ng-model="state.cities", data-options="table.options")
+        //div(ng-repeat="city in state.cities")
+        //div(ng-repeat="city in state.cities")
+        //	p {{ city.zip }}

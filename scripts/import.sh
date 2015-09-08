@@ -13,3 +13,6 @@ mongoimport -h localhost --port 27017 -d mobileconnect -c users --drop --jsonArr
 
 echo "Importing state data..."
 mongoimport -h localhost --port 27017 -d mobileconnect -c states --drop --jsonArray --stopOnError --file $BASE_DIR/../data/states-cities.json
+
+echo "Importing fake job data..."
+mongoimport -h localhost --port 27017 -d mobileconnect -c jobs --drop --jsonArray --stopOnError --file $BASE_DIR/../data/fake_jobs.json

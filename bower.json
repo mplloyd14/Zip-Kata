@@ -1,8 +1,11 @@
 {
-	"name": "peseed",
-	"private": "true",
-	"dependencies": {
-		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop",
-		"font-awesome": "~4.3.0"
-	}
+  "name": "peseed",
+  "private": "true",
+  "dependencies": {
+    "angular-animate": "~1.4.5",
+    "angular-google-maps": "~2.1.6",
+    "font-awesome": "~4.3.0",
+    "monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop",
+    "ngScrollSpy": "~1.0.8"
+  }
 }

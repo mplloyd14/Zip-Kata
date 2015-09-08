@@ -1,14 +1,14 @@
 module.exports = {
 	port : 1337,
-	product_code : 'breakfastStout',
+	product_code : 'breakfaststout',
 	locales : ['en'],
-	appBase : 'breakfastStout',
+	appBase : 'breakfaststout',
 	authenticationServer : 'localhost:3000',
-	backdoor: {
-	    user: 'ccsuser',
+	x_backdoor: {
+	    user: 'fbsuser',
 	    context: {
-	        product: 'breakfastStout',
-	        company: 'cc'
+	        product: 'breakfaststout',
+	        company: 'fb'
 	    }
 	},
 	client : {
@@ -139,15 +139,18 @@ module.exports = {
 			sessions : {
 				database : 'mobileconnect'
 			},
-            users: {
-                database: 'mobileconnect'
-            },
-            companies: {
-                database: 'mobileconnect'
-            },
-            productDefinitions: {
-                database: 'mobileconnect'
-            }
+      users: {
+          database: 'mobileconnect'
+      },
+      companies: {
+          database: 'mobileconnect'
+      },
+      productDefinitions: {
+          database: 'mobileconnect'
+      },
+      states: {
+      	database: 'mobileconnect'
+      }
 		}
 	}
 };
