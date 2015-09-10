@@ -3,3 +3,8 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/emitters-2.1
+hooks:
+  AfterInstall:
+    - location: deploy/move_init.sh
+      timeout: 120
+      runas: root

@@ -1,0 +1,39 @@
+#!/bin/bash
+# mobileconnect - Startup script for mobileconnect auth/admin
+# chkconfig: 35 85 15
+# description: PE-Seed Server
+# processname: node
+
+export PATH=$PATH:/usr/bin:/usr/local/bin
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+APP_NAME=pe-seed       					# Unique name for the application
+export NODE_ENV=production              		# Node environment
+INSTANCE_DIR=/opt/cai/pe-seed       # Location of the application source
+LOG_DIR=/log/pe-seed                      # Location of the application logs
+export NODE_CONFIG_DIR=$INSTANCE_DIR/config     # Location of the application configuration
+SOURCE_NAME=content/app.js			# Name of the application entry point script
+forever_dir=/usr/bin							# Forever root directory.
+
+case "$1" in
+    start)
+        echo "Starting $APP_NAME node instance: "
+        exec $forever_dir/forever start --sourceDir=$INSTANCE_DIR -p $forever_dir -l $LOG_DIR/$APP_NAME.log -a $SOURCE_NAME
+        RETVAL=$?
+        ;;
+    stop)
+        echo -n "Shutting down $APP_NAME node instance : "
+        exec $forever_dir/forever stop --sourceDir=$INSTANCE_DIR $SOURCE_NAME
+        RETVAL=$?
+        ;;
+    restart|reload|force-reload)
+        echo -n "Restarting $APP_NAME node instance : "
+        exec $forever_dir/forever restart --sourceDir=$INSTANCE_DIR -p $forever_dir -l $LOG_DIR/$APP_NAME.log -a $SOURCE_NAME
+        RETVAL=$?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+exit $RETVAL
+
