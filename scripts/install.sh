@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# Absolute path to this script, e.g. /home/user/bin/foo.sh
-SCRIPT=$(readlink -f "$0")
-# Absolute path this script is in, thus /home/user/bin
-SCRIPTPATH=$(dirname "$SCRIPT")
+SCRIPTPATH=$1
+if [[ $SCRIPTPATH = "" ]]
+then
+    # Absolute path to this script, e.g. /home/user/bin/foo.sh
+    SCRIPT=$(readlink -f "$0")
+    # Absolute path this script is in, thus /home/user/bin
+    SCRIPTPATH=$(dirname "$SCRIPT")
+fi
 LOG_DIR='/var/log/cai'
 BASE_DIR='/opt/cai'
 APP_DIR='high-availability'
