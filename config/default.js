@@ -1,8 +1,9 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 4000,
+    product_code : 'highavailability',
 	locales : ['en'],
+	appBase : '/highavailability',
 	authenticationServer : 'localhost:3000',
-	appBase : '',
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -33,11 +34,13 @@ module.exports = {
 	},
 	data : {
 		providers : [
+            'RestProvider.js',
+            'SocketProvider.js'
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  4002,
 				timeout : 10000
 			},
 			client: {
@@ -46,7 +49,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port :  4001
 			}
 		}
 	},
@@ -55,17 +58,10 @@ module.exports = {
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
 				console : {
+					format: ['date', 'level', 'message', 'company', 'product', 'user', 'platform', 'locale'],
 					level : 'info', // maximum level of logged messages
 					colorize : true, // color levels
 					enabled : true // this switch can be used to easily toggle use of a given transport
-				},
-				file : {
-					level : 'warn',
-					enabled : true,
-					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
-					maxFiles : 10,
-					maxsize : 5242880
 				}
 			}
 		},
@@ -81,7 +77,7 @@ module.exports = {
 	},
 	db : {
 		servers : {
-			mobileconnect : {
+			evolution : {
 				host : 'localhost',
 				port : 27017,
 				options : {
@@ -120,22 +116,22 @@ module.exports = {
 			}
 		},
 		databases : {
-			mobileconnect : {
-				server : 'mobileconnect'
+			evolution : {
+				server : 'evolution'
 			}
 		},
 		collections : {
 			sessions : {
-				database : 'mobileconnect'
+				database : 'evolution'
 			},
             users: {
-                database: 'mobileconnect'
+                database: 'evolution'
             },
             companies: {
-                database: 'mobileconnect'
+                database: 'evolution'
             },
             productDefinitions: {
-                database: 'mobileconnect'
+                database: 'evolution'
             }
 		}
 	}

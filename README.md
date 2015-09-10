@@ -1,227 +1,99 @@
-Project-Evolution Seed
-======================
+#Background
 
-Retrieve this repo to start a new application using Project Evolution
+This peseed shows examples of using |URL|, |PATH_BEG|, and |*| emitters.  It also discourses on how data enters EVO and makes it to the emitters.
 
-# Getting started
+###REST Services
 
-Create a new git repo and commit the HEAD of the master branch of this repo to the new repo.
+Establishing REST services allows an application to create a REST API so it can receive data from external sources.  This example application establishes 4 REST services.
 
-DO NOT WORK DIRECTLY AGAINST THIS REPO!
+- /test
+- /test/id/:id
+- /test/id/:id/vendor/:vendor
+- /test/broadcast
 
-Create a develop branch and commit to the new repo:
+When an POST comes in to one of the routes, an event is fired on the Project Evo message bus.  The follow table shows the routes and their events.
 
-```
-git checkout -b develop
-git push -u origin develop
-```
-
-Follow the [gitflow] (http://nvie.com/posts/a-successful-git-branching-model/) procedures (mostly) for working on features, bugs, etc.
-
-## Install Dependencies
-From a git shell, change to the repo working folder and execute the command:
-
-`npm install`
-
-## Main Entry Point
-To facilitate production deployment, the main entry point file must be given a "unique" name.
-
-Be sure to rename the file content/app.js to something representative of the project that is under construction.
-
-For instance, for the evolution admin "product", the file has been renamed mobileconnect.js.
+| Route | Event |
+| ------ | ------ |
+| /test | urlReceived |
+| /test/id/:id | pathBegReceived |
+| /test/id/:id/vendor/:vendor | pathBegReceived |
+| /test/broadcast | broadcastReceived |
 
 
-## Package definition
-Customize the package definition to reflect the product/project being developed.
+###Socket Services
 
-Select a project/product name and enter it into the package.json file as shown below.
-Additionally, set the main entry point file name in the scripts/start setting, as shown below.
+Socket Services create listeners that will answer call from Angular Services and Controllers in EVO apps.  This example establishes 3 handlers.
 
-```
-{
-  "name": "PROVIDE A PROJECT/PRODUCT NAME",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node content/MAINENTRYPOINT",
-    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
-  },
+* createPathBegRoom
+* createVendorRoom
+* createUrlRoom
 
-```
+Each handler creates a room upon being called.  Rooms aggregate clients who want to be notified about data.  Each use |URL| for it's room id.  This means
+that the url declared in the "url" property will be inflated with the values passed into the handler as JSON by the javascript call on the frontend.  The subsequent url
+will then become the unique id of the room.  If the "announce" setting on the room is set to false so that the room's
+creation and destruction will not be announced on the event bus, otherwise it will.  Finally, the room created by the "createVendorRoom" is marked as "exactMatch : true".  This means
+that the room will not allow events to be passed to it's members unless the source url of the information is the same as the room's id.
 
-## Configuration
-A default configuration file is provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
+###Emitters
 
-### Ports
-To support the production environment, each running instance must be configured with a unique port numbers for the web, socket, and REST server. All servers are optional and will be created based on the providers that are implemented. 
-In general, the ports will be grouped together into a contiguous range. Please consult with the Evo team when choosing a starting port number to use.
-Enter the port number into the configuration as presented below.
+The job  of an emitter is to send messages to clients in rooms.  To do this you need to tell the emitter which event on the event bus that it needs to listen for.
+This is done by setting the "event" property.  Once the event is received from the bus, it uses the "room" property to determine if the information should be passed to
+the room.  Setting the room property to "|URL|" means that the source url of the data (the url upon which the REST service received the data) must exactly match the id of
+the room (created when data is passed to a handler that has a "room" property with it's id value set to "|URL|").  Setting the property to "|*|"  means that any client in
+any room will receive the message.  In short it broadcasts to all connected clients.  Setting the property "|PATH_BEG|" means that the source url of the data should be
+put into the pattern defined in the "pattern" property.  The pattern will then be inflated using the values from the source url.  For example if a pattern of "test/{id}"
+is inflated using a source url of "/test/id/7" then the id of "7" is extracted from the source url and applied to the pattern.  This yields "/test/id/7".  So rooms ids are searched
+and anyone beginning with "/test/id/7" will be a match. While this contrived example may seems obvious, note that if the source url had been "/material/sand/location/west/truck/id/7" the
+value of "7" for id would still have been extracted and used to inflate the pattern.  The result would still be "/test/id/7".
 
-#### Web Server Port
-```
-module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
-	...
-};
+
+#Creating the rooms via the UI
+When the Angular front end calls one of the websocket handlers in the SocketProvider, if the handler is configured to create a room it will do so.  If the rooms "id" field is set to "|URL|" then the pattern
+in the "url" field is inflated with the values passed into the handler.  For example, if { id : 7, vendor : "abc" } were passed into a handler configured with the following room, the pattern would be inflated
+to "/test/id/7/vendor/abc".  This would then become the room's id.
+
+```javascript
+room: {
+                id: "|URL|",
+                client: true,
+                url: "/test/{id}/{vendor}",
+                announce: false
+            }
 ```
 
-#### Socket Server Port
-```
-module.exports = {
-	...
-	data : {
-		...
-		socket : {
-			server : {
-				...
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
-				...
-			}
-		},	
-	...
-};
+
+#Receiving emitted events in Angular
+
+Every event listed in the emitter declaration must have corresponding code in Angular to receive the event.  Code in either a controller or service must listen for the event on
+rootScope.  Below is an example.
+
+
+```javascript
+ $rootScope.$on("urlReceived", function (event, message) {
+            console.log("Event urlReceived fired with : " + message);
+        });
 ```
 
-#### REST Server Port
-```
-module.exports = {
-	...
-	data : {
-		...
-		REST : {
-			server : {
-				port :  <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
-			}
-		}
-	}
-};
-```
 
-### Log File Name
-```
-module.exports = {
-	...
-	log : {
-		...
-		server : {
-			...			
-			transports : {
-				...
-				file : {
-					...
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
-					...
-				},
-				...
-			}
-		},
-	},
-	...
-};
-```
+#Running the example
 
-## Build Process
-The grunt utility is used to "build" applications. In general the "build" accomplishes 2 goals: set version number/date and concatenate and minify resources.
+Start the server.  In a browser navagate to http://cc.localhost:4000/.  Using either another profile on that browser or another browser again go to http://cc.localhost:4000/.  Open the Javascript console
+on both browsers. In one browser click the "Create Test Room" button and the "Create Test/id" button.  In the other browser click the "Create Test/id/vendor" button.  Using a REST client post to the following routes.
+Looking in the Javascript console keep track of which which routes fire upon each post.
 
-### Configuration
-The configuration for grunt is contained in a file named Gruntfile.js that resides in the project root folder. Different project will require different build activities, but the base file provides a starting point.
-
-#### Resource name
-At the very least, the generated resource files should be named in accordance with the product/project. Replace the token <MAINENTRYPOINT> with a unique name. Typically, the same name as was used for the main entry point file will suffice.
-
-```
-	...
-	uglify: {
-		webJS: {
-			files: {
-				'<%= meta.webDistDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.min.js': ['<%= meta.webTempDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.js']
-			}
-		}
-	},
-	...
-```
-
-## Testing
-A set of default configuration files are provided, but several settings MUST be supplied. In general, the defaults are sufficient for any setting that is not addressed here.
-
-All configuration files are in the test/config/ folder.
-
-A set of scripts are provided to execute tests. All scripts are in the scripts/ folder.
-
-### All Tests
-To execute all tests and generate output to files, execute the following command: 
-
-##### Windows
-`scripts\test.bat`
-
-##### *nix
-`./scripts/test.sh`
-
-### Unit Testing
-Unit testing is divided into Server and Client. Mocha is used in conjunction with Chai, Sinon, and other helpful libraries for both Server and Client testsing.
-
-#### Server
-To execute server tests (only), execute the following command: (obviously, write the tests first!)
-
-`npm test`
-
-Or, to capture the output to a file:
-
-##### Windows
-`scripts\server-test.bat`
-
-##### *nix
-`./scripts/server-test.sh`
-
-#### Client
-Client testing makes use of Karma in addition to the other tools. 
-
-##### Configuration
-There are 2 configuration files for Karma, 1 to run all tests and capture the output to a file and another for development purposes that can be used to isolate testing and interactively test.
-
-test/config/karma.conf.js is the configuration that will run ALL tests and capture the output to a file. This configuration should not be used (or modified) during development.
-
-test/config/karma-dev.conf.js is the configuration that can be used during development to perform isolated and interactive testing. This configuration should be used (and modified) during development.
-
-To execute client tests (only), execute the following command: (obviously, write the tests first!)
-
-##### Windows
-`scripts\client-test.bat`
-
-##### *nix
-`./scripts/client-test.sh`
+http://localhost:4001/company/cc/product/emitters/test
+http://localhost:4001/company/cc/product/emitters/test/id/7
+http://localhost:4001/company/cc/product/emitters/test/id/7/vendor/abc
+http://localhost:4001/company/cc/product/emitters/test/broadcast
 
 
-### End to End (e2e) Testing
-Protractor is used in conjunction with Selenium. Protractor uses a flavor of Jasmine and the syntax of tests is slightly different from the Server/Client tests.
-
-##### Selenium
-To start the selenium server, execute the following command:
-
-###### Windows
-`scripts\start-selenium.bat`
-
-###### *nix
-`./scripts/start-selenium.sh`
+#Understanding the example
+In order to understand the example, think about the following questions.  Based on the overview, does it make sense which emitters fired each time?  Notice that both of the routes "/test/id/7" and "/test/id/7/vendor/abc"
+fired in browser where you created the "Test/id Room" but only "/test/id/7/vendor/abc" caused the event to fire in the "Test/id/vendor" room.  Since both rooms are marked |PATH_BEG|, why didn't they both receive two events?
+When you opened the page and created rooms, you did not create one for the broadcast events yet they reached the browser.  Why?
 
 
-##### Configuration
-There are 2 configuration files for Protractor, 1 to run all tests and capture the output to a file and another for development purposes that can be used to isolate testing.
-
-test/config/protractor.conf.js is the configuration that will run ALL tests and capture the output to a file. This configuration should not be used (or modified) during development.
-
-test/config/protractor-dev.conf.js is the configuration that can be used during development to perform isolated and interactive testing. This configuration should be used (and modified) during development.
-
-To execute e2e tests (only), execute the following command: (obviously, write the tests first!)
-
-##### Windows
-`scripts\e2e-test.bat`
-
-##### *nix
-`./scripts/e2e-test.sh`
 
 
-## Start the project
-From a command shell, execute the following command:
 
-`npm start`

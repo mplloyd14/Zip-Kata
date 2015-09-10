@@ -4,14 +4,14 @@ module.exports = exports = function(i18n) {
 		{
 			method: 'get',
 			route: '/',
-			redirect: '/product/peseed',
+			redirect: '/product/emitters',
 			protected: false
 		},
 
 		{
 			method: 'get',
 			route: '/product/:product',
-			redirect: '/product/peseed/root',
+			redirect: '/product/emitters/root',
 			protected: true
 		},
 
@@ -30,7 +30,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/desktop*',
 			base: '/product/:product/desktop',
 			render: {
-				title: 'PESeed',
+				title: 'Emitters',
 				template: '/web/index'
 			},
 			protected: true
@@ -40,7 +40,7 @@ module.exports = exports = function(i18n) {
 			route: '/product/:product/mobile*',
 			base: '/product/:product/mobile',
 			render: {
-				title: 'PESeed',
+				title: 'Emitters',
 				template: '/mobile/index'
 			},
 			protected: true

@@ -16,7 +16,7 @@
 				"settings":{}
 			},
             {
-                "code": "etldemo",
+                "code": "emitters",
                 "roles": [
                     "appuser"
                 ],
@@ -45,7 +45,7 @@
 				"settings":{}
 			},
             {
-                "code": "etldemo",
+                "code": "emitters",
                 "roles": [
                     "appuser"
                 ],

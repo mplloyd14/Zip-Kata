@@ -3,12 +3,11 @@ html(ng-app="peApp")
   head
     meta(charset='utf8')
     title #{title}
-    link(rel='stylesheet', href='#{config.appBase}/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='#{config.appBase}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
-    link(rel='stylesheet', href='#{config.appBase}/web/css/app.css')
-    include /core/shared/branding
+    link(rel='stylesheet', href='#{productRoute}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{productRoute}/shared/monkeynaut/dist/css/projevo-core.pkg.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
-    script(src='#{config.appBase}/shared/monkeynaut/dist/js/bundle-full.min.js')
+    script(src='#{productRoute}/shared/monkeynaut/dist/js/bundle-full.js')
     include /core/shared/scripts
+
     block body
