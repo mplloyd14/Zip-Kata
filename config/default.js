@@ -134,5 +134,10 @@ module.exports = {
                 database: 'evolution'
             }
 		}
-	}
+	},
+	apiServer: {
+      host: 'http://localhost:4010',
+      routeRegistrationPath: '/routes/refresh',
+      etlRegistrationPath: '/etls/refresh'
+  	}
 };
