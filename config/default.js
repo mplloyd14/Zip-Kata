@@ -77,7 +77,7 @@ module.exports = {
 	},
 	db : {
 		servers : {
-			evolution : {
+			mobileconnect : {
 				host : 'localhost',
 				port : 27017,
 				options : {
@@ -116,22 +116,22 @@ module.exports = {
 			}
 		},
 		databases : {
-			evolution : {
-				server : 'evolution'
+			mobileconnect : {
+				server : 'mobileconnect'
 			}
 		},
 		collections : {
 			sessions : {
-				database : 'evolution'
+				database : 'mobileconnect'
 			},
             users: {
-                database: 'evolution'
+                database: 'mobileconnect'
             },
             companies: {
-                database: 'evolution'
+                database: 'mobileconnect'
             },
             productDefinitions: {
-                database: 'evolution'
+                database: 'mobileconnect'
             }
 		}
 	},
