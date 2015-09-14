@@ -1,12 +1,12 @@
 #!/bin/bash
-# api-server - Startup script for high-availability
+# highavailability - Startup script for high-availability
 # chkconfig: 35 85 15
 # description: Evolution High Availatility test app
 # processname: node
 
 export PATH=$PATH:/usr/bin:/usr/local/bin
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
-APP_NAME=api-server       					# Unique name for the application
+APP_NAME=high-availability       					# Unique name for the application
 export NODE_ENV=production              		# Node environment
 INSTANCE_DIR=/opt/cai/high-availability       # Location of the application source
 LOG_DIR=/var/log/cai/high-availability                      # Location of the application logs
