@@ -13,7 +13,7 @@
 				"settings": {}
 			},
             {
-                "code": "emitters",
+                "code": "highavailability",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {
@@ -42,7 +42,7 @@
 				"settings": {}
 			},
             {
-                "code": "emitters",
+                "code": "highavailability",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {

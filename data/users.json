@@ -16,7 +16,7 @@
 				"settings":{}
 			},
             {
-                "code": "emitters",
+                "code": "highavailability",
                 "roles": [
                     "appuser"
                 ],
@@ -45,7 +45,7 @@
 				"settings":{}
 			},
             {
-                "code": "emitters",
+                "code": "highavailability",
                 "roles": [
                     "appuser"
                 ],

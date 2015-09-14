@@ -1,8 +1,8 @@
 [
     {
-        "code": "emitters",
-        "name": "PESeed Master",
-        "description": "PESeed Master",
+        "code": "highavailability",
+        "name": "High Availability Sample",
+        "description": "High Availability Sample",
         "roles": [
             "globaladmin",
             "appadmin",
