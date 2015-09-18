@@ -1,9 +1,9 @@
 {
-  "name": "emitters",
+  "name": "high-availability",
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "node content/emitters.js",
+    "start": "node content/high-availability.js",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript",
 	"postinstall": "bower install"
   },
