@@ -12,3 +12,14 @@ permissions:
     mode: 777
     type:
       - file
+  - object: /opt/cai/pe-seed/deploy/post_install.sh
+    owner: root
+    mode: 700
+    type:
+      - file
+
+hooks:
+  AfterInstall:
+    - location: /opt/cai/pe-seed/deploy/post_install.sh
+      timeout: 60
+      runas: root
