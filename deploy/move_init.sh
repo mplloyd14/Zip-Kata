@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "## Moving pe-seed init script to /etc/init.d"
-cp ../init/pe-seed /etc/init.d
+cp /home/ubuntu/init/pe-seed /etc/init.d
 
 echo "## Making init script executable"
 chmod +x /etc/init.d/pe-seed
