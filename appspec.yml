@@ -13,7 +13,7 @@ permissions:
     type:
       - file
   - object: /opt/cai/pe-seed/deploy/post_install.sh
-    owner: root
+    owner: ubuntu
     mode: 700
     type:
       - file
