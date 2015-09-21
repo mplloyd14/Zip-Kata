@@ -9,12 +9,12 @@ files:
 permissions:
   - object: /etc/init.d/pe-seed
     owner: root
-    mode: 777
+    mode: 744
     type:
       - file
   - object: deploy/post_install.sh
-    owner: ubuntu
-    mode: 700
+    owner: root
+    mode: 744
     type:
       - file
 
