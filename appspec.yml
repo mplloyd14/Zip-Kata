@@ -4,7 +4,7 @@ files:
   - source: /init/pe-seed
     destination: /etc/init.d
   - source: /
-    destination: /home/ubuntu/emitters-2.1
+    destination: /opt/cai/pe-seed
 
 permissions:
   - object: /etc/init.d/pe-seed
