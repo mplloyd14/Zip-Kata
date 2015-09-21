@@ -4,8 +4,8 @@ files:
   - source: /
     destination: /home/ubuntu/emitters-2.1
 permissions:
-  - object: /home/ubuntu/emitters-2.1/deploy/move_init.sh
-    pattern: "*.sh"
+  - object: /home/ubuntu/emitters-2.1/deploy
+    pattern: "**"
     owner: ubuntu
     mode: 777
     type:
