@@ -1,17 +1,14 @@
 version: 0.0
 os: linux
 files:
+  - source: /deploy/move_init.sh
+    destination: /etc/init.d
   - source: /
     destination: /home/ubuntu/emitters-2.1
+
 permissions:
-  - object: /home/ubuntu/emitters-2.1/deploy
-    pattern: "**"
-    owner: ubuntu
+  - object: /etc/init.d/move_init.sh
+    owner: root
     mode: 777
     type:
       - file
-hooks:
-  AfterInstall:
-    - location: /home/ubuntu/emitters-2.1/deploy/move_init.sh
-      timeout: 120
-      runas: root
