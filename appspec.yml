@@ -1,13 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /deploy/move_init.sh
+  - source: /init/pe-seed
     destination: /etc/init.d
   - source: /
     destination: /home/ubuntu/emitters-2.1
 
 permissions:
-  - object: /etc/init.d/move_init.sh
+  - object: /etc/init.d/pe-seed
     owner: root
     mode: 777
     type:
