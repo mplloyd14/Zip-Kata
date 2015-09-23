@@ -4,7 +4,7 @@ files:
   - source: /init/pe-seed
     destination: /etc/init.d
   - source: /
-    destination: /opt/cai/pe-seed
+    destination: /opt/app/pe-seed
 
 permissions:
   - object: /etc/init.d/pe-seed
