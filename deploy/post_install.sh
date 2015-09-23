@@ -3,7 +3,7 @@
 LOG_DIR='/log'
 PE_DIR='/pe-seed'
 SYM_DIR='/opt/cai'
-APP_DIR='/opt/app'
+APP_DIR='/opt/apps'
 
 mkdir $LOG_DIR
 mkdir $LOG_DIR/$PE_DIR
