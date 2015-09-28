@@ -4,7 +4,7 @@ files:
   - source: /init/pe-seed
     destination: /etc/init.d
   - source: /
-    destination: /opt/apps/pe-seed/pe-seed_test_tag
+    destination: /opt/apps/deploy_test/pe-seed_test_tag
 
 permissions:
   - object: /etc/init.d/pe-seed
