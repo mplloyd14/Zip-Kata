@@ -11,6 +11,6 @@ mkdir $LOG_DIR
 mkdir $LOG_DIR/$PE_DIR
 
 echo "$SYM_DIR/$PE_DIR to $APP_DIR/$SERVICE_DIR/$TAG_NAME"
-ln -fsn $APP_DIR/$SERVICE_DIR/$TAG_NAME $PE_DIR
+ln -fsn $APP_DIR/$SERVICE_DIR/$TAG_NAME $SYM_DIR/$PE_DIR
 
 service pe-seed start
