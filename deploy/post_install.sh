@@ -1,8 +1,9 @@
 #!/bin/bash
 
-LOG_DIR='/loG'
+LOG_DIR='/log'
 SERVICE_DIR='deploy_test'
 PE_DIR='pe-seed'
+SYM_DIR='/opt/cai'
 APP_DIR='/opt/apps'
 TAG_NAME='pe-seed_test_tag'
 
