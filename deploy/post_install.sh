@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG_DIR='/log'
-PE_DIR='/pe-seed'
+PE_DIR='pe-seed'
 SYM_DIR='/opt/cai'
 APP_DIR='/opt/apps'
 TAG_NAME='pe-seed_test_tag'
