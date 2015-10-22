@@ -1,5 +1,5 @@
 module.exports = {
-	port :3000,
+	port :5000,
 	product_code: "peseed",
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
@@ -34,13 +34,13 @@ module.exports = {
 	},
 	data : {
 		providers : [
-			// "RESTProvider",
-			// "SocketProvider"
+			"RESTProvider",
+			"SocketProvider"
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  3001,
+				port :  5001,
 				timeout : 10000
 			},
 			client: {
@@ -49,7 +49,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : 3002
+				port : 5002
 			}
 		}
 	},

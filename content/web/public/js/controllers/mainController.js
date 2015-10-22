@@ -37,13 +37,24 @@ evo.module("peApp.controllers", ["evo.common.directives"])
                     {  rk: 1, player: "Jenny McCarthy", team: "myself", avg: 1 }
                 ]
             };
+            scope.response = {};
 
-            try {
-                api.callFunction("dataAccess", {}).then(function () {}, function () {});
-            } catch (err) {
-                console.log(err);
-                console.log("Call does not exist.")
-            }
+            var ticket = {
+              "ticketNumber": "123456",
+              "entityData": [
+                {
+                  "name": "ticket",
+                  "year": "2016"
+                }
+              ]
+            };
 
+            console.debug("[MainCtrl]:submitEDXTicket");
+            api.callFunction("submitEDXTicket", ticket).then(function (d) {
+              scope.response = d;
+            },
+            function (err) {
+              console.error("[MainCtrl]:submitEDXTicket:" + err.errorMsg);
+            });
         }
     ]);
