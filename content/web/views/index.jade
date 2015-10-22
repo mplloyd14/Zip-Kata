@@ -1,9 +1,8 @@
 extends layout
 
 block body
-    script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')	
-
+    script(src='#{productRoute}/web/js/controllers/mainController.js')
+    script(src='#{productRoute}/web/js/app.js')
     h1 Web
     div(ng-view)
         

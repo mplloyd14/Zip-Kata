@@ -9,11 +9,8 @@
             "logo" : "@logo: 'ss-logo.png';"
         },
         "products": [
-			{ 	"code": "peseed",
-				"settings": {}
-			},
             {
-                "code": "etldemo",
+                "code": "peseed",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {
@@ -38,11 +35,8 @@
             "logo" : "@logo: 'cc-logo.png';"
         },
         "products": [
-			{ 	"code": "peseed",
-				"settings": {}
-			},
             {
-                "code": "etldemo",
+                "code": "peseed",
                 "settings": {
                     "dataEndPoints": {
                         "IncomingData" : {

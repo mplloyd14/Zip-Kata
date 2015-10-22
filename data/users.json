@@ -12,7 +12,9 @@
         "products": [
 			{
 				"code": "peseed",
-				"roles": [],
+				"roles": [
+                    "appuser"
+                ],
 				"settings":{}
 			},
             {
@@ -41,7 +43,9 @@
         "products": [
 			{
 				"code": "peseed",
-				"roles": [],
+				"roles": [
+                    "appuser"
+                ],
 				"settings":{}
 			},
             {

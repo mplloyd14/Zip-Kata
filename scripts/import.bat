@@ -11,3 +11,6 @@ mongoimport -h localhost --port 27017 -d mobileconnect -c companies --drop --jso
 
 @echo Importing Users...
 mongoimport -h localhost --port 27017 -d mobileconnect -c users --drop --jsonArray --stopOnError --file "%BASE_DIR%\..\data\users.json"
+
+@echo Importing Zips...
+mongoimport -h localhost --port 27017 -d mobileconnect -c zips --drop --jsonArray --stopOnError --file "%BASE_DIR%\..\data\zips.json"
