@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 	        dest: '<%= meta.webDistDir %>/css/style.min.css'
 	      },
 	    },
-        
+
         uglify: {
             webJS: {
                 files: {
@@ -85,13 +85,13 @@ module.exports = function (grunt) {
                 files: ['content/**/public/**/*.less'],
                 tasks: ['less:production']
             },
-            test: {
-                files: ['test/unit/**/*.js', 'content/**/public/*.js'],
-                tasks: ['karma:dev:run'],
-                options: {
-                    spawn: false
-                }
-            },
+            // test: {
+            //     files: ['test/unit/**/*.js', 'content/**/public/*.js'],
+            //     tasks: ['karma:dev:run'],
+            //     options: {
+            //         spawn: false
+            //     }
+            // },
             build: {
                 files: ['content/web/**/*.js', 'content/web/**/*.less'],
                 tasks: ['build-production'],
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
         'less:development',
         'copy:web'
     ]);
-    
+
     grunt.registerTask('build-less', 'Build web css.', ['less:development']);
     grunt.registerTask('build-dev', 'Build web applications.', ['build-development']);
     grunt.registerTask('build', 'Build web applications.', ['build-production']);

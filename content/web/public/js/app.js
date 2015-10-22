@@ -1,13 +1,24 @@
-'use strict';
 
-// Declare app level module which depends on filters, and services
-evo.module('peApp', ['evo', 'peControllers', 'ngCookies', 'ngRoute']).
-  config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider.
-      when('/', {
-		templateUrl: 'hello',
-        controller: 'MainController'
-      }).otherwise({redirectTo: '/'})
-	;
-    $locationProvider.html5Mode(true);
-}]);
+evo.module("peApp", [
+    "evo",
+    "ngCookies",
+    "ngRoute",
+    "peApp.controllers"])
+    .config([
+        "$routeProvider",
+        "$locationProvider",
+        function (routeProvider, locationProvider) {
+            routeProvider
+                .when("/", {
+                    templateUrl: "hello",
+                    controller: "MainCtrl"
+                });
+
+            locationProvider.html5Mode('/');
+        }
+    ])
+    .run([
+        function () {
+            console.log("Running application.");
+        }
+    ]);
