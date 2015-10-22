@@ -30,19 +30,12 @@ evo.module("peApp.controllers", ["evo.common.directives"])
                   }
                 },
                 data: [
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 }
+                    {  rk: 1, player: "Jason Bourne", team: "myself", avg: 1 },
+                    {  rk: 1, player: "Steven", team: "myself", avg: 1 },
+                    {  rk: 1, player: "Luke Skywalker", team: "myself", avg: 1 },
+                    {  rk: 1, player: "Joseph Santos", team: "myself", avg: 1 },
+                    {  rk: 1, player: "Jimmy Kimble", team: "myself", avg: 1 },
+                    {  rk: 1, player: "Jenny McCarthy", team: "myself", avg: 1 }
                 ]
             };
 
@@ -71,7 +64,7 @@ evo.module("peApp", [
                     controller: "MainCtrl"
                 });
 
-            // locationProvider.html5Mode(true)
+            locationProvider.html5Mode('/')
         }
     ])
     .run([
