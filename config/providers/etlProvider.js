@@ -14,6 +14,16 @@ module.exports = {
                 '/bar/:bar'
             ],
             module: 'lib/demoETL.js'
+        },
+        {
+            domain: null,
+            method: 'post',
+            mode: 'none',
+            sendTransformedPayload: true,
+            routes: [
+                '/fu/export'
+            ],
+            module: 'lib/demoExportETL.js'
         }
     ]
 };

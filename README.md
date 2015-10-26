@@ -35,7 +35,7 @@ From a shell, change to the demo working folder and execute the command:
 ##### Windows
 `scripts\import.bat`
 
-##### *nix
+##### star-nix
 `./scripts/import.sh`
 
 ## Start the projects
@@ -85,3 +85,19 @@ Using your favorite REST client (curl, Advanced Rest Client, XHR Poster, to name
 `http://cc.localhost:4010/product/etldemo/fu/fu`
 
 The test/data folder contains json files that can be posted to the service.
+
+## Export Data
+
+Run a mock rest service for each company to receive the exported data.
+
+From a shell, change to the demo working folder and execute the command:
+
+`node test/mocks/mock-rest-service.js NNNN`
+
+Where NNNN is the port number:
+* 5901 for company ss
+* 6901 for company cc
+
+Browse to the page, retrieve some data for Fu, and click Export. The Fu data will be exported to the appropriate company mock service.
+
+A Transform is applied to the exported route by the API Server, declared in config/providers/etlProvider.js and defined in lib/demoExportETL.js.
