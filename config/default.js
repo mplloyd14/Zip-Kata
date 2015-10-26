@@ -35,7 +35,8 @@ module.exports = {
 	data : {
 		providers : [
 			"RESTProvider",
-			"SocketProvider"
+			"SocketProvider",
+			"ETLProvider"
 		],
 		socket : {
 			server : {
@@ -141,5 +142,10 @@ module.exports = {
                 database: 'mobileconnect'
             }
 		}
-	}
+	},
+    apiServer: {
+        host: 'http://localhost:4010',
+        routeRegistrationPath: '/routes/refresh',
+        etlRegistrationPath: '/etls/refresh'
+    },
 };
