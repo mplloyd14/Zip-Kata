@@ -1,0 +1,20 @@
+{
+	"Check": "portuguese-Check and Mate",
+	"txtLocalMsg": "portuguese-This is from the pe-seed/custom-admin-demo",
+	"globaladmin": "portuguese-Total World Dominator",
+	"appadmin": "portuguese-Poser",
+	"appuser": "portuguese-Just a Feeb",
+	"txtAbout": "portuguese-txtAbout",
+	"txtProductName": "portuguese-txtProductName",
+	"txtProductVersion": "portuguese-txtProductVersion",
+	"txtProductBuildDate": "portuguese-txtProductBuildDate",
+	"txtCoreLibraryVersion": "portuguese-txtCoreLibraryVersion",
+	"txtCoreLibraryBuildDate": "portuguese-txtCoreLibraryBuildDate",
+	"txtCopyrightInformation": "portuguese-txtCopyrightInformation",
+	"txtAllRightsReserved.": "portuguese-txtAllRightsReserved.",
+	"btnClose": "portuguese-btnClose",
+	"Admin": "portuguese-Admin",
+	"Logout": "portuguese-Logout",
+	"Change Password": "portuguese-Change Password",
+	"Custom Admin Demo": "portuguese-Custom Admin Demo"
+}
