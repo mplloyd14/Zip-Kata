@@ -1,2 +1,11 @@
 script#hello(type='text/ng-template')
-	h2#hellomsg {{message}}
+    h2#hellomsg {{message}}
+    br
+    button(ng-click="getSecretMessage()") Get Secret Message
+    button(ng-click="getConfidentialMessage()") Get Confidential Message
+    br
+    br
+    br
+    #urlrecvmsg {{secreteMessage}}
+    br
+    #pathbegrecvmsg {{confidentialMessage}}

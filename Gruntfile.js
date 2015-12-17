@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                     '!<%= meta.sharedJS %>/lib/*.js',
                     '<%= meta.webAppJS %>/**/*.js'
                 ],
-                dest: '<%= meta.webTempDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.js'
+                dest: '<%= meta.webTempDir %>/securityhack.js'
             }
         },
 	    cssmin: {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         uglify: {
             webJS: {
                 files: {
-                    '<%= meta.webDistDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.min.js': ['<%= meta.webTempDir %>/<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.js']
+                    '<%= meta.webDistDir %>/securityhack.min.js': ['<%= meta.webTempDir %>/securityhack.js']
                 }
             }
         },

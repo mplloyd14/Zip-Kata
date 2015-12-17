@@ -5,9 +5,8 @@ evo.module('peApp', ['evo', 'peControllers', 'ngCookies', 'ngRoute']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
-		templateUrl: 'hello',
+		    templateUrl: 'hello',
         controller: 'MainController'
-      }).otherwise({redirectTo: '/'})
-	;
+      }).otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
 }]);

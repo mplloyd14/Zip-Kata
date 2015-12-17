@@ -1,8 +1,24 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 4000,
 	locales : ['en'],
-	authenticationServer : 'localhost:3000',
+	authenticationServer : 'evodevelop.com:3000',
+	product_code: 'peseed',
 	appBase : '',
+	
+	/*
+	backdoor: {
+	    user: {
+	        userName: 'cctest',
+	        email: 'cctest@test.com'
+	    },
+	    context: {
+	        product: 'peseed',
+	        company: 'cc'
+	    }
+	},
+	*/
+	
+	
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',
@@ -33,11 +49,14 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			'ETLprovider',
+			'RESTprovider',
+			'SocketsProvider' 
 		],
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  4002,
 				timeout : 10000
 			},
 			client: {
@@ -46,7 +65,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port : 4001
 			}
 		}
 	},
@@ -55,7 +74,7 @@ module.exports = {
 			levels : ['error', 'warn', 'info', 'debug'], // available log levels
 			transports : { // supported logging transports
 				console : {
-					level : 'info', // maximum level of logged messages
+					level : 'debug', // maximum level of logged messages
 					colorize : true, // color levels
 					enabled : true // this switch can be used to easily toggle use of a given transport
 				},
@@ -63,7 +82,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'securityhack.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}
@@ -82,7 +101,7 @@ module.exports = {
 	db : {
 		servers : {
 			mobileconnect : {
-				host : 'localhost',
+				host : 'evodevelop.com',
 				port : 27017,
 				options : {
 					server : { // mongodb - server options

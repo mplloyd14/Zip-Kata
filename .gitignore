@@ -38,3 +38,4 @@ content/shared/public/css/*.styleguide.css
 content/shared/public/font-awesome
 content/shared/public/lodash
 content/shared/public/monkeynaut
+.vscode/
