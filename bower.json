@@ -2,7 +2,7 @@
 	"name": "peseed",
 	"private": "true",
 	"dependencies": {
-		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#develop",
-		"font-awesome": "~4.3.0"
+		"monkeynaut": "git@github.com:CommandAlkon/monkeynaut.git#bug/update_ionic",
+		"font-awesome": "~4.5.0"
 	}
 }
