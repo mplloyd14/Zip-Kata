@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/MAINENTRYPOINT",
-    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
+    "start": "node content/peseed.js",
+    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",

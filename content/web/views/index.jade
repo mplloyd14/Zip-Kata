@@ -1,10 +1,16 @@
 extends layout
 
 block body
-    script(src='/web/js/controllers/mainController.js')
-    script(src='/web/js/app.js')	
+    script(src='#{productRoute}/web/js/controllers/mainCtrl.js')
+    script(src='#{productRoute}/web/js/app.js')	
 
-    h1 Web
-    div(ng-view)
+    div(class="bar bar-header bar-stable")
+        h1(class="title") bar-stable
+    
+    div(class="container-fluid content has-header")
+        div(class="ng-view")
+    
+    div(class="bar bar-footer bar-balanced")
+        div(class="title") Footer
         
-    include partials/hello.jade
+    include partials/main.jade

@@ -1,5 +1,5 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+	port : 3000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
@@ -37,7 +37,7 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  3001,
 				timeout : 10000
 			},
 			client: {
@@ -46,7 +46,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port : 3002
 			}
 		}
 	},
