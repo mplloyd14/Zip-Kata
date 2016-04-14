@@ -6,46 +6,34 @@ angular.module('peControllers', ['evo',"evo.common.directives"])
                 scope.table = {
                   options: {
                       columns: {
-                          "rk": "uint",
-                          "player": "string",
-                          "pos": {
-                              type: "string",
-                              fmt: "uppercase"
-                          },
-                          "team": {
-                              type: "string",
-                              fmt: "uppercase"
-                          },
-                          "avg": {
-                              type: "float",
-                              fmt: { precision: 3 }
+                          "city": "string",
+                          "state": "string",
+                          "loc": "string",
+                          "edit": {
+                                type: "button",
+                                icon: "fa fa-pencil-square-o",
+                                width: "60px",
+                                textAlign: "center",
+                                onclick: function (e, item, column, index) {
+                                        /** do something */
+                                        console.info(e);
+                                        console.info(item);
+                                        console.info(column);
+                                        console.info(index);
+                                }
                           }
                       },
                       pagination: {
-                        itemsPerPage: 2,
-                        maxSize: 4
+                        itemsPerPage: 5
                       }
                   },
-                  data: [
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                    {  rk: 1, player: "me", team: "myself", avg: 1 },
-                  ]
+                  data: [ ]
               }
                 
 		evoAPI.callFunction('dataAccess',{}).then(function(message){
 			//$scope.zips.data = message.result;
                         console.info(message.result);
+                        scope.table.data = message.result;
                         log.info('Zips loaded sucessfully.');
                  });
 	}]);
