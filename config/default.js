@@ -1,5 +1,6 @@
 module.exports = {
-	port : <SUPPLY A PORT FOR THE APPLICATION WEB SERVER>,
+    product_code: 'peseed',
+	port : 4000,
 	locales : ['en'],
 	authenticationServer : 'localhost:3000',
 	appBase : '',
@@ -37,7 +38,7 @@ module.exports = {
 		socket : {
 			server : {
 				host : '',
-				port :  <SUPPLY A PORT FOR THE APPLICATION SOCKET SERVER>,
+				port :  4002,
 				timeout : 10000
 			},
 			client: {
@@ -46,7 +47,7 @@ module.exports = {
 		},
 		REST : {
 			server : {
-				port : <SUPPLY A PORT FOR THE APPLICATION REST SERVER>
+				port : 4001
 			}
 		}
 	},

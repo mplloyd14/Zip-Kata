@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node content/MAINENTRYPOINT",
+    "start": "node content/app.js",
     "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
   },
   "dependencies": {
-    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#develop",
+    "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#1.0.3",
     "config": "^1.7.0",
     "q": "=0.9.2",
     "lodash-node": "=2.2.1"
