@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node content/app.js",
-    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript"
+    "test": "mocha test/unit/server --globals NODE_CONFIG,exportscoffeeScript",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "projevo-core": "git+ssh://git@github.com:CommandAlkon/ProjectEvo-Core.git#1.0.3",
