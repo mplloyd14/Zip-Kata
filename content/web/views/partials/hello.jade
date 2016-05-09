@@ -1,2 +1,7 @@
 script#hello(type='text/ng-template')
-	h2#hellomsg {{message}}
+  h2#hellomsg {{message}}
+  
+  button.btn.btn-default(ng-click="getCompanyUsers()") Company Users
+  button.btn.btn-default(ng-click="getAllUsers()") All Users
+
+  p {{ companyUsers.company.code }} - {{ companyUsers.company.productUsers }}

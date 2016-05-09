@@ -1,8 +1,8 @@
 module.exports = {
-    product_code: 'peseed',
+    product_code: 'billing',
 	port : 4000,
 	locales : ['en'],
-	authenticationServer : 'localhost:3000',
+	authenticationServer : 'evo.dev:3000',
 	appBase : '',
 	client : {
 		auth_server : 'authenticationServer',
