@@ -2,17 +2,13 @@ module.exports = {
 	port : 4000,
     product_code : 'emitters',
 	locales : ['en'],
-	appBase : '',
-    backdoor: {
-        user: {
-            userName: 'commandalkon',
-            email: 'pe@commandalkon.com'
-    },
-        context: {
-            product: 'emitters',
-            company: 'cai'
-        }
-    },
+   authenticationServer: 'localhost:3000',
+   appBase : '',
+  	session: {
+		cookie: {
+		maxAge: 86400000  // 0 or null means don't expire
+		}
+  	},
 	client : {
 		auth_server : 'authenticationServer',
 		socket_server : 'data.socket.server.host',

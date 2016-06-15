@@ -4,12 +4,13 @@ html(ng-app="peApp")
     meta(charset='utf8')
     //base(href='/')
     title #{title}
-    link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/shared/bootstrap/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/shared/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/web/css/app.css')
+    link(rel='stylesheet', href='#{productRoute}/shared/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='#{productRoute}/shared/bootstrap/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='#{productRoute}/shared/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='#{productRoute}/web/css/app.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
+    script(src='#{productRoute}/shared/monkeynaut/dist/js/bundle-full.min.js')
     include /core/shared/scripts
 
     block body
