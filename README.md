@@ -78,7 +78,7 @@ rootScope.  Below is an example.
 
 #Running the example
 
-Start the server.  In a browser navagate to http://localhost:4000/.  Using either another profile on that browser or another browser again go to http://localhost:4000/.  Open the Javascript console
+Start the server.  In a browser navagate to http://cai.localhost:4000/.  Using either another profile on that browser or another browser again go to http://localhost:4000/.  Open the Javascript console
 on both browsers. In one browser click the "Create Test Room" button and the "Create Test/id" button.  In the other browser click the "Create Test/id/vendor" button.  Using a REST client post to the following routes.
 Looking in the Javascript console keep track of which which routes fire upon each post.
 
