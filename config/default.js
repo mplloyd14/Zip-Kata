@@ -34,6 +34,7 @@ module.exports = {
 	},
 	data : {
 		providers : [
+			SocketProvider.js
 		],
 		socket : {
 			server : {
@@ -64,7 +65,7 @@ module.exports = {
 					level : 'warn',
 					enabled : true,
 					filepath : '',
-					filename : '<USE THE SAME NAME AS THE MAIN ENTRY POINT FILE>.app.log',
+					filename : 'zipkata.app.log',
 					maxFiles : 10,
 					maxsize : 5242880
 				}
@@ -137,7 +138,13 @@ module.exports = {
             },
             productDefinitions: {
                 database: 'mobileconnect'
-            }
+            },
+			zipcodes: {
+				database: 'mobileconnect'
+			}
 		}
+	},
+	session: {
+		rolling: true
 	}
 };
