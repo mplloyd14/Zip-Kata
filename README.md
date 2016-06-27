@@ -26,7 +26,7 @@ From a git shell, change to the repo working folder and execute the command:
 ## Main Entry Point
 To facilitate production deployment, the main entry point file must be given a "unique" name.
 
-Be sure to rename the file content/app.js to something representative of the project that is under construction.
+Be sure to rename the file content/zipkata.js to something representative of the project that is under construction.
 
 For instance, for the evolution admin "product", the file has been renamed mobileconnect.js.
 

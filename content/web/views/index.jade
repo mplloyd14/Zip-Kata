@@ -1,10 +1,13 @@
 extends layout
 
 block body
+    script(src='#{productRoute}/web/js/services/ZipService.js')
     script(src='#{productRoute}/web/js/controllers/mainController.js')
+    script(src='#{productRoute}/web/js/controllers/editController.js')
     script(src='#{productRoute}/web/js/zipkata.js')
 
     h1 Web
     div(ng-view)
         
-    include partials/hello.jade
+    include partials/table.jade
+    include partials/edit.jade
