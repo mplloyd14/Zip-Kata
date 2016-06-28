@@ -1,5 +1,6 @@
 {
-  "txtSearch": "Search",
-  "txtNext": "Next",
-  "txtPrevious": "Previous"
+	"txtSearch": "Search",
+	"txtNext": "Next",
+	"txtPrevious": "Previous",
+	"cancel": "cancel"
 }

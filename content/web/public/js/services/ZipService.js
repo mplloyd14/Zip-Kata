@@ -24,8 +24,9 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
         console.log('Getting Zip');
         return evoAPI.callFunction('findZipById', idIn).then(function (response) {
             console.log('Success');
+            console.log(response.result);
             return response.result;
-        }).catch(function (err) {
+        }, function (err) {
             console.log(err);
         })
     };

@@ -12,7 +12,7 @@ kata.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
         .when('/edit/:id', {
         templateUrl: 'edit',
         controller: 'EditController'
-      });
+      }).otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
 }]);
 
