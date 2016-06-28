@@ -12,10 +12,41 @@ evo.module('peControllers', ['evo', 'evo.common'])
         console.log($scope.tempId);
         ZipService.GatherById($scope.tempId).then(function (data) {
             $scope.entry = data;
-            $scope.stuff = JSON.stringify($scope.entry);
+
+            $scope.stuff = $scope.entry._id;
         });
 
         $scope.back = function () {
             $location.path('/');
+        };
+
+        $scope.confirm = function() {
+            // Check the spaces
+            if ($scope.verify() == true) {
+                $log.log('true');
+                ZipService.updateEntry($scope.entry);
+            }
+        };
+
+        $scope.verify = function () {
+            if ($scope.entry.city.length <= 0) {
+                $scope.errorMessage = 'Error: City blank empty';
+                return false;
+            } else if ($scope.entry.state.length <= 0) {
+                $scope.errorMessage = 'Error: State blank empty';
+                return false;
+            } else if ($scope.entry.pop == undefined || $scope.entry.pop == "") {
+                $scope.errorMessage = 'Error: Population blank empty';
+                return false;
+            } else if ($scope.entry.loc[0] == undefined || $scope.entry.loc[0] == "") {
+                $scope.errorMessage = 'Error: Latitude blank empty';
+                return false;
+            } else if ($scope.entry.loc[1] == undefined || $scope.entry.loc[1] == "") {
+                $scope.errorMessage = 'Error: Longitude blank empty';
+                return false;
+            } else {
+                $scope.errorMessage = '';
+                return true;
+            }
         };
     }]);

@@ -30,4 +30,14 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
             console.log(err);
         })
     };
+
+    self.updateEntry = function (newEntry) {
+        console.log('Beginning update');
+        return evoAPI.callFunction('updateData', newEntry).then(function () {
+            console.log('Successful update');
+            self.GatherZips();
+        }, function (err) {
+            console.log(err);
+        })
+    }
 }]);

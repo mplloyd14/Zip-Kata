@@ -14,6 +14,10 @@ module.exports = {
         },
         findZipById: {
             handler: fetch.findZipById
+        },
+        updateData: {
+            handler: fetch.updateData
         }
+        
     }
 };

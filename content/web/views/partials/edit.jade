@@ -3,9 +3,38 @@
 
 script#edit(type='text/ng-template')
     h2
-        | Hello
+        | Editing Zip Entry: {{stuff}}
 
-    h2#data {{stuff}}
+    h3
+        | City
+    input(type='text', ng-model='entry.city')
+    br
 
+    h3
+        | State
+    input(type='text', ng-model='entry.state')
+    br
+
+    h3
+        | Population
+    input(type='text', ng-model='entry.pop')
+    br
+
+    h3
+        | Latitude
+    input(type='text', ng-model='entry.loc[1]')
+    br
+
+    h3
+        | Longitude
+    input(type='text', ng-model='entry.loc[0]')
+    br
+    button.button.cai-btn(ng-click='confirm()')
+        | Confirm
+    br
     button.button.cai-btn(ng-click='back()')
         | Back
+    br
+
+    h2
+        | {{errorMessage}}
