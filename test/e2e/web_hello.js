@@ -6,7 +6,7 @@ var ptor = protractor.getInstance();
 describe('Test web hello page', function() {
 
 	beforeEach(function() {
-		ptor.get('/');
+		browser.get('http://localhost:3333/#/');
 	});
 
 	it('should display the message', function(done) {

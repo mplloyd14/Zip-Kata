@@ -1,29 +1,17 @@
 'use strict'
 
 var protractor = require('protractor');
-var ptor = protractor.getInstance();
- 
+
 describe('Test web hello page', function() {
 
 	beforeEach(function() {
-		ptor.get('/');
+		browser.get('/');
 	});
 
-	it('should display the message', function(done) {
-	
-		ptor.findElement(protractor.By.id("hellomsg")).getText()
-			.then(function(text) {
-				expect(text).toEqual('Hello world');
-				done();
-			});
-
-	},	100000);
-});	
-
-
-
-
-	
+	it('should have the correct URL', function() {
+		expect(browser.getCurrentUrl()).toEqual('/');
+	});
+});
 
 
 

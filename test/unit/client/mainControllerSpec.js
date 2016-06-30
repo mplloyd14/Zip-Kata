@@ -1,33 +1,42 @@
 'use strict';
 
 
+
 describe('Main Controller', function() {
-	var mocks = {};
 	var expect = chai.expect,
 	    should = chai.should();
 
+    var scope, ctrl, log, location, evoAPI, ZipService;
+
     beforeEach(module('ngCookies'));
     beforeEach(module('ngRoute'));
-    beforeEach(module('cai.services'));
-	beforeEach(module('peApp'));
+    beforeEach(module('evo'));
+    beforeEach(module('kataService'));
 	beforeEach(module('peControllers'));
+    
+    beforeEach(inject(function ($rootScope, $controller, $log, $location, _evoAPI_, _ZipService_) {
+        scope = $rootScope.$new();
+        log = $log;
+        location = $location;
+        evoAPI = _evoAPI_;
+        ZipService = _ZipService_;
+        ctrl = $controller('MainController', {
+            $scope: scope,
+            $log: log,
+            $location: location,
+            evoAPI: evoAPI,
+            ZipService: ZipService
+        });
+    }));
+
+    it('should be created', function () {
+        expect(ctrl).to.exist;
+    });
+
 
     describe('display', function() {
-    	var env = {};
-        
-        var scope, ctrl;
-    	beforeEach(inject(function($rootScope) {
-            scope = $rootScope.$new();
-            inject(function($controller, apiProvider){
-                ctrl = $controller('MainController', {
-                    $scope: scope
-                });
-            });
-		}));
-
-        it('should display message', function() {
-            scope.message.should.exist;
-            scope.message.should.equal('Hello world');
+        it('should load the table', function() {
+            scope.table.should.exist;
         });
 	});
 });

@@ -11,16 +11,25 @@ exports.config = {
 
     // A base URL for your application under test. Calls to protractor.get()
     // with relative paths will be prepended with this.
-    baseUrl: 'http://localhost',	// append the port number for the application
+    baseUrl: 'cc.localhost:4000/#/',	// append the port number for the application
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        "chromeOptions": {
+            binary: "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+            args: [],
+            extensions: []
+        }
 //    'browserName': 'firefox'
     },
+    basePath: "../../",
+    files: [
+        'node_modules/protractor/lib/protractor.js'
+    ],
     allScriptsTimeout: 20000,
     specs: [
-		'../e2e/**/*.js'
+		'../e2e/client/*.js'
     ],
 
     // Options to be passed to Jasmine-node.

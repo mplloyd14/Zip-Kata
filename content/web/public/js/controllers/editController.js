@@ -9,11 +9,11 @@ evo.module('peControllers', ['evo', 'evo.common'])
         $log.log('Loading web Edit Controller');
 
         $scope.tempId = $routeParams.id;
-        console.log($scope.tempId);
+
         ZipService.GatherById($scope.tempId).then(function (data) {
             $scope.entry = data;
+            $scope.idvar = $scope.entry._id;
 
-            $scope.stuff = $scope.entry._id;
         });
 
         $scope.back = function () {
@@ -22,9 +22,16 @@ evo.module('peControllers', ['evo', 'evo.common'])
 
         $scope.confirm = function() {
             // Check the spaces
+
+
+
             if ($scope.verify() == true) {
-                $log.log('true');
-                ZipService.updateEntry($scope.entry);
+                // Continue
+                ZipService.updateEntry($scope.entry).then(function () {
+                    $location.path('/');
+                });
+
+
             }
         };
 

@@ -11,7 +11,7 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
 
     self.GatherZips = function () {
         console.log('Gathering Zips');
-        evoAPI.callFunction('findAll').then(function (response) {
+        return evoAPI.callFunction('findAll').then(function (response) {
             console.log('Success');
             self.data = response.result;
             $rootScope.$broadcast('fetched');
@@ -21,10 +21,8 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
     };
 
     self.GatherById = function (idIn) {
-        console.log('Getting Zip');
         return evoAPI.callFunction('findZipById', idIn).then(function (response) {
             console.log('Success');
-            console.log(response.result);
             return response.result;
         }, function (err) {
             console.log(err);
@@ -35,7 +33,7 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
         console.log('Beginning update');
         return evoAPI.callFunction('updateData', newEntry).then(function () {
             console.log('Successful update');
-            self.GatherZips();
+            return self.GatherZips();
         }, function (err) {
             console.log(err);
         })

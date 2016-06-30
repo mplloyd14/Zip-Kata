@@ -9,15 +9,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-	  'node_modules/chai-as-promised/lib/chai-as-promised.js',
-      'content/shared/public/js/lib/angular/angular.js',
-      'content/shared/public/js/lib/angular/angular-cookies.js',
-      'content/shared/public/js/lib/angular/angular-mocks.js',
+      'node_modules/chai-as-promised/lib/chai-as-promised.js',
+      'node_modules/chai/chai.js',
+      'content/shared/public/monkeynaut/dist/js/bundle-full.min.js',
+      'content/shared/public/angular/angular.js',
+      //'content/shared/public/js/lib/angular/angular-cookies.js',
+      'content/shared/public/angular-mocks/angular-mocks.js',
+      'content/web/public/js/controllers/*.js',
       'content/shared/public/js/lib/*.js',
       'content/shared/public/js/lib/lodash/*.js',
+      'content/shared/public/js/controllers/**/*.js',
       'content/shared/public/js/services/**/*.js',
-      'content/shared/public/js/controllers/*.js',
-      'content/shared/public/js/directives/*.js',
       'test/unit/client/*.js'
     ],
 

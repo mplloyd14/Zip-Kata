@@ -33,11 +33,12 @@ evo.module('peControllers', ['evo'])
 				toolbar: {
 					search: {
 						by: true,
+						//exclude: ['edit'],
 						placeholder: 'Search'
 					}
 				},
 				pagination: {
-					itemsPerPage: 25,
+					itemsPerPage: 10,
 					maxSize: 5,
 					nextText: 'Next',
 					previousText: 'Previous'
