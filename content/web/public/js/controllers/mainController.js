@@ -4,6 +4,7 @@
 evo.module('peControllers', ['evo'])
 	.controller('MainController', ['$rootScope', '$scope', '$log', '$location', 'evoAPI', 'ZipService' , function($rootScope, $scope, $log, $location, evoAPI, ZipService) {
 		$log.log('Loading web main controller');
+		$scope.listen = ZipService.listen();
 		$rootScope.$on('fetched', function () {
 			$scope.table.data = undefined;
 			$scope.table.data = ZipService.data;

@@ -13,7 +13,6 @@ evo.module('peControllers', ['evo', 'evo.common'])
         ZipService.GatherById($scope.tempId).then(function (data) {
             $scope.entry = data;
             $scope.idvar = $scope.entry._id;
-
         });
 
         $scope.back = function () {
@@ -23,15 +22,14 @@ evo.module('peControllers', ['evo', 'evo.common'])
         $scope.confirm = function() {
             // Check the spaces
 
-
+            $scope.entry.city = $scope.entry.city.toUpperCase();
+            $scope.entry.state = $scope.entry.state.toUpperCase();
 
             if ($scope.verify() == true) {
                 // Continue
                 ZipService.updateEntry($scope.entry).then(function () {
                     $location.path('/');
                 });
-
-
             }
         };
 

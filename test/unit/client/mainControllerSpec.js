@@ -1,19 +1,19 @@
 'use strict';
 
 
-
 describe('Main Controller', function() {
-	var expect = chai.expect,
-	    should = chai.should();
+    var expect = chai.expect,
+        should = chai.should();
 
     var scope, ctrl, log, location, evoAPI, ZipService;
 
-    beforeEach(module('ngCookies'));
-    beforeEach(module('ngRoute'));
+
     beforeEach(module('evo'));
+    beforeEach(module('peApp'));
+    beforeEach(module('peControllers'));
     beforeEach(module('kataService'));
-	beforeEach(module('peControllers'));
-    
+    beforeEach(module('ngCookies'));
+
     beforeEach(inject(function ($rootScope, $controller, $log, $location, _evoAPI_, _ZipService_) {
         scope = $rootScope.$new();
         log = $log;

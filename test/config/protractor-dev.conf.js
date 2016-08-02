@@ -25,11 +25,11 @@ exports.config = {
     },
     basePath: "../../",
     files: [
-        'node_modules/protractor/lib/protractor.js'
+        './node_modules/protractor/lib/protractor.js'
     ],
     allScriptsTimeout: 20000,
     specs: [
-		'../e2e/client/*.js'
+		'../e2e/**/*.js'
     ],
 
     // Options to be passed to Jasmine-node.

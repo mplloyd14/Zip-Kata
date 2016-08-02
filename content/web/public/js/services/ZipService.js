@@ -37,5 +37,26 @@ evo.module('kataService').service('ZipService',['evoAPI', '$rootScope', '$log', 
         }, function (err) {
             console.log(err);
         })
-    }
+    };
+    
+    self.listen = function () {
+        $rootScope.$on('postMessage', function(event, inc){
+            return evoAPI.callFunction('updateData', inc.data).then(function() {
+                console.log('POST Successful update')
+                return self.GatherZips();
+            }, function(err) {
+                console.log(err)
+            })
+        });
+
+        $rootScope.$on('addMessage', function(event, inc) {
+            return evoAPI.callFunction('addData', inc.data).then(function() {
+                console.log('POST Successful add')
+                return self.GatherZips();
+            }, function(err) {
+                console.log(err)
+            })
+        });
+    };
+    
 }]);

@@ -9,7 +9,7 @@ describe('Test web hello page', function() {
 	});
 
 	it('should have the correct URL', function() {
-		expect(browser.getCurrentUrl()).toEqual('/');
+		expect(browser.getCurrentUrl()).toEqual('cc.localhost:4000/product/:product/desktop');
 	});
 });
 

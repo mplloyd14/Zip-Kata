@@ -17,7 +17,20 @@ module.exports = {
         },
         updateData: {
             handler: fetch.updateData
+        },
+        addData: {
+            handler: fetch.addData
         }
         
+    },
+    emitters: {
+        events: [{
+            'event': 'postMessage',
+            'room': '*'
+        },
+        {
+            'event': 'addMessage',
+            'room': '*'
+        }]
     }
 };
